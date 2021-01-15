@@ -1,140 +1,89 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"math"
-	"os"
-
-	"github.com/go-audio/audio"
-	"github.com/go-audio/wav"
-)
-
-const (
-	C              = -9
-	D              = -7
-	E              = -5
-	F              = -4
-	G              = -2
-	A              = 0
-	B              = 2
-	c              = 3
-	d              = 5
-	e              = 7
-	f              = 8
-	g              = 10
-	a              = 12
-	b              = 14
-	SampleRate     = 44100
-	BitDepth       = 16
-	NumChannels    = 2
-	WavAudioFormat = 1
-)
+import "fmt"
 
 func main() {
+	parseMusic()
+}
 
-	// cnote := note(p(C), 1, drop)
-	anote := note(p(A), 1, curve)
-	// bnote := note(p(B), 1, drop)
+func parseMusic() {
+	var m Music
+	err := Parse(&m, "music.yaml")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(m.Notes[0].C1[1])
+}
 
-	// cmaj, err := concat(note(p(C), 0.5, drop), note(p(E), 0.5, drop), note(p(G), 0.5, drop))
+func createTune() {
+	t := Tune{
+		Key:        "Eb",
+		NoteLength: 1,
+		Channel1:   []Note{createNote(c4), createNote(d4), createNote(e4)},
+		Channel2:   []Note{createNote(g4), createNote(a4), createNote(b4)},
+	}
+	data, err := t.Encode()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("data:", data)
+	fmt.Println("ch1:", t.Channel1)
+	fmt.Println("ch2:", t.Channel2)
 
-	// if err != nil {
-	// 	panic("Cannot create chord")
-	// }
+	write("tune", data)
+}
 
-	// melody, err := chain(anote, bnote, cnote)
-	// chords, err := chain(note(p(C), 0.5, drop), cmaj, note(p(C), 0.5, drop), cmaj, note(p(C), 0.5, drop), cmaj)
-	data, _ := stereo(anote, anote)
+func createNote(n int) (note Note) {
+	note = Note{
+		Pitch:      []int{n},
+		Accidental: []int{0},
+		Length:     (1.0 / 3.0),
+		Envelope:   drop,
+	}
+	return
+}
+
+func testManualCreateNotes() {
+	c := Note{
+		Pitch:      []int{c4},
+		Accidental: []int{0},
+		Length:     (1.0 / 3.0),
+		Envelope:   drop,
+	}
+
+	f := Note{
+		Pitch:      []int{f4},
+		Accidental: []int{0},
+		Length:     (1.0 / 3.0),
+		Envelope:   drop,
+	}
+
+	g := Note{
+		Pitch:      []int{g4},
+		Accidental: []int{0},
+		Length:     (1.0 / 3.0),
+		Envelope:   drop,
+	}
+
+	cNote, err := c.encode()
+	fNote, err := f.encode()
+	gNote, err := g.encode()
+
+	notes, err := chain(cNote, fNote, gNote)
+
+	cmaj := Note{
+		Pitch:      []int{c4, e4, g4},
+		Accidental: []int{0, 0, 0},
+		Length:     1.0,
+		Envelope:   drop,
+	}
+
+	cmajChord, err := cmaj.encode()
+	data, err := stereo(notes, cmajChord)
+
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	write("test", data)
-}
-
-func write(name string, data []int) (err error) {
-	out, err := os.Create(name + ".wav")
-	defer out.Close()
-	if err != nil {
-		fmt.Printf("couldn't create wav file - %v", err)
-		return
-	}
-	enc := wav.NewEncoder(out, SampleRate, BitDepth, NumChannels, WavAudioFormat)
-	buf := &audio.IntBuffer{
-		Format: &audio.Format{
-			NumChannels: NumChannels,
-			SampleRate:  SampleRate,
-		},
-		SourceBitDepth: BitDepth,
-		Data:           data,
-	}
-	if err = enc.Write(buf); err != nil {
-		fmt.Printf("couldn't write to encoder - %v", err)
-		return
-	}
-
-	if err = enc.Close(); err != nil {
-		fmt.Printf("couldn't close encoder - %v", err)
-		return
-	}
-	return
-}
-
-func note(frequency float64, duration float64, env envelope) (data []int) {
-	for i := 0.0; i < duration; i = i + (1.0 / float64(SampleRate)) {
-		x := int(10000 * env(i, duration) * math.Sin(2*math.Pi*frequency*i))
-		data = append(data, x)
-	}
-	return
-}
-
-func rest(duration float64) (data []int) {
-	for i := 0.0; i < duration; i = i + (1.0 / float64(SampleRate)) {
-		data = append(data, 0)
-	}
-	return
-}
-
-// chain notes together to create music!
-func chain(notes ...[]int) (data []int, err error) {
-	for _, note := range notes {
-		data = append(data, note...)
-	}
-	return
-}
-
-// concatenate notes together to make chords
-func concat(notes ...[]int) (data []int, err error) {
-	// make sure all the notes are the same length
-	l := len(notes[0])
-	for _, note := range notes {
-		if len(note) != l {
-			err = errors.New("length of notes are not the same")
-			return
-		}
-	}
-	// add up all the notes
-	for i := 0; i < l; i++ {
-		d := 0
-		for _, note := range notes {
-			d += note[i]
-		}
-		data = append(data, d)
-	}
-
-	return
-}
-
-func stereo(c1, c2 []int) (data []int, err error) {
-	if len(c1) == len(c2) {
-		for i := range c1 {
-			data = append(data, c1[i], c2[i])
-		}
-	} else {
-		err = errors.New("Channel lengths are different")
-	}
-	return
-}
-
-// returns the pitch of the note
-func p(step int) float64 {
-	return 440.0 * (math.Pow(2, (float64(step) / 12.0)))
 }
