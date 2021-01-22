@@ -67,7 +67,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 		log.Printf("Cannot encode the tune - %v", err)
 		return s.Name, err
 	}
-	name = outfile
+	name = s.Name
 	write(outfile, data)
 	return
 }

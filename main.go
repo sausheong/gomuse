@@ -13,6 +13,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/xid"
+	"gopkg.in/yaml.v2"
 )
 
 var serverFlag *bool
@@ -35,7 +36,7 @@ func main() {
 		r.HandleFunc("/", index)
 		r.HandleFunc("/sample/{name}", sample)
 		r.HandleFunc("/generate", generate)
-		r.HandleFunc("/tune", tuneHandler)
+		r.HandleFunc("/share/{id}", share)
 
 		r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir+"/static"))))
 
@@ -79,17 +80,37 @@ func generate(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	score := r.PostFormValue("score")
 	guid := xid.New()
-	s := parseScore("static/tunes/"+guid.String(), []byte(score))
+	name := parseScore("static/tunes/"+guid.String(), []byte(score))
 	data := struct {
+		ID       string
+		Name     string
 		Score    string
 		Filename string
-	}{score, s + ".wav"}
+	}{guid.String(), name, score, "static/tunes/" + guid.String() + ".wav"}
+	err := ioutil.WriteFile(dir+"/static/scores/"+guid.String()+".yaml", []byte(score), 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
 	t.Execute(w, &data)
 }
 
-func tuneHandler(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles(dir + "/static/html/tune.html")
-	t.Execute(w, nil)
+func share(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles(dir + "/static/html/share.html")
+	vars := mux.Vars(r)
+	score, _ := ioutil.ReadFile(dir + "/static/scores/" + vars["id"] + ".yaml")
+	var s *Score
+	err := yaml.Unmarshal(score, &s)
+	if err != nil {
+		log.Fatalf("Cannot unmarshal score file - %v", err)
+		return
+	}
+
+	data := struct {
+		Name     string
+		Score    string
+		Filename string
+	}{s.Name, string(score), "/static/tunes/" + vars["id"] + ".wav"}
+	t.Execute(w, &data)
 }
 
 func parseScore(outfile string, score []byte) string {
