@@ -1,5 +1,5 @@
 ---
-# Every Breath You Take -- Sting
+name: Every Breath You Take
 key: A
 length: 0.25
 envelope: round
@@ -122,5 +122,4 @@ sections: [
     C1: [],
     C2: []
   },  
-  
 ]

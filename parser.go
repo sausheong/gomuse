@@ -11,6 +11,7 @@ import (
 
 // Score represents the musical score
 type Score struct {
+	Name     string    `yaml:"name"`
 	Key      string    `yaml:"key"`
 	Length   float64   `yaml:"length"`
 	Envelope string    `yaml:"envelope"`
@@ -23,14 +24,21 @@ type Section struct {
 	C2 []string `yaml:"C2"`
 }
 
-// Parse reads a muse notation file and converts into a Music struct
-func Parse(s *Score, name string) (err error) {
-	scoreFile, err := ioutil.ReadFile(name + ".yaml")
+// ParseFile reads a score file and parses it into a Score struct
+func ParseFile(s *Score, filename string) (name string, err error) {
+	scoreFile, err := ioutil.ReadFile(filename + ".yaml")
 	if err != nil {
 		log.Printf("Cannot read score file - #%v ", err)
 		return
 	}
-	err = yaml.Unmarshal(scoreFile, s)
+	name, err = Parse(s, scoreFile, dir+"/"+filename)
+	return
+}
+
+// Parse reads a score and converts into a Score struct
+func Parse(s *Score, score []byte, outfile string) (name string, err error) {
+
+	err = yaml.Unmarshal(score, s)
 	if err != nil {
 		log.Fatalf("Cannot unmarshal score file - %v", err)
 		return
@@ -57,9 +65,10 @@ func Parse(s *Score, name string) (err error) {
 	data, err := t.encode()
 	if err != nil {
 		log.Printf("Cannot encode the tune - %v", err)
-		return err
+		return s.Name, err
 	}
-	write(name, data)
+	name = outfile
+	write(outfile, data)
 	return
 }
 
