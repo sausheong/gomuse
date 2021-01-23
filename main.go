@@ -106,10 +106,11 @@ func share(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := struct {
+		ID       string
 		Name     string
 		Score    string
 		Filename string
-	}{s.Name, string(score), "/static/tunes/" + vars["id"] + ".wav"}
+	}{vars["id"], s.Name, string(score), "/static/tunes/" + vars["id"] + ".wav"}
 	t.Execute(w, &data)
 }
 
