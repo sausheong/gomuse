@@ -9,6 +9,14 @@
         <link rel="stylesheet" href="/static/css/prism-live.css" >        
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="tag" content="tag data">
+        <meta property="og:url" content="https://muse.sausheong.com/share/{{.ID}}"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:audio" content="{{ .Filename }}" />
+        <meta property="og:audio:type" content="audio/wav" />
+        <meta property="og:title" content="{{ .Name }}" />
+        <meta property="og:image" content="https://muse.sausheong.com/static/img/muse.svg"/>
+        <meta property="fb:app_id" content="801297730468387"/>        
         <style>
             body, h4, h5 {font-family: 'Open Sans', sans-serif;}            
             .display-6 {color: #03A9F4;}
