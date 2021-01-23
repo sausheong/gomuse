@@ -35,7 +35,7 @@ func main() {
 		r := mux.NewRouter()
 		r.HandleFunc("/", index)
 		r.HandleFunc("/sample/{name}", sample)
-		r.HandleFunc("/generate", generate)
+		r.HandleFunc("/create", create)
 		r.HandleFunc("/share/{id}", share)
 
 		r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir+"/static"))))
@@ -75,7 +75,7 @@ func sample(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, string(score))
 }
 
-func generate(w http.ResponseWriter, r *http.Request) {
+func create(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles(dir + "/static/html/tune.html")
 	r.ParseForm()
 	score := r.PostFormValue("score")
