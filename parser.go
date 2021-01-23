@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
-	"log"
 	"strconv"
 	"strings"
 
@@ -28,7 +28,7 @@ type Section struct {
 func ParseFile(s *Score, filename string) (name string, err error) {
 	scoreFile, err := ioutil.ReadFile(filename + ".yaml")
 	if err != nil {
-		log.Printf("Cannot read score file - #%v ", err)
+		err = fmt.Errorf("Cannot read score file > %v ", err)
 		return
 	}
 	name, err = Parse(s, scoreFile, dir+"/"+filename)
@@ -37,42 +37,49 @@ func ParseFile(s *Score, filename string) (name string, err error) {
 
 // Parse reads a score and converts into a Score struct
 func Parse(s *Score, score []byte, outfile string) (name string, err error) {
-
 	err = yaml.Unmarshal(score, s)
 	if err != nil {
-		log.Fatalf("Cannot unmarshal score file - %v", err)
+		err = fmt.Errorf("Cannot unmarshal score file > %v", err)
 		return
 	}
-
+	name = s.Name
 	t := tune{
 		key:    s.Key,
 		length: s.Length,
 		ch1:    []note{},
 		ch2:    []note{},
 	}
-
+	var nt note
 	for _, section := range s.Sections {
 		for _, n := range section.C1 {
-			note := makeNote(n, s.Length, s.Envelope)
-			t.ch1 = append(t.ch1, note)
+			nt, err = makeNote(n, s.Length, s.Envelope)
+			if err != nil {
+				err = fmt.Errorf("[C1] cannot make note > %v ", err)
+				return
+			}
+			t.ch1 = append(t.ch1, nt)
 		}
 
 		for _, n := range section.C2 {
-			note := makeNote(n, s.Length, s.Envelope)
-			t.ch2 = append(t.ch2, note)
+			nt, err = makeNote(n, s.Length, s.Envelope)
+			if err != nil {
+				err = fmt.Errorf("[C2] cannot make note > %v ", err)
+				return
+			}
+			t.ch2 = append(t.ch2, nt)
 		}
 	}
-	data, err := t.encode()
+	var data []int
+	data, err = t.encode()
 	if err != nil {
-		log.Printf("Cannot encode the tune - %v", err)
-		return s.Name, err
+		err = fmt.Errorf("Cannot encode the tune > %v", err)
+		return
 	}
-	name = s.Name
 	write(outfile, data)
 	return
 }
 
-func makeNote(noteString string, length float64, env string) (n note) {
+func makeNote(noteString string, length float64, env string) (n note, err error) {
 	// default returned note
 	n = note{
 		pitch:      []int{},
@@ -85,14 +92,13 @@ func makeNote(noteString string, length float64, env string) (n note) {
 	nArray := strings.Split(noteString, ":") // split the length away from the notes
 	var l float64                            // note length
 	var p string                             // pitch
-	var err error
 
 	// if length of note is explicitly set
 	if len(nArray) > 1 {
 		l, err = strconv.ParseFloat(nArray[0], 64)
 		p = nArray[1]
 		if err != nil {
-			panic(err)
+			err = fmt.Errorf("cannot parse note > %v", err)
 		}
 	} else {
 		// if length of note is not explicitly set, use the standard one
@@ -105,25 +111,53 @@ func makeNote(noteString string, length float64, env string) (n note) {
 	// a chord
 	if len(p) > 3 {
 		chord := strings.Split(p, "-")
+		if len(chord) < 2 {
+			err = fmt.Errorf("wrong chords structure - %s ", chord)
+			return
+		}
 		for _, c := range chord {
-			process(&n, c)
+			err = process(&n, c)
+			if err != nil {
+				err = fmt.Errorf("wrong chords formation %s > %v", c, err)
+				return
+			}
 		}
 	} else {
 		// a single note
-		process(&n, p)
+		err = process(&n, p)
+		if err != nil {
+			err = fmt.Errorf("wrong note structure - %s > %v ", p, err)
+			return
+		}
 	}
 	return
 }
 
-func process(n *note, p string) {
+func process(n *note, p string) (err error) {
 	if p != "z" {
-		n.pitch = append(n.pitch, pitch[p[:2]])
-		if p[len(p)-1:] == "#" {
-			n.accidental = append(n.accidental, 1)
-		} else if p[len(p)-1:] == "b" {
-			n.accidental = append(n.accidental, -1)
+		if len(p) < 2 {
+			err = fmt.Errorf("note doesn't exist, is too short - %s ", p)
+			return
+		}
+
+		if len(p) > 3 {
+			err = fmt.Errorf("note doesn't exist, is too long - %s ", p)
+			return
+		}
+
+		_, ok := pitch[p[:2]]
+		if ok {
+			n.pitch = append(n.pitch, pitch[p[:2]])
+			if p[len(p)-1:] == "#" {
+				n.accidental = append(n.accidental, 1)
+			} else if p[len(p)-1:] == "b" {
+				n.accidental = append(n.accidental, -1)
+			} else {
+				n.accidental = append(n.accidental, 0)
+			}
 		} else {
-			n.accidental = append(n.accidental, 0)
+			err = fmt.Errorf("note doesn't exist - %s ", p)
 		}
 	}
+	return
 }

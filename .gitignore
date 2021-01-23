@@ -1,4 +1,5 @@
 .DS_Store
 gomuse
+muse
 *.wav
 static/scores/*.yaml

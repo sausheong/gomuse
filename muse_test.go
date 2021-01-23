@@ -14,7 +14,7 @@ func TestCreateTune(t *testing.T) {
 	}
 	data, err := mytune.encode()
 	if err != nil {
-		log.Fatalf("Cannot encode the tune - %v", err)
+		log.Println("Cannot encode the tune - %v", err)
 	}
 	write("tune", data)
 }

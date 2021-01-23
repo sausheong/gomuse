@@ -29,7 +29,12 @@
                 <div class="col-sm-9">
                     <h4>
                         {{ .Name }}
-                    </h4>        
+                    </h4>    
+                    {{ if gt (len .Message) 0}}
+                    <p class="text-danger">
+                        {{ .Message }}
+                    </p>
+                    {{ end }}
                     <form action="/create" id="create" method="post">
                         <div class="mb-3">
                             <textarea id="score" name="score" class="prism-live language-js fill" style="--height: 30em; --max-height: 30em">{{ .Score }}</textarea>
@@ -39,22 +44,25 @@
                                 create
                                 <i class="bi bi-music-note"></i>
                             </button>
+                            {{ if eq (len .Message) 0 }}
                             <a class="btn btn-share" href="/share/{{ .ID }}">
                                 share
                                 <i class="bi bi-share"></i>
-                            </a>
+                            </a>                            
                             <a class="btn btn-download"  href="/static/tunes/{{ .ID }}.wav" download="{{.Name}}.wav">
                                 download
                                 <i class="bi bi-download"></i>
                             </a>
-
+                            {{ end }}
                         </div>
                     </form>
+                    {{ if eq (len .Message) 0 }}
                     <div class="row mt-4">
                         <audio controls src="{{ .Filename }}" id="audiocontrol">
                             Your browser does not support the <code>audio</code> element.
                         </audio>                         
                     </div>
+                    {{ end }}
                 </div>
                 <div class="col-sm-3 mt-3">
                     <h5>Try these!</h5>

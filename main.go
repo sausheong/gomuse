@@ -80,17 +80,22 @@ func create(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	score := r.PostFormValue("score")
 	guid := xid.New()
-	name := parseScore("static/tunes/"+guid.String(), []byte(score))
+	name, err := parseScore("static/tunes/"+guid.String(), []byte(score))
+	var message string
+	if err != nil {
+		message = err.Error()
+	}
+	err = ioutil.WriteFile(dir+"/static/scores/"+guid.String()+".yaml", []byte(score), 0644)
+	if err != nil {
+		message = err.Error()
+	}
 	data := struct {
 		ID       string
+		Message  string
 		Name     string
 		Score    string
 		Filename string
-	}{guid.String(), name, score, "static/tunes/" + guid.String() + ".wav"}
-	err := ioutil.WriteFile(dir+"/static/scores/"+guid.String()+".yaml", []byte(score), 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
+	}{guid.String(), message, name, score, "static/tunes/" + guid.String() + ".wav"}
 	t.Execute(w, &data)
 }
 
@@ -101,7 +106,7 @@ func share(w http.ResponseWriter, r *http.Request) {
 	var s *Score
 	err := yaml.Unmarshal(score, &s)
 	if err != nil {
-		log.Fatalf("Cannot unmarshal score file - %v", err)
+		log.Println("Cannot unmarshal score file - %v", err)
 		return
 	}
 
@@ -114,21 +119,20 @@ func share(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, &data)
 }
 
-func parseScore(outfile string, score []byte) string {
+func parseScore(outfile string, score []byte) (name string, err error) {
 	var s Score
-
-	id, err := Parse(&s, score, outfile)
+	name, err = Parse(&s, score, outfile)
 	if err != nil {
-		log.Fatalf("Cannot parse score file - %v", err)
+		log.Println("Cannot parse score file - %v", err)
 	}
-	return id
+	return
 }
 
 func parseScoreFile(file string) string {
 	var s Score
 	id, err := ParseFile(&s, file)
 	if err != nil {
-		log.Fatalf("Cannot parse score file - %v", err)
+		log.Println("Cannot parse score file - %v", err)
 	}
 	return id
 }
