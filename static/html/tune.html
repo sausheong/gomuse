@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-9">
+                <div class="col-sm-9">
                     <h4>
                         {{ .Name }}
                     </h4>        
@@ -34,7 +34,7 @@
                         <div class="mb-3">
                             <textarea id="score" name="score" class="prism-live language-js fill" style="--height: 30em; --max-height: 30em">{{ .Score }}</textarea>
                         </div>
-                        <div>
+                        <div class="d-grid gap-2 d-md-block mt-3">
                             <button type="submit" class="btn btn-create">
                                 create
                                 <i class="bi bi-music-note"></i>
@@ -56,7 +56,7 @@
                         </audio>                         
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3">
                     <h5>Try these!</h5>
                     <ul>
                         <li><a href="/sample/every">Every Breath You Take</a></li>
