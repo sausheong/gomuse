@@ -18,6 +18,7 @@ import (
 
 var serverFlag *bool
 var dir string
+var h string
 
 func init() {
 	serverFlag = flag.Bool("s", false, "start the Muse service")
@@ -27,6 +28,7 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	h = dir + "/static/html/"
 }
 
 func main() {
@@ -64,19 +66,19 @@ func main() {
 
 // front page
 func index(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles(dir + "/static/html/index.html")
+	t, _ := template.ParseFiles(h+"index.html", h+"try.html", h+"links.html")
 	t.Execute(w, nil)
 }
 
 func sample(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles(dir + "/static/html/sample.html")
+	t, _ := template.ParseFiles(h+"sample.html", h+"try.html", h+"links.html")
 	vars := mux.Vars(r)
 	score, _ := ioutil.ReadFile(dir + "/scores/" + vars["name"] + ".yaml")
 	t.Execute(w, string(score))
 }
 
 func create(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles(dir + "/static/html/tune.html")
+	t, _ := template.ParseFiles(h+"tune.html", h+"try.html", h+"links.html")
 	r.ParseForm()
 	score := r.PostFormValue("score")
 	guid := xid.New()
@@ -100,7 +102,7 @@ func create(w http.ResponseWriter, r *http.Request) {
 }
 
 func share(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles(dir + "/static/html/share.html")
+	t, _ := template.ParseFiles(h+"share.html", h+"links.html")
 	vars := mux.Vars(r)
 	score, _ := ioutil.ReadFile(dir + "/static/scores/" + vars["id"] + ".yaml")
 	var s *Score
