@@ -17,6 +17,8 @@ func init() {
 	envelopes["triangle"] = triangle
 	envelopes["tadpole"] = tadpole
 	envelopes["flat"] = flat
+	envelopes["combi"] = combi
+	envelopes["diamond"] = diamond
 }
 
 //
@@ -61,4 +63,14 @@ func tadpole(input float64, duration float64) float64 {
 		(0.5 * math.Sin(2*math.Pi*input/duration)) +
 		(0.333 * math.Sin(3*math.Pi*input/duration)) -
 		(0.25 * math.Sin(4*math.Pi*input/duration))
+}
+
+func combi(input float64, duration float64) float64 {
+	return math.Sin((math.Pi*input)/(duration))/2 + math.Cos((math.Pi*input)/(2*duration))/3
+}
+
+func diamond(input float64, duration float64) float64 {
+	return (2/math.Pi)*math.Asin(math.Sin(math.Pi*input/duration))/4 +
+		(2/math.Pi)*math.Asin(math.Sin(2*math.Pi*input/duration))/4
+
 }
