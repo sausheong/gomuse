@@ -55,7 +55,7 @@ func main() {
 		if len(os.Args) > 1 {
 			arg := os.Args[1]
 			t1 := time.Now()
-			parseScoreFile(arg)
+			parseAndCreateWaveCLI(arg)
 			dur := time.Since(t1)
 			fmt.Println("Created", arg+".wav", "in", dur.String())
 		} else {
@@ -70,6 +70,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, nil)
 }
 
+// show a sample score
 func sample(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles(h+"sample.html", h+"try.html", h+"links.html")
 	vars := mux.Vars(r)
@@ -77,20 +78,29 @@ func sample(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, string(score))
 }
 
+// create the wav file given the score
 func create(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles(h+"tune.html", h+"try.html", h+"links.html")
 	r.ParseForm()
+	// get the score
 	score := r.PostFormValue("score")
-	guid := xid.New()
-	name, err := parseScore("static/tunes/"+guid.String(), []byte(score))
+	// error message if something goes wrong
 	var message string
+
+	// parse the score into a wave file
+	guid := xid.New()
+	name, err := parseAndCreateWav("static/tunes/"+guid.String(), []byte(score))
 	if err != nil {
 		message = err.Error()
 	}
+
+	// write the score to a score file for sharing later
 	err = ioutil.WriteFile(dir+"/static/scores/"+guid.String()+".yaml", []byte(score), 0644)
 	if err != nil {
 		message = err.Error()
 	}
+
+	// anonymous struct to send back to the page
 	data := struct {
 		ID       string
 		Message  string
@@ -101,17 +111,22 @@ func create(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, &data)
 }
 
+// share page for sharing to Facebook, Twitter etc
 func share(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles(h+"share.html", h+"links.html")
+	// read from the score file, given theID
 	vars := mux.Vars(r)
 	score, _ := ioutil.ReadFile(dir + "/static/scores/" + vars["id"] + ".yaml")
+
+	// unmarshal the score file into a Score struct
 	var s *Score
 	err := yaml.Unmarshal(score, &s)
 	if err != nil {
-		log.Println("Cannot unmarshal score file - %v", err)
+		log.Printf("Cannot unmarshal score file - %v", err)
 		return
 	}
 
+	// anonymous struct to send back to the page
 	data := struct {
 		ID       string
 		Name     string
@@ -121,20 +136,22 @@ func share(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, &data)
 }
 
-func parseScore(outfile string, score []byte) (name string, err error) {
+// parse the score and save to a wav file
+func parseAndCreateWav(outfile string, score []byte) (name string, err error) {
 	var s Score
 	name, err = Parse(&s, score, outfile)
 	if err != nil {
-		log.Println("Cannot parse score file - %v", err)
+		log.Printf("Cannot parse score file - %v", err)
 	}
 	return
 }
 
-func parseScoreFile(file string) string {
+//
+func parseAndCreateWaveCLI(file string) string {
 	var s Score
 	id, err := ParseFile(&s, file)
 	if err != nil {
-		log.Println("Cannot parse score file - %v", err)
+		fmt.Printf("Cannot parse score file - %v", err)
 	}
 	return id
 }

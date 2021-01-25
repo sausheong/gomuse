@@ -79,6 +79,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 	return
 }
 
+// make a note
 func makeNote(noteString string, length float64, env string) (n note, err error) {
 	// default returned note
 	n = note{
@@ -133,6 +134,7 @@ func makeNote(noteString string, length float64, env string) (n note, err error)
 	return
 }
 
+// process the note
 func process(n *note, p string) (err error) {
 	if p != "z" {
 		if len(p) < 2 {
@@ -144,7 +146,7 @@ func process(n *note, p string) (err error) {
 			err = fmt.Errorf("note doesn't exist, is too long - %s ", p)
 			return
 		}
-
+		// check if the note exists
 		_, ok := pitch[p[:2]]
 		if ok {
 			n.pitch = append(n.pitch, pitch[p[:2]])
