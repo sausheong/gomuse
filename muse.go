@@ -6,8 +6,7 @@ import (
 	"math"
 )
 
-var pitch map[string]int
-
+var pitch map[string]int // a list of all pitches
 var tuneKey map[string][]int
 var sharpKeys []string
 var flatKeys []string
@@ -32,6 +31,8 @@ type note struct {
 	accidental []int // 1 for sharp, -1 for flat, 0 for everything else
 	length     float64
 	env        envelope
+	har        harmonic
+	vol        int
 }
 
 // tune represents a piece of music
@@ -100,16 +101,16 @@ func (n note) encode() (data []int, err error) {
 	var notes [][]int
 	for i := 0; i < len(n.pitch); i++ {
 		pitch := p(n.pitch[i] + n.accidental[i])
-		notes = append(notes, noteData(pitch, n.length, n.env))
+		notes = append(notes, noteData(pitch, n.length, n.env, n.har, n.vol))
 	}
 	data, err = concat(notes...)
 	return
 }
 
 // actual note data
-func noteData(frequency float64, duration float64, env envelope) (data []int) {
+func noteData(frequency float64, duration float64, env envelope, har harmonic, vol int) (data []int) {
 	for i := 0.0; i < duration; i = i + (1.0 / float64(SampleRate)) {
-		x := int(10000 * env(i, duration) * math.Sin(2*math.Pi*frequency*i))
+		x := int(float64(vol) * env(i, duration) * har(frequency*i))
 		data = append(data, x)
 	}
 	return

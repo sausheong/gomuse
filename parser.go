@@ -15,6 +15,8 @@ type Score struct {
 	Key      string    `yaml:"key"`
 	Length   float64   `yaml:"length"`
 	Envelope string    `yaml:"envelope"`
+	Harmonic string    `yaml:"harmonic"`
+	Volume   int       `yaml:"volume"`
 	Sections []Section `yaml:"sections"`
 }
 
@@ -52,7 +54,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 	var nt note
 	for _, section := range s.Sections {
 		for _, n := range section.C1 {
-			nt, err = makeNote(n, s.Length, s.Envelope)
+			nt, err = makeNote(n, s.Length, s.Envelope, s.Harmonic, s.Volume)
 			if err != nil {
 				err = fmt.Errorf("[C1] cannot make note > %v ", err)
 				return
@@ -61,7 +63,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 		}
 
 		for _, n := range section.C2 {
-			nt, err = makeNote(n, s.Length, s.Envelope)
+			nt, err = makeNote(n, s.Length, s.Envelope, s.Harmonic, s.Volume)
 			if err != nil {
 				err = fmt.Errorf("[C2] cannot make note > %v ", err)
 				return
@@ -80,13 +82,15 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 }
 
 // make a note
-func makeNote(noteString string, length float64, env string) (n note, err error) {
+func makeNote(noteString string, length float64, env string, har string, vol int) (n note, err error) {
 	// default returned note
 	n = note{
 		pitch:      []int{},
 		accidental: []int{},
 		length:     length,
 		env:        envelopes[env],
+		har:        harmonics[har],
+		vol:        vol,
 	}
 
 	// if length is explicitly set, separate length of note from the pitches

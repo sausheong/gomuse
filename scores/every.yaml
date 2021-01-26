@@ -2,7 +2,9 @@
 name: Every Breath You Take
 key: A
 length: 0.25
-envelope: round
+envelope: drawl
+harmonic: stringed
+volume: 550
 sections: [
   # intro
   { 

@@ -2,7 +2,9 @@
 name: Sweet Child O'Mine
 key: D
 length: 0.25
-envelope: rise
+envelope: drawl
+harmonic: stringed
+volume: 500
 sections: [
   # intro
   { 

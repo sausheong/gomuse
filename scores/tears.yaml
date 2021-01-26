@@ -2,7 +2,9 @@
 name: Tears In Heaven
 key: D
 length: 0.35
-envelope: combi
+envelope: drawl
+harmonic: stringed
+volume: 500
 sections: [
   { 
     C1: [0.5:a2, 0.5:c3],

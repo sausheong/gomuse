@@ -2,7 +2,9 @@
 name: Beauty and the Beast
 key: F
 length: 0.4
-envelope: drop
+envelope: round
+harmonic: stringed
+volume: 600
 sections: [
   { 
     C1: [a4, c5, e5, 2:f5, 3:b4, a5, b5, g5, a5],
@@ -26,6 +28,6 @@ sections: [
   },
   {
     C1: [4:f4, 2:b4, 0.66:a4, 0.66:g4, 1.66:f4-d4, 5:c4, 2:c4-e4],
-    C2: [b2b, d3, f3, b3, 4:d3_b3, 2:c3, b2b, c3, 2:f3, 2:e3],
+    C2: [b2b, d3, f3, b3, 4:d3-b3, 2:c3, b2b, c3, 2:f3, 2:e3],
   },  
 ]
