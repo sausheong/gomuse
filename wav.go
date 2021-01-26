@@ -14,7 +14,7 @@ const (
 	BitDepth       = 16
 	NumChannels    = 2
 	WavAudioFormat = 1
-	Tolerance      = 1000
+	Tolerance      = 1500
 )
 
 // write data to WAV file
