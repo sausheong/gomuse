@@ -45,8 +45,8 @@ func main() {
 		srv := &http.Server{
 			Handler:      r,
 			Addr:         "0.0.0.0:8888",
-			WriteTimeout: 15 * time.Second,
-			ReadTimeout:  15 * time.Second,
+			WriteTimeout: 30 * time.Second,
+			ReadTimeout:  30 * time.Second,
 		}
 		fmt.Println("Starting Muse server at", srv.Addr)
 		log.Fatal(srv.ListenAndServe())
