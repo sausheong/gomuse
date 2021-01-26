@@ -1,10 +1,9 @@
 ---
 key: C
 length: 0.5
-envelope: drawl
-harmonic: stringed
-volume: 500
+envelope: round
+harmonic: first
+volume: 5000
 sections: [
   { C1: [c4, d4, e4, f4, g4, a4, b4, c5]}
-  # { C1: [c4]}
 ]
