@@ -31,5 +31,5 @@ func third(input float64) float64 {
 }
 
 func stringed(input float64) float64 {
-	return 0.5*math.Sin(base(input)*2) + 3*math.Sin(base(input)) + math.Sin(base(input)*0.5) + math.Sin(base(input)*0.25) + 0.5*math.Sin(base(input)*0.125)
+	return 3*math.Sin(base(input)) + 0.5*math.Sin(base(input)*0.5) + 1.5*math.Sin(base(input)*2) + 0.25*math.Sin(base(input)*3) + 0.125*math.Sin(base(input)*4)
 }
