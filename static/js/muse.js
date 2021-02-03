@@ -1,0 +1,1 @@
+var cm = new CodeMirror.fromTextArea(document.getElementById("score"), {lineNumbers: true});

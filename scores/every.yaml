@@ -2,7 +2,7 @@
 name: Every Breath You Take
 key: A
 length: 0.25
-envelope: drop
+envelope: tempered
 harmonic: stringed
 volume: 550
 sections: [

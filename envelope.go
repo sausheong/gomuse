@@ -20,6 +20,7 @@ func init() {
 	envelopes["combi"] = combi
 	envelopes["diamond"] = diamond
 	envelopes["drawl"] = drawl
+	envelopes["tempered"] = tempered
 }
 
 //
@@ -78,4 +79,8 @@ func diamond(input float64, duration float64) float64 {
 
 func drawl(input float64, duration float64) float64 {
 	return 1 / math.Log10((2*math.Pi*input/duration)+1.9)
+}
+
+func tempered(input float64, duration float64) float64 {
+	return drop(input, duration) * drawl(input, duration)
 }

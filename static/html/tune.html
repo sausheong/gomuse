@@ -24,7 +24,7 @@
                     {{ end }}
                     <form action="/create" id="create" method="post">
                         <div class="mb-3">
-                            <textarea id="score" name="score" class="prism-live language-js fill" style="--height: 30em; --max-height: 30em">{{ .Score }}</textarea>
+                            <textarea id="score" name="score" style="--height: 30em; --max-height: 30em">{{ .Score }}</textarea>
                         </div>
                         <div class="d-grid gap-2 d-md-block mt-3">
                             <button type="submit" class="btn btn-create">
@@ -55,11 +55,8 @@
             </div>
 
         </div>        
-        <script src="https://blissfuljs.com/bliss.shy.min.js"></script>
-        <script src="https://prismjs.com/prism.js"></script>
-        <script src="/static/js/prism-live.js"></script>
-        <script src="/static/js/prism-live-markup.js"></script>
-        <script src="/static/js/prism-live-css.js"></script>
-        <script src="/static/js/prism-live-javascript.js"></script>
+        <script src="/static/js/codemirror.js"></script>
+        <script src="/static/js/yaml.js"></script>
+        <script src="/static/js/muse.js"></script>
     </body>
 </html>

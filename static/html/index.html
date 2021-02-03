@@ -19,11 +19,13 @@
                     </p>        
                     <form action="/create" id="create" method="post">
                         <div class="mb-3">
-                            <textarea id="score" name="score" class="prism-live language-js fill" style="--height: 30em; --max-height: 30em">
+                            <textarea id="score" name="score" class="score">
 ---
 name: My Music
 key: C
 length: 0.25
+vol: 1000
+harmonic: first
 envelope: round
 sections: [
     # my comments
@@ -49,12 +51,8 @@ sections: [
                 {{ template "try.html" }}
             </div>
         </div>        
-        <script src="https://blissfuljs.com/bliss.shy.min.js"></script>
-        <script src="https://prismjs.com/prism.js"></script>
-        <script src="https://prismjs.com/plugins/line-numbers/prism-line-numbers.js"></script>
-        <script src="/static/js/prism-live.js"></script>
-        <script src="/static/js/prism-live-markup.js"></script>
-        <script src="/static/js/prism-live-css.js"></script>
-        <script src="/static/js/prism-live-javascript.js"></script>
+        <script src="/static/js/codemirror.js"></script>
+        <script src="/static/js/yaml.js"></script>
+        <script src="/static/js/muse.js"></script>
     </body>
 </html>

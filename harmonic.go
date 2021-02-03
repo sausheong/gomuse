@@ -23,11 +23,11 @@ func first(input float64) float64 {
 }
 
 func second(input float64) float64 {
-	return math.Sin(base(input)) + math.Sin(base(input)*3)
+	return math.Sin(base(input)) + math.Sin(base(input)*2)
 }
 
 func third(input float64) float64 {
-	return math.Sin(base(input)) + math.Sin(base(input)*3) + math.Sin(base(input)*5)
+	return math.Sin(base(input)) + math.Sin(base(input)*2) + math.Sin(base(input)*3)
 }
 
 func stringed(input float64) float64 {
