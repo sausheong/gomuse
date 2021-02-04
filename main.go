@@ -81,7 +81,9 @@ func sample(w http.ResponseWriter, r *http.Request) {
 // create the wav file given the score
 func create(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles(h+"tune.html", h+"try.html", h+"links.html")
+	fmt.Println("1")
 	r.ParseForm()
+	fmt.Println("2")
 	// get the score
 	score := r.PostFormValue("score")
 	// error message if something goes wrong
@@ -90,15 +92,17 @@ func create(w http.ResponseWriter, r *http.Request) {
 	// parse the score into a wave file
 	guid := xid.New()
 	name, err := parseAndCreateWav("static/tunes/"+guid.String(), []byte(score))
+	fmt.Println("3")
 	if err != nil {
 		message = err.Error()
 	}
-
+	fmt.Println("4")
 	// write the score to a score file for sharing later
 	err = ioutil.WriteFile(dir+"/static/scores/"+guid.String()+".yaml", []byte(score), 0644)
 	if err != nil {
 		message = err.Error()
 	}
+	fmt.Println("5")
 
 	// anonymous struct to send back to the page
 	data := struct {
@@ -108,6 +112,7 @@ func create(w http.ResponseWriter, r *http.Request) {
 		Score    string
 		Filename string
 	}{guid.String(), message, name, score, "static/tunes/" + guid.String() + ".wav"}
+	fmt.Println("6")
 	t.Execute(w, &data)
 }
 
