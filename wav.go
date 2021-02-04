@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"log"
 	"os"
 
@@ -16,6 +15,7 @@ const (
 	NumChannels    = 2
 	WavAudioFormat = 1
 	Tolerance      = 1500
+	MaxTuneLength  = 6000000
 )
 
 // write data to WAV file
@@ -48,6 +48,12 @@ func write(name string, data []int) (err error) {
 
 // make stereo channels for WAV file
 func stereo(c1, c2 []int) (data []int, err error) {
+
+	if *serverFlag && len(c1) > MaxTuneLength {
+		err = errors.New("Tune too long, use the command line tool instead")
+		return
+	}
+
 	// if there is only 1 channel, duplicate the other one
 	if len(c2) == 0 {
 		c2 = c1
@@ -64,14 +70,13 @@ func stereo(c1, c2 []int) (data []int, err error) {
 	}
 
 	if len(c1) == len(c2) {
-		fmt.Println(">", len(c1))
 		for i := range c1 {
-
 			data = append(data, c1[i], c2[i])
 		}
 	} else {
 		log.Println("C1:", len(c1), "C2:", len(c2))
 		err = errors.New("Channel lengths are different")
 	}
+
 	return
 }

@@ -71,6 +71,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 			t.ch2 = append(t.ch2, nt)
 		}
 	}
+
 	var data []int
 	data, err = t.encode()
 	if err != nil {
