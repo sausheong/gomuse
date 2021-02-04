@@ -73,7 +73,6 @@ func stereo(c1, c2 []int) (data []int, err error) {
 		fmt.Println("stereo6")
 
 		for i := range c1 {
-			fmt.Print(".")
 
 			data = append(data, c1[i], c2[i])
 		}
