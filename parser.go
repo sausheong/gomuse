@@ -39,11 +39,13 @@ func ParseFile(s *Score, filename string) (name string, err error) {
 
 // Parse reads a score and converts into a Score struct
 func Parse(s *Score, score []byte, outfile string) (name string, err error) {
+	fmt.Println("parse1")
 	err = yaml.Unmarshal(score, s)
 	if err != nil {
 		err = fmt.Errorf("Cannot unmarshal score file > %v", err)
 		return
 	}
+	fmt.Println("parse2")
 	name = s.Name
 	t := tune{
 		key:    s.Key,
@@ -51,6 +53,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 		ch1:    []note{},
 		ch2:    []note{},
 	}
+	fmt.Println("parse3")
 	var nt note
 	for _, section := range s.Sections {
 		for _, n := range section.C1 {
@@ -71,8 +74,10 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 			t.ch2 = append(t.ch2, nt)
 		}
 	}
+	fmt.Println("parse10")
 	var data []int
 	data, err = t.encode()
+	fmt.Println("parse11")
 	if err != nil {
 		err = fmt.Errorf("Cannot encode the tune > %v", err)
 		return

@@ -86,11 +86,13 @@ func create(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("2")
 	// get the score
 	score := r.PostFormValue("score")
+	fmt.Println("2.1")
 	// error message if something goes wrong
 	var message string
 
 	// parse the score into a wave file
 	guid := xid.New()
+	fmt.Println("2.2")
 	name, err := parseAndCreateWav("static/tunes/"+guid.String(), []byte(score))
 	fmt.Println("3")
 	if err != nil {
@@ -144,7 +146,9 @@ func share(w http.ResponseWriter, r *http.Request) {
 // parse the score and save to a wav file
 func parseAndCreateWav(outfile string, score []byte) (name string, err error) {
 	var s Score
+	fmt.Println("p1")
 	name, err = Parse(&s, score, outfile)
+	fmt.Println("p2")
 	if err != nil {
 		log.Printf("Cannot parse score file - %v", err)
 	}
