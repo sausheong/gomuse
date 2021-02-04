@@ -45,6 +45,7 @@ type tune struct {
 
 // Encode converts the tune to []int data to be used to create a WAV file
 func (t tune) encode() (data []int, err error) {
+	fmt.Println("encode1")
 	// apply key
 	acc := 0
 	if inKey(sharpKeys, t.key) { // if the key signature is a sharp key
@@ -52,7 +53,7 @@ func (t tune) encode() (data []int, err error) {
 	} else if inKey(flatKeys, t.key) { // if the key signature is a flat key
 		acc = -1
 	}
-
+	fmt.Println("encode2")
 	channels := [][]note{t.ch1, t.ch2}
 
 	for _, channel := range channels {
@@ -64,6 +65,7 @@ func (t tune) encode() (data []int, err error) {
 			}
 		}
 	}
+	fmt.Println("encode3")
 	var c1, c2, n []int
 	for _, note := range t.ch1 {
 		n, err = note.encode()
@@ -72,6 +74,7 @@ func (t tune) encode() (data []int, err error) {
 		}
 		c1 = append(c1, n...)
 	}
+	fmt.Println("encode4")
 	for _, note := range t.ch2 {
 		n, err = note.encode()
 		if err != nil {
@@ -79,8 +82,10 @@ func (t tune) encode() (data []int, err error) {
 		}
 		c2 = append(c2, n...)
 	}
+	fmt.Println("encode5")
 
 	data, err = stereo(c1, c2)
+	fmt.Println("encode6")
 	return
 }
 
