@@ -84,6 +84,17 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 
 // make a note
 func makeNote(noteString string, length float64, env string, har string, vol int) (n note, err error) {
+
+	if _, ok := envelopes[env]; !ok {
+		err = fmt.Errorf("envelope doesn't exist")
+		return
+	}
+
+	if _, ok := harmonics[har]; !ok {
+		err = fmt.Errorf("harmonic doesn't exist")
+		return
+	}
+
 	// default returned note
 	n = note{
 		pitch:      []int{},
