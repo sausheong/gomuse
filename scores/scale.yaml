@@ -14,7 +14,6 @@ sections: [
   },
   { 
     harmonic: second,
-    envelope: round,
     C1: [g4, a4, b4, c5],
     C2: [2:g4-b4-d4, 2:z],
   }  

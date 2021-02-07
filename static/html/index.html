@@ -21,29 +21,25 @@
                         <div class="mb-3">
                             <textarea id="score" name="score" class="score">
 ---
-name: My Music
+name: C major scale with C major chord progression
 key: C
-length: 0.25
-vol: 1000
-harmonic: first
+length: 0.5
 envelope: round
+harmonic: first
+volume: 5000
 sections: [
-    # my comments
-    {
-    key: A
-    length: 0.5
-    vol: 1000
-    harmonic: second
-    envelope: drop
-    C1: [],
-    C2: []
+    { 
+    envelope: drawl,
+    volume: 2000,
+    C1: [c4, d4, e4, f4],
+    C2: [2:c4-e4-g4, 2:f4-a4-c4],
     },
     { 
-    C1: [],
-    C2: []
-    },
-]                            
-                            </textarea>
+    harmonic: second,
+    C1: [g4, a4, b4, c5],
+    C2: [2:g4-b4-d4, 2:z],
+    }  
+]</textarea>
                         </div>
                         <div class="d-grid gap-2 d-md-block mt-3">
                             <button type="submit" class="btn btn-create">
