@@ -42,6 +42,7 @@
                             </a>
                             {{ end }}
                         </div>
+                        <input type="hidden" name="guid" value="{{ .ID }}"/>
                     </form>
                     {{ if eq (len .Message) 0 }}
                     <div class="row mt-4">

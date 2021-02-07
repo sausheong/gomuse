@@ -93,14 +93,19 @@ func create(w http.ResponseWriter, r *http.Request) {
 	var message string
 
 	// parse the score into a wave file
-	guid := xid.New()
-	name, err := parseAndCreateWav("static/tunes/"+guid.String(), []byte(score))
+	id := r.PostFormValue("guid")
+	if id == "" {
+		guid := xid.New()
+		id = guid.String()
+	}
+
+	name, err := parseAndCreateWav("static/tunes/"+id, []byte(score))
 	if err != nil {
 		message = err.Error()
 	}
 
 	// write the score to a score file for sharing later
-	err = ioutil.WriteFile(dir+"/static/scores/"+guid.String()+".yaml", []byte(score), 0644)
+	err = ioutil.WriteFile(dir+"/static/scores/"+id+".yaml", []byte(score), 0644)
 	if err != nil {
 		message = err.Error()
 	}
@@ -112,7 +117,7 @@ func create(w http.ResponseWriter, r *http.Request) {
 		Name     string
 		Score    string
 		Filename string
-	}{guid.String(), message, name, score, "static/tunes/" + guid.String() + ".wav"}
+	}{id, message, name, score, "static/tunes/" + id + ".wav"}
 	t.Execute(w, &data)
 }
 
