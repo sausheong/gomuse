@@ -22,8 +22,12 @@ type Score struct {
 
 // Section represents a section of music; it has 2 channels for stereo purposes
 type Section struct {
-	C1 []string `yaml:"C1"`
-	C2 []string `yaml:"C2"`
+	Length   float64  `yaml:"length,omitempty"`
+	Envelope string   `yaml:"envelope,omitempty"`
+	Harmonic string   `yaml:"harmonic,omitempty"`
+	Volume   int      `yaml:"volume,omitempty"`
+	C1       []string `yaml:"C1"`
+	C2       []string `yaml:"C2"`
 }
 
 // ParseFile reads a score file and parses it into a Score struct
@@ -46,15 +50,14 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 	}
 	name = s.Name
 	t := tune{
-		key:    s.Key,
-		length: s.Length,
-		ch1:    []note{},
-		ch2:    []note{},
+		key: s.Key,
+		ch1: []note{},
+		ch2: []note{},
 	}
 	var nt note
 	for _, section := range s.Sections {
 		for _, n := range section.C1 {
-			nt, err = makeNote(n, s.Length, s.Envelope, s.Harmonic, s.Volume)
+			nt, err = makeNote(n, section, *s)
 			if err != nil {
 				err = fmt.Errorf("[C1] cannot make note > %v ", err)
 				return
@@ -63,7 +66,7 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 		}
 
 		for _, n := range section.C2 {
-			nt, err = makeNote(n, s.Length, s.Envelope, s.Harmonic, s.Volume)
+			nt, err = makeNote(n, section, *s)
 			if err != nil {
 				err = fmt.Errorf("[C2] cannot make note > %v ", err)
 				return
@@ -78,18 +81,34 @@ func Parse(s *Score, score []byte, outfile string) (name string, err error) {
 		err = fmt.Errorf("Cannot encode the tune > %v", err)
 		return
 	}
-	write(outfile, data)
+	writeWAV(outfile, data)
 	return
 }
 
 // make a note
-func makeNote(noteString string, length float64, env string, har string, vol int) (n note, err error) {
+func makeNote(noteString string, section Section, score Score) (n note, err error) {
+	length := section.Length
+	if length == 0.0 {
+		length = score.Length
+	}
+	vol := section.Volume
+	if vol == 0 {
+		vol = score.Volume
+	}
+	env := section.Envelope
+	if env == "" {
+		env = score.Envelope
+	}
+	har := section.Harmonic
+	if har == "" {
+		har = score.Harmonic
+	}
 
+	// make sure envelope and harmonic exists
 	if _, ok := envelopes[env]; !ok {
 		err = fmt.Errorf("envelope doesn't exist")
 		return
 	}
-
 	if _, ok := harmonics[har]; !ok {
 		err = fmt.Errorf("harmonic doesn't exist")
 		return

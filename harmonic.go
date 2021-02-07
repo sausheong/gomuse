@@ -2,6 +2,7 @@ package main
 
 import "math"
 
+// the harmonic describes the additional harmonics added to the fundamental frequency
 type harmonic = func(input float64) float64
 
 var harmonics map[string]harmonic

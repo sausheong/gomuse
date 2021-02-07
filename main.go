@@ -55,9 +55,14 @@ func main() {
 		if len(os.Args) > 1 {
 			arg := os.Args[1]
 			t1 := time.Now()
-			parseAndCreateWaveCLI(arg)
+
+			var s Score
+			name, err := ParseFile(&s, arg)
+			if err != nil {
+				fmt.Printf("Cannot parse score file - %v", err)
+			}
 			dur := time.Since(t1)
-			fmt.Println("Created", arg+".wav", "in", dur.String())
+			fmt.Println("Created tune", name, "in", arg+".wav", "in", dur.String())
 		} else {
 			fmt.Println("No score provided")
 		}
@@ -144,14 +149,4 @@ func parseAndCreateWav(outfile string, score []byte) (name string, err error) {
 		log.Printf("Cannot parse score file - %v", err)
 	}
 	return
-}
-
-//
-func parseAndCreateWaveCLI(file string) string {
-	var s Score
-	id, err := ParseFile(&s, file)
-	if err != nil {
-		fmt.Printf("Cannot parse score file - %v", err)
-	}
-	return id
 }

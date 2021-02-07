@@ -28,10 +28,9 @@ type note struct {
 
 // tune represents a piece of music
 type tune struct {
-	key    string
-	length float64
-	ch1    []note
-	ch2    []note
+	key string
+	ch1 []note
+	ch2 []note
 }
 
 // Encode converts the tune to []int data to be used to create a WAV file

@@ -19,7 +19,7 @@ const (
 )
 
 // write data to WAV file
-func write(name string, data []int) (err error) {
+func writeWAV(name string, data []int) (err error) {
 	out, err := os.Create(name + ".wav")
 	defer out.Close()
 	if err != nil {

@@ -4,7 +4,7 @@ key: F
 length: 0.4
 envelope: round
 harmonic: first
-volume: 2000
+volume: 5000
 sections: [
   { 
     C1: [a4, c5, e5, 2:f5, 3:b4, a5, b5, g5, a5],

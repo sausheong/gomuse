@@ -7,16 +7,15 @@ import (
 
 func TestCreateTune(t *testing.T) {
 	mytune := tune{
-		key:    "Eb",
-		length: 1,
-		ch1:    []note{createNote(pitch["c4"]), createNote(pitch["d4"]), createNote(pitch["e4"])},
-		ch2:    []note{createNote(pitch["g4"]), createNote(pitch["a4"]), createNote(pitch["b4"])},
+		key: "Eb",
+		ch1: []note{createNote(pitch["c4"]), createNote(pitch["d4"]), createNote(pitch["e4"])},
+		ch2: []note{createNote(pitch["g4"]), createNote(pitch["a4"]), createNote(pitch["b4"])},
 	}
 	data, err := mytune.encode()
 	if err != nil {
 		log.Println("Cannot encode the tune - %v", err)
 	}
-	write("tune", data)
+	writeWAV("tune", data)
 }
 
 func createNote(p int) (n note) {
@@ -70,5 +69,5 @@ func TestManualCreateNotes(t *testing.T) {
 		log.Println(err)
 	}
 
-	write("test", data)
+	writeWAV("test", data)
 }
