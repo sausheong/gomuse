@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"io"
@@ -13,45 +13,17 @@ import (
 	"testing"
 )
 
-// newTestServer copies static/html and a scores fixture into a fresh temp
-// base dir and wires up a handler against it via setupServer. Handlers use
-// package-level state (baseDir, htmlDir, the parsed templates), so these
-// tests run sequentially rather than in parallel.
+// newTestServer builds the app against a fresh temp data dir, using the
+// embedded templates, static files and sample scores, and returns its
+// handler along with the data dir so tests can inspect what was written.
 func newTestServer(t *testing.T) (http.Handler, string) {
 	t.Helper()
-	base := t.TempDir()
-
-	dstHTML := filepath.Join(base, "static", "html")
-	if err := os.MkdirAll(dstHTML, 0755); err != nil {
-		t.Fatal(err)
-	}
-	entries, err := os.ReadDir("static/html")
+	data := t.TempDir()
+	app, err := New(data)
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, e := range entries {
-		data, err := os.ReadFile(filepath.Join("static/html", e.Name()))
-		if err != nil {
-			t.Fatal(err)
-		}
-		if err := os.WriteFile(filepath.Join(dstHTML, e.Name()), data, 0644); err != nil {
-			t.Fatal(err)
-		}
-	}
-
-	scoresDir := filepath.Join(base, "scores")
-	if err := os.MkdirAll(scoresDir, 0755); err != nil {
-		t.Fatal(err)
-	}
-	scale, err := os.ReadFile("scores/scale.yaml")
-	if err != nil {
-		t.Fatal(err)
-	}
-	if err := os.WriteFile(filepath.Join(scoresDir, "scale.yaml"), scale, 0644); err != nil {
-		t.Fatal(err)
-	}
-
-	return setupServer(base), base
+	return app.Handler(), data
 }
 
 const validScore = `
@@ -160,7 +132,11 @@ func TestWebSampleTraversalRejected(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/sample/x", nil)
 	req.SetPathValue("name", "../../etc/passwd")
 	rec := httptest.NewRecorder()
-	sample(rec, req)
+	app, err := New(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	app.sample(rec, req)
 	if rec.Code != http.StatusNotFound {
 		t.Fatalf("sample(\"../../etc/passwd\") = %d, want 404", rec.Code)
 	}
@@ -184,10 +160,10 @@ func TestWebCreateValidScore(t *testing.T) {
 	if id == "" {
 		t.Fatalf("could not find guid in response body: %s", body)
 	}
-	if _, err := os.Stat(filepath.Join(base, "static", "tunes", id+".wav")); err != nil {
+	if _, err := os.Stat(filepath.Join(base, "tunes", id+".wav")); err != nil {
 		t.Fatalf("expected wav file to be written: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join(base, "static", "scores", id+".yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join(base, "scores", id+".yaml")); err != nil {
 		t.Fatalf("expected score yaml to be written: %v", err)
 	}
 }
@@ -204,7 +180,7 @@ func TestWebCreateBadGUIDRejected(t *testing.T) {
 	}
 
 	// nothing should have been written outside the tunes/scores dirs under base
-	if _, err := os.Stat(filepath.Join(base, "static", "tunes", "evil.wav")); err == nil {
+	if _, err := os.Stat(filepath.Join(base, "tunes", "evil.wav")); err == nil {
 		t.Fatal("evil.wav should not have been written")
 	}
 	if _, err := os.Stat(filepath.Join(filepath.Dir(base), "evil.yaml")); err == nil {
@@ -250,7 +226,7 @@ func TestWebCreateGUIDReuseWithCookieOverwrites(t *testing.T) {
 	if got := extractGUID(t, string(body2)); got != id {
 		t.Fatalf("re-creating with the owning cookie should keep id %s, got %s", id, got)
 	}
-	saved, err := os.ReadFile(filepath.Join(base, "static", "scores", id+".yaml"))
+	saved, err := os.ReadFile(filepath.Join(base, "scores", id+".yaml"))
 	if err != nil {
 		t.Fatalf("cannot read saved score: %v", err)
 	}
@@ -276,7 +252,7 @@ func TestWebCreateGUIDWithoutCookieCannotOverwrite(t *testing.T) {
 	if victimID == "" {
 		t.Fatalf("could not find victim guid in response body: %s", victimBody)
 	}
-	victimScoreBefore, err := os.ReadFile(filepath.Join(base, "static", "scores", victimID+".yaml"))
+	victimScoreBefore, err := os.ReadFile(filepath.Join(base, "scores", victimID+".yaml"))
 	if err != nil {
 		t.Fatalf("cannot read victim score: %v", err)
 	}
@@ -297,7 +273,7 @@ func TestWebCreateGUIDWithoutCookieCannotOverwrite(t *testing.T) {
 		t.Fatal("attacker without the edit cookie must not be able to reuse the victim's id")
 	}
 
-	victimScoreAfter, err := os.ReadFile(filepath.Join(base, "static", "scores", victimID+".yaml"))
+	victimScoreAfter, err := os.ReadFile(filepath.Join(base, "scores", victimID+".yaml"))
 	if err != nil {
 		t.Fatalf("cannot read victim score after attack: %v", err)
 	}
@@ -446,7 +422,7 @@ func TestWebCreateWavWriteFailureHidesPath(t *testing.T) {
 	ts := httptest.NewServer(handler)
 	defer ts.Close()
 
-	tunesDir := filepath.Join(base, "static", "tunes")
+	tunesDir := filepath.Join(base, "tunes")
 	if err := os.Chmod(tunesDir, 0500); err != nil {
 		t.Fatal(err)
 	}

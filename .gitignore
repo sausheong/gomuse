@@ -1,6 +1,10 @@
 .DS_Store
-gomuse
-muse
+# stray binaries from go build
+/gomuse
+/muse
+# build output
+/bin/
+# web app runtime data (generated tunes and their scores)
+/data/
+# rendered tunes
 *.wav
-static/scores/*.yaml
-static/tunes/

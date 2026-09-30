@@ -1,6 +1,10 @@
-package main
+package muse
 
 import (
+	"io/fs"
+
+	"github.com/sausheong/gomuse/scores"
+
 	"math"
 	"os"
 	"path/filepath"
@@ -468,7 +472,7 @@ sections:
 `)
 	var s Score
 	out := filepath.Join(t.TempDir(), "wide")
-	if _, err := Parse(&s, score, out, maxSamplesPerChannel); err == nil {
+	if _, err := Parse(&s, score, out, 6000000); err == nil {
 		t.Fatal("expected an error for an oversized chord, got nil")
 	}
 	if _, statErr := os.Stat(out + ".wav"); statErr == nil {
@@ -479,18 +483,17 @@ sections:
 // -- every sample score parses and produces a valid WAV ---------------------------------------------------
 
 func TestSampleScoresProduceValidWAV(t *testing.T) {
-	files, err := filepath.Glob("scores/*.yaml")
+	files, err := fs.Glob(scores.FS, "*.yaml")
 	if err != nil {
 		t.Fatalf("glob failed: %v", err)
 	}
 	if len(files) == 0 {
-		t.Fatal("no sample scores found in scores/")
+		t.Fatal("no sample scores embedded from scores/")
 	}
 
 	for _, f := range files {
-		f := f
-		t.Run(filepath.Base(f), func(t *testing.T) {
-			data, err := os.ReadFile(f)
+		t.Run(f, func(t *testing.T) {
+			data, err := fs.ReadFile(scores.FS, f)
 			if err != nil {
 				t.Fatalf("cannot read %s: %v", f, err)
 			}
