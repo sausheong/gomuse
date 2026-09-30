@@ -23,36 +23,38 @@ func init() {
 	envelopes["tempered"] = tempered
 }
 
-//
 // -----
-//
 func flat(input float64, duration float64) float64 {
 	return 1
 }
 
 // -- .
-//     \
-//      \
+//
+//	\
+//	 \
 func drop(input float64, duration float64) float64 {
 	return math.Cos((math.Pi * input) / (2 * duration))
 }
 
-//   . --
-//  /
+//	 . --
+//	/
+//
 // /
 func rise(input float64, duration float64) float64 {
 	return math.Sin((math.Pi * input) / (2 * duration))
 }
 
-//   . -- .
-//  /      \
+//	 . -- .
+//	/      \
+//
 // /        \
 func round(input float64, duration float64) float64 {
 	return math.Sin(math.Pi * input / duration)
 }
 
-//   /\
-//  /  \
+//	 /\
+//	/  \
+//
 // /    \
 func triangle(input float64, duration float64) float64 {
 	return (2 / math.Pi) * math.Asin(math.Sin(2*math.Pi*input/duration))

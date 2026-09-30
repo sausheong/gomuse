@@ -3,3 +3,4 @@ gomuse
 muse
 *.wav
 static/scores/*.yaml
+static/tunes/
