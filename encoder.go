@@ -16,14 +16,17 @@ func init() {
 	setupKeys()
 }
 
-// Note represents a musical note
+// note represents a musical note
 type note struct {
-	pitch      []int // if it's a chord, there will be more than 1 pitch
-	accidental []int // 1 for sharp, -1 for flat, 0 for everything else
-	length     float64
-	env        envelope
-	har        harmonic
-	vol        int
+	pitch      []int  // if it's a chord, there will be more than 1 pitch
+	accidental []int  // 1 for sharp, -1 for flat, 0 for everything else
+	explicit   []bool // true when the accidental was written explicitly (#, b or n);
+	// an explicit accidental replaces the key signature for that note instead
+	// of stacking with it
+	length float64
+	env    envelope
+	har    harmonic
+	vol    int
 }
 
 // tune represents a piece of music
@@ -35,6 +38,11 @@ type tune struct {
 
 // Encode converts the tune to []int data to be used to create a WAV file
 func (t tune) encode() (data []int, err error) {
+	if !validKey(t.key) {
+		err = fmt.Errorf("unknown key signature - %s ", t.key)
+		return
+	}
+
 	// apply key
 	acc := 0
 	if inKey(sharpKeys, t.key) { // if the key signature is a sharp key
@@ -43,36 +51,51 @@ func (t tune) encode() (data []int, err error) {
 		acc = -1
 	}
 
-	// set up the accidentals for each note in the channels
+	// set up the accidentals for each note in the channels. A note whose
+	// accidental was written explicitly (# , b or n) replaces the key
+	// signature rather than stacking with it, so it's left untouched here.
 	channels := [][]note{t.ch1, t.ch2}
 	for _, channel := range channels {
 		for _, n := range channel {
-			for i, pitch := range n.pitch {
-				if inNote(tuneKey[t.key], pitch) {
+			for i, p := range n.pitch {
+				if n.explicit[i] {
+					continue
+				}
+				if inNote(tuneKey[t.key], p) {
 					n.accidental[i] += acc
 				}
 			}
 		}
 	}
 
-	// start encoding each note in the 2 channels
-	var c1, c2, n []int
-	for _, note := range t.ch1 {
-		n, err = note.encode()
-		if err != nil {
-			return
-		}
-		c1 = append(c1, n...)
+	var c1, c2 []int
+	c1, err = encodeChannel(t.ch1)
+	if err != nil {
+		return
 	}
-	for _, note := range t.ch2 {
-		n, err = note.encode()
-		if err != nil {
-			return
-		}
-		c2 = append(c2, n...)
+	c2, err = encodeChannel(t.ch2)
+	if err != nil {
+		return
 	}
-	// put the 2 channels together
 	data, err = stereo(c1, c2)
+	return
+}
+
+// encodeChannel encodes a whole channel, one note after another
+func encodeChannel(notes []note) (data []int, err error) {
+	capacity := 0
+	for _, n := range notes {
+		capacity += sampleCount(n.length)
+	}
+	data = make([]int, 0, capacity)
+	for _, n := range notes {
+		var nd []int
+		nd, err = n.encode()
+		if err != nil {
+			return nil, err
+		}
+		data = append(data, nd...)
+	}
 	return
 }
 
@@ -89,64 +112,81 @@ func (n note) encode() (data []int, err error) {
 		return
 	}
 
-	// encode into []int
-	var notes [][]int
+	// encode into []int, one slice of samples per pitch in the chord
+	notes := make([][]int, len(n.pitch))
 	for i := 0; i < len(n.pitch); i++ {
-		pitch := frequency(n.pitch[i] + n.accidental[i])
-		notes = append(notes, noteData(pitch, n.length, n.env, n.har, n.vol))
+		freq := frequency(n.pitch[i] + n.accidental[i])
+		notes[i] = noteData(freq, n.length, n.env, n.har, n.vol)
 	}
 	data, err = concat(notes...)
 	return
 }
 
+// sampleCount is the exact number of samples a duration (in seconds) maps
+// to, rounded to the nearest whole sample. Using this everywhere a duration
+// is turned into samples keeps note/rest/channel lengths consistent instead
+// of drifting apart through repeated float addition.
+func sampleCount(duration float64) int {
+	return int(math.Round(duration * float64(sampleRate)))
+}
+
 // actual note data
 func noteData(frequency float64, duration float64, env envelope, har harmonic, vol int) (data []int) {
-	for i := 0.0; i < duration; i = i + (1.0 / float64(sampleRate)) {
-		x := int(float64(vol) * env(i, duration) * har(frequency*i))
-		data = append(data, x)
+	n := sampleCount(duration)
+	data = make([]int, n)
+	for k := 0; k < n; k++ {
+		t := float64(k) / float64(sampleRate)
+		data[k] = int(float64(vol) * env(t, duration) * har(frequency*t))
 	}
 	return
 }
 
 // rest note
 func rest(duration float64) (data []int) {
-	for i := 0.0; i < duration; i = i + (1.0 / float64(sampleRate)) {
-		data = append(data, 0)
-	}
+	// zero-valued ints are silence, so there's nothing to fill in
+	data = make([]int, sampleCount(duration))
 	return
 }
 
 // chain notes together to create music!
 func chain(notes ...[]int) (data []int, err error) {
-	for _, note := range notes {
-		data = append(data, note...)
+	total := 0
+	for _, n := range notes {
+		total += len(n)
+	}
+	data = make([]int, 0, total)
+	for _, n := range notes {
+		data = append(data, n...)
 	}
 	return
 }
 
 // concatenate notes together to make chords
 func concat(notes ...[]int) (data []int, err error) {
+	if len(notes) == 0 {
+		return
+	}
 	// make sure all the notes are the same length
 	l := len(notes[0])
-	for _, note := range notes {
-		if len(note) != l {
+	for _, n := range notes {
+		if len(n) != l {
 			err = errors.New("length of notes are not the same")
 			return
 		}
 	}
 	// add up all the notes
+	data = make([]int, l)
 	for i := 0; i < l; i++ {
 		d := 0
-		for _, note := range notes {
-			d += note[i]
+		for _, n := range notes {
+			d += n[i]
 		}
-		data = append(data, d)
+		data[i] = d
 	}
-
 	return
 }
 
-// returns the pitch of the note
+// returns the frequency of the note
 func frequency(step int) float64 {
 	return 440.0 * (math.Pow(2, (float64(step) / 12.0)))
 }
@@ -164,8 +204,9 @@ func setupPitches() {
 	}
 }
 
-// initialise the tuneKey array, which is a
-// used to apply the key signature to notes
+// initialise the tuneKey array, which is used to apply the key signature
+// to notes. A key's accidental note applies across every octave (1 to 7),
+// so l ranges over all 7 octaves starting from the octave-1 pitch (l=0).
 func setupKeys() {
 	tuneKey = make(map[string][]int)
 	tuneKey["C"] = []int{}
@@ -174,7 +215,7 @@ func setupKeys() {
 	for i, key := range sharpKeys {
 		k := []int{}
 		for j := 0; j < i+1; j++ {
-			for l := 1; l < 6; l++ {
+			for l := 0; l < 7; l++ {
 				k = append(k, sharpNotes[j]+(12*l))
 			}
 		}
@@ -186,12 +227,20 @@ func setupKeys() {
 	for i, key := range flatKeys {
 		k := []int{}
 		for j := 0; j < i+1; j++ {
-			for l := 1; l < 6; l++ {
+			for l := 0; l < 7; l++ {
 				k = append(k, flatNotes[j]+(12*l))
 			}
 		}
 		tuneKey[key] = k
 	}
+}
+
+// validKey reports whether key is a recognised key signature
+func validKey(key string) bool {
+	if key == "C" {
+		return true
+	}
+	return inKey(sharpKeys, key) || inKey(flatKeys, key)
 }
 
 // check if the key is sharp or flat

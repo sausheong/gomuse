@@ -1,8 +1,7 @@
 package main
 
 import (
-	"errors"
-	"log"
+	"fmt"
 	"os"
 
 	"github.com/go-audio/audio"
@@ -14,8 +13,21 @@ const (
 	bitDepth       = 16
 	numChannels    = 2
 	wavAudioFormat = 1
-	tolerance      = 1500
-	maxTuneLength  = 6000000
+
+	// C1 and C2 are independent melodic lines: even in a well-formed score
+	// their notes don't always add up to exactly the same total duration
+	// (different rhythms, fractional note lengths that don't sum evenly),
+	// and each note's length is now rounded to the nearest whole sample
+	// (see sampleCount) rather than drifting through float addition. Across
+	// a whole tune that leaves a gap of at most a few hundred samples in
+	// the real scores shipped in scores/*.yaml (well under a tenth of a
+	// second), which this tolerance absorbs by cropping the longer channel.
+	// Anything bigger than that is a genuine mismatch and is still reported
+	// as an error below.
+	tolerance = 1500
+
+	minSample = -32768
+	maxSample = 32767
 )
 
 // write data to WAV file
@@ -23,9 +35,9 @@ func writeWAV(name string, data []int) (err error) {
 	out, err := os.Create(name + ".wav")
 	defer out.Close()
 	if err != nil {
-		log.Printf("couldn't create wav file - %v", err)
-		return
+		return fmt.Errorf("couldn't create wav file - %w", err)
 	}
+
 	enc := wav.NewEncoder(out, sampleRate, bitDepth, numChannels, wavAudioFormat)
 	buf := &audio.IntBuffer{
 		Format: &audio.Format{
@@ -36,30 +48,24 @@ func writeWAV(name string, data []int) (err error) {
 		Data:           data,
 	}
 	if err = enc.Write(buf); err != nil {
-		log.Printf("couldn't write to encoder - %v", err)
-		return
+		return fmt.Errorf("couldn't write to encoder - %w", err)
 	}
 	if err = enc.Close(); err != nil {
-		log.Printf("couldn't close encoder - %v", err)
-		return
+		return fmt.Errorf("couldn't close encoder - %w", err)
 	}
-	return
+	return nil
 }
 
-// make stereo channels for WAV file
+// make stereo channels for the WAV file. Every sample is hard-clamped to
+// the 16-bit signed range here, once, after the two channels have been
+// fully summed - this is the only place clipping is applied, so chords or
+// high volumes can no longer wrap around instead of clipping.
 func stereo(c1, c2 []int) (data []int, err error) {
-	// sometimes if the tunes are long, they run the risk of being killed
-	// if the server doesn't have enough memory. In this case, don't process
-	// it in the web app. This should normally be ok for the command line tool
-	if *serverFlag && len(c1) > maxTuneLength {
-		err = errors.New("Tune too long, use the command line tool instead")
-		return
-	}
 	// if there is only 1 channel, duplicate the other one
 	if len(c2) == 0 {
 		c2 = c1
 	}
-	// if the channels lengths are within a tolerance, crop the longer
+	// if the channel lengths are within a tolerance, crop the longer
 	// array so that both arrays are the same
 	d1 := len(c1) - len(c2)
 	d2 := len(c2) - len(c1)
@@ -70,14 +76,25 @@ func stereo(c1, c2 []int) (data []int, err error) {
 		c2 = c2[:len(c1)]
 	}
 
-	if len(c1) == len(c2) {
-		for i := range c1 {
-			data = append(data, c1[i], c2[i])
-		}
-	} else {
-		// if the channel lengths are too different, can't process
-		log.Println("C1:", len(c1), "C2:", len(c2))
-		err = errors.New("Channel lengths are different")
+	if len(c1) != len(c2) {
+		err = fmt.Errorf("channel lengths are different - C1: %d C2: %d", len(c1), len(c2))
+		return
+	}
+
+	data = make([]int, 0, len(c1)*2)
+	for i := range c1 {
+		data = append(data, clamp(c1[i]), clamp(c2[i]))
 	}
 	return
+}
+
+// clamp hard-limits a sample to the 16-bit signed range
+func clamp(x int) int {
+	if x > maxSample {
+		return maxSample
+	}
+	if x < minSample {
+		return minSample
+	}
+	return x
 }
