@@ -8,12 +8,13 @@ volume: 5000
 sections: [
   { 
     envelope: drawl,
-    volume: 2000,
+    volume: 7200,
     C1: [c4, d4, e4, f4],
     C2: [2:c4-e4-g4, 2:f4-a4-c4],
   },
   { 
     harmonic: second,
+    volume: 8800,
     C1: [g4, a4, b4, c5],
     C2: [2:g4-b4-d4, 2:z],
   }  

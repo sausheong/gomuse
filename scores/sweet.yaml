@@ -4,7 +4,7 @@ key: D
 length: 0.25
 envelope: drawl
 harmonic: stringed
-volume: 500
+volume: 7300
 sections: [
   # intro
   { 

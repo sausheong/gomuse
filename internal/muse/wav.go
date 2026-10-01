@@ -33,10 +33,10 @@ const (
 // write data to WAV file
 func writeWAV(name string, data []int) (err error) {
 	out, err := os.Create(name + ".wav")
-	defer out.Close()
 	if err != nil {
 		return fmt.Errorf("couldn't create wav file - %w", err)
 	}
+	defer out.Close()
 
 	enc := wav.NewEncoder(out, sampleRate, bitDepth, numChannels, wavAudioFormat)
 	buf := &audio.IntBuffer{

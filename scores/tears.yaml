@@ -4,7 +4,7 @@ key: D
 length: 0.35
 envelope: tempered
 harmonic: stringed
-volume: 500
+volume: 7300
 sections: [
   { 
     C1: [0.5:a2, 0.5:c3],
