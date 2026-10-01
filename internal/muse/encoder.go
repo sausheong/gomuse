@@ -26,6 +26,7 @@ type note struct {
 	length float64
 	env    envelope
 	har    harmonic
+	ins    instrument // when set, replaces env and har
 	vol    int
 }
 
@@ -116,7 +117,11 @@ func (n note) encode() (data []int, err error) {
 	notes := make([][]int, len(n.pitch))
 	for i := 0; i < len(n.pitch); i++ {
 		freq := frequency(n.pitch[i] + n.accidental[i])
-		notes[i] = noteData(freq, n.length, n.env, n.har, n.vol)
+		if n.ins != nil {
+			notes[i] = instrumentData(freq, n.length, n.ins, n.vol)
+		} else {
+			notes[i] = noteData(freq, n.length, n.env, n.har, n.vol)
+		}
 	}
 	data, err = concat(notes...)
 	return
@@ -137,6 +142,16 @@ func noteData(frequency float64, duration float64, env envelope, har harmonic, v
 	for k := 0; k < n; k++ {
 		t := float64(k) / float64(sampleRate)
 		data[k] = int(float64(vol) * env(t, duration) * har(frequency*t))
+	}
+	return
+}
+
+// note data from an instrument, scaled to the volume
+func instrumentData(frequency float64, duration float64, ins instrument, vol int) (data []int) {
+	samples := ins(frequency, duration)
+	data = make([]int, len(samples))
+	for k, v := range samples {
+		data[k] = int(float64(vol) * v)
 	}
 	return
 }

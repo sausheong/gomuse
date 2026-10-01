@@ -19,23 +19,25 @@ const maxChordPitches = 16
 
 // Score represents the musical score
 type Score struct {
-	Name     string    `yaml:"name"`
-	Key      string    `yaml:"key"`
-	Length   float64   `yaml:"length"`
-	Envelope string    `yaml:"envelope"`
-	Harmonic string    `yaml:"harmonic"`
-	Volume   int       `yaml:"volume"`
-	Sections []Section `yaml:"sections"`
+	Name       string    `yaml:"name"`
+	Key        string    `yaml:"key"`
+	Length     float64   `yaml:"length"`
+	Envelope   string    `yaml:"envelope"`
+	Harmonic   string    `yaml:"harmonic"`
+	Instrument string    `yaml:"instrument,omitempty"`
+	Volume     int       `yaml:"volume"`
+	Sections   []Section `yaml:"sections"`
 }
 
 // Section represents a section of music; it has 2 channels for stereo purposes
 type Section struct {
-	Length   float64  `yaml:"length,omitempty"`
-	Envelope string   `yaml:"envelope,omitempty"`
-	Harmonic string   `yaml:"harmonic,omitempty"`
-	Volume   int      `yaml:"volume,omitempty"`
-	C1       []string `yaml:"C1"`
-	C2       []string `yaml:"C2"`
+	Length     float64  `yaml:"length,omitempty"`
+	Envelope   string   `yaml:"envelope,omitempty"`
+	Harmonic   string   `yaml:"harmonic,omitempty"`
+	Instrument string   `yaml:"instrument,omitempty"`
+	Volume     int      `yaml:"volume,omitempty"`
+	C1         []string `yaml:"C1"`
+	C2         []string `yaml:"C2"`
 }
 
 // ParseFile reads a score file (filename+".yaml") and writes the resulting
@@ -148,16 +150,32 @@ func makeNote(noteString string, section Section, score Score) (n note, err erro
 		har = score.Harmonic
 	}
 
-	// make sure envelope and harmonic exist
-	envFn, ok := envelopes[env]
-	if !ok {
-		err = fmt.Errorf("envelope doesn't exist - %s ", env)
-		return
+	ins := section.Instrument
+	if ins == "" {
+		ins = score.Instrument
 	}
-	harFn, ok := harmonics[har]
-	if !ok {
-		err = fmt.Errorf("harmonic doesn't exist - %s ", har)
-		return
+
+	// an instrument shapes the whole note itself, and replaces the envelope
+	// and harmonic; without one, both must exist
+	var envFn envelope
+	var harFn harmonic
+	var insFn instrument
+	if ins != "" {
+		var ok bool
+		if insFn, ok = instruments[ins]; !ok {
+			err = fmt.Errorf("instrument doesn't exist - %s ", ins)
+			return
+		}
+	} else {
+		var ok bool
+		if envFn, ok = envelopes[env]; !ok {
+			err = fmt.Errorf("envelope doesn't exist - %s ", env)
+			return
+		}
+		if harFn, ok = harmonics[har]; !ok {
+			err = fmt.Errorf("harmonic doesn't exist - %s ", har)
+			return
+		}
 	}
 
 	// default returned note
@@ -168,6 +186,7 @@ func makeNote(noteString string, section Section, score Score) (n note, err erro
 		length:     length,
 		env:        envFn,
 		har:        harFn,
+		ins:        insFn,
 		vol:        vol,
 	}
 

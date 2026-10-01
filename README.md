@@ -124,7 +124,8 @@ sections: [
 | `length` | score, section | Length of one beat in seconds |
 | `envelope` | score, section | Envelope name (see below) |
 | `harmonic` | score, section | Harmonic name (see below) |
-| `volume` | score, section | Amplitude. Keep the total below 32767 to avoid clipping; chords and the richer harmonics add up |
+| `instrument` | score, section | Instrument name (see below). Replaces `envelope` and `harmonic`, which can then be left out |
+| `volume` | score, section | Peak amplitude of a single note. Every envelope and harmonic peaks at 1, so a note never exceeds `volume`. Chord notes add up, so keep `volume × notes in the largest chord` below 32767 to avoid clipping |
 | `sections` | score | List of sections, played in order |
 | `C1`, `C2` | section | Notes for the left and right channels |
 
@@ -160,29 +161,52 @@ The key signature applies to every octave. A note written without an accidental 
 - `f4#` plays F♯.
 - `f4b` plays F♭.
 
+### Instruments
+
+An instrument synthesises each note as a whole instead of combining an envelope with a harmonic. That lets every overtone fade at its own rate: in a real plucked or struck string the high overtones die away much faster than the fundamental, so the note starts bright and turns mellow. Like envelopes, every instrument peaks at 1 and ends at 0.
+
+| Name | Sound |
+|---|---|
+| `guitar` | A plucked steel string. Plucked a fifth of the way along, so every 5th overtone is missing. The overtones run very slightly sharp, and higher ones fade faster |
+| `piano` | A hammered string. The hammer strikes a seventh of the way along and its felt softens the top. Above the bass, two strings tuned 1.6 cents apart beat gently against each other. Each overtone decays in two stages (a quick drop, then a long tail), and higher notes die away faster |
+
+```yaml
+instrument: piano     # instead of envelope and harmonic
+sections:
+  - C1: [d5, e5, f5]
+  - instrument: guitar   # a section can switch instrument
+    C1: [a4, b4, 2:c5]
+```
+
+Instruments live in `internal/muse/instrument.go`. Each builds its note from a list of partials: sine components with a frequency, a level and one or more exponential decay stages.
+
 ### Envelopes
+
+Every envelope stays between 0 and 1, peaks at 1, and ends at 0, so notes never click.
 
 | Name | Shape |
 |---|---|
-| `flat` | Constant volume |
+| `flat` | Constant volume, with a 10 ms fade at the end |
 | `drop` | Starts loud and fades out (a quarter cosine) |
-| `rise` | Starts silent and swells (a quarter sine) |
+| `rise` | Starts silent and swells to full volume, then a 10 ms fade at the end |
 | `round` | Swells, then fades (a half sine) |
-| `triangle` | One full triangle-wave cycle: up, down through zero to negative, and back |
-| `tadpole` | Swells slowly, peaks near the end, then cuts off sharply |
+| `triangle` | Rises linearly to the middle of the note, then falls linearly |
+| `tadpole` | A quick attack (the head), then a rippling decay to silence (the tail) |
 | `combi` | A mix of `round` and `drop` |
-| `diamond` | A mix of two triangle waves |
-| `drawl` | A slow logarithmic decay |
-| `tempered` | `drop` × `drawl`, a soft plucked decay |
+| `diamond` | A tall swell followed by a smaller second one |
+| `drawl` | Decays quickly, then slowly, lingering before it fades out |
+| `tempered` | `drop` shaped by `drawl`'s curve, a soft plucked decay |
 
 ### Harmonics
+
+Each harmonic is scaled to peak at 1.
 
 | Name | Waveform |
 |---|---|
 | `first` | Pure sine: the fundamental only |
 | `second` | Fundamental plus the 2nd harmonic |
 | `third` | Fundamental plus the 2nd and 3rd harmonics |
-| `stringed` | A weighted mix of a sub-harmonic and harmonics 1–4, for a plucked-string sound |
+| `stringed` | Harmonics 1–4 weighted 3 : 1.5 : 0.25 : 0.125, for a plucked-string sound |
 
 Envelopes live in `internal/muse/envelope.go` and harmonics in `internal/muse/harmonic.go`. Each is a small pure function registered in a map, so adding one takes a few lines.
 
@@ -193,6 +217,9 @@ The `scores/` folder contains:
 | File | Tune | Key | Envelope / harmonic |
 |---|---|---|---|
 | `scale.yaml` | C major scale with a C major chord progression | C | round / first |
+| `after_all.yaml` | After All (about 4½ minutes, so it's too long for the web app; render it with the CLI) | D | tempered / stringed |
+| `after_all_guitar.yaml` | After All, first chorus, on the guitar instrument | D | guitar |
+| `after_all_piano.yaml` | After All, first chorus, on the piano instrument | D | piano |
 | `beauty.yaml` | Beauty and the Beast | F | round / first |
 | `cheek.yaml` | Cheek to Cheek | C | drop / stringed |
 | `every.yaml` | Every Breath You Take | A | tempered / stringed |
@@ -213,6 +240,7 @@ internal/muse/       audio engine
   encoder.go           pitches, key signatures, synthesis of notes, rests and chords
   envelope.go          envelope functions
   harmonic.go          harmonic functions
+  instrument.go        guitar and piano instruments
   wav.go               stereo interleaving, clipping, WAV writing
 internal/server/     web app: routes, handlers, edit cookies
 web/                 embedded web assets

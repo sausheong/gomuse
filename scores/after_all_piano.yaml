@@ -1,0 +1,38 @@
+# After All - first chorus, played on the piano instrument.
+# Generated from the after_all.yaml transcription.
+name: After All (piano)
+key: D
+length: 1.0       # quarter note = 60
+instrument: piano
+volume: 8000
+sections:
+  # pickup - Af-ter
+  - C1: [0.5:d5-d4, 0.5:e5-e4]
+    C2: [1:z]
+  # bar 20 - D
+  - C1: [0.5:g5-g4, 0.25:f5-f4, 0.75:f5-f4, 0.25:e5-e4, 1.25:f5-f4, 0.25:d5-d4, 0.25:d5-d4, 0.25:e5-e4, 0.25:f5-f4]
+    C2: [d2-f3-a3, f3-a3, f3-a3, f3-a3]
+  # bar 21 - Em7 Bm7
+  - C1: [0.5:g5-g4, 0.25:g5-g4, 0.25:g5-g4, 0.25:g5-g4, 0.75:a5-a4, 1.5:f5-f4, 0.5:a5-a4]
+    C2: [e2-g3-d4, g3-d4, b2-a3-d4, a3-d4]
+  # bar 22 - Em D/F# G
+  - C1: [0.5:a5-a4, 0.25:a4-a3, 0.25:a4-a3, 0.5:a4-a3, 0.5:d5-d4, 0.5:d5-d4, 0.834:a5-a4, 0.333:g5-g4, 0.333:f5-f4]
+    C2: [e2-g3-b3, f2-a3-d4, g2-b3-d4, b3-d4]
+  # bar 23 - A G G/A
+  - C1: [3:c5-c4, 0.5:d5-d4, 0.5:e5-e4]
+    C2: [a2-c4-e4, c4-e4, g2-b3-d4, a2-g3-b3]
+  # bar 24 - D
+  - C1: [0.5:g5-g4, 0.25:f5-f4, 0.75:f5-f4, 0.25:f5-f4, 1.25:f5-f4, 0.334:z, 0.333:f5-f4, 0.333:a5-a4]
+    C2: [d2-f3-a3, f3-a3, f3-a3, f3-a3]
+  # bar 25 - F#7b9 Bm7
+  - C1: [0.5:a5-a4, 0.25:g5-g4, 0.75:f5-f4, 0.25:e5-e4, 2:d5-d4, 0.25:c5-c4]
+    C2: [f2-e3-g3, e3-g3, b2-a3-d4, a3-d4]
+  # bar 26 - G
+  - C1: [0.5:b4-b3, 0.5:c5-c4, 0.5:d5-d4, 0.25:e5-e4, 0.25:e5-e4, 0.5:d5-d4, 1.25:e5-e4, 0.25:d5-d4]
+    C2: [g2-b3-d4, b3-d4, b3-d4, b3-d4]
+  # bar 27 - G/A A7
+  - C1: [0.75:g5-g4, 0.5:f5-f4, 0.25:e5-e4, 0.25:d5-d4, 0.25:e5-e4, 1:e5-e4, 0.5:d5-d4, 0.5:c5-c4]
+    C2: [a2-g3-b3, g3-b3, a2-g3-c4, g3-c4]
+  # bar 28 - D G/D
+  - C1: [4:d5-d4]
+    C2: [d2-f3-a3, f3-a3, d2-g3-b3, g3-b3]
