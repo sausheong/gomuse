@@ -75,10 +75,12 @@ func TestInstrumentsPlayInTune(t *testing.T) {
 	}
 }
 
-// Plucked and struck strings get quieter and mellower as they ring: the
+// Plucked and struck strings (guitar and piano) get quieter and mellower as they ring: the
 // overtones fade faster than the fundamental.
 func TestInstrumentsDecayAndMellow(t *testing.T) {
-	for name, ins := range instruments {
+	// only the plucked and struck strings; a voice sustains
+	for _, name := range []string{"guitar", "piano"} {
+		ins := instruments[name]
 		f := 196.0
 		x := ins(f, 2)
 		early, late := 0, sampleRate // first 50 ms vs 50 ms starting at 1 s

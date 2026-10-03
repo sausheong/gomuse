@@ -1,0 +1,369 @@
+# April in Paris — Vernon Duke; words by E. Y. Harburg.
+# Transcribed from the supplied two-page solo-guitar arrangement by Thomas F. Heck.
+# Source: scores/April in Paris.pdf. Source bar numbers are counted from the first bar.
+# 4/4, G major. 96 BPM is an editorial playback tempo; none is legible in the scan.
+# Guitar treble notation has been lowered one octave to sounding pitch.
+# C1: upper melody; C2: inner chords/arpeggios; C3: bass.
+# Repeat realised explicitly: 1–32, then 1–30, then second ending 33–34 (64 bars).
+# Quarter-note triplets use balanced decimal durations totalling two beats.
+# Transcription draft: the scan is blurred, especially the dense voicings in 15–17.
+# Playback compromises: cross-bar ties are rearticulated; inner sustained chord tones
+# sometimes retrigger with the moving voice (20, 22), and the initial inner chord in
+# 31 is shortened to fit three voices. Engraved fingering, string/position indications
+# and slurs are not encoded. Muse supplies a small guitar strum, not the full printed roll.
+# p/f contrasts are retained; ff/mp endpoints for unlabelled hairpins are editorial.
+# Mid-bar dynamic changes in 14 and 30 are approximated by a crescendo.
+# The final fermata is rendered as an editorial two-beat extension before the rest.
+name: April in Paris — solo guitar
+key: G
+length: 0.625
+instrument: guitar
+instruments: {C1: guitar, C2: guitar, C3: guitar}
+pan: {C1: 0, C2: 0.08, C3: -0.08}
+levels: {C1: 1, C2: 0.75, C3: 0.85}
+volume: 24000
+humanize: 0.12
+swing: 0
+reverb: 0.16
+sections:
+  # Source bar 1 | playback bar 1
+  - dynamic: f
+    C1: [0.666667:c4, 0.666666:c4, 0.666667:c4, a3#, b3]
+    C2: [2:d3#-a3, z, d3n-g3]
+    C3: [2:g2, 2:g2]
+  # Source bar 2 | playback bar 2
+  - dynamic: p
+    C1: [4:b3]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:b3, 0.5:f4, 0.5:b3, 0.5:g3, 0.5:d3]
+    C3: [4:g2]
+  # Source bar 3 | playback bar 3
+  - dynamic: f
+    C1: [0.666667:c4, 0.666666:c4, 0.666667:c4, a3#, b3]
+    C2: [2:d3#-g3, z, d3n-a3n]
+    C3: [2:a2, 2:f2]
+  # Source bar 4 | playback bar 4
+  - dynamic: p
+    C1: [4:b3]
+    C2: [0.5:z, 0.5:d3#, 0.5:a3, 0.5:b3, 0.5:f4, 0.5:b3, 0.5:a3, 0.5:d3#]
+    C3: [4:b2]
+  # Source bar 5 | playback bar 5
+  - dynamic: f
+    C1: [0.666667:a3, 0.666666:a3, 0.666667:a3, f3, g3]
+    C2: [2:c3-e3b, 2:c3]
+    C3: [2:e2, 2:e2]
+  # Source bar 6 | playback bar 6
+  - dynamic: f
+    hairpin: cresc
+    C1: [b3, d4, f4n, a4]
+    C2: [g3, g3, c4, d4]
+    C3: [g2, b2, d3, f3n]
+  # Source bar 7 | playback bar 7
+  - dynamic: ff
+    hairpin: dim
+    C1: [4:a4]
+    C2: [0.5:z, 0.5:c4, 0.5:d4, 0.5:a4, 0.5:z, 0.5:c4, 0.5:d4, 0.5:a4]
+    C3: [2:f3n, 2:f3n]
+  # Source bar 8 | playback bar 8
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.5:z, 0.5:b3, 0.5:f4n, 0.5:a4, 0.5:z, 0.5:b3, 0.5:f4n, 0.5:a4]
+    C3: [2:e3, 2:e3]
+  # Source bar 9 | playback bar 9
+  - dynamic: f
+    C1: [0.666667:a4, 0.666666:a4, 0.666667:a4, f4, g4]
+    C2: [2:g3-e4, 2:z]
+    C3: [2:c3, 2:z]
+  # Source bar 10 | playback bar 10
+  - dynamic: p
+    C1: [4:g4]
+    C2: [0.5:z, 0.5:e3, 0.5:g3, 0.5:b3, 0.5:g4, 0.5:b3, 0.5:g3, 0.5:e3]
+    C3: [4:c3]
+  # Source bar 11 | playback bar 11
+  - dynamic: f
+    C1: [0.666667:a4, 0.666666:a4, 0.666667:a4, f4, g4]
+    C2: [2:g3-d4, 2:z]
+    C3: [2:b2, 2:z]
+  # Source bar 12 | playback bar 12
+  - dynamic: p
+    C1: [4:g4]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:d4, 0.5:g4, 0.5:d4, 0.5:g3, 0.5:d3]
+    C3: [4:b2]
+  # Source bar 13 | playback bar 13
+  - dynamic: f
+    C1: [0.666667:g4, 0.666666:g4, 0.666667:g4, e4, f4]
+    C2: [2:a3-c4, 2:z]
+    C3: [2:c3#, 2:z]
+  # Source bar 14 | playback bar 14
+  - dynamic: p
+    hairpin: cresc
+    C1: [2:f4, 2:g4]
+    C2: [0.5:z, 0.5:c3#, 0.5:e3, 0.5:a3#, 2:z]
+    C3: [4:f2]
+  # Source bar 15 | playback bar 15
+  - dynamic: f
+    hairpin: cresc
+    C1: [4:b4]
+    C2: [2:c4#-e4, 2:f3-a3#-d4#-f4]
+    C3: [2:f3, 2:b2]
+  # Source bar 16 | playback bar 16
+  - dynamic: ff
+    C1: [4:b4]
+    C2: [2:d4n-f4, 2:g3#-d4n-f4n]
+    C3: [2:e3, 2:e2]
+  # Source bar 17 | playback bar 17
+  - dynamic: f
+    C1: [2:b4, 0.5:a4, 0.5:f4n, 0.5:f4#, 0.5:a4]
+    C2: [2:g3-c4#-e4, b3-d4b, z]
+    C3: [2:a2, 2:d3]
+  # Source bar 18 | playback bar 18
+  - dynamic: f
+    C1: [g4, g4, 2:g4]
+    C2: [2:g3-d4, 2:g3-c4#]
+    C3: [2:b2, 2:b2b]
+  # Source bar 19 | playback bar 19
+  - dynamic: f
+    C1: [0.5:a4, 0.5:f4n, 0.5:f4#, 0.5:a4, g4, g4]
+    C2: [2:g3-c4-e4, g3-c4n, g3-c4#]
+    C3: [2:a2, a2, a2#]
+  # Source bar 20 | playback bar 20
+  - dynamic: f
+    C1: [4:g4]
+    C2: [d3-g3-d4, d3-g3-c4, d3-g3-b3, d3-g3-d4]
+    C3: [b2, a2, g2, b2]
+  # Source bar 21 | playback bar 21
+  - dynamic: f
+    C1: [2:b4, 0.5:a4, 0.5:f4n, 0.5:f4#, 0.5:a4]
+    C2: [2:f3n-c4-e4, a3-d4#, z]
+    C3: [2:a2, 2:b2]
+  # Source bar 22 | playback bar 22
+  - dynamic: f
+    hairpin: dim
+    C1: [g4, g4, 2:g4]
+    C2: [g3-b3, g3-b3, 2:g3-b3]
+    C3: [e2, e3, 2:d3]
+  # Source bar 23 | playback bar 23
+  - dynamic: f
+    hairpin: dim
+    C1: [0.5:g4, 0.5:d4#, 0.5:e4, 0.5:g4, f4, f4]
+    C2: [g3-b3, g3, 2:c3#-e3-a3#-c4#]
+    C3: [2:c3#, 2:f2]
+  # Source bar 24 | playback bar 24
+  - dynamic: p
+    C1: [2:d4#, 2:d4n]
+    C2: [2:f3-a3#, 2:f3-c4]
+    C3: [2:b2, 2:a2]
+  # Source bar 25 | playback bar 25
+  - dynamic: f
+    C1: [0.666667:c4, 0.666666:c4, 0.666667:c4, a3#, b3]
+    C2: [2:d3#-a3, z, d3n-g3]
+    C3: [2:g2, 2:g2]
+  # Source bar 26 | playback bar 26
+  - dynamic: p
+    C1: [4:b3]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:b3, 0.5:z, 0.5:d3, 0.5:g3, 0.5:b3]
+    C3: [2:g2, 2:a2]
+  # Source bar 27 | playback bar 27
+  - dynamic: f
+    C1: [0.666667:f4n, 0.666666:f4n, 0.666667:f4n, d4#, e4]
+    C2: [2:a3-d4, 2:f3n-a3]
+    C3: [2:b2, 2:z]
+  # Source bar 28 | playback bar 28
+  - dynamic: p
+    C1: [4:e4]
+    C2: [0.5:z, 0.5:b2, 0.5:d3, 0.5:a3#, 0.5:z, 0.5:a3#, 0.5:d4, 0.5:e4]
+    C3: [2:e2, 2:b2]
+  # Source bar 29 | playback bar 29
+  - dynamic: f
+    C1: [0.666667:a4, 0.666666:a4, 0.666667:a4, f4, g4]
+    C2: [2:g3-c4#-e4, 2:z]
+    C3: [4:a2]
+  # Source bar 30 | playback bar 30
+  - dynamic: p
+    hairpin: cresc
+    C1: [2:g4, 2:a4]
+    C2: [0.5:z, 0.5:g3, 0.5:c4, 0.5:g4, 0.5:z, 0.5:c4, 0.5:d4#, 0.5:c4]
+    C3: [2:a2, 2:d3]
+  # Source bar 31 | playback bar 31 | first ending
+  - dynamic: f
+    C1: [4:g4]
+    C2: [0.5:b3-d4, 0.5:d3, 0.5:g3, 0.5:b3, 0.5:e4, 0.5:d4, 0.5:b3, 0.5:g3]
+    C3: [2:g2, 2:g2]
+  # Source bar 32 | playback bar 32 | first ending
+  - dynamic: p
+    C1: [4:z]
+    C2: [0.5:z, 0.5:d3#, 0.5:g3, 0.5:c4, 0.5:z, 0.5:a3, 0.5:c4, 0.5:f4]
+    C3: [2:a2, 2:d3]
+  # Source bar 1 | playback bar 33
+  - dynamic: f
+    C1: [0.666667:c4, 0.666666:c4, 0.666667:c4, a3#, b3]
+    C2: [2:d3#-a3, z, d3n-g3]
+    C3: [2:g2, 2:g2]
+  # Source bar 2 | playback bar 34
+  - dynamic: p
+    C1: [4:b3]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:b3, 0.5:f4, 0.5:b3, 0.5:g3, 0.5:d3]
+    C3: [4:g2]
+  # Source bar 3 | playback bar 35
+  - dynamic: f
+    C1: [0.666667:c4, 0.666666:c4, 0.666667:c4, a3#, b3]
+    C2: [2:d3#-g3, z, d3n-a3n]
+    C3: [2:a2, 2:f2]
+  # Source bar 4 | playback bar 36
+  - dynamic: p
+    C1: [4:b3]
+    C2: [0.5:z, 0.5:d3#, 0.5:a3, 0.5:b3, 0.5:f4, 0.5:b3, 0.5:a3, 0.5:d3#]
+    C3: [4:b2]
+  # Source bar 5 | playback bar 37
+  - dynamic: f
+    C1: [0.666667:a3, 0.666666:a3, 0.666667:a3, f3, g3]
+    C2: [2:c3-e3b, 2:c3]
+    C3: [2:e2, 2:e2]
+  # Source bar 6 | playback bar 38
+  - dynamic: f
+    hairpin: cresc
+    C1: [b3, d4, f4n, a4]
+    C2: [g3, g3, c4, d4]
+    C3: [g2, b2, d3, f3n]
+  # Source bar 7 | playback bar 39
+  - dynamic: ff
+    hairpin: dim
+    C1: [4:a4]
+    C2: [0.5:z, 0.5:c4, 0.5:d4, 0.5:a4, 0.5:z, 0.5:c4, 0.5:d4, 0.5:a4]
+    C3: [2:f3n, 2:f3n]
+  # Source bar 8 | playback bar 40
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.5:z, 0.5:b3, 0.5:f4n, 0.5:a4, 0.5:z, 0.5:b3, 0.5:f4n, 0.5:a4]
+    C3: [2:e3, 2:e3]
+  # Source bar 9 | playback bar 41
+  - dynamic: f
+    C1: [0.666667:a4, 0.666666:a4, 0.666667:a4, f4, g4]
+    C2: [2:g3-e4, 2:z]
+    C3: [2:c3, 2:z]
+  # Source bar 10 | playback bar 42
+  - dynamic: p
+    C1: [4:g4]
+    C2: [0.5:z, 0.5:e3, 0.5:g3, 0.5:b3, 0.5:g4, 0.5:b3, 0.5:g3, 0.5:e3]
+    C3: [4:c3]
+  # Source bar 11 | playback bar 43
+  - dynamic: f
+    C1: [0.666667:a4, 0.666666:a4, 0.666667:a4, f4, g4]
+    C2: [2:g3-d4, 2:z]
+    C3: [2:b2, 2:z]
+  # Source bar 12 | playback bar 44
+  - dynamic: p
+    C1: [4:g4]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:d4, 0.5:g4, 0.5:d4, 0.5:g3, 0.5:d3]
+    C3: [4:b2]
+  # Source bar 13 | playback bar 45
+  - dynamic: f
+    C1: [0.666667:g4, 0.666666:g4, 0.666667:g4, e4, f4]
+    C2: [2:a3-c4, 2:z]
+    C3: [2:c3#, 2:z]
+  # Source bar 14 | playback bar 46
+  - dynamic: p
+    hairpin: cresc
+    C1: [2:f4, 2:g4]
+    C2: [0.5:z, 0.5:c3#, 0.5:e3, 0.5:a3#, 2:z]
+    C3: [4:f2]
+  # Source bar 15 | playback bar 47
+  - dynamic: f
+    hairpin: cresc
+    C1: [4:b4]
+    C2: [2:c4#-e4, 2:f3-a3#-d4#-f4]
+    C3: [2:f3, 2:b2]
+  # Source bar 16 | playback bar 48
+  - dynamic: ff
+    C1: [4:b4]
+    C2: [2:d4n-f4, 2:g3#-d4n-f4n]
+    C3: [2:e3, 2:e2]
+  # Source bar 17 | playback bar 49
+  - dynamic: f
+    C1: [2:b4, 0.5:a4, 0.5:f4n, 0.5:f4#, 0.5:a4]
+    C2: [2:g3-c4#-e4, b3-d4b, z]
+    C3: [2:a2, 2:d3]
+  # Source bar 18 | playback bar 50
+  - dynamic: f
+    C1: [g4, g4, 2:g4]
+    C2: [2:g3-d4, 2:g3-c4#]
+    C3: [2:b2, 2:b2b]
+  # Source bar 19 | playback bar 51
+  - dynamic: f
+    C1: [0.5:a4, 0.5:f4n, 0.5:f4#, 0.5:a4, g4, g4]
+    C2: [2:g3-c4-e4, g3-c4n, g3-c4#]
+    C3: [2:a2, a2, a2#]
+  # Source bar 20 | playback bar 52
+  - dynamic: f
+    C1: [4:g4]
+    C2: [d3-g3-d4, d3-g3-c4, d3-g3-b3, d3-g3-d4]
+    C3: [b2, a2, g2, b2]
+  # Source bar 21 | playback bar 53
+  - dynamic: f
+    C1: [2:b4, 0.5:a4, 0.5:f4n, 0.5:f4#, 0.5:a4]
+    C2: [2:f3n-c4-e4, a3-d4#, z]
+    C3: [2:a2, 2:b2]
+  # Source bar 22 | playback bar 54
+  - dynamic: f
+    hairpin: dim
+    C1: [g4, g4, 2:g4]
+    C2: [g3-b3, g3-b3, 2:g3-b3]
+    C3: [e2, e3, 2:d3]
+  # Source bar 23 | playback bar 55
+  - dynamic: f
+    hairpin: dim
+    C1: [0.5:g4, 0.5:d4#, 0.5:e4, 0.5:g4, f4, f4]
+    C2: [g3-b3, g3, 2:c3#-e3-a3#-c4#]
+    C3: [2:c3#, 2:f2]
+  # Source bar 24 | playback bar 56
+  - dynamic: p
+    C1: [2:d4#, 2:d4n]
+    C2: [2:f3-a3#, 2:f3-c4]
+    C3: [2:b2, 2:a2]
+  # Source bar 25 | playback bar 57
+  - dynamic: f
+    C1: [0.666667:c4, 0.666666:c4, 0.666667:c4, a3#, b3]
+    C2: [2:d3#-a3, z, d3n-g3]
+    C3: [2:g2, 2:g2]
+  # Source bar 26 | playback bar 58
+  - dynamic: p
+    C1: [4:b3]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:b3, 0.5:z, 0.5:d3, 0.5:g3, 0.5:b3]
+    C3: [2:g2, 2:a2]
+  # Source bar 27 | playback bar 59
+  - dynamic: f
+    C1: [0.666667:f4n, 0.666666:f4n, 0.666667:f4n, d4#, e4]
+    C2: [2:a3-d4, 2:f3n-a3]
+    C3: [2:b2, 2:z]
+  # Source bar 28 | playback bar 60
+  - dynamic: p
+    C1: [4:e4]
+    C2: [0.5:z, 0.5:b2, 0.5:d3, 0.5:a3#, 0.5:z, 0.5:a3#, 0.5:d4, 0.5:e4]
+    C3: [2:e2, 2:b2]
+  # Source bar 29 | playback bar 61
+  - dynamic: f
+    C1: [0.666667:a4, 0.666666:a4, 0.666667:a4, f4, g4]
+    C2: [2:g3-c4#-e4, 2:z]
+    C3: [4:a2]
+  # Source bar 30 | playback bar 62
+  - dynamic: p
+    hairpin: cresc
+    C1: [2:g4, 2:a4]
+    C2: [0.5:z, 0.5:g3, 0.5:c4, 0.5:g4, 0.5:z, 0.5:c4, 0.5:d4#, 0.5:c4]
+    C3: [2:a2, 2:d3]
+  # Source bar 33 | playback bar 63 | second ending
+  - dynamic: f
+    hairpin: dim
+    C1: [4:g4]
+    C2: [0.5:z, 0.5:d3, 0.5:g3, 0.5:b3, 0.5:e4, 0.5:d4, 0.5:b3, 0.5:g3]
+    C3: [2:g2, 2:g2]
+  # Source bar 34 | playback bar 64 | second ending
+  - dynamic: p
+    fermata: 2
+    C1: [3:g4]
+    C2: [3:b3-e4]
+    C3: [3:g2]
+  # Final quarter rest of source bar 34.
+  - dynamic: p
+    C1: [z]
+    C2: [z]
+    C3: [z]

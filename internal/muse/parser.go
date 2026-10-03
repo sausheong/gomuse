@@ -19,25 +19,57 @@ const maxChordPitches = 16
 
 // Score represents the musical score
 type Score struct {
-	Name       string    `yaml:"name"`
-	Key        string    `yaml:"key"`
-	Length     float64   `yaml:"length"`
-	Envelope   string    `yaml:"envelope"`
-	Harmonic   string    `yaml:"harmonic"`
-	Instrument string    `yaml:"instrument,omitempty"`
-	Volume     int       `yaml:"volume"`
-	Sections   []Section `yaml:"sections"`
+	Name       string   `yaml:"name"`
+	Key        string   `yaml:"key"`
+	Length     float64  `yaml:"length"`
+	Envelope   string   `yaml:"envelope"`
+	Harmonic   string   `yaml:"harmonic"`
+	Instrument string   `yaml:"instrument,omitempty"`
+	Volume     int      `yaml:"volume"`
+	Reverb     *float64 `yaml:"reverb,omitempty"` // 0 to 1; unset means defaultReverb
+	Plain      bool     `yaml:"plain,omitempty"`  // play exactly as written: no ring-over, accents or reverb
+	// Humanize scales the small random timing and loudness variations, 0 to
+	// 1; unset means the default (see timing.go)
+	Humanize *float64 `yaml:"humanize,omitempty"`
+	// Swing delays every off-beat eighth note, 0 (straight) to 1 (full
+	// triplet swing)
+	Swing float64 `yaml:"swing,omitempty"`
+	// Instruments sets an instrument per channel, e.g. {C1: voice}, which
+	// replaces Instrument for that channel
+	Instruments map[string]string `yaml:"instruments,omitempty"`
+	// Pan places each channel from -1 (left) to 1 (right), e.g. {C1: 0};
+	// unset channels get the defaults in voice.go
+	Pan map[string]float64 `yaml:"pan,omitempty"`
+	// Levels sets the loudness of each channel from 0 to 1, e.g. {C2: 0.6},
+	// in place of the default balance (see channelGains in expression.go)
+	Levels   map[string]float64 `yaml:"levels,omitempty"`
+	Sections []Section          `yaml:"sections"`
 }
 
-// Section represents a section of music; it has 2 channels for stereo purposes
+// Section represents a section of music. C1 and C2 are the left and right
+// channels; C3, if present, is a centre channel mixed into both.
 type Section struct {
-	Length     float64  `yaml:"length,omitempty"`
-	Envelope   string   `yaml:"envelope,omitempty"`
-	Harmonic   string   `yaml:"harmonic,omitempty"`
-	Instrument string   `yaml:"instrument,omitempty"`
-	Volume     int      `yaml:"volume,omitempty"`
-	C1         []string `yaml:"C1"`
-	C2         []string `yaml:"C2"`
+	Length     float64 `yaml:"length,omitempty"`
+	Envelope   string  `yaml:"envelope,omitempty"`
+	Harmonic   string  `yaml:"harmonic,omitempty"`
+	Instrument string  `yaml:"instrument,omitempty"`
+	Volume     int     `yaml:"volume,omitempty"`
+	// Dynamic is the dynamic marking at the start of the section: ppp, pp,
+	// p, mp, mf, f, ff or fff; it lasts until the next one (see dynamics.go)
+	Dynamic string `yaml:"dynamic,omitempty"`
+	// Hairpin is "cresc" or "dim": the dynamic moves smoothly over the
+	// section towards the next section's dynamic
+	Hairpin string `yaml:"hairpin,omitempty"`
+	// Ritardando slows the section down gradually: 0.2 means the end of the
+	// section is played 20% slower (negative values speed up, accelerando)
+	Ritardando float64 `yaml:"ritardando,omitempty"`
+	// Fermata holds the last note of the section this many beats longer
+	Fermata float64 `yaml:"fermata,omitempty"`
+	// Instruments sets an instrument per channel for this section
+	Instruments map[string]string `yaml:"instruments,omitempty"`
+	C1          []string          `yaml:"C1"`
+	C2          []string          `yaml:"C2"`
+	C3          []string          `yaml:"C3,omitempty"`
 }
 
 // ParseFile reads a score file (filename+".yaml") and writes the resulting
@@ -65,30 +97,9 @@ func Parse(s *Score, score []byte, outfile string, maxSamples int) (name string,
 	}
 	name = s.Name
 
-	t := tune{
-		key: s.Key,
-		ch1: []note{},
-		ch2: []note{},
-	}
-	var nt note
-	for _, section := range s.Sections {
-		for _, n := range section.C1 {
-			nt, err = makeNote(n, section, *s)
-			if err != nil {
-				err = fmt.Errorf("[C1] cannot make note > %v ", err)
-				return
-			}
-			t.ch1 = append(t.ch1, nt)
-		}
-
-		for _, n := range section.C2 {
-			nt, err = makeNote(n, section, *s)
-			if err != nil {
-				err = fmt.Errorf("[C2] cannot make note > %v ", err)
-				return
-			}
-			t.ch2 = append(t.ch2, nt)
-		}
+	var t tune
+	if t, err = buildTune(s); err != nil {
+		return
 	}
 
 	// reject a score that would be too long before synthesising any audio,
@@ -100,6 +111,10 @@ func Parse(s *Score, score []byte, outfile string, maxSamples int) (name string,
 		}
 		if n := channelSamples(t.ch2); n > maxSamples {
 			err = fmt.Errorf("tune too long > channel 2 needs %d samples, max is %d ", n, maxSamples)
+			return
+		}
+		if n := channelSamples(t.ch3); n > maxSamples {
+			err = fmt.Errorf("tune too long > channel 3 needs %d samples, max is %d ", n, maxSamples)
 			return
 		}
 	}
@@ -114,6 +129,65 @@ func Parse(s *Score, score []byte, outfile string, maxSamples int) (name string,
 	return
 }
 
+// Check validates a score's settings and every note in every channel
+// without synthesising any audio.
+func Check(s *Score) error {
+	t, err := buildTune(s)
+	if err != nil {
+		return err
+	}
+	if !validKey(t.key) {
+		return fmt.Errorf("unknown key signature - %s ", t.key)
+	}
+	return nil
+}
+
+// buildTune turns every note string in the score into a note
+func buildTune(s *Score) (tune, error) {
+	for _, validate := range []func(*Score) error{validateDynamics, validateTiming, validateParts} {
+		if err := validate(s); err != nil {
+			return tune{}, err
+		}
+	}
+	t := tune{
+		key: s.Key,
+		ch1: []note{},
+		ch2: []note{},
+		ch3: []note{},
+	}
+	for _, section := range s.Sections {
+		for _, n := range section.C1 {
+			nt, err := makeChannelNote(n, section, *s, "C1")
+			if err != nil {
+				return t, fmt.Errorf("[C1] cannot make note > %v ", err)
+			}
+			t.ch1 = append(t.ch1, nt)
+		}
+
+		for _, n := range section.C2 {
+			nt, err := makeChannelNote(n, section, *s, "C2")
+			if err != nil {
+				return t, fmt.Errorf("[C2] cannot make note > %v ", err)
+			}
+			t.ch2 = append(t.ch2, nt)
+		}
+
+		for _, n := range section.C3 {
+			nt, err := makeChannelNote(n, section, *s, "C3")
+			if err != nil {
+				return t, fmt.Errorf("[C3] cannot make note > %v ", err)
+			}
+			t.ch3 = append(t.ch3, nt)
+		}
+	}
+	expressive(s, &t)
+	applyDynamics(s, &t)
+	applyTiming(s, &t)
+	t.reverb = reverbAmount(s)
+	t.pan = pans(s, &t)
+	return t, nil
+}
+
 // channelSamples adds up the number of samples a channel's notes will
 // produce, without synthesising any of them. encode() allocates one sample
 // slice per pitch in a chord (see note.encode in encoder.go), so a note's
@@ -126,9 +200,27 @@ func channelSamples(notes []note) int {
 		if width == 0 { // a rest still allocates one slice
 			width = 1
 		}
-		total += sampleCount(n.length) * width
+		// timing (timing.go) may play a note longer than written, through a
+		// ritardando or fermata, and a rolled chord delays its upper notes
+		played := n.length
+		if n.placed && n.hold > 0 {
+			played = n.hold
+		}
+		played += n.release + n.spread*float64(width-1)
+		total += sampleCount(played) * width
 	}
 	return total
+}
+
+// makeChannelNote makes a note for one channel, using that channel's
+// instrument if the section or score sets one in Instruments
+func makeChannelNote(noteString string, section Section, score Score, channel string) (note, error) {
+	if ins, ok := section.Instruments[channel]; ok {
+		section.Instrument = ins
+	} else if ins, ok := score.Instruments[channel]; ok && section.Instrument == "" {
+		section.Instrument = ins
+	}
+	return makeNote(noteString, section, score)
 }
 
 // make a note
@@ -188,6 +280,10 @@ func makeNote(noteString string, section Section, score Score) (n note, err erro
 		har:        harFn,
 		ins:        insFn,
 		vol:        vol,
+		gain:       1,
+	}
+	if ins != "" && !score.Plain {
+		n.release = releases[ins]
 	}
 
 	// if length is explicitly set, separate length of note from the pitches

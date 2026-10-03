@@ -1,0 +1,135 @@
+# How Deep Is Your Love — Bee Gees
+# Source: user-supplied four-page How-Deep-Is-Your-Love-Sheet-Music-
+# Bee-Gees-thepianonotes.com_.pdf; source bars numbered 1–34 here.
+# Melody transcribed visually from the printed vocal staff; bars 1–3
+# retain the printed piano introduction in C1.
+# Enhanced arrangement: sustained piano chords and the printed bass line
+# under the verses (bars 5-18); extended voicings, broken-chord patterns and
+# a moving bass in the choruses; phrase dynamics and ending.
+# These accompaniment additions are not a literal copy of the piano staves.
+# Key Eb, 4/4, quarter note = 88 (printed 105, slowed for a ballad feel).
+# Explicit naturals cancel the key signature.
+# Source ties are merged inside phrases; repeated notes remain articulated.
+# The two-voice handover in source bar 18 moves the high responses to C2.
+# Form: 1–28; repeat 5–28; 29–31; D.S. chorus 19–28; 29–31; closing tag 32–34.
+# The ambiguous D.S./fade is realised as one finite chorus reprise followed
+# by the interlude, the written closing tag and a held final chord rather
+# than an open loop.
+# Phrase sections preserve ties; source bar references identify the PDF.
+# C1 melody on saxophone (piano in the intro); C2 piano accompaniment;
+# C3 piano bass.
+name: "How Deep Is Your Love — expanded arrangement"
+key: Eb
+length: 0.6818181818181818   # quarter note = 88
+instrument: piano
+instruments: {C1: saxophone, C2: piano, C3: piano}
+pan: {C1: 0, C2: 0.3, C3: -0.22}
+levels: {C1: 1, C2: 0.45, C3: 0.42}
+volume: 26000
+humanize: 0.18
+swing: 0
+reverb: 0.2
+sections:
+  # Intro | source bars 1,2,3 | playback bar 1
+  # Harmony: Eb | Ebmaj7 | Abmaj7
+  - dynamic: mf
+    instruments: {C1: piano}
+    C1: [0.5:z, 0.5:b3, 0.5:e4, f4, 1.5:e4-g4, 0.5:z, 0.5:b3, 0.5:d4, f4, d4-g4, 0.5:c4, 4:c4-g4]
+    C2: [0.5:g3, 0.5:b3-c4, 0.5:f4, 0.5:c4, 0.5:g3-b3, 0.5:c4, 0.5:b3-f4, 0.5:c4, 0.5:g3-b3-d4, 0.5:f4, 0.5:b3, 0.5:d4-f4, 0.5:g3-d4, 0.5:b3, 0.5:d4-f4, 0.5:b3, 0.5:c4-g4, 0.5:e4, 0.5:g4-b4, 0.5:e4, 0.5:c4-g4, 0.5:b4, 0.5:e4-b4, 0.5:g4]
+    C3: [1.5:e2, 0.5:b2, 0.5:e3, 0.5:g3, b2, e2-e3, b2, 0.5:g3, 0.5:e3, 0.5:b2, 0.5:e2, a2, 0.5:e3, 0.5:a3, c4, 0.5:e3, 0.5:a3]
+  # Intro | source bars 4 | playback bar 4
+  # Harmony: Ab/Bb
+  - dynamic: mf
+    C1: [2.5:z, 0.5:b3, 0.5:e4, 0.5:f4]
+    C2: [0.5:a3, 0.5:c4-e4, 0.5:g4, 0.5:e4, 0.5:a3-c4, 0.5:e4, 0.5:c4-g4, 0.5:e4]
+    C3: [1.5:b1, 0.5:f2, 0.5:b2, 0.5:a2, f2]
+  # Verse 1 and chorus | source bars 5,6,7,8,9,10 | playback bar 5
+  # Harmony: Eb/Gm7 | Fm7/C7 | Fm7/G7 | Ab/Bb | Eb/Gm7 | Cm7
+  - dynamic: mf
+    C1: [g4, 0.5:g4, 0.5:e4, f4, 0.5:g4, 1.5:e4, z, 0.5:e4n, 0.5:f4, 0.5:g4, a4, 0.5:a4, 0.5:a4, 0.5:f4, g4, 0.5:a4, 1.5:f4, 1.5:z, 0.5:g4, 0.5:a4, b4, 0.5:b4, 0.5:b4, 0.5:g4, 0.5:b4, c5, b4, g4, e4, 0.5:e4, 0.5:f4, 0.5:g4]
+    C2: [2:g3-b3-e4, 2:b3-d4-f4, 2:a3-c4-e4, 2:g3-b3-e4n, 2:a3-c4-e4, 2:f3-b3n-d4, 4:a3-c4-e4, 2:g3-b3-e4, 2:b3-d4-f4, 4:g3-b3-e4]
+    C3: [1.5:e2, 0.5:e2, 2:g2, 1.5:f2, 0.5:f2, 2:c2, 1.5:f2, 0.5:f2, 2:g2, 1.5:b2, 0.5:b2, 2:b1, 1.5:e2, 0.5:e2, 2:g2, 1.5:c3, 0.5:c3, 2:c2]
+  # Verse 1 and chorus | source bars 11,12,13,14,15,16 | playback bar 11
+  # Harmony: Fm7 | Ab/Bb | Abmaj7 | Gm7 | Fm7 | Db9
+  - dynamic: mf
+    hairpin: cresc
+    C1: [0.5:a4, 0.5:a4, 0.5:a4, 0.5:a4, b4, 0.5:g4, 1.5:f4, 1.5:z, 0.5:e4, 0.5:e4, c5, c5, c5, 0.5:e5, 0.5:c5, f5, d5, b4, 0.5:b4, 0.5:c5, e5, 0.5:c5, 0.5:b4, c5, 0.5:b4, 0.5:g4, b4, g4, 1.5:f4, 0.5:e4, 0.5:f4]
+    C2: [4:a3-c4-e4, 4:c4-e4-a4, 4:c4-e4-g4, 4:b3-d4-f4, 4:a3-c4-e4, 4:f3-a3-c4b-e4]
+    C3: [1.5:f2, 0.5:f2, 2:f2, 1.5:b2, 0.5:b2, 2:b2, 2:a2-e3, 2:a2-e3, 2:g2-f3, 2:g2-f3, 2:f2, f3, f2, 2:d2b, d3b, d2b]
+  # Verse 1 and chorus | source bars 17,18,19,20 | playback bar 17
+  # Harmony: Gm7 | Ab/Bb | Eb | Ebmaj7
+  - dynamic: mf
+    C1: [0.5:g4, b4, c5, 0.5:e5, 2:g5, 0.5:z, 0.5:g5, z, 0.5:b3, c4, 0.5:b3, 0.5:e4, d4, c4, b3, e4, d4, c4, 0.5:z]
+    C2: [4:b3-d4-f4, 2:a3-c4-e4, 0.5:a3-c4-e4-g5, 0.5:g5, 0.5:g5, 0.5:g5, 0.5:g3-b3-c4, 0.5:f4, 0.5:b3, 0.5:c4-f4, 0.5:g3-c4, 0.5:b3, 0.5:c4-f4, 0.5:b3, 0.5:g3-d4, 0.5:b3, 0.5:d4-f4, 0.5:b3, 0.5:g3-d4, 0.5:f4, 0.5:b3-f4, 0.5:d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2, b2, 3:b1, e2-e3, b2, 0.5:g3, 0.5:e3, 0.5:b2, 0.5:e2, e2, 0.5:b2, 0.5:e3, g3, 0.5:b2, 0.5:e3]
+  # Verse 1 and chorus | source bars 21,22,23,24 | playback bar 21
+  # Harmony: Abmaj7 | Abm6 | Eb | Bbm/Db
+  - dynamic: f
+    C1: [0.5:b3, 0.5:c4, 0.5:e4, 1.5:g4, 0.5:a4, g4, 1.5:f4, g4, a4, 0.5:b4, 0.5:b4, 0.5:b4, 0.5:b4, 0.5:b4, c5, 1.5:b4, z, 0.666667:b4, 0.666666:c5, 0.666667:d5b]
+    C2: [0.5:c4, 0.5:e4-g4, 0.5:b4, 0.5:g4, 0.5:c4-e4, 0.5:g4, 0.5:e4-b4, 0.5:g4, 0.5:c4b-e4-f4, 0.5:b4, 0.5:e4, 0.5:f4-b4, 0.5:c4b-f4, 0.5:e4, 0.5:f4-b4, 0.5:e4, 0.5:g3-c4, 0.5:b3, 0.5:c4-f4, 0.5:b3, 0.5:g3-c4, 0.5:f4, 0.5:b3-f4, 0.5:c4, 0.5:f3, 0.5:a3-b3, 0.5:d4b, 0.5:b3, 0.5:f3-a3, 0.5:b3, 0.5:a3-d4b, 0.5:b3]
+    C3: [1.5:a2, 0.5:e3, 0.5:a3, 0.5:c4, e3, a2-a3, e3, 0.5:c4b, 0.5:a3, 0.5:e3, 0.5:a2, e2, 0.5:b2, 0.5:e3, g3, 0.5:b2, 0.5:e3, 1.5:d2b, 0.5:a2, 0.5:d3b, 0.5:f3, a2]
+  # Verse 1 and chorus | source bars 25,26,27,28 | playback bar 25
+  # Harmony: C7 | C7 | Fm7 | Abm6
+  - dynamic: f
+    C1: [b4, z, 0.5:z, 0.5:b4, 0.5:c5, 1.5:d5b, d5b, 0.5:c5, b4, 1.5:a4, 1.5:z, 0.5:a4, 0.5:b4, 1.5:c5b, 0.5:c5b, b4, a4, 0.5:g4]
+    C2: [0.5:e3n-b3-d4, 0.5:g4, 0.5:b3, 0.5:d4-g4, 0.5:e3n-d4, 0.5:b3, 0.5:d4-g4, 0.5:b3, 0.5:e3n-d4, 0.5:b3, 0.5:d4-g4, 0.5:b3, 0.5:e3n-d4, 0.5:g4, 0.5:b3-g4, 0.5:d4, 0.5:a3, 0.5:c4-e4, 0.5:g4, 0.5:e4, 0.5:a3-c4, 0.5:e4, 0.5:c4-g4, 0.5:e4, 0.5:c4b-e4-f4, 0.5:b4, 0.5:e4, 0.5:f4-b4, 0.5:c4b-f4, 0.5:e4, 0.5:f4-b4, 0.5:e4]
+    C3: [c2-c3, g2, 0.5:e3n, 0.5:c3, 0.5:g2, 0.5:c2, c2, 0.5:g2, 0.5:c3, e3n, 0.5:g2, 0.5:c3, 1.5:f2, 0.5:c3, 0.5:f3, 0.5:a3, c3, a2-a3, e3, 0.5:c4b, 0.5:a3, 0.5:e3, 0.5:a2]
+  # Verse 2 and chorus | source bars 5,6,7,8,9,10 | playback bar 29
+  # Harmony: Eb/Gm7 | Fm7/C7 | Fm7/G7 | Ab/Bb | Eb/Gm7 | Cm7
+  - dynamic: mf
+    C1: [g4, 0.5:g4, 0.5:e4, f4, 0.5:g4, 1.5:e4, z, 0.5:e4n, 0.5:f4, 0.5:g4, a4, 0.5:a4, 0.5:a4, 0.5:f4, g4, 0.5:a4, 1.5:f4, 1.5:z, 0.5:g4, 0.5:a4, b4, 0.5:b4, 0.5:b4, 0.5:g4, 0.5:b4, c5, b4, g4, e4, 0.5:e4, 0.5:f4, 0.5:g4]
+    C2: [2:g3-b3-e4, 2:b3-d4-f4, 2:a3-c4-e4, 2:g3-b3-e4n, 2:a3-c4-e4, 2:f3-b3n-d4, 4:a3-c4-e4, 2:g3-b3-e4, 2:b3-d4-f4, 4:g3-b3-e4]
+    C3: [1.5:e2, 0.5:e2, 2:g2, 1.5:f2, 0.5:f2, 2:c2, 1.5:f2, 0.5:f2, 2:g2, 1.5:b2, 0.5:b2, 2:b1, 1.5:e2, 0.5:e2, 2:g2, 1.5:c3, 0.5:c3, 2:c2]
+  # Verse 2 and chorus | source bars 11,12,13,14,15,16 | playback bar 35
+  # Harmony: Fm7 | Ab/Bb | Abmaj7 | Gm7 | Fm7 | Db9
+  - dynamic: mf
+    hairpin: cresc
+    C1: [0.5:a4, 0.5:a4, 0.5:a4, 0.5:a4, b4, 0.5:g4, 1.5:f4, 1.5:z, 0.5:e4, 0.5:e4, c5, c5, c5, 0.5:e5, 0.5:c5, f5, d5, b4, 0.5:b4, 0.5:c5, e5, 0.5:c5, 0.5:b4, c5, 0.5:b4, 0.5:g4, b4, g4, 1.5:f4, 0.5:e4, 0.5:f4]
+    C2: [4:a3-c4-e4, 4:c4-e4-a4, 4:c4-e4-g4, 4:b3-d4-f4, 4:a3-c4-e4, 4:f3-a3-c4b-e4]
+    C3: [1.5:f2, 0.5:f2, 2:f2, 1.5:b2, 0.5:b2, 2:b2, 2:a2-e3, 2:a2-e3, 2:g2-f3, 2:g2-f3, 2:f2, f3, f2, 2:d2b, d3b, d2b]
+  # Verse 2 and chorus | source bars 17,18,19,20 | playback bar 41
+  # Harmony: Gm7 | Ab/Bb | Eb | Ebmaj7
+  - dynamic: mf
+    C1: [0.5:g4, b4, c5, 0.5:e5, 2:g5, 0.5:z, 0.5:g5, z, 0.5:b3, c4, 0.5:b3, 0.5:e4, d4, c4, b3, e4, d4, c4, 0.5:z]
+    C2: [4:b3-d4-f4, 2:a3-c4-e4, 0.5:a3-c4-e4-g5, 0.5:g5, 0.5:g5, 0.5:g5, 0.5:g3-c4, 0.5:b3, 0.5:c4-f4, 0.5:b3, 0.5:g3-c4, 0.5:f4, 0.5:b3-f4, 0.5:c4, 0.5:g3, 0.5:b3-d4, 0.5:f4, 0.5:d4, 0.5:g3-b3, 0.5:d4, 0.5:b3-f4, 0.5:d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2, b2, 3:b1, e2, 0.5:b2, 0.5:e3, g3, 0.5:b2, 0.5:e3, 1.5:e2, 0.5:b2, 0.5:e3, 0.5:g3, b2]
+  # Verse 2 and chorus | source bars 21,22,23,24 | playback bar 45
+  # Harmony: Abmaj7 | Abm6 | Eb | Bbm/Db
+  - dynamic: f
+    C1: [0.5:b3, 0.5:c4, 0.5:e4, 1.5:g4, 0.5:a4, g4, 1.5:f4, g4, a4, 0.5:b4, 0.5:b4, 0.5:b4, 0.5:b4, 0.5:b4, c5, 1.5:b4, z, 0.666667:b4, 0.666666:c5, 0.666667:d5b]
+    C2: [0.5:c4-e4-g4, 0.5:b4, 0.5:e4, 0.5:g4-b4, 0.5:c4-g4, 0.5:e4, 0.5:g4-b4, 0.5:e4, 0.5:c4b-f4, 0.5:e4, 0.5:f4-b4, 0.5:e4, 0.5:c4b-f4, 0.5:b4, 0.5:e4-b4, 0.5:f4, 0.5:g3, 0.5:b3-c4, 0.5:f4, 0.5:c4, 0.5:g3-b3, 0.5:c4, 0.5:b3-f4, 0.5:c4, 0.5:f3-a3-b3, 0.5:d4b, 0.5:a3, 0.5:b3-d4b, 0.5:f3-b3, 0.5:a3, 0.5:b3-d4b, 0.5:a3]
+    C3: [a2-a3, e3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a2, a2, 0.5:e3, 0.5:a3, c4b, 0.5:e3, 0.5:a3, 1.5:e2, 0.5:b2, 0.5:e3, 0.5:g3, b2, d2b-d3b, a2, 0.5:f3, 0.5:d3b, 0.5:a2, 0.5:d2b]
+  # Verse 2 and chorus | source bars 25,26,27,28 | playback bar 49
+  # Harmony: C7 | C7 | Fm7 | Abm6
+  - dynamic: f
+    C1: [b4, z, 0.5:z, 0.5:b4, 0.5:c5, 1.5:d5b, d5b, 0.5:c5, b4, 1.5:a4, 1.5:z, 0.5:a4, 0.5:b4, 1.5:c5b, 0.5:c5b, b4, a4, 0.5:g4]
+    C2: [0.5:e3n-d4, 0.5:b3, 0.5:d4-g4, 0.5:b3, 0.5:e3n-d4, 0.5:g4, 0.5:b3-g4, 0.5:d4, 0.5:e3n, 0.5:b3-d4, 0.5:g4, 0.5:d4, 0.5:e3n-b3, 0.5:d4, 0.5:b3-g4, 0.5:d4, 0.5:a3-c4-e4, 0.5:g4, 0.5:c4, 0.5:e4-g4, 0.5:a3-e4, 0.5:c4, 0.5:e4-g4, 0.5:c4, 0.5:c4b-f4, 0.5:e4, 0.5:f4-b4, 0.5:e4, 0.5:c4b-f4, 0.5:b4, 0.5:e4-b4, 0.5:f4]
+    C3: [c2, 0.5:g2, 0.5:c3, e3n, 0.5:g2, 0.5:c3, 1.5:c2, 0.5:g2, 0.5:c3, 0.5:e3n, g2, f2-f3, c3, 0.5:a3, 0.5:f3, 0.5:c3, 0.5:f2, a2, 0.5:e3, 0.5:a3, c4b, 0.5:e3, 0.5:a3]
+  # Interlude / D.S. chorus reprise | source bars 29,30,31,19,20,21,22 | playback bar 53
+  # Harmony: Eb/Gm7 | Ab/Bb | Ab/Bb | Eb | Ebmaj7 | Abmaj7 | Abm6
+  - dynamic: mp
+    C1: [4:z, 4:z, 3:z, 0.5:b3, c4, 0.5:b3, 0.5:e4, d4, c4, b3, e4, d4, c4, 0.5:z, 0.5:b3, 0.5:c4, 0.5:e4, 1.5:g4, 0.5:a4, g4, 1.5:f4, g4, a4]
+    C2: [0.5:g3-b3-c4, 0.5:f4, 0.5:b3, 0.5:c4-f4, 0.5:b3-d4-f4, 0.5:a4n, 0.5:d4, 0.5:f4-a4n, 0.5:a3-e4, 0.5:c4, 0.5:e4-g4, 0.5:c4, 0.5:a3-e4, 0.5:g4, 0.5:c4-g4, 0.5:e4, 0.5:a3, 0.5:c4-e4, 0.5:g4, 0.5:e4, 0.5:a3-c4, 0.5:e4, 0.5:c4-g4, 0.5:e4, 0.5:g3-b3-c4, 0.5:f4, 0.5:b3, 0.5:c4-f4, 0.5:g3-c4, 0.5:b3, 0.5:c4-f4, 0.5:b3, 0.5:g3-d4, 0.5:b3, 0.5:d4-f4, 0.5:b3, 0.5:g3-d4, 0.5:f4, 0.5:b3-f4, 0.5:d4, 0.5:c4, 0.5:e4-g4, 0.5:b4, 0.5:g4, 0.5:c4-e4, 0.5:g4, 0.5:e4-b4, 0.5:g4, 0.5:c4b-e4-f4, 0.5:b4, 0.5:e4, 0.5:f4-b4, 0.5:c4b-f4, 0.5:e4, 0.5:f4-b4, 0.5:e4]
+    C3: [e2, 0.5:b2, 0.5:g3, g2, 0.5:d3, 0.5:b3, b1, 0.5:f2, 0.5:b2, a2, 0.5:f2, 0.5:b2, 1.5:b1, 0.5:f2, 0.5:b2, 0.5:a2, f2, e2-e3, b2, 0.5:g3, 0.5:e3, 0.5:b2, 0.5:e2, e2, 0.5:b2, 0.5:e3, g3, 0.5:b2, 0.5:e3, 1.5:a2, 0.5:e3, 0.5:a3, 0.5:c4, e3, a2-a3, e3, 0.5:c4b, 0.5:a3, 0.5:e3, 0.5:a2]
+  # D.S. chorus reprise | source bars 23,24,25,26,27,28 | playback bar 60
+  # Harmony: Eb | Bbm/Db | C7 | C7 | Fm7 | Abm6
+  - dynamic: f
+    hairpin: dim
+    C1: [0.5:b4, 0.5:b4, 0.5:b4, 0.5:b4, 0.5:b4, c5, 1.5:b4, z, 0.666667:b4, 0.666666:c5, 0.666667:d5b, b4, z, 0.5:z, 0.5:b4, 0.5:c5, 1.5:d5b, d5b, 0.5:c5, b4, 1.5:a4, 1.5:z, 0.5:a4, 0.5:b4, 1.5:c5b, 0.5:c5b, b4, a4, 0.5:g4]
+    C2: [0.5:g3-c4, 0.5:b3, 0.5:c4-f4, 0.5:b3, 0.5:g3-c4, 0.5:f4, 0.5:b3-f4, 0.5:c4, 0.5:f3, 0.5:a3-b3, 0.5:d4b, 0.5:b3, 0.5:f3-a3, 0.5:b3, 0.5:a3-d4b, 0.5:b3, 0.5:e3n-b3-d4, 0.5:g4, 0.5:b3, 0.5:d4-g4, 0.5:e3n-d4, 0.5:b3, 0.5:d4-g4, 0.5:b3, 0.5:e3n-d4, 0.5:b3, 0.5:d4-g4, 0.5:b3, 0.5:e3n-d4, 0.5:g4, 0.5:b3-g4, 0.5:d4, 0.5:a3, 0.5:c4-e4, 0.5:g4, 0.5:e4, 0.5:a3-c4, 0.5:e4, 0.5:c4-g4, 0.5:e4, 0.5:c4b-e4-f4, 0.5:b4, 0.5:e4, 0.5:f4-b4, 0.5:c4b-f4, 0.5:e4, 0.5:f4-b4, 0.5:e4]
+    C3: [e2, 0.5:b2, 0.5:e3, g3, 0.5:b2, 0.5:e3, 1.5:d2b, 0.5:a2, 0.5:d3b, 0.5:f3, a2, c2-c3, g2, 0.5:e3n, 0.5:c3, 0.5:g2, 0.5:c2, c2, 0.5:g2, 0.5:c3, e3n, 0.5:g2, 0.5:c3, 1.5:f2, 0.5:c3, 0.5:f3, 0.5:a3, c3, a2-a3, e3, 0.5:c4b, 0.5:a3, 0.5:e3, 0.5:a2]
+  # Interlude and written closing tag | source bars 29,30,31,32,33 | playback bar 66
+  # Harmony: Eb/Gm7 | Ab/Bb | Ab/Bb | Eb | Ebmaj7
+  - dynamic: mp
+    hairpin: dim
+    C1: [4:z, 4:z, 3:z, 0.5:b3, c4, 0.5:b3, 0.5:e4, d4, c4, b3, e4, d4, c4, 0.5:z]
+    C2: [0.5:g3-b3-c4, 0.5:f4, 0.5:b3, 0.5:c4-f4, 0.5:b3-d4-f4, 0.5:a4n, 0.5:d4, 0.5:f4-a4n, 0.5:a3-e4, 0.5:c4, 0.5:e4-g4, 0.5:c4, 0.5:a3-e4, 0.5:g4, 0.5:c4-g4, 0.5:e4, 0.5:a3, 0.5:c4-e4, 0.5:g4, 0.5:e4, 0.5:a3-c4, 0.5:e4, 0.5:c4-g4, 0.5:e4, 0.5:g3, 0.5:b3-c4, 0.5:f4, 0.5:c4, 0.5:g3-b3, 0.5:c4, 0.5:b3-f4, 0.5:c4, 0.5:g3-b3-d4, 0.5:f4, 0.5:b3, 0.5:d4-f4, 0.5:g3-d4, 0.5:b3, 0.5:d4-f4, 0.5:b3]
+    C3: [e2, 0.5:b2, 0.5:g3, g2, 0.5:d3, 0.5:b3, b1, 0.5:f2, 0.5:b2, a2, 0.5:f2, 0.5:b2, 1.5:b1, 0.5:f2, 0.5:b2, 0.5:a2, f2, 1.5:e2, 0.5:b2, 0.5:e3, 0.5:g3, b2, e2-e3, b2, 0.5:g3, 0.5:e3, 0.5:b2, 0.5:e2]
+  # Written closing tag | source bars 34 | playback bar 71
+  # Harmony: Eb
+  - dynamic: pp
+    ritardando: 0.18
+    fermata: 2
+    C1: [4:z]
+    C2: [4:g3-b3-e4-f4]
+    C3: [4:e2-b2-e3]

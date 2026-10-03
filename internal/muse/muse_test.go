@@ -125,7 +125,7 @@ func TestStereoClampsSummedChords(t *testing.T) {
 	if err != nil {
 		t.Fatalf("concat returned error: %v", err)
 	}
-	data, err := stereo(c1, c1)
+	data, err := stereo(c1, c1, nil)
 	if err != nil {
 		t.Fatalf("stereo returned error: %v", err)
 	}
@@ -142,7 +142,7 @@ func TestStereoClampsSummedChords(t *testing.T) {
 func TestStereoDoesNotAlterInRangeAudio(t *testing.T) {
 	c1 := []int{100, -200, 300}
 	c2 := []int{-50, 60, -70}
-	data, err := stereo(c1, c2)
+	data, err := stereo(c1, c2, nil)
 	if err != nil {
 		t.Fatalf("stereo returned error: %v", err)
 	}
@@ -157,7 +157,7 @@ func TestStereoDoesNotAlterInRangeAudio(t *testing.T) {
 func TestStereoRejectsTooDifferentChannels(t *testing.T) {
 	c1 := make([]int, 100)
 	c2 := make([]int, 100+tolerance+1)
-	if _, err := stereo(c1, c2); err == nil {
+	if _, err := stereo(c1, c2, nil); err == nil {
 		t.Fatal("expected error for channel lengths too different, got nil")
 	}
 }
@@ -537,5 +537,104 @@ func TestSampleCountRounds(t *testing.T) {
 	want := int(math.Round((1.0 / 3.0) * float64(sampleRate)))
 	if got != want {
 		t.Fatalf("sampleCount = %d, want %d", got, want)
+	}
+}
+
+// -- C3, the centre channel ------------------------------------------
+
+func TestStereoMixesC3IntoBothSides(t *testing.T) {
+	c1 := []int{100, 200}
+	c2 := []int{-100, -200}
+	c3 := []int{10, 20}
+	data, err := stereo(c1, c2, c3)
+	if err != nil {
+		t.Fatalf("stereo returned error: %v", err)
+	}
+	want := []int{110, -90, 220, -180}
+	for i := range want {
+		if data[i] != want[i] {
+			t.Fatalf("data[%d] = %d, want %d", i, data[i], want[i])
+		}
+	}
+}
+
+func TestStereoClampsAfterMixingC3(t *testing.T) {
+	data, err := stereo([]int{30000}, []int{-30000}, []int{30000})
+	if err != nil {
+		t.Fatalf("stereo returned error: %v", err)
+	}
+	if data[0] != maxSample || data[1] != 0 {
+		t.Fatalf("got %v, want [%d 0]", data, maxSample)
+	}
+}
+
+func TestStereoRejectsTooDifferentC3(t *testing.T) {
+	c1 := make([]int, 100)
+	c3 := make([]int, 100+tolerance+1)
+	if _, err := stereo(c1, c1, c3); err == nil {
+		t.Fatal("expected error for C3 length too different, got nil")
+	}
+}
+
+func TestParseScoreWithC3(t *testing.T) {
+	score := []byte(`
+name: Three staves
+key: C
+length: 0.1
+envelope: flat
+harmonic: first
+volume: 1000
+sections:
+  - C1: [e5, 2:g5]
+    C2: [3:c4-e4]
+    C3: [c3, c3, c3]
+`)
+	var s Score
+	out := filepath.Join(t.TempDir(), "three")
+	if _, err := Parse(&s, score, out, 0); err != nil {
+		t.Fatalf("Parse returned error: %v", err)
+	}
+	if got := len(s.Sections[0].C3); got != 3 {
+		t.Fatalf("C3 has %d notes, want 3", got)
+	}
+	if _, err := os.Stat(out + ".wav"); err != nil {
+		t.Fatalf("no wav written: %v", err)
+	}
+}
+
+func TestParseRejectsBadC3Note(t *testing.T) {
+	score := []byte(`
+name: Bad
+key: C
+length: 0.1
+envelope: flat
+harmonic: first
+volume: 1000
+sections:
+  - C1: [c4]
+    C3: [h9]
+`)
+	var s Score
+	_, err := Parse(&s, score, filepath.Join(t.TempDir(), "bad"), 0)
+	if err == nil || !strings.Contains(err.Error(), "[C3]") {
+		t.Fatalf("expected a [C3] error, got %v", err)
+	}
+}
+
+func TestCheck(t *testing.T) {
+	good := Score{Key: "D", Length: 1, Instrument: "piano", Volume: 1000,
+		Sections: []Section{{C1: []string{"f4", "2:a4-d5"}, C3: []string{"3:d2"}}}}
+	if err := Check(&good); err != nil {
+		t.Fatalf("Check(good) = %v, want nil", err)
+	}
+	badKey := good
+	badKey.Key = "H"
+	if err := Check(&badKey); err == nil {
+		t.Fatal("Check should reject an unknown key")
+	}
+	badNote := good
+	badNote.Sections = []Section{{C2: []string{"q4"}}}
+	if err := Check(&badNote); err == nil || !strings.Contains(err.Error(), "[C2]") {
+		t.Fatalf("Check should report the bad C2 note, got %v", err)
 	}
 }

@@ -1,0 +1,67 @@
+# Original piano miniature, in F major, 4/4, around 67 bpm.
+# C1: right-hand melody. C2: gently flowing left-hand accompaniment.
+# Each section is one four-beat bar; B notes follow the key (B flat).
+name: The Light You Left
+key: F
+length: 0.9
+instrument: piano
+volume: 12500
+reverb: 0.3
+humanize: 0.45
+pan: {C1: 0.18, C2: -0.22}
+sections:
+  # A quiet recollection: F - C/E - Dm7 - Bbmaj7.
+  - dynamic: mp
+    C1: [1.5:a4, 0.5:g4, f4, c5]
+    C2: [f2, c3, a3, c3]
+  - C1: [2:g4, 0.5:f4, 0.5:g4, e4]
+    C2: [e2, c3, g3, c3]
+  - C1: [1.5:f4, 0.5:a4, c5, a4]
+    C2: [d2, a2, f3, c3]
+  - dynamic: p
+    C1: [3:f4, 0.5:e4, 0.5:f4]
+    C2: [b2, f3, a3, f3]
+
+  # The same memory opens out: Gm7 - F/A - Bb - C7.
+  - dynamic: mp
+    C1: [1.5:g4, 0.5:a4, b4, d5]
+    C2: [g2, d3, f3, b3]
+  - C1: [2:c5, a4, g4]
+    C2: [a2, c3, f3, c3]
+  - hairpin: cresc
+    C1: [f4, a4, c5, d5]
+    C2: [b2, f3, b3, d4]
+  - dynamic: mf
+    C1: [2:e5, d5, c5]
+    C2: [c3, g3, b3, g3]
+
+  # A brief, warmer crest, then a sigh: Dm - Am - Bbmaj7 - C7.
+  - dynamic: mf
+    C1: [1.5:f5, 0.5:e5, d5, a4]
+    C2: [d3, a3, d4, a3]
+  - hairpin: dim
+    C1: [2:e5, c5, a4]
+    C2: [a2, e3, a3, c4]
+  - dynamic: mp
+    C1: [1.5:d5, 0.5:c5, a4, f4]
+    C2: [b2, f3, a3, d4]
+  - dynamic: p
+    C1: [2:g4, e4, 0.5:f4, 0.5:g4]
+    C2: [c3, g3, b3, e3]
+
+  # The opening returns and settles: F/A - Gm7 - C7 - F.
+  - dynamic: mp
+    C1: [1.5:a4, 0.5:g4, f4, c5]
+    C2: [a2, c3, f3, c3]
+  - dynamic: p
+    C1: [2:b4, a4, g4]
+    C2: [g2, d3, f3, b3]
+  - hairpin: dim
+    ritardando: 0.15
+    C1: [1.5:g4, 0.5:f4, 2:e4]
+    C2: [c3, g3, 2:b3-e4]
+  - dynamic: pp
+    ritardando: 0.35
+    fermata: 1
+    C1: [4:f4-a4]
+    C2: [4:f2-c3-f3]

@@ -11,13 +11,19 @@ GOARCH  ?= $(shell go env GOARCH)
 
 .DEFAULT_GOAL := help
 
-.PHONY: help build build-linux run serve render test race cover vet fmt fmt-check tidy check clean
+.PHONY: help build build-convert convert build-linux run serve render test race cover vet fmt fmt-check tidy check clean
 
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*## "} /^[a-zA-Z_-]+:.*## / {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 build: ## Build bin/muse for this machine
 	go build -trimpath -o $(BIN_DIR)/$(BINARY) $(CMD)
+
+build-convert: ## Build bin/muse-convert, the sheet music converter
+	go build -trimpath -o $(BIN_DIR)/muse-convert ./cmd/muse-convert
+
+convert: build-convert ## Convert sheet music: make convert PAGES="notation/misty_*.jpeg" OUT=scores/misty.yaml
+	$(BIN_DIR)/muse-convert -o $(OUT) $(PAGES)
 
 build-linux: ## Cross-compile bin/muse-linux-amd64 for deployment
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -o $(BIN_DIR)/$(BINARY)-linux-amd64 $(CMD)

@@ -8,3 +8,5 @@
 /data/
 # rendered tunes
 *.wav
+# local secrets
+.env

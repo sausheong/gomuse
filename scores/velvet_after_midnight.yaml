@@ -1,0 +1,117 @@
+# Original jazz miniature: 24 bars, 4/4, 100 bpm, relaxed swing.
+# C1: wordless sung "ah"; C2: piano chord voicings; C3: piano bass.
+# Three eight-bar phrases: an invitation, a wandering bridge, a return.
+# Every channel contains four beats per section. Accidentals are explicit.
+name: Velvet After Midnight
+key: C
+length: 0.6
+instrument: piano
+instruments: {C1: voice, C2: piano, C3: piano}
+volume: 11000
+reverb: 0.28
+humanize: 0.6
+swing: 0.65
+pan: {C1: 0, C2: 0.28, C3: -0.25}
+sections:
+  # 1-4: Cmaj9 / A7(b9) / Dm9 / G13.
+  - dynamic: mf
+    C1: [0.5:z, e4, 0.5:g4, 1.5:b4, 0.5:a4]
+    C2: [1.5:e3-g3-b3-d4, 0.5:z, g3-b3-d4-e4, z]
+    C3: [c2, e2, g2, 0.5:b2, 0.5:b2b]
+  - C1: [g4, 0.5:e4, 0.5:c4#, 1.5:b4b, 0.5:a4]
+    C2: [0.5:z, c3#-g3-b3b-e4, 0.5:z, 2:g3-b3b-c4#-e4]
+    C3: [a2, c3#, e3, e2b]
+  - C1: [1.5:a4, 0.5:f4, e4, 0.5:d4, 0.5:f4]
+    C2: [f3-a3-c4-e4, 0.5:z, 1.5:a3-c4-e4-f4, z]
+    C3: [d2, f2, a2, a2b]
+  - C1: [0.5:a4, 0.5:b4, 2:e5, 0.5:d5, 0.5:z]
+    C2: [0.5:z, f3-a3-b3-e4, 0.5:z, f3-a3-b3-e4, z]
+    C3: [g2, b2, d3, d2b]
+
+  # 5-8: Em9 / A7(#5,b9) / Dm9-G13 / C6/9.
+  - C1: [g4, b4, 1.5:f5#, 0.5:e5]
+    C2: [1.5:g3-b3-d4-f4#, 0.5:z, b3-d4-f4#-g4, z]
+    C3: [e2, g2, b2, b2b]
+  - hairpin: cresc
+    C1: [0.5:e5, 0.5:c5#, b4b, g4, 0.5:f4, 0.5:e4]
+    C2: [0.5:z, g3-b3b-c4#-f4, 0.5:z, 2:g3-b3b-c4#-f4]
+    C3: [a2, e2, g2, c3#]
+  - dynamic: f
+    C1: [f4, 0.5:a4, 0.5:c5, b4, 0.5:a4, 0.5:g4]
+    C2: [1.5:f3-a3-c4-e4, 0.5:z, 1.5:f3-a3-b3-e4, 0.5:z]
+    C3: [d2, a2, g2, b2]
+  - dynamic: mf
+    C1: [2:e4, z, 0.5:g4, 0.5:a4]
+    C2: [2:e3-a3-d4-g4, 0.5:z, 0.5:e4-g4, 0.5:a4, 0.5:b4b]
+    C3: [c2, g2, a2, b2]
+
+  # 9-12: Cm9 / F13 / Bbmaj9 / Ebmaj9 -- a softer colour.
+  - dynamic: mp
+    C1: [1.5:b4b, 0.5:g4, e4b, g4]
+    C2: [1.5:e3b-g3-b3b-d4, 0.5:z, g3-b3b-d4-e4b, z]
+    C3: [c3, b2b, g2, g2b]
+  - C1: [0.5:z, a4, 0.5:c5, 1.5:d5, 0.5:c5]
+    C2: [0.5:z, e3b-g3-a3-d4, 0.5:z, 2:e3b-g3-a3-d4]
+    C3: [f2, a2, c3, b2]
+  - C1: [2:a4, 0.5:f4, 0.5:g4, a4]
+    C2: [d3-f3-a3-c4, 0.5:z, 1.5:f3-a3-c4-d4, z]
+    C3: [b2b, f2, d2, d2b]
+  - hairpin: cresc
+    C1: [g4, b4b, 0.5:d5, 0.5:f5, e5b]
+    C2: [0.5:z, g3-b3b-d4-f4, 0.5:z, 2:g3-b3b-d4-f4]
+    C3: [e2b, g2, b2b, a2]
+
+  # 13-16: Am7(b5) / D7(b9) / Gm9 / Db9(#11), a tritone return.
+  - dynamic: mf
+    C1: [1.5:e5b, 0.5:d5, c5, 0.5:a4, 0.5:g4]
+    C2: [1.5:g3-a3-c4-e4b, 0.5:z, a3-c4-e4b-g4, z]
+    C3: [a2, c3, e3b, e3]
+  - C1: [f4#, a4, c5, 0.5:e5b, 0.5:d5]
+    C2: [0.5:z, f3#-a3-c4-e4b, 0.5:z, 2:f3#-a3-c4-e4b]
+    C3: [d3, a2, f2#, a2b]
+  - C1: [2:d5, b4b, 0.5:a4, 0.5:g4]
+    C2: [f3-a3-b3b-d4, 0.5:z, 1.5:a3-b3b-d4-f4, z]
+    C3: [g2, d3, f3, d3]
+  - C1: [1.5:a4b, 0.5:g4, f4, 0.5:e4b, 0.5:z]
+    C2: [0.5:z, f3-b3-e4b-g4, 0.5:z, f3-b3-e4b-g4, z]
+    C3: [d3b, a2b, f2, d2b]
+
+  # 17-20: Cmaj9 / A7(b9) / Dm9 / G13 -- the melody returns.
+  - dynamic: mf
+    C1: [0.5:z, e4, 0.5:g4, b4, 0.5:d5, 0.5:e5]
+    C2: [1.5:e3-g3-b3-d4, 0.5:z, g3-b3-d4-e4, z]
+    C3: [c2, e2, g2, b2b]
+  - hairpin: cresc
+    C1: [1.5:g5, 0.5:e5, c5#, b4b]
+    C2: [0.5:z, g3-b3b-c4#-e4, 0.5:z, 2:g3-b3b-c4#-e4]
+    C3: [a2, c3#, e3, e2b]
+  - dynamic: f
+    C1: [a4, c5, 0.5:e5, 0.5:f5, e5]
+    C2: [f3-a3-c4-e4, 0.5:z, 1.5:a3-c4-e4-f4, z]
+    C3: [d2, f2, a2, a2b]
+  - hairpin: dim
+    C1: [1.5:d5, 0.5:b4, a4, 0.5:g4, 0.5:z]
+    C2: [0.5:z, f3-a3-b3-e4, 0.5:z, 2:f3-a3-b3-e4]
+    C3: [g2, d3, b2, e2]
+
+  # 21-24: Fmaj9 / Fm6/9 / C6/9-G7(b9) / C6/9.
+  - dynamic: mf
+    C1: [1.5:a4, 0.5:c5, 2:g4]
+    C2: [2:a3-c4-e4-g4, 0.5:z, 1.5:a3-c4-e4-g4]
+    C3: [f2, c3, e3, e2]
+  - dynamic: mp
+    C1: [1.5:a4b, 0.5:g4, 2:f4]
+    C2: [2:a3b-c4-d4-g4, 0.5:z, 1.5:a3b-c4-d4-g4]
+    C3: [f2, c3, d3, d3b]
+  - dynamic: p
+    hairpin: dim
+    ritardando: 0.2
+    C1: [e4, g4, 1.5:a4b, 0.5:b4]
+    C2: [2:e3-a3-d4-g4, 2:f3-a3b-b3-d4]
+    C3: [c3, e2, g2, b2]
+  - dynamic: pp
+    ritardando: 0.4
+    fermata: 1.5
+    C1: [4:g4]
+    C2: [4:e3-a3-d4-g4]
+    C3: [4:c2-g2]
