@@ -1,6 +1,6 @@
 # Muse
 
-Muse turns music scores written in YAML into stereo WAV files. It uses nothing but Go and some simple maths: every note is built from sine waves, either shaped by an envelope and coloured by harmonics, or synthesised whole by an instrument (piano, guitar, voice, trumpet, saxophone). A score is then played the way a person would play it, with dynamics, phrasing, loose timing, stereo placement and a room, unless you ask for it exactly as written.
+Muse turns music scores written in YAML into stereo WAV files. It uses nothing but Go and some simple maths: every note is built from sine waves, either shaped by an envelope and coloured by harmonics, or synthesised whole by an instrument (acoustic, electric and electronic instruments), with a synthesised drum kit to keep time. A score is then played the way a person would play it, with dynamics, phrasing, loose timing, stereo placement and a room, unless you ask for it exactly as written.
 
 It also comes with `muse-convert`, which turns sheet music (images or PDFs) into scores using Claude's vision.
 
@@ -52,8 +52,8 @@ An instrument instead synthesises the whole note at once, so each overtone can c
 - **Envelope** shapes the note's loudness over its duration, for example a fade-out (`drop`) or a swell (`round`).
 - **Harmonic** adds overtones to the fundamental frequency to change the timbre.
 - **Chords** are the samples of their notes added together.
-- **Expression:** unless a score sets `plain: true`, it's played a little like a person would play it, not exactly as written (see [Expression](#expression)).
-- **Channels:** a score has up to three channels, `C1`, `C2` and `C3`, usually the melody, the accompaniment and the bass. They're placed across the stereo field (the melody in the middle) and mixed into a stereo WAV; a `plain` score instead puts `C1` on the left, `C2` on the right and `C3` in the centre (see [Singing voice and stereo placement](#singing-voice-and-stereo-placement)). Samples are clamped to the 16-bit range, so loud chords clip rather than wrap around.
+- **Expression:** unless a score sets `plain: true`, it's played the way a person would play it, not exactly as written: louder and softer with the [dynamics](#dynamics) and crescendos you mark, with accents and phrasing, notes that ring into each other, loose [timing](#timing) that slows for a ritardando or holds a fermata, the parts [placed across the stereo field](#parts-and-stereo-placement), and a room around it all (see [Expression](#expression)).
+- **Channels:** a score has up to three pitched channels, `C1`, `C2` and `C3`, usually the melody, the accompaniment and the bass, plus an optional [drum part](#drums). They're placed across the stereo field (the melody and the drums in the middle) and mixed into a stereo WAV; a `plain` score instead puts `C1` on the left, `C2` on the right and `C3` and the drums in the centre (see [Parts and stereo placement](#parts-and-stereo-placement)). Samples are clamped to the 16-bit range, so loud chords clip rather than wrap around.
 
 ## Command-line tool
 
@@ -122,6 +122,34 @@ sections: [
 ]
 ```
 
+The same format scales up to a performance. This one gives the melody to a saxophone over a piano, marks the dynamics, swells into the second bar, and slows down and holds the last chord:
+
+```yaml
+name: Expressive example
+key: F
+length: 0.75            # 80 beats a minute
+instrument: piano
+instruments: {C1: sax}  # the melody on saxophone
+levels: {C2: 0.5, C3: 0.45}
+volume: 20000
+sections:
+  - dynamic: p
+    hairpin: cresc      # grows to the next section's f
+    C1: [c5, 0.5:a4, 0.5:b4, 2:c5]
+    C2: [4:f3-a3-c4]
+    C3: [2:f2, 2:c3]
+  - dynamic: f
+    C1: [d5, 0.5:c5, 0.5:b4, 2:a4]
+    C2: [2:f3-b3-d4, 2:f3-a3-c4]
+    C3: [2:b1, 2:f2]
+  - dynamic: mp
+    ritardando: 0.3     # slows down through the bar...
+    fermata: 2          # ...and holds the end two beats longer
+    C1: [4:f4]
+    C2: [4:f3-a3-c4]
+    C3: [4:f2]
+```
+
 ### Fields
 
 | Field | Level | Meaning |
@@ -138,17 +166,18 @@ sections: [
 | `humanize` | score | Small random timing variation, from `0` (none) to `1`. Defaults to `0.5` |
 | `swing` | score | Swing for off-beat eighths, from `0` (straight) to `1` (triplet feel) |
 | `instruments` | score, section | An instrument per channel, e.g. `{C1: voice}` |
-| `pan` | score | Stereo position per channel, from `-1` (left) to `1` (right), e.g. `{C1: 0}` |
-| `levels` | score | Loudness per channel, from `0` to `1`, e.g. `{C2: 0.6, C3: 0.55}`. Replaces the default balance, and applies even when `plain` |
+| `pan` | score | Stereo position per channel (`C1`, `C2`, `C3` or `drums`), from `-1` (left) to `1` (right), e.g. `{C1: 0}` |
+| `levels` | score | Loudness per channel (`C1`, `C2`, `C3` or `drums`), from `0` to `1`, e.g. `{C2: 0.6, drums: 0.7}`. Replaces the default balance, and applies even when `plain` |
 | `dynamic` | section | Dynamic marking: `ppp pp p mp mf f ff fff`. Lasts until the next one |
 | `hairpin` | section | `cresc` or `dim`: moves smoothly towards the next section's dynamic |
 | `ritardando` | section | Slows the section gradually: `0.2` ends it 20% slower. Negative speeds up |
 | `fermata` | section | Holds the end of the section this many beats longer |
 | `sections` | score | List of sections, played in order |
 | `C1`, `C2` | section | Notes for the left and right channels |
-| `C3` | section | Optional notes for a centre channel, mixed into both sides |
+| `C3` | section | Optional notes for a third channel |
+| `drums` | section | Optional drum part: the drums struck on each beat, e.g. `[0.5:kick-hat, 0.5:hat]` (see [Drums](#drums)) |
 
-A section inherits every setting it doesn't set itself from the score. If `C2` and `C3` are empty everywhere, `C1` plays on both sides. All channels should be the same length; a difference under 1,500 samples (about 34 ms) is padded with silence, and anything bigger is an error. Each section is best kept to one bar: accents and dynamics follow sections, so a long section only gets one strong downbeat.
+A section inherits every setting it doesn't set itself from the score. If `C2` and `C3` are empty everywhere, `C1` plays on both sides. A score can also be a drum part alone. All channels should be the same length; a difference under 1,500 samples (about 34 ms) is padded with silence, and anything bigger is an error. Each section is best kept to one bar: accents and dynamics follow sections, so a long section only gets one strong downbeat.
 
 ### Notes
 
@@ -184,13 +213,29 @@ The key signature applies to every octave. A note written without an accidental 
 
 An instrument synthesises each note as a whole instead of combining an envelope with a harmonic. That lets every overtone change at its own rate: in a real plucked or struck string the high overtones die away much faster than the fundamental, so the note starts bright and turns mellow; in a horn they grow faster as the player blows harder. Like envelopes, every instrument peaks at 1 and ends at 0.
 
-| Name | Sound |
-|---|---|
-| `guitar` | A plucked steel string. Plucked a fifth of the way along, so every 5th overtone is missing. The overtones run very slightly sharp, and higher ones fade faster |
-| `piano` | A hammered string. The hammer strikes a seventh of the way along and its felt softens the top. Above the bass, two strings tuned 1.6 cents apart beat gently against each other. Each overtone decays in two stages (a quick drop, then a long tail), and higher notes die away faster |
-| `voice` | A sung "ah" with vowel formants and a delayed vibrato. Best for melodies; see [Singing voice and stereo placement](#singing-voice-and-stereo-placement) |
-| `trumpet` | A bright brass tone. Tongued firmly, starts a little under the note as the lips find the pitch, and is mostly played straight, with only a touch of vibrato on long notes |
-| `saxophone` (or `sax`) | A darker, reedy tone with a nasal colour. Slides up into each note, sings with a clear vibrato, and the breath is heard all through the note |
+All instruments are used the same way: as the score's `instrument`, a section's `instrument`, or one channel's, with `instruments: {C1: sax, C3: bass}` (see [Parts and stereo placement](#parts-and-stereo-placement)).
+
+| Name | Family | Sound |
+|---|---|---|
+| `violin` | bowed strings | Solo bowed tone with gradual bow engagement, body resonances, quiet friction noise and delayed vibrato; useful around G3–E6 |
+| `cello` | bowed strings | Darker body resonances and a slower bow attack; useful around C2–C5 |
+| `synth-bass` | electronic | Tight attack, strong fundamental and quickly decaying upper harmonics; useful around C1–C4 |
+| `synth-lead` | electronic | Bright, mildly detuned oscillators and an articulated attack; useful around C3–C6 |
+| `synth-pad` | electronic | Slow swell, gently detuned oscillators and sustained harmony; useful around C2–C6 |
+| `upright-bass` | plucked strings | Pizzicato acoustic bass, with body resonances and a shorter initial decay than electric bass; useful around E1–G3 |
+| `harp` | plucked strings | Lightly stretched harmonics, a clear pluck and longer low-register decay; useful around C2–C7 |
+| `marimba` | mallets | Soft wooden-bar strike, tuned and inharmonic modes and a shorter decay than vibraphone; useful around C3–C6 |
+| `electric-piano` | keyboards | Tine-inspired warmth, register-dependent tine modes, a fading bell attack and stronger pickup harmonics on harder strikes |
+| `organ` | keyboards | Fixed drawbar registration, steady sustain and a brief filtered key-contact transient; no rotary speaker effect |
+| `vibraphone` | mallets | Tuned and inharmonic bar modes, long decay and gentle 5 Hz tremolo |
+| `flute` | woodwinds | Fundamental-rich tone, breath noise, soft tonguing and delayed vibrato |
+| `clarinet` | woodwinds | Strong odd harmonics in the low register, fuller even harmonics higher up and a restrained reed attack |
+| `piano` | strings (struck) | A hammered string. The hammer strikes a seventh of the way along and its felt softens the top. Above the bass, two strings, then three in the middle and upper registers, beat gently against each other. Hammer hardness changes the upper partials with velocity. Each overtone decays in two stages (a quick drop, then a long tail), and higher notes die away faster |
+| `guitar` | strings (plucked) | A plucked steel string. Plucked a fifth of the way along, so every 5th overtone is missing. Broad body resonances colour the strings and stronger plucks excite more high-frequency energy. The overtones run very slightly sharp, and higher ones fade faster |
+| `bass` | strings (plucked) | An electric bass guitar played with the fingers. Thick strings, so the overtones run sharper; plucked over the neck pickup, whose roll-off opens with stronger finger attacks. A long, steady fundamental under quickly fading overtones, so a bass line sits under everything without getting in the way. At home from E1 to G3 |
+| `voice` | voice | A sung "ah": a glottal buzz shaped by warm vowel formants (about 650, 1080 and 2650 Hz). It fades in softly, holds the pitch steady for the first 0.2 s, then grows a vibrato (about 5.5 Hz, ±45 cents), with a slight drift and shimmer and a touch of breath at the onset |
+| `trumpet` | winds (brass) | A bright brass tone. Tongued firmly, starts a little under the note as the lips find the pitch, and is mostly played straight, with only a touch of vibrato on long notes |
+| `saxophone` (or `sax`) | winds (reed) | A darker, reedy tone with a nasal colour. Slides up into each note, sings with a clear vibrato, and the breath is heard all through the note |
 
 ```yaml
 instrument: piano     # instead of envelope and harmonic
@@ -200,16 +245,78 @@ sections:
     C1: [a4, b4, 2:c5]
 ```
 
-The trumpet and saxophone share one model (in `internal/muse/winds.go`): blowing harder doesn't just make a horn louder, it makes it brighter, because the upper overtones grow much faster than the low ones. So each note starts dark and opens up as it swells. Use them like the voice, on a melody: `instruments: {C1: trumpet}`, or `muse-convert -melody sax`.
+How they're built, by family:
 
-The guitar and piano live in `internal/muse/instrument.go`, and build each note from a list of partials: sine components with a frequency, a level and one or more exponential decay stages. The voice (`voice.go`) and the winds (`winds.go`) are sustained tones whose pitch moves (a scoop into the note, vibrato), so they follow the fundamental's phase and derive the overtones from it. To add an instrument, write a function that returns a normalised note and register it in the `instruments` map, with a ring-over time in `releases`.
+- **Strings** (`internal/muse/strings.go`): a string set ringing and left to die away. Each note is a list of fixed partials (sine components with a frequency, a level and one or more exponential decay stages), and the pluck or strike position decides which overtones are strong.
+- **Voice** (`voice.go`) and **winds** (`winds.go`): sustained tones whose pitch moves (a scoop into the note, vibrato), so they follow the fundamental's phase and derive the overtones from it. In the winds, blowing harder doesn't just make the note louder, it makes it brighter, so each note starts dark and opens up as it swells.
+
+To add an instrument, write a function `func(freq, duration float64) []float64` that returns `sampleCount(duration)` samples peaking at 1 and ending at 0, register it in the `instruments` map in an `init` function, and give it a ring-over time in `releases`. The shared pieces are in `instrument.go`.
+
+The pitched instruments other than `voice` receive the existing dynamic velocity during synthesis, without a second generic tone filter. Scores without dynamics use a moderate strike/breath strength. The `organ` registration stays constant with velocity; dynamics still change its loudness. These instruments now damp from note-off rather than sustaining throughout their release allowance. Singing synthesis keeps its previous rendering path. These are procedural approximations, not sampled instruments.
+
+`keyboards.go` provides an optional `velocityInstrument` renderer and `registerVelocityInstrument` helper. `woodwinds.go` supplies the flute and clarinet presets. Pitched articulation controls, electric-piano tremolo and a rotary speaker remain future work. Piano, guitar and bass now shape their excitation with velocity; trumpet and saxophone vary their breath pressure and tonguing before mixing.
+
+Listen to `scores/instrument_palette.wav`, generated from `scores/instrument_palette.yaml`: electric piano, organ, vibraphone, flute and clarinet each play alone, followed by three short ensemble passages. The exposed phrases include low, middle and high notes, repeated notes and contrasting dynamics.
+
+The second palette is `scores/instrument_palette_2.yaml` and its rendered WAV. Each of the eight new presets plays a soft and loud solo phrase, followed by chamber, electronic and plucked/mallet ensemble passages. The suggested ranges above describe intended colour, not enforced pitch limits.
+
+- **Bowed strings** (`bowed.go`) sustain a body-shaped harmonic bank with bow engagement, delayed vibrato and filtered friction noise. Violin and cello are solo-note approximations; connected bowing, portamento and orchestral sections are not modelled.
+- **Electronic instruments** (`synth.go`) sum a bounded number of harmonics, checking each detuned partial against the synthesis frequency ceiling. Harmonic envelopes change brightness over time; there is no nonlinear resonant filter or user-editable synth patch yet.
+- **Acoustic plucks and bars** (`acoustic.go`) provide pizzicato upright bass, harp and marimba. They respond to dynamics and note-off damping. Harp sympathetic coupling across notes and alternate upright-bass articulations are not modelled.
+
+For example, `instruments: {C1: violin, C2: harp, C3: cello}` creates a chamber trio; use `{C1: synth-lead, C2: synth-pad, C3: synth-bass}` for an electronic arrangement.
+
+### Drums
+
+A section's `drums:` line is a drum part, played on a synthesised kit. It works like a channel, but each entry names the drums struck together instead of pitches: `kick-hat` plays the kick and the hi-hat at once, a length prefix works as usual (`0.5:snare`), and `z` is a rest. Like every channel, the drum part of a section must add up to the same number of beats as the others.
+
+```yaml
+name: Groove
+key: F
+length: 0.625            # 96 beats a minute
+instrument: piano
+instruments: {C3: bass}
+levels: {drums: 0.7}
+volume: 20000
+sections:
+  - C1: [1.5:a4, 0.5:g4, f4, 0.5:c5, 0.5:a4]
+    C3: [1.5:f2, 0.5:f2, 0.5:c3, 0.5:a2, 0.5:g2, 0.5:e2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+```
+
+| Drum | Short names | Sound |
+|---|---|---|
+| `kick` | `k`, `bd` | Bass drum: a sine that drops within a few milliseconds to a low thump, plus a click from the beater |
+| `snare` | `s`, `sd` | A short tuned drum body plus bright noise for the wires |
+| `hat` | `h`, `hh` | Closed hi-hat: very bright noise, choked short |
+| `openhat` | `o`, `oh` | Open hi-hat, left to ring |
+| `crash` | `c`, `cy` | Crash cymbal: bright noise with a long wash |
+| `ride` | `r`, `rd` | Ride cymbal: clashing metallic tones over a soft wash |
+| `tom1`, `tom2`, `tom3` | | High, mid and low toms: pitched drums that bend down onto their note |
+| `clap` | `cp` | Hand clap: three quick bursts of noise and a short tail |
+| `rim` | `rs` | Side stick: the stick clicking on the rim |
+| `cowbell` | `cb` | Two clashing tones with a hollow clank |
+
+- **Ringing:** every drum rings for its own natural length (a closed hat about 0.15 s, a crash 3 s), however short the written note, so cymbals wash on under what follows.
+- **Variety:** each drum comes in four slightly different variants that the hits cycle through, so a run of hi-hats doesn't sound like one recording repeated.
+- **Expression:** the drums get the same treatment as the other parts. They follow the [dynamics](#dynamics) and the shared tempo map, so they swing, slow down and hold with everything else; hits are humanised by a few milliseconds; the first hit of a section is accented. They sit in the centre and default to a level of 0.7; change both with `pan` and `levels` (`drums: ...`).
+- **Not an instrument:** the drums ignore the key signature, and can't be given an `instrument`.
+
+The kit uses a short contact onset to avoid sample jumps. Kick and toms include additional head modes, snare includes a shell transient, hi-hat and crash mix inharmonic metal modes with noise, and ride has a fuller mode cluster. Cowbell uses a bounded set of odd harmonics instead of nonlinear waveshaping. The kit is in `internal/muse/drums.go`. `scores/sunday_groove.yaml` is a short example with saxophone, piano, bass and drums. The converter writes a percussion staff as a drum part.
 
 ### Expression
 
-A score played exactly as written sounds mechanical: every note equally loud, cut off the instant the next one starts, in a room with no echo. Unless a score sets `plain: true`, Muse adds four things a player and a room would:
+A score played exactly as written sounds mechanical: every note equally loud, cut off the instant the next one starts, in strict time, in a room with no echo. Unless a score sets `plain: true`, Muse plays it the way a player in a room would:
 
-- **Ring-over:** instrument notes keep sounding after their written length and overlap the notes that follow, the way strings ring on and a pianist's fingers overlap from key to key: 0.8 s for guitar, 0.3 s for piano, about 0.13 s for the voice and saxophone and 0.08 s for the trumpet, for legato. Envelopes are shapes that already end at silence, so they're left alone.
-- **Balance:** when a score has more than one part, `C2` is played at 0.8 and `C3` at 0.7 of the volume of `C1`, which usually carries the melody. That's only about 2 dB of difference, so for a singer over a busy accompaniment set your own with `levels`, e.g. `levels: {C2: 0.6, C3: 0.55}`.
+- **[Dynamics](#dynamics):** louder and softer passages from the `dynamic:` and `hairpin:` markings you give each section, with softer notes also darker, and gentle phrase shaping of the melody.
+- **[Timing](#timing):** notes a few milliseconds off the grid, rolled chords, `swing`, and a tempo that slows for a `ritardando` and holds a `fermata`, with a gentle slow-down at the end.
+- **[Stereo placement](#parts-and-stereo-placement):** the melody in the middle and the accompaniment either side, instead of hard left and right.
+- **Ring-over, balance, accents and reverb**, below.
+
+The rest of this section covers the last four:
+
+- **Ring-over:** instrument notes keep sounding after their written length and overlap the notes that follow, the way strings ring on and a pianist's fingers overlap from key to key: 0.8 s for guitar, 0.3 s for piano, 0.15 s for bass (a bass player mutes between notes to keep a line tight), about 0.13 s for the voice and saxophone and 0.08 s for the trumpet, for legato. Envelopes are shapes that already end at silence, so they're left alone.
+- **Balance:** when a score has more than one part, `C2` is played at 0.8, `C3` at 0.7 and the drums at 0.7 of the volume of `C1`, which usually carries the melody. That's only about 2 dB of difference, so for a singer over a busy accompaniment set your own with `levels`, e.g. `levels: {C2: 0.6, C3: 0.55}`.
 - **Accents:** the first note of each section (ideally a bar) is the strongest, notes on a beat are played at 0.92 and notes between beats at 0.85. Each note's loudness is also lowered by up to 5% at random, so repeated notes aren't identical. The randomness has a fixed seed, so a score sounds the same every time it's rendered.
 - **Reverb:** a room reverb (after Freeverb) adds a tail of echoes that darken as they fade, slightly different on each side for width. Set the amount with `reverb`.
 
@@ -227,26 +334,29 @@ Softer notes are also darker, as on a real piano, guitar or voice: a velocity-de
 
 Unless a score sets `plain: true`, timing is not machine-exact:
 
-- **Humanize:** each note starts a few milliseconds early or late around its place on the beat (about 6 ms spread at `humanize: 1`, never more than 20 ms). The error never accumulates. The melody (C1) leans slightly ahead of the beat. Chords roll lowest note first, over about 5–10 ms for piano and 12–20 ms for guitar (a strum).
+- **Humanize:** each note starts a few milliseconds early or late around its place on the beat (about 6 ms spread at `humanize: 1`, never more than 20 ms). The error never accumulates. The melody (C1) leans slightly ahead of the beat. Chords roll lowest note first, over about 5–10 ms for piano and 12–20 ms for guitar (a strum); drum hits land together.
 - **Swing:** `swing:` delays off-beat eighths by `swing` × 1/6 beat, so `1` gives a 2:1 triplet feel. The on-beat note is held longer by the same amount, so nothing overlaps.
 - **Ritardando:** `ritardando: r` on a section slows it gradually, so it ends `r` slower (`0.5` = 50% slower at the end). Negative values, down to just above `-0.5`, speed up; the maximum is `1`. The next section returns to tempo. If the last section sets none, a gentle final ritardando of `0.2` is applied.
 - **Fermata:** `fermata: f` (0–8) holds the end of the section `f` beats, lengthening the notes sounding then. All the fermatas in a score may add at most 60 seconds.
 
 All channels share one tempo map, so they stay together at every section boundary. The length limits count the time as played, not as written.
 
-### Singing voice and stereo placement
+### Parts and stereo placement
 
-`instruments: {C1: voice}`, at the score level or in a section, gives a channel its own instrument; keys are `C1`, `C2` or `C3`. A section's own `instrument` beats the score's per-channel map, and a section's per-channel map beats both.
+A score's channels are its parts: up to three pitched channels and a drum part. Three settings work per channel:
 
-`voice` is a sung "ah": a glottal source shaped by warm vowel formants (about 650, 1080 and 2650 Hz). It fades in softly, holds the pitch steady for the first 0.2 s, then grows a vibrato (about 5.5 Hz, ±45 cents). It has a slight drift and shimmer, and a touch of breath at the onset. Its notes overlap the next by 0.12 s, for legato.
+- **`instruments`:** `instruments: {C1: voice, C3: bass}`, at the score level or in a section, gives a pitched channel its own instrument; keys are `C1`, `C2` or `C3`. A section's own `instrument` beats the score's per-channel map, and a section's per-channel map beats both.
+- **`levels`:** the loudness of each channel, from 0 to 1, in place of the default balance (see [Expression](#expression)). Keys are `C1`, `C2`, `C3` or `drums`.
+- **`pan`:** each channel's place in the stereo field, from −1 (left) to 1 (right). Keys are `C1`, `C2`, `C3` or `drums`.
 
 Unless the score is `plain`, the channels are placed in the stereo field instead of hard left and right:
 
 - three channels: C1 in the centre, C2 at +0.35 (right) and C3 at −0.35 (left), like a singer in front of a piano
 - two channels: C1 at +0.3 and C2 at −0.3
 - one channel: centre
+- the drums: centre
 
-`pan: {C1: 0, C2: 0.5}` overrides any channel. The default layout is a little louder than plain mixing, because a centred channel plays at full level on both sides.
+`pan: {C1: 0, C2: 0.5}` overrides any channel. The default layout is a little louder than plain mixing, because a centred channel plays at full level on both sides. The per-channel settings live in `internal/muse/parts.go`.
 
 ### Envelopes
 
@@ -265,6 +375,17 @@ Every envelope stays between 0 and 1, peaks at 1, and ends at 0, so notes never 
 | `drawl` | Decays quickly, then slowly, lingering before it fades out |
 | `tempered` | `drop` shaped by `drawl`'s curve, a soft plucked decay |
 
+The envelopes above stretch to fit the note, so a long note fades as slowly as a short one fades quickly. These are timed in seconds instead, the way real instruments behave: a bell rings for the same time whatever the written length, and a held organ note stays level until it's let go. On very short notes each stage shrinks so they still peak at 1 and end at 0.
+
+| Name | Shape | Good for |
+|---|---|---|
+| `adsr` | A 10 ms attack, a 0.1 s decay to 70%, a steady sustain while the note is held, then a 0.08 s release | Keyboards, synths, anything with a steady tone |
+| `pluck` | An instant attack, then an exponential decay that loses about two thirds of its level every 0.35 s | Plucked strings, harp, pizzicato |
+| `bell` | An instant attack and a long ring (a 1.5 s time constant) | Bells, chimes, vibraphone |
+| `bowed` | A soft 0.12 s attack to 85%, a slight swell while held, then a gentle release | Bowed strings, held winds, pads |
+| `staccato` | Sounds for half the note (at most 0.3 s), then silence | Short, detached notes |
+| `tremolo` | A held note pulsing 6 times a second by up to 30% | Vibraphone, accordion, tremolo effects |
+
 ### Harmonics
 
 Each harmonic is scaled to peak at 1.
@@ -275,8 +396,16 @@ Each harmonic is scaled to peak at 1.
 | `second` | Fundamental plus the 2nd harmonic |
 | `third` | Fundamental plus the 2nd and 3rd harmonics |
 | `stringed` | Harmonics 1–4 weighted 3 : 1.5 : 0.25 : 0.125, for a plucked-string sound |
+| `hollow` | A soft square wave: odd overtones only, each at 1/n. Hollow and woody, like a clarinet |
+| `bright` | A soft sawtooth: every overtone at 1/n. The buzz of brass, bowed strings and analogue synths |
+| `mellow` | A triangle wave: odd overtones falling as 1/n². Nearly pure with a little body, like a flute or ocarina |
+| `organ` | A pipe organ registration: the 8′ stop with 4′, 2⅔′, 2′ and higher stops drawn progressively softer |
+| `nasal` | Strongest at the 3rd and 4th overtones, with a weak fundamental. Reedy, like an oboe or a muted trumpet |
+
+The new waveforms stop at the 9th overtone, so even the highest notes stay below the 22 kHz limit of the sample rate instead of folding back as harsh, out-of-tune tones. Some pairings that work well: `pluck` + `bright` for a harp or synth pluck, `bell` + `mellow` for chimes, `bowed` + `organ` or `bowed` + `bright` for a string pad, `adsr` + `hollow` for a clarinet-like lead, and `staccato` + `nasal` for a reedy, detached line.
 
 Envelopes live in `internal/muse/envelope.go` and harmonics in `internal/muse/harmonic.go`. Each is a small pure function registered in a map, so adding one takes a few lines.
+
 
 ## Converting sheet music
 
@@ -289,14 +418,13 @@ bin/muse scores/misty
 ```
 
 - **Input:** PDF, PNG, JPEG, GIF or WebP files of one piece, given in playing order. Each file is transcribed in one request; a PDF goes in whole, so split very long PDFs into several files. Images larger than the model needs (over 2576 px on the long side, or over 3.5 MB) are shrunk first.
-- **Staves to channels:** each staff of a system becomes a channel, counted from the top. One staff gives `C1`; two staves (a piano score) give `C1` and `C2`; three staves (voice and piano) give `C1`, `C2` and `C3`. More than three staves put the rest into `C3` as chords. A staff that is missing for a few bars, like the voice in an introduction, is filled with rests so the channels stay in step.
+- **Staves to channels:** each staff of a system becomes a channel, counted from the top. One staff gives `C1`; two staves (a piano score) give `C1` and `C2`; three staves (voice and piano) give `C1`, `C2` and `C3`. More than three staves put the rest into `C3` as chords. A percussion staff becomes a drum part. A staff that is missing for a few bars, like the voice in an introduction, is filled with rests so the channels stay in step.
 - **Checks:** every page must parse, every note must be valid, every channel used in the score must appear in every section, and the channels of each section must add up to the same number of beats. A page that fails is sent back with the list of problems, up to `-retries` times. Anything still wrong is listed on stderr and the command exits with status 1, but the score is written anyway so you can fix it by hand.
 - **Settings:** the name, key and tempo come from the music, along with dynamics, hairpins, ritardandos and fermatas. With three staves, the top one (the voice) is sung with the `voice` instrument; change that with `-melody`, e.g. `-melody sax`. The instrument (`piano` by default) and volume come from flags; by default the volume is the loudest the widest chords allow without clipping.
 - **Accuracy:** the transcription is good but not exact. Listen to the result and compare it with the music, especially accidentals, ties and dense chords.
 
 | Flag | Default | Meaning |
 |---|---|---|
-| `-o` | `<first input>.yaml` | Output score file |
 | `-env` | `.env` | File with `ANTHROPIC_*` settings. Variables already in the environment win |
 | `-model` | `$ANTHROPIC_MODEL`, else `claude-opus-5-5` | Claude model |
 | `-effort` | `high` | Thinking effort: `low`, `medium`, `high`, `xhigh` or `max`. Empty uses the model's default |
@@ -337,6 +465,7 @@ The `scores/` folder contains these scores. Those marked † are longer than the
 | `march.yaml` | Turkish March | C | drop / stringed |
 | `memory.yaml` | Memory | C | round / first |
 | `misty.yaml` | Misty, converted by `muse-convert` † | E♭ | voice and piano |
+| `sunday_groove.yaml` | Sunday Groove, an original groove to show off the bass and drums | F | saxophone, piano, bass and drums |
 | `sweet.yaml` | Sweet Child O' Mine | D | drawl / stringed |
 | `tears.yaml` | Tears in Heaven (excerpt) | D | tempered / stringed |
 | `tears.full.yaml` | Tears in Heaven (full) † | D | tempered / stringed |
@@ -355,12 +484,15 @@ internal/muse/       audio engine
   encoder.go           pitches, key signatures, synthesis of notes, rests and chords
   envelope.go          envelope functions
   harmonic.go          harmonic functions
-  instrument.go        guitar and piano instruments
+  instrument.go        what every instrument shares: the contract, the registry, additive synthesis
+  strings.go           guitar, piano and bass
+  voice.go             the voice
+  winds.go             trumpet and saxophone
+  drums.go             the drum kit
+  parts.go             per-channel instruments, pans and levels; stereo placement
   expression.go        ring-over, balance and accents
   dynamics.go          dynamic markings, hairpins, tone of soft notes
   timing.go            tempo map, ritardando, fermata, swing, humanize
-  voice.go             the voice instrument and stereo placement
-  winds.go             trumpet and saxophone
   reverb.go            room reverb
   wav.go               stereo interleaving, clipping, WAV writing
 internal/convert/    sheet music transcription with Claude
@@ -396,7 +528,10 @@ Every test is hermetic: it writes only to temporary folders. The tests cover:
 - key signatures and accidentals
 - parser errors
 - rendering every sample score and decoding the WAV back
-- instruments: normalisation and tuning for all of them, decay for the guitar and piano, formants and vibrato for the voice, brightening and vibrato for the winds
+- instruments: normalisation and tuning for all of them, decay for the guitar, piano and bass, formants and vibrato for the voice, brightening and vibrato for the winds
+- drums: every drum rendered and varied, where each sits in the spectrum, parsing drum notes, drums following the tempo map, drums-only scores
 - expression: ring-over, balance, levels, accents, dynamics and hairpins, the tone of soft notes, the tempo map (ritardando, fermata, swing, humanize), panning and reverb, and that `plain` turns them off
 - the converter's checks, page assembly, automatic volume, image shrinking and `.env` loading (the calls to Claude aren't tested)
 - the web handlers via `httptest`, including escaping, ID validation, 404s and size limits
+
+Rendered WAVs are generated locally and ignored by Git. Run `go run ./cmd/muse scores/instrument_palette_2` for the expanded palette or `go run ./cmd/muse scores/how_deep_is_your_love_chamber_pop` for the chamber-pop arrangement.

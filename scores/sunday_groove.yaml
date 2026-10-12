@@ -1,0 +1,62 @@
+# Sunday Groove - an original nine-bar groove to show off the drums and
+# the bass guitar: saxophone melody (C1), piano chords (C2), bass (C3) and
+# a drum part, in F, 4/4, 96 bpm. Each section is one bar.
+# Changes: Fmaj7 | Dm7 | Gm7 | C7, twice, then a tom fill into the last F.
+name: Sunday Groove
+key: F
+length: 0.625      # quarter note = 96
+instrument: piano
+instruments: {C1: sax, C3: bass}
+levels: {C2: 0.5, C3: 0.8, drums: 0.7}
+volume: 24000
+sections:
+  # bar 1 - Fmaj7
+  - dynamic: mf
+    C1: [1.5:a4, 0.5:g4, f4, 0.5:c5, 0.5:a4]
+    C2: [1.5:a3-c4-e4, 0.5:z, 2:a3-c4-e4]
+    C3: [1.5:f2, 0.5:f2, 0.5:c3, 0.5:a2, 0.5:g2, 0.5:e2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 2 - Dm7
+  - C1: [2:d5, 0.5:c5, 0.5:a4, f4]
+    C2: [1.5:f3-a3-c4, 0.5:z, 2:f3-a3-c4]
+    C3: [1.5:d2, 0.5:d2, 0.5:a2, 0.5:f2, 0.5:e2, 0.5:c2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 3 - Gm7
+  - C1: [1.5:b4, 0.5:a4, g4, 0.5:f4, 0.5:d4]
+    C2: [1.5:f3-b3-d4, 0.5:z, 2:f3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 0.5:d3, 0.5:b2, 0.5:a2, 0.5:f2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 4 - C7
+  - C1: [3:e4, 0.5:f4, 0.5:g4]
+    C2: [1.5:e3-g3-b3, 0.5:z, 2:e3-g3-b3]
+    C3: [1.5:c2, 0.5:c2, 0.5:g2, 0.5:e2, 0.5:b1, 0.5:c2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:snare]
+  # bar 5 - Fmaj7
+  - C1: [1.5:a4, 0.5:c5, f5, 0.5:e5, 0.5:c5]
+    C2: [1.5:a3-c4-e4, 0.5:z, 2:a3-c4-e4]
+    C3: [1.5:f2, 0.5:f2, 0.5:c3, 0.5:a2, 0.5:g2, 0.5:e2]
+    drums: [0.5:kick-crash, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 6 - Dm7
+  - C1: [1.5:d5, 0.5:c5, a4, f4]
+    C2: [1.5:f3-a3-c4, 0.5:z, 2:f3-a3-c4]
+    C3: [1.5:d2, 0.5:d2, 0.5:a2, 0.5:f2, 0.5:e2, 0.5:c2]
+    drums: [0.5:kick-ride, 0.5:ride, 0.5:snare-ride, 0.5:ride, 0.5:kick-ride, 0.5:kick-ride, 0.5:snare-ride, 0.5:ride]
+  # bar 7 - Gm7
+  - C1: [0.5:g4, 0.5:a4, 0.5:b4, 0.5:d5, c5, b4]
+    C2: [1.5:f3-b3-d4, 0.5:z, 2:f3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 0.5:d3, 0.5:b2, 0.5:a2, 0.5:f2]
+    drums: [0.5:kick-ride, 0.5:ride, 0.5:snare-ride, 0.5:ride, 0.5:kick-ride, 0.5:kick-ride, 0.5:snare-ride, 0.5:ride]
+  # bar 8 - C7, with a tom fill
+  - hairpin: cresc
+    C1: [2:g4, 2:z]
+    C2: [1.5:e3-g3-b3, 0.5:z, 2:e3-g3-b3]
+    C3: [1.5:c2, 0.5:c2, 0.5:g2, 0.5:e2, 0.5:b1, 0.5:c2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:tom3, 0.5:snare]
+  # bar 9 - F, held
+  - dynamic: f
+    ritardando: 0.2
+    fermata: 2
+    C1: [4:f4]
+    C2: [4:a3-c4-f4]
+    C3: [4:f2]
+    drums: [kick-crash, 3:z]

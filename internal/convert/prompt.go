@@ -54,6 +54,8 @@ Each staff of a system becomes one channel, counted from the top:
 - 3 staves (e.g. voice + piano, or piano + bass): top staff C1, middle staff C2, bottom staff C3. Always create C3 when the systems have three staves - never fold the third staff into C1 or C2.
 - More than 3 staves: top staff C1, second staff C2, and all remaining staves merged into C3 as chords.
 
+A percussion staff (a drum kit, written with a percussion clef or an "x" note head) is not a channel: write it as a separate "drums:" list in each section, naming the drums struck together instead of pitches, e.g. drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]. The drums are kick, snare, hat (closed hi-hat), openhat, crash, ride, tom1, tom2, tom3 (high to low), clap, rim (side stick) and cowbell; z is a rest. Count the pitched staves without it.
+
 Keep the same mapping for the whole piece. If a staff is silent or missing in some bars (e.g. the voice in the introduction), still write that channel, filled with rests.
 
 # Header

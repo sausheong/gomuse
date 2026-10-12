@@ -1,0 +1,11 @@
+{
+  "duration_seconds": 196.36301587301588,
+  "channels": 2,
+  "sample_rate": 44100,
+  "peak_dbfs": -2.5983031209901823,
+  "clipped_samples": 0,
+  "bars": 71,
+  "sections": 16,
+  "source_sha256": "445ffa6c2ea9b2e3ebf139dc8168adbe4d21ac77ee4a636a7a91f0f74b7fe2fa",
+  "source_pitched_parts_preserved": true
+}

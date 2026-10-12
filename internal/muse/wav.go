@@ -125,11 +125,14 @@ func mix(c1, c2, c3 []int) (l, r []int, err error) {
 // with an equal-power pan law: pan -1 is hard left, 0 centre, 1 hard
 // right. The channels must already be the same length (or empty). If C2 is
 // empty and C3 is too, C1 is played centred, as a single line.
-func mixPanned(cs [3][]int, pan []float64) (l, r []int, err error) {
-	n := len(cs[0])
+func mixPanned(cs [channelCount][]int, pan []float64) (l, r []int, err error) {
+	n := 0
+	for _, c := range cs {
+		n = max(n, len(c))
+	}
 	for i, c := range cs {
 		if len(c) > 0 && len(c) != n {
-			return nil, nil, fmt.Errorf("channel lengths are different - C1: %d C%d: %d", n, i+1, len(c))
+			return nil, nil, fmt.Errorf("channel lengths are different - %s: %d, want %d", channelNames[i], len(c), n)
 		}
 	}
 	l, r = make([]int, n), make([]int, n)

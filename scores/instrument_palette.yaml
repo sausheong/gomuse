@@ -1,0 +1,81 @@
+# Original instrument audition. Five exposed 8-second phrases, then ensembles.
+name: Instrument Palette
+key: C
+length: 0.5
+instrument: electric-piano
+volume: 10000
+humanize: 0
+reverb: 0.12
+pan: {C1: 0, C2: -0.3, C3: 0.3}
+levels: {C1: 0.8, C2: 0.35, C3: 0.4}
+sections:
+  # electric-piano
+  - instrument: electric-piano
+    dynamic: p
+    C1: [c3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: electric-piano
+    dynamic: f
+    C1: [c3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  # organ
+  - instrument: organ
+    dynamic: p
+    C1: [c3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: organ
+    dynamic: f
+    C1: [c3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  # vibraphone
+  - instrument: vibraphone
+    dynamic: p
+    C1: [f3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: vibraphone
+    dynamic: f
+    C1: [f3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  # flute
+  - instrument: flute
+    dynamic: p
+    C1: [c4, c5, 2:c6, c5, c5, c5, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: flute
+    dynamic: f
+    C1: [c4, c5, 2:c6, c5, c5, c5, z]
+    C2: [8:z]
+    C3: [8:z]
+  # clarinet
+  - instrument: clarinet
+    dynamic: p
+    C1: [d3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: clarinet
+    dynamic: f
+    C1: [d3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instruments: {C1: flute, C2: electric-piano, C3: bass}
+    dynamic: mf
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]
+  - instruments: {C1: clarinet, C2: organ, C3: bass}
+    dynamic: mf
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]
+  - instruments: {C1: vibraphone, C2: electric-piano, C3: bass}
+    dynamic: mf
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]

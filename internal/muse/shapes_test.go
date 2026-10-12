@@ -149,3 +149,127 @@ func TestStringedOvertoneBalance(t *testing.T) {
 		t.Fatalf("stringed fundamental / 2nd harmonic = %v, want 2", ratio)
 	}
 }
+
+// -- envelopes timed in seconds ---------------------------------------
+
+// adsr holds its sustain level through the middle of a long note
+func TestADSRHoldsTheSustain(t *testing.T) {
+	if v := adsr(0.01, 2); math.Abs(v-1) > 1e-9 {
+		t.Errorf("adsr at the end of the attack = %v, want 1", v)
+	}
+	for _, at := range []float64{0.3, 1, 1.8} {
+		if v := adsr(at, 2); math.Abs(v-0.7) > 1e-9 {
+			t.Errorf("adsr(%v s) = %v, want the 0.7 sustain", at, v)
+		}
+	}
+}
+
+// pluck and bell decay at their own rate whatever the note length, and the
+// bell rings far longer
+func TestStruckEnvelopesDecayByTheClock(t *testing.T) {
+	for _, name := range []string{"pluck", "bell"} {
+		e := envelopes[name]
+		if short, long := e(0.5, 1), e(0.5, 4); math.Abs(short-long) > 1e-9 {
+			t.Errorf("%s at 0.5 s is %v in a 1 s note but %v in a 4 s note, want the same", name, short, long)
+		}
+		vs := sample(e, 2, 2000)
+		for i := 10; i < len(vs); i++ { // past the attack it only falls
+			if vs[i] > vs[i-1]+shapeTol {
+				t.Errorf("%s rises at sample %d", name, i)
+				break
+			}
+		}
+	}
+	if p, b := pluck(1, 3), bell(1, 3); b < 4*p {
+		t.Errorf("after 1 s pluck is at %v and bell at %v, want the bell ringing much longer", p, b)
+	}
+}
+
+// bowed starts softly and swells to full volume just before it's let go
+func TestBowedSwells(t *testing.T) {
+	d := 2.0
+	if v := bowed(0.03, d); v > 0.5 {
+		t.Errorf("bowed after 30 ms = %v, want a soft start", v)
+	}
+	if mid, late := bowed(0.6, d), bowed(1.85, d); late <= mid {
+		t.Errorf("bowed is %v at 0.6 s and %v at 1.85 s, want it to swell while held", mid, late)
+	}
+}
+
+// staccato sounds briefly and leaves the rest of the note silent
+func TestStaccatoIsShort(t *testing.T) {
+	for _, d := range []float64{0.4, 2} {
+		sound := math.Min(d/2, 0.3)
+		for _, at := range []float64{sound, sound + 0.01, d * 0.9} {
+			if v := staccato(at, d); v != 0 {
+				t.Errorf("staccato(%v s) in a %v s note = %v, want silence after %v s", at, d, v, sound)
+			}
+		}
+	}
+}
+
+// tremolo pulses about 6 times a second
+func TestTremoloPulses(t *testing.T) {
+	vs := sample(tremolo, 2, 20000)
+	dips := 0
+	for i := 1; i+1 < len(vs)*9/10; i++ {
+		if vs[i] < vs[i-1] && vs[i] < vs[i+1] {
+			dips++
+		}
+	}
+	if dips < 10 || dips > 13 {
+		t.Fatalf("tremolo dips %d times in 2 s, want about 12 (6 Hz)", dips)
+	}
+	if lo := tremolo(0.005+1.0/12, 2); math.Abs(lo-0.7) > 1e-6 {
+		t.Fatalf("tremolo at the bottom of a pulse = %v, want 0.7", lo)
+	}
+}
+
+// -- waveforms ----------------------------------------------------------
+
+// overtone is the strength of overtone n in harmonic h over one cycle
+func overtone(h harmonic, n int) float64 {
+	const steps = 20000
+	var s, c float64
+	for i := range steps {
+		x := float64(i) / steps
+		s += h(x) * math.Sin(2*math.Pi*float64(n)*x)
+		c += h(x) * math.Cos(2*math.Pi*float64(n)*x)
+	}
+	return 2 * math.Hypot(s, c) / steps
+}
+
+func TestWaveformColours(t *testing.T) {
+	hollow, bright, mellow := harmonics["hollow"], harmonics["bright"], harmonics["mellow"]
+	for n := 2; n <= 8; n += 2 {
+		if v := overtone(hollow, n); v > 1e-6 {
+			t.Errorf("hollow has even overtone %d at %v, want none", n, v)
+		}
+	}
+	if overtone(bright, 2) < 0.4*overtone(bright, 1) {
+		t.Error("bright should keep its even overtones (2nd at half the fundamental)")
+	}
+	// mellow's overtones fall far faster than hollow's: 1/n² against 1/n
+	if m, h := overtone(mellow, 3)/overtone(mellow, 1), overtone(hollow, 3)/overtone(hollow, 1); m > h/2 {
+		t.Errorf("mellow's 3rd overtone is %.3f of its fundamental, hollow's %.3f - want mellow much purer", m, h)
+	}
+	nasal := harmonics["nasal"]
+	if overtone(nasal, 3) <= overtone(nasal, 1) {
+		t.Error("nasal's 3rd overtone should be stronger than its fundamental")
+	}
+	organ := harmonics["organ"]
+	if overtone(organ, 5) > 1e-6 || overtone(organ, 2) < 0.5*overtone(organ, 1) {
+		t.Error("organ should have a strong octave (4') and no 5th overtone")
+	}
+}
+
+// no waveform goes above the 9th overtone, so the highest notes don't alias
+func TestWaveformsStayBandLimited(t *testing.T) {
+	for name, h := range harmonics {
+		for n := 10; n <= 16; n++ {
+			if v := overtone(h, n); v > 1e-6 {
+				t.Errorf("%s has overtone %d at %v, want nothing above the 9th", name, n, v)
+			}
+		}
+	}
+}

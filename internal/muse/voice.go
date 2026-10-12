@@ -1,14 +1,11 @@
 package muse
 
 import (
-	"fmt"
 	"math"
 	"math/rand/v2"
-	"sort"
 )
 
-// Voice: a singing instrument for melodies, per-channel instrument checks,
-// and the stereo placement of the channels.
+// Voice: a singing instrument for melodies.
 
 func init() {
 	instruments["voice"] = voice
@@ -158,93 +155,4 @@ func voice(freq, duration float64) []float64 {
 	}
 	out[0], out[n-1] = 0, 0
 	return out
-}
-
-// Default stereo positions, from -1 (left) to 1 (right), as heard from the
-// audience: the melody sits in the middle; with a piano underneath, the
-// right hand (C2) leans right and the left hand (C3) left, as on the
-// keyboard; with only two parts they sit either side of the middle.
-const (
-	panSpread = 0.35
-	panPair   = 0.3
-)
-
-// pans returns the stereo position of each channel, or nil for the plain
-// layout (C1 left, C2 right, C3 centre).
-func pans(s *Score, t *tune) []float64 {
-	if s.Plain {
-		return nil
-	}
-	p := []float64{0, 0, 0}
-	switch {
-	case len(t.ch3) > 0:
-		p = []float64{0, panSpread, -panSpread}
-	case len(t.ch2) > 0:
-		p = []float64{panPair, -panPair, 0}
-	}
-	for i, c := range []string{"C1", "C2", "C3"} {
-		if v, ok := s.Pan[c]; ok {
-			p[i] = v
-		}
-	}
-	return p
-}
-
-// partChannels are the channels a score can set an instrument or pan for
-var partChannels = map[string]bool{"C1": true, "C2": true, "C3": true}
-
-// validateParts reports invalid values in the fields this file handles:
-// the instruments, pans and levels per channel.
-func validateParts(s *Score) error {
-	check := func(where string, m map[string]string) error {
-		keys := make([]string, 0, len(m))
-		for k := range m {
-			keys = append(keys, k)
-		}
-		sort.Strings(keys)
-		for _, k := range keys {
-			if !partChannels[k] {
-				return fmt.Errorf("%s: unknown channel %q - use C1, C2 or C3 ", where, k)
-			}
-			if _, ok := instruments[m[k]]; !ok {
-				return fmt.Errorf("%s: instrument doesn't exist - %s ", where, m[k])
-			}
-		}
-		return nil
-	}
-	if err := check("instruments", s.Instruments); err != nil {
-		return err
-	}
-	for i, sec := range s.Sections {
-		if err := check(fmt.Sprintf("section %d instruments", i+1), sec.Instruments); err != nil {
-			return err
-		}
-	}
-	keys := make([]string, 0, len(s.Pan))
-	for k := range s.Pan {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	for _, k := range keys {
-		if !partChannels[k] {
-			return fmt.Errorf("pan: unknown channel %q - use C1, C2 or C3 ", k)
-		}
-		if v := s.Pan[k]; math.IsNaN(v) || v < -1 || v > 1 {
-			return fmt.Errorf("pan: %s is %v - use a value from -1 (left) to 1 (right) ", k, v)
-		}
-	}
-	keys = keys[:0]
-	for k := range s.Levels {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	for _, k := range keys {
-		if !partChannels[k] {
-			return fmt.Errorf("levels: unknown channel %q - use C1, C2 or C3 ", k)
-		}
-		if v := s.Levels[k]; math.IsNaN(v) || v < 0 || v > 1 {
-			return fmt.Errorf("levels: %s is %v - use a value from 0 to 1 ", k, v)
-		}
-	}
-	return nil
 }

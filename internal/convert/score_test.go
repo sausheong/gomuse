@@ -209,3 +209,15 @@ func TestPromptAndScoreAcceptExpressionKeys(t *testing.T) {
 		t.Errorf("Problems rejected expression keys: %v", p)
 	}
 }
+
+// a drum part counts in the beat check like any other channel
+func TestProblemsChecksDrums(t *testing.T) {
+	head := "name: x\nkey: C\nlength: 1.0\ninstrument: piano\nvolume: 1000\nsections:\n"
+	if probs := Problems(head + "  - C1: [c4, d4]\n    drums: [k, s]\n"); len(probs) != 0 {
+		t.Fatalf("a matching drum part should pass, got %v", probs)
+	}
+	probs := Problems(head + "  - C1: [c4, d4]\n    drums: [k]\n")
+	if !strings.Contains(strings.Join(probs, "\n"), "drums = 1 beats") {
+		t.Fatalf("a short drum part should be reported, got %v", probs)
+	}
+}

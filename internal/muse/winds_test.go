@@ -118,3 +118,13 @@ sections:
 		}
 	}
 }
+
+func TestExistingWindsRespondToBreath(t *testing.T) {
+	for _, name := range []string{"trumpet", "saxophone"} {
+		fn := velocityInstruments[name]
+		soft, hard := fn(220, 1, 0.2), fn(220, 1, 1)
+		if brightness(hard, ms(200), ms(500), 220) <= brightness(soft, ms(200), ms(500), 220) {
+			t.Errorf("%s hard breath is not brighter", name)
+		}
+	}
+}

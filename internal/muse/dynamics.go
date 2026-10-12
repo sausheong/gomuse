@@ -106,7 +106,7 @@ func applyDynamics(s *Score, t *tune) {
 		return
 	}
 	shapePhrases(s, t.ch1)
-	chs := [3][]note{t.ch1, t.ch2, t.ch3}
+	chs := t.channels()
 	for c := range chs {
 		i := 0
 		for si, sec := range s.Sections {

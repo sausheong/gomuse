@@ -13,12 +13,9 @@ import (
 // opens up as it swells - the "blat" of a trumpet, the edge of a sax.
 
 func init() {
-	instruments["trumpet"] = trumpet
-	instruments["saxophone"] = saxophone
-	instruments["sax"] = saxophone
-	releases["trumpet"] = 0.08
-	releases["saxophone"] = 0.12
-	releases["sax"] = 0.12
+	registerVelocityInstrument("trumpet", trumpetVelocity, 0.08)
+	registerVelocityInstrument("saxophone", saxophoneVelocity, 0.12)
+	registerVelocityInstrument("sax", saxophoneVelocity, 0.12)
 }
 
 // a wind describes one instrument for windNote
@@ -39,6 +36,8 @@ type wind struct {
 	vibDelay   float64   // seconds before the vibrato starts
 	breath     float64   // breath noise through the note, relative to the tone
 	chiff      float64   // extra noise at the onset (the tongue releasing the air)
+	air        bool      // woodwind breath follows tonguing and has a brighter noise band
+	even       float64   // optional even-harmonic multiplier; zero preserves existing winds
 	seed       uint64
 }
 
@@ -91,8 +90,8 @@ var saxophoneSpec = wind{
 	seed:       0x5a0e,
 }
 
-func trumpet(freq, duration float64) []float64   { return windNote(trumpetSpec, freq, duration) }
-func saxophone(freq, duration float64) []float64 { return windNote(saxophoneSpec, freq, duration) }
+func trumpet(freq, duration float64) []float64   { return trumpetVelocity(freq, duration, 0.7) }
+func saxophone(freq, duration float64) []float64 { return saxophoneVelocity(freq, duration, 0.7) }
 
 // resonanceGain is the body's gain at hz: a sum of resonance peaks
 // (Lorentzians, as in formantGain) over a floor
@@ -126,6 +125,9 @@ func windNote(w wind, freq, duration float64) []float64 {
 	b := make([]float64, count+1)
 	for h := 1; h <= count; h++ {
 		amp := resonanceGain(w.resonances, w.floor, float64(h)*freq) / math.Pow(float64(h), w.tilt)
+		if h%2 == 0 && w.even > 0 {
+			amp *= w.even
+		}
 		theta := 0.5 * math.Pi * float64(h*h) / float64(count) // spread the phases
 		a[h], b[h] = amp*math.Cos(theta), amp*math.Sin(theta)
 	}
@@ -176,7 +178,16 @@ func windNote(w wind, freq, duration float64) []float64 {
 		// onset where the tongue lets the air go
 		noise = 0.6*noise + 0.4*(rng.Float64()*2-1)
 		dark = 0.85*dark + 0.15*noise
-		sum += (w.breath*e + w.chiff*math.Exp(-t/0.03)) * dark * 4
+		if w.air {
+			// Remove low-frequency rumble and open the air stream with the tongue.
+			// Two slow, non-matching rates avoid an obviously repeated amplitude cycle.
+			air := noise - dark
+			onset := math.Min(1, t/0.012)
+			sum *= 1 + 0.008*math.Sin(2*math.Pi*1.17*t) + 0.004*math.Sin(2*math.Pi*2.31*t)
+			sum += (w.breath*e + w.chiff*math.Exp(-t/0.025)) * air * onset * 3
+		} else {
+			sum += (w.breath*e + w.chiff*math.Exp(-t/0.03)) * dark * 4
+		}
 
 		out[k] = sum
 	}
@@ -196,3 +207,17 @@ func windNote(w wind, freq, duration float64) []float64 {
 	out[0], out[n-1] = 0, 0
 	return out
 }
+
+// Breath pressure alters the excitation and tongue transient before mixing.
+// Keep dynamics in the oscillator instead of darkening the finished note twice.
+func expressiveWind(w wind, f, d, velocity float64) []float64 {
+	v := playingVelocity(velocity)
+	w.tilt += 0.9 * (0.7 - v)
+	w.attack *= 1.25 - 0.35*v
+	w.overshoot *= 0.5 + 0.7*v
+	w.chiff *= 0.4 + 0.85*v
+	w.air = true
+	return windNote(w, f, d)
+}
+func trumpetVelocity(f, d, v float64) []float64   { return expressiveWind(trumpetSpec, f, d, v) }
+func saxophoneVelocity(f, d, v float64) []float64 { return expressiveWind(saxophoneSpec, f, d, v) }

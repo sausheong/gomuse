@@ -57,9 +57,9 @@ type tempoMap []tempoSection
 // within it takes u + r*u^2/(2D) seconds, D being the written length. The
 // next section starts back in tempo.
 func buildTempoMap(s *Score, t *tune) tempoMap {
-	chs := [3][]note{t.ch1, t.ch2, t.ch3}
+	chs := t.channels()
 	tm := make(tempoMap, len(s.Sections))
-	idx := [3]int{}
+	idx := [channelCount]int{}
 	at := 0.0
 	for k, sec := range s.Sections {
 		d := 0.0
@@ -140,7 +140,7 @@ func applyTiming(s *Score, t *tune) {
 	}
 	tm := buildTempoMap(s, t)
 	h := humanizeAmount(s)
-	chs := [3][]note{t.ch1, t.ch2, t.ch3}
+	chs := t.channels()
 	for c := range chs {
 		rnd := rand.New(rand.NewPCG(uint64(c)+101, 2024))
 		i := 0
@@ -157,7 +157,7 @@ func applyTiming(s *Score, t *tune) {
 				startAt := ts.at(u, false)
 				endAt := ts.at(u+n.length, true)
 				u += n.length
-				if len(n.pitch) > 0 {
+				if len(n.pitch) > 0 || len(n.kit) > 0 {
 					startAt += jitterFor(rnd, h, c)
 					startAt = math.Max(0, startAt)
 				}
@@ -201,7 +201,10 @@ func chordSpread(rnd *rand.Rand, h float64, ins string, hold float64, pitches in
 // channelInstrument names the instrument a channel plays in a section,
 // following the same precedence as makeChannelNote.
 func channelInstrument(s *Score, sec Section, c int) string {
-	ch := [3]string{"C1", "C2", "C3"}[c]
+	if c == drumChannel {
+		return "" // the drums aren't an instrument and never roll a chord
+	}
+	ch := channelNames[c]
 	ins := sec.Instrument
 	if v, ok := sec.Instruments[ch]; ok {
 		ins = v

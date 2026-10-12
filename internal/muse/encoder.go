@@ -23,12 +23,13 @@ type note struct {
 	explicit   []bool // true when the accidental was written explicitly (#, b or n);
 	// an explicit accidental replaces the key signature for that note instead
 	// of stacking with it
-	length float64
-	env    envelope
-	har    harmonic
-	ins    instrument // when set, replaces env and har
-	vol    int
-	gain   float64 // loudness relative to vol, for accents and balance; 0 means 1
+	length      float64
+	env         envelope
+	har         harmonic
+	ins         instrument         // when set, replaces env and har
+	velocityIns velocityInstrument // optional timbre response to dynamics
+	vol         int
+	gain        float64 // loudness relative to vol, for accents and balance; 0 means 1
 	// release is how long the note keeps sounding after its written length,
 	// overlapping whatever comes next
 	release float64
@@ -44,6 +45,11 @@ type note struct {
 	// spread is the delay in seconds between successive pitches of a
 	// chord, lowest first, so a chord is rolled instead of struck at once
 	spread float64
+	// kit is the drums struck together on a drum note (see drums.go); a
+	// drum note has no pitch. hit counts the drum notes in the part, to
+	// pick which variant of each drum it plays.
+	kit []string
+	hit int
 }
 
 // tune represents a piece of music
@@ -52,6 +58,8 @@ type tune struct {
 	ch1 []note
 	ch2 []note
 	ch3 []note // centre channel, mixed into both sides
+	// drums is the drum part: hits on the kit rather than pitches
+	drums []note
 	// reverb is the amount of room reverb, 0 to 1
 	reverb float64
 	// pan places each channel from -1 (left) to 1 (right); nil means the
@@ -77,7 +85,7 @@ func (t tune) encode() (data []int, err error) {
 	// set up the accidentals for each note in the channels. A note whose
 	// accidental was written explicitly (# , b or n) replaces the key
 	// signature rather than stacking with it, so it's left untouched here.
-	channels := [][]note{t.ch1, t.ch2, t.ch3}
+	channels := t.channels()
 	for _, channel := range channels {
 		for _, n := range channel {
 			for i, p := range n.pitch {
@@ -91,9 +99,9 @@ func (t tune) encode() (data []int, err error) {
 		}
 	}
 
-	var cs [3][]int
-	var nominal [3]int
-	for i, ch := range [][]note{t.ch1, t.ch2, t.ch3} {
+	var cs [channelCount][]int
+	var nominal [channelCount]int
+	for i, ch := range t.channels() {
 		if cs[i], nominal[i], err = encodeChannel(ch); err != nil {
 			return
 		}
@@ -115,11 +123,20 @@ func (t tune) encode() (data []int, err error) {
 
 	var l, r []int
 	if t.pan == nil {
-		l, r, err = mix(cs[0], cs[1], cs[2])
-	} else {
-		l, r, err = mixPanned(cs, t.pan)
-	}
-	if err != nil {
+		// the plain layout: C1 left, C2 right, C3 and the drums centre
+		if l, r, err = mix(cs[0], cs[1], cs[2]); err != nil {
+			return
+		}
+		if d := cs[drumChannel]; len(d) > 0 {
+			if len(l) == 0 {
+				l, r = make([]int, len(d)), make([]int, len(d))
+			}
+			for k, v := range d {
+				l[k] += v
+				r[k] += v
+			}
+		}
+	} else if l, r, err = mixPanned(cs, t.pan); err != nil {
 		return
 	}
 	l, r = reverb(l, r, t.reverb)
@@ -129,16 +146,39 @@ func (t tune) encode() (data []int, err error) {
 
 // sameLength checks that the channels' written lengths (without the tails
 // of their last notes) agree to within the tolerance
-func sameLength(cs [3][]int, nominal [3]int) error {
-	for i := 1; i < 3; i++ {
+func sameLength(cs [channelCount][]int, nominal [channelCount]int) error {
+	// compare against the first channel that has any notes, so a score can
+	// be drums alone
+	ref := -1
+	for i := range cs {
 		if len(cs[i]) == 0 {
 			continue
 		}
-		if d := nominal[i] - nominal[0]; d >= tolerance || -d >= tolerance {
-			return fmt.Errorf("channel lengths are different - C1: %d C%d: %d", nominal[0], i+1, nominal[i])
+		if ref < 0 {
+			ref = i
+			continue
+		}
+		if d := nominal[i] - nominal[ref]; d >= tolerance || -d >= tolerance {
+			return fmt.Errorf("channel lengths are different - %s: %d %s: %d", channelNames[ref], nominal[ref], channelNames[i], nominal[i])
 		}
 	}
 	return nil
+}
+
+// channelCount is how many channels a tune has: C1, C2, C3 and the drums
+const channelCount = 4
+
+// drumChannel is the index of the drum part in channelNames
+const drumChannel = 3
+
+// channelNames names the tune's channels, in order, as a score writes them
+var channelNames = [channelCount]string{"C1", "C2", "C3", "drums"}
+
+// channels returns the tune's channels in the order of channelNames. The
+// slices share their notes with the tune, so changing a note through them
+// changes the tune.
+func (t *tune) channels() [channelCount][]note {
+	return [channelCount][]note{t.ch1, t.ch2, t.ch3, t.drums}
 }
 
 // encodeChannel encodes a whole channel. Each note starts where the
@@ -183,15 +223,19 @@ func (n note) encode() (data []int, err error) {
 		return
 	}
 
+	vol := n.vol
+	if n.gain > 0 {
+		vol = int(math.Round(float64(vol) * n.gain))
+	}
+
+	if len(n.kit) > 0 {
+		return n.kitData(vol), nil
+	}
+
 	// this is a rest
 	if len(n.pitch) == 0 && n.length != 0 {
 		data = rest(n.length)
 		return
-	}
-
-	vol := n.vol
-	if n.gain > 0 {
-		vol = int(math.Round(float64(vol) * n.gain))
 	}
 
 	length := n.length
@@ -209,9 +253,17 @@ func (n note) encode() (data []int, err error) {
 		freq := frequency(n.pitch[i] + n.accidental[i])
 		var nd []int
 		if n.ins != nil {
-			samples := n.ins(freq, length+n.release)
+			var samples []float64
+			if n.velocityIns != nil {
+				samples = n.velocityIns(freq, length+n.release, n.velocity)
+				if n.release > 0 {
+					dampAfterHold(samples, length)
+				}
+			} else {
+				samples = tone(n, freq, n.ins(freq, length+n.release))
+			}
 			nd = make([]int, len(samples))
-			for k, v := range tone(n, freq, samples) {
+			for k, v := range samples {
 				nd[k] = int(float64(vol) * v)
 			}
 		} else {

@@ -1,0 +1,32 @@
+{
+  "duration_seconds": 62.257120181405895,
+  "channels": 2,
+  "sample_rate": 44100,
+  "peak_dbfs": -15.170193978259874,
+  "clipped_samples": 0,
+  "solo_order": [
+    "violin",
+    "cello",
+    "synth-bass",
+    "synth-lead",
+    "synth-pad",
+    "upright-bass",
+    "harp",
+    "marimba"
+  ],
+  "solo_start_seconds": [
+    0,
+    6.4,
+    12.8,
+    19.2,
+    25.6,
+    32,
+    38.4,
+    44.8
+  ],
+  "ensemble_start_seconds": [
+    51.2,
+    54.4,
+    57.6
+  ]
+}

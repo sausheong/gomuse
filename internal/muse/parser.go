@@ -67,9 +67,12 @@ type Section struct {
 	Fermata float64 `yaml:"fermata,omitempty"`
 	// Instruments sets an instrument per channel for this section
 	Instruments map[string]string `yaml:"instruments,omitempty"`
-	C1          []string          `yaml:"C1"`
-	C2          []string          `yaml:"C2"`
-	C3          []string          `yaml:"C3,omitempty"`
+	// Drums is the drum part: each entry names the drums struck together,
+	// e.g. kick-hat or 0.5:snare (see drums.go)
+	Drums []string `yaml:"drums,omitempty"`
+	C1    []string `yaml:"C1"`
+	C2    []string `yaml:"C2"`
+	C3    []string `yaml:"C3,omitempty"`
 }
 
 // ParseFile reads a score file (filename+".yaml") and writes the resulting
@@ -115,6 +118,10 @@ func Parse(s *Score, score []byte, outfile string, maxSamples int) (name string,
 		}
 		if n := channelSamples(t.ch3); n > maxSamples {
 			err = fmt.Errorf("tune too long > channel 3 needs %d samples, max is %d ", n, maxSamples)
+			return
+		}
+		if n := channelSamples(t.drums); n > maxSamples {
+			err = fmt.Errorf("tune too long > the drums need %d samples, max is %d ", n, maxSamples)
 			return
 		}
 	}
@@ -179,6 +186,15 @@ func buildTune(s *Score) (tune, error) {
 			}
 			t.ch3 = append(t.ch3, nt)
 		}
+
+		for _, n := range section.Drums {
+			nt, err := makeDrumNote(n, section, *s)
+			if err != nil {
+				return t, fmt.Errorf("[drums] cannot make note > %v ", err)
+			}
+			nt.hit = len(t.drums)
+			t.drums = append(t.drums, nt)
+		}
 	}
 	expressive(s, &t)
 	applyDynamics(s, &t)
@@ -207,6 +223,11 @@ func channelSamples(notes []note) int {
 			played = n.hold
 		}
 		played += n.release + n.spread*float64(width-1)
+		if len(n.kit) > 0 {
+			// every drum rings for its own length, however short the note
+			total += max(sampleCount(played), drumLength(n)) * len(n.kit)
+			continue
+		}
 		total += sampleCount(played) * width
 	}
 	return total
@@ -272,15 +293,16 @@ func makeNote(noteString string, section Section, score Score) (n note, err erro
 
 	// default returned note
 	n = note{
-		pitch:      []int{},
-		accidental: []int{},
-		explicit:   []bool{},
-		length:     length,
-		env:        envFn,
-		har:        harFn,
-		ins:        insFn,
-		vol:        vol,
-		gain:       1,
+		pitch:       []int{},
+		accidental:  []int{},
+		explicit:    []bool{},
+		length:      length,
+		env:         envFn,
+		har:         harFn,
+		ins:         insFn,
+		velocityIns: velocityInstruments[ins],
+		vol:         vol,
+		gain:        1,
 	}
 	if ins != "" && !score.Plain {
 		n.release = releases[ins]

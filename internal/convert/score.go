@@ -17,7 +17,7 @@ import (
 const beatTolerance = 0.02
 
 // channels lists every channel a section can have, in order
-var channels = []string{"C1", "C2", "C3"}
+var channels = []string{"C1", "C2", "C3", "drums"}
 
 // Header holds the score-level settings the model reads from the page
 type Header struct {
@@ -267,5 +267,5 @@ func usedChannels(s muse.Score) []string {
 }
 
 func channelNotes(sec muse.Section) map[string][]string {
-	return map[string][]string{"C1": sec.C1, "C2": sec.C2, "C3": sec.C3}
+	return map[string][]string{"C1": sec.C1, "C2": sec.C2, "C3": sec.C3, "drums": sec.Drums}
 }

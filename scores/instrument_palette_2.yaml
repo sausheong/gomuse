@@ -1,0 +1,117 @@
+# Original audition: eight solo presets, followed by three ensembles.
+name: Instrument Palette 2
+key: C
+length: 0.4
+instrument: piano
+volume: 11000
+humanize: 0
+reverb: 0.14
+pan: {C1: 0, C2: -0.3, C3: 0.3}
+levels: {C1: 0.8, C2: 0.35, C3: 0.5}
+sections:
+  # violin
+  - instrument: violin
+    dynamic: p
+    C1: [g3, a4, 2:e5, a4, a4, a4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: violin
+    dynamic: f
+    C1: [g3, a4, 2:e5, a4, a4, a4, z]
+    C2: [8:z]
+    C3: [8:z]
+  # cello
+  - instrument: cello
+    dynamic: p
+    C1: [c2, g2, 2:c4, g2, g2, g2, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: cello
+    dynamic: f
+    C1: [c2, g2, 2:c4, g2, g2, g2, z]
+    C2: [8:z]
+    C3: [8:z]
+  # synth-bass
+  - instrument: synth-bass
+    dynamic: p
+    C1: [c2, g2, 2:c3, g2, g2, g2, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: synth-bass
+    dynamic: f
+    C1: [c2, g2, 2:c3, g2, g2, g2, z]
+    C2: [8:z]
+    C3: [8:z]
+  # synth-lead
+  - instrument: synth-lead
+    dynamic: p
+    C1: [c4, g4, 2:c5, g4, g4, g4, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: synth-lead
+    dynamic: f
+    C1: [c4, g4, 2:c5, g4, g4, g4, z]
+    C2: [8:z]
+    C3: [8:z]
+  # synth-pad
+  - instrument: synth-pad
+    dynamic: p
+    C1: [c3, g3, 2:c4, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: synth-pad
+    dynamic: f
+    C1: [c3, g3, 2:c4, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+  # upright-bass
+  - instrument: upright-bass
+    dynamic: p
+    C1: [e1, a1, 2:e2, a1, a1, a1, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: upright-bass
+    dynamic: f
+    C1: [e1, a1, 2:e2, a1, a1, a1, z]
+    C2: [8:z]
+    C3: [8:z]
+  # harp
+  - instrument: harp
+    dynamic: p
+    C1: [c3, g3, 2:c5, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: harp
+    dynamic: f
+    C1: [c3, g3, 2:c5, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+  # marimba
+  - instrument: marimba
+    dynamic: p
+    C1: [c3, g3, 2:c5, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+  - instrument: marimba
+    dynamic: f
+    C1: [c3, g3, 2:c5, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+  # Ensemble: violin, harp, cello
+  - instruments: {C1: violin, C2: harp, C3: cello}
+    dynamic: mf
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]
+  # Ensemble: synth-lead, synth-pad, synth-bass
+  - instruments: {C1: synth-lead, C2: synth-pad, C3: synth-bass}
+    dynamic: mf
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]
+  # Ensemble: marimba, harp, upright-bass
+  - instruments: {C1: marimba, C2: harp, C3: upright-bass}
+    dynamic: mf
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]

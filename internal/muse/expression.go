@@ -21,9 +21,9 @@ var releases = map[string]float64{
 }
 
 // channelGains balances the parts when there is more than one: C1 usually
-// carries the melody, C2 the inner part or right hand, C3 the bass. A
-// score's Levels replace these.
-var channelGains = [3]float64{1, 0.8, 0.7}
+// carries the melody, C2 the inner part or right hand, C3 the bass, and the
+// drums sit underneath. A score's Levels replace these.
+var channelGains = [channelCount]float64{1, 0.8, 0.7, 0.7}
 
 const (
 	// accents: the first note of a section (usually a bar) is the
@@ -44,11 +44,11 @@ const (
 // accents follow the beats of each section. The jitter comes from a fixed
 // seed, so a score always renders the same way.
 func expressive(s *Score, t *tune) {
-	chs := [3][]note{t.ch1, t.ch2, t.ch3}
+	chs := t.channels()
 	if s.Plain {
 		// a plain score is played as written, but a level the score asks
 		// for is part of what's written
-		for c, name := range []string{"C1", "C2", "C3"} {
+		for c, name := range channelNames {
 			if lv, ok := s.Levels[name]; ok {
 				for i := range chs[c] {
 					chs[c][i].gain = lv
@@ -69,7 +69,7 @@ func expressive(s *Score, t *tune) {
 		if used > 1 {
 			balance = channelGains[c]
 		}
-		if lv, ok := s.Levels[[]string{"C1", "C2", "C3"}[c]]; ok {
+		if lv, ok := s.Levels[channelNames[c]]; ok {
 			balance = lv
 		}
 		i := 0
@@ -97,7 +97,7 @@ func expressive(s *Score, t *tune) {
 }
 
 func sectionChannel(sec Section, c int) []string {
-	return [3][]string{sec.C1, sec.C2, sec.C3}[c]
+	return [channelCount][]string{sec.C1, sec.C2, sec.C3, sec.Drums}[c]
 }
 
 // reverbAmount is how much reverb a score asks for, from 0 (none) to 1
