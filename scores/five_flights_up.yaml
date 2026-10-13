@@ -1,0 +1,686 @@
+# Original NYC melodic hip-hop; 92 BPM, 20 bars. Leif Lush vocal.
+name: Five Flights Up
+key: C
+length: 0.6521739130434783
+instrument: piano
+instruments:
+  C1: voice
+  C2: piano
+  C3: bass
+levels:
+  C1: 1
+  C2: 0.22
+  C3: 0.68
+  drums: 0.42
+pan:
+  C1: 0
+  C2: 0.2
+  C3: 0
+  drums: 0
+volume: 18000
+humanize: 0.015
+swing: 0.25
+reverb: 0.08
+singing:
+  channel: C1
+  language: en
+sections:
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - c3-e3-g3-b3
+  - z
+  - 0.5:z
+  - 0.5:c3-e3-g3-b3
+  - z
+  C3:
+  - 1.5:a1
+  - 0.5:a1
+  - z
+  - e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - c3-e3-g3-b3
+  - z
+  - 0.5:z
+  - 0.5:c3-e3-g3-b3
+  - z
+  C3:
+  - 1.5:a1
+  - 0.5:a1
+  - z
+  - e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:e3
+  - 0.5:e3
+  - 0.5:g3
+  - 0.5:e3
+  - 0.5:e3
+  - 0.5:d3
+  - 0.5:e3
+  - 0.5:z
+  lyrics:
+  - Rent
+  - takes
+  - my
+  - whole
+  - check
+  - but
+  - this
+  - ''
+  C2:
+  - a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:a3-c4-e4
+  - z
+  C3:
+  - 1.5:f2
+  - 0.5:f2
+  - z
+  - c3
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:e3
+  - 0.5:e3
+  - 0.5:g3
+  - 0.5:e3
+  - 1.5:e3
+  - 0.5:z
+  lyrics:
+  - block
+  - still
+  - knows
+  - my
+  - name
+  - ''
+  C2:
+  - a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:a3-c4-e4
+  - z
+  C3:
+  - 1.5:f2
+  - 0.5:f2
+  - z
+  - c3
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:e3
+  - 0.5:g3
+  - 0.5:e3
+  - 0.5:d3
+  - 0.5:e3
+  - 0.5:g3
+  - 0.5:a3
+  - 0.5:z
+  lyrics:
+  - Train
+  - shakes
+  - the
+  - tracks
+  - while
+  - I
+  - chase
+  - ''
+  C2:
+  - f3-a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:f3-a3-c4-e4
+  - z
+  C3:
+  - 1.5:d2
+  - 0.5:d2
+  - z
+  - a2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:e3
+  - 0.5:g3
+  - 0.5:e3
+  - 0.5:d3
+  - 1.5:e3
+  - 0.5:z
+  lyrics:
+  - that
+  - green
+  - light
+  - through
+  - rain
+  - ''
+  C2:
+  - f3-a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:f3-a3-c4-e4
+  - z
+  C3:
+  - 1.5:d2
+  - 0.5:d2
+  - z
+  - a2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:f3
+  - 0.5:f3
+  - 0.5:a3
+  - 0.5:f3
+  - 0.5:e3
+  - 0.5:f3
+  - 0.5:e3
+  - 0.5:z
+  lyrics:
+  - Steam
+  - from
+  - the
+  - street
+  - meets
+  - the
+  - cold
+  - ''
+  C2:
+  - g3#-b3-d4
+  - z
+  - 0.5:z
+  - 0.5:g3#-b3-d4
+  - z
+  C3:
+  - 1.5:e2
+  - 0.5:e2
+  - z
+  - b2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:f3
+  - 0.5:f3
+  - 0.5:a3
+  - 0.5:f3
+  - 1.5:e3
+  - 0.5:z
+  lyrics:
+  - 'on'
+  - my
+  - face
+  - at
+  - dawn
+  - ''
+  C2:
+  - g3#-b3-d4
+  - z
+  - 0.5:z
+  - 0.5:g3#-b3-d4
+  - z
+  C3:
+  - 1.5:e2
+  - 0.5:e2
+  - z
+  - b2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:e3
+  - 0.5:e3
+  - 0.5:g3#
+  - 0.5:e3
+  - 0.5:d3
+  - 0.5:e3
+  - 0.5:b2
+  - 0.5:z
+  lyrics:
+  - Up
+  - five
+  - flights
+  - home
+  - then
+  - the
+  - beat
+  - ''
+  C2:
+  - c3-e3-g3-b3
+  - z
+  - 0.5:z
+  - 0.5:c3-e3-g3-b3
+  - z
+  C3:
+  - 1.5:a1
+  - 0.5:a1
+  - z
+  - e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 0.5:e3
+  - 0.5:e3
+  - 0.5:g3#
+  - 0.5:e3
+  - 1.5:d3
+  - 0.5:z
+  lyrics:
+  - keeps
+  - me
+  - up
+  - till
+  - morn
+  - ''
+  C2:
+  - c3-e3-g3-b3
+  - z
+  - 0.5:z
+  - 0.5:c3-e3-g3-b3
+  - z
+  C3:
+  - 1.5:a1
+  - 0.5:a1
+  - z
+  - e2
+  drums:
+  - kick-hat
+  - snare-hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.25:snare
+  - 0.25:snare
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - a3
+  - 0.5:c4
+  - 0.5:b3
+  - a3
+  - g3
+  lyrics:
+  - New
+  - York
+  - nights
+  - got
+  - a
+  C2:
+  - a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:a3-c4-e4
+  - z
+  C3:
+  - 1.5:f2
+  - 0.5:f2
+  - z
+  - c3
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - e3
+  - g3
+  - 1.5:a3
+  - 0.5:z
+  lyrics:
+  - hold
+  - 'on'
+  - me
+  - ''
+  C2:
+  - a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:a3-c4-e4
+  - z
+  C3:
+  - 1.5:f2
+  - 0.5:f2
+  - z
+  - c3
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - a3
+  - 0.5:a3
+  - 0.5:c4
+  - a3
+  - g3
+  lyrics:
+  - Small
+  - room
+  - big
+  - dreams
+  - from
+  C2:
+  - f3-a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:f3-a3-c4-e4
+  - z
+  C3:
+  - 1.5:d2
+  - 0.5:d2
+  - z
+  - a2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - f3
+  - e3
+  - 1.5:f3
+  - 0.5:z
+  lyrics:
+  - the
+  - train
+  - seat
+  - ''
+  C2:
+  - f3-a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:f3-a3-c4-e4
+  - z
+  C3:
+  - 1.5:d2
+  - 0.5:d2
+  - z
+  - a2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - f3
+  - 0.5:a3
+  - 0.5:c4
+  - a3
+  - g3
+  lyrics:
+  - Heart
+  - 'on'
+  - the
+  - block
+  - and
+  C2:
+  - g3#-b3-d4
+  - z
+  - 0.5:z
+  - 0.5:g3#-b3-d4
+  - z
+  C3:
+  - 1.5:e2
+  - 0.5:e2
+  - z
+  - b2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - f3
+  - e3
+  - 1.5:d3
+  - 0.5:z
+  lyrics:
+  - my
+  - feet
+  - move
+  - ''
+  C2:
+  - g3#-b3-d4
+  - z
+  - 0.5:z
+  - 0.5:g3#-b3-d4
+  - z
+  C3:
+  - 1.5:e2
+  - 0.5:e2
+  - z
+  - b2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - e3
+  - 0.5:g3#
+  - 0.5:b3
+  - a3
+  - g3#
+  lyrics:
+  - This
+  - town
+  - hits
+  - hard
+  - but
+  C2:
+  - c3-e3-g3-b3
+  - z
+  - 0.5:z
+  - 0.5:c3-e3-g3-b3
+  - z
+  C3:
+  - 1.5:a1
+  - 0.5:a1
+  - z
+  - e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - e3
+  - g3#
+  - 1.5:a3
+  - 0.5:z
+  lyrics:
+  - I
+  - still
+  - groove
+  - ''
+  C2:
+  - c3-e3-g3-b3
+  - z
+  - 0.5:z
+  - 0.5:c3-e3-g3-b3
+  - z
+  C3:
+  - 1.5:a1
+  - 0.5:a1
+  - z
+  - e2
+  drums:
+  - kick-hat
+  - snare-hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.25:snare
+  - 0.25:snare
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - a3-c4-e4
+  - z
+  - 0.5:z
+  - 0.5:a3-c4-e4
+  - z
+  C3:
+  - 1.5:f2
+  - 0.5:f2
+  - z
+  - c3
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  ritardando: 0
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 3:c3-e3-g3-b3
+  - z
+  C3:
+  - 3:a1
+  - z
+  drums:
+  - kick-hat
+  - 3:z
+  ritardando: 0

@@ -1,0 +1,397 @@
+name: "Scat conversations \u2014 relaxed, playful, assertive"
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+swing: 0.65
+reverb: 0.08
+plain: false
+scat:
+  channel: C1
+  delivery: relaxed
+sections:
+- C1:
+  - g3
+  - 0.5:a3
+  - 0.5:g3
+  - e3
+  - g3
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  scat:
+    syllables:
+    - doo
+    - +
+    - bah
+    - wah
+    - +
+    emphasis:
+    - 0.3
+    - 0.4
+    - 0.9
+    - 0.6
+    - 0.3
+    delivery: relaxed
+  C3: &id001
+  - c2
+  - e2
+  - g2
+  - a2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - a3
+  - 0.5:c4
+  - 0.5:a3
+  - g3
+  - z
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - wah
+    - ''
+    emphasis:
+    - 0.8
+    - 0.5
+    - 0.4
+    - 0.8
+    - 0
+    delivery: relaxed
+  C3: &id002
+  - a2
+  - g2
+  - e2
+  - c2#
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - 2:e3
+  - g3
+  - a3
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  scat:
+    syllables:
+    - wah
+    - +
+    - doo
+    emphasis:
+    - 0.25
+    - 0.7
+    - 0.9
+    delivery: relaxed
+  C3: &id003
+  - d2
+  - f2
+  - a2
+  - g2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - g3
+  - e3
+  - c3
+  - z
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - ''
+    emphasis:
+    - 0.9
+    - 0.3
+    - 0.2
+    - 0
+    delivery: relaxed
+  C3: &id004
+  - c2
+  - g2
+  - c2
+  - z
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - g3
+  - 0.5:a3
+  - 0.5:g3
+  - e3
+  - g3
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  scat:
+    syllables:
+    - doo
+    - +
+    - bah
+    - wah
+    - +
+    emphasis:
+    - 0.3
+    - 0.4
+    - 0.9
+    - 0.6
+    - 0.3
+    delivery: playful
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - a3
+  - 0.5:c4
+  - 0.5:a3
+  - g3
+  - z
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - wah
+    - ''
+    emphasis:
+    - 0.8
+    - 0.5
+    - 0.4
+    - 0.8
+    - 0
+    delivery: playful
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - 2:e3
+  - g3
+  - a3
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  scat:
+    syllables:
+    - wah
+    - +
+    - doo
+    emphasis:
+    - 0.25
+    - 0.7
+    - 0.9
+    delivery: playful
+  C3: *id003
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - g3
+  - e3
+  - c3
+  - z
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - ''
+    emphasis:
+    - 0.9
+    - 0.3
+    - 0.2
+    - 0
+    delivery: playful
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - g3
+  - 0.5:a3
+  - 0.5:g3
+  - e3
+  - g3
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  scat:
+    syllables:
+    - doo
+    - +
+    - bah
+    - wah
+    - +
+    emphasis:
+    - 0.3
+    - 0.4
+    - 0.9
+    - 0.6
+    - 0.3
+    delivery: assertive
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - a3
+  - 0.5:c4
+  - 0.5:a3
+  - g3
+  - z
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - wah
+    - ''
+    emphasis:
+    - 0.8
+    - 0.5
+    - 0.4
+    - 0.8
+    - 0
+    delivery: assertive
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - 2:e3
+  - g3
+  - a3
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  scat:
+    syllables:
+    - wah
+    - +
+    - doo
+    emphasis:
+    - 0.25
+    - 0.7
+    - 0.9
+    delivery: assertive
+  C3: *id003
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- C1:
+  - g3
+  - e3
+  - c3
+  - z
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - ''
+    emphasis:
+    - 0.9
+    - 0.3
+    - 0.2
+    - 0
+    delivery: assertive
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+levels:
+  C1: 0.8
+  C2: 0.25
+  C3: 0.45
+  drums: 0.2
+instruments:
+  C3: bass
+pan:
+  C1: 0
+  C2: 0.25
+  C3: -0.1

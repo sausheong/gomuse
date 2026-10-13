@@ -1,0 +1,72 @@
+[
+  {
+    "file": "examples/singing/procedural/words/phrase.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": " Hey, oh, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey, hey",
+        "avg_logprob": -0.09879931661817763,
+        "no_speech_prob": 0.30728426575660706
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/vocabulary.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 14.0,
+        "text": " A, O, my, you, take me, we, t, a, no, so, I",
+        "avg_logprob": -0.49534561157226564,
+        "no_speech_prob": 0.5598264336585999
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/check_one.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Oh my...",
+        "avg_logprob": -0.6558822095394135,
+        "no_speech_prob": 0.030030319467186928
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/check_two.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Oh, see me",
+        "avg_logprob": -0.5972303152084351,
+        "no_speech_prob": 0.5528852939605713
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/check_three.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " We say no",
+        "avg_logprob": -0.38402271767457324,
+        "no_speech_prob": 0.10541730374097824
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+name: quick
+key: C
+length: 0.3
+instrument: piano
+volume: 16000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  breaths: 0
+  breathiness: 0.05
+sections:
+- C1:
+  - e3
+  - g3
+  - 2:a3
+  - z
+  C2:
+  - 5:z
+  scat:
+    syllables:
+    - hey
+    - you
+    - stay
+    - ''

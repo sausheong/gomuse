@@ -1,0 +1,72 @@
+[
+  {
+    "file": "examples/singing/procedural/words/phrase.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.5600000000000005,
+        "text": " Pay won't stay, pay won't stay",
+        "avg_logprob": -0.6743284612894058,
+        "no_speech_prob": 0.20867665112018585
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/vocabulary.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 14.0,
+        "text": " A, O, my, you, say, me, we, see, say, no, so, I",
+        "avg_logprob": -0.37796941514198595,
+        "no_speech_prob": 0.6278859376907349
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/check_one.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Oh my...",
+        "avg_logprob": -0.6525449454784393,
+        "no_speech_prob": 0.07122380286455154
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/check_two.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " You'll see me",
+        "avg_logprob": -0.4493198735373361,
+        "no_speech_prob": 0.5914618968963623
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/check_three.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " We say no",
+        "avg_logprob": -0.37704283992449444,
+        "no_speech_prob": 0.235860675573349
+      }
+    ]
+  }
+]

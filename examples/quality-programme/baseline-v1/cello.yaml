@@ -1,0 +1,51 @@
+name: cello benchmark
+key: C
+length: 0.32
+envelope: ""
+harmonic: ""
+instrument: cello
+volume: 12000
+reverb: 0
+humanize: 0
+pan:
+    C1: 0
+sections:
+    - dynamic: p
+      C1:
+        - c2
+        - g3
+        - c5
+        - z
+        - .5:g3
+        - .5:g3
+        - .5:g3
+        - .5:g3
+        - 3:g3
+        - z
+      C2: []
+    - dynamic: mf
+      C1:
+        - c2
+        - g3
+        - c5
+        - z
+        - .5:g3
+        - .5:g3
+        - .5:g3
+        - .5:g3
+        - 3:g3
+        - z
+      C2: []
+    - dynamic: f
+      C1:
+        - c2
+        - g3
+        - c5
+        - z
+        - .5:g3
+        - .5:g3
+        - .5:g3
+        - .5:g3
+        - 3:g3
+        - z
+      C2: []

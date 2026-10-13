@@ -86,7 +86,7 @@ func TestMakeDrumNote(t *testing.T) {
 	if r, err := makeDrumNote("2:z", Section{}, score); err != nil || len(r.kit) != 0 || r.length != 1 {
 		t.Fatalf("rest: kit %v length %v err %v", r.kit, r.length, err)
 	}
-	for _, bad := range []string{"bongo", "x:kick", "-1:kick", "kick-"} {
+	for _, bad := range []string{"unknown-drum", "x:kick", "-1:kick", "kick-"} {
 		if _, err := makeDrumNote(bad, Section{}, score); err == nil {
 			t.Errorf("makeDrumNote(%q) should fail", bad)
 		}
@@ -188,7 +188,7 @@ func TestDrumMixSettings(t *testing.T) {
 	if err := Check(parse(bad)); err == nil {
 		t.Error("the drums can't be given an instrument")
 	}
-	unknown := strings.Replace(ok, "drums: [k]", "drums: [bongo]", 1)
+	unknown := strings.Replace(ok, "drums: [k]", "drums: [unknown-drum]", 1)
 	if err := Check(parse(unknown)); err == nil || !strings.Contains(err.Error(), "[drums]") {
 		t.Errorf("an unknown drum should be a [drums] error, got %v", err)
 	}
@@ -213,6 +213,37 @@ func TestDrumAttacksStartAtSilence(t *testing.T) {
 					t.Fatalf("%s has nonfinite samples", name)
 				}
 			}
+		}
+	}
+}
+
+// Compare tone at equal gain: a dynamic must change excitation, not merely
+// make an identical waveform quieter. Endpoints remain click-free.
+func TestDrumVelocityColour(t *testing.T) {
+	for name := range drumKit {
+		render := func(v float64) []float64 {
+			n := note{kit: []string{name}, velocity: v, length: drumKit[name].length}
+			ints := n.kitData(100000)
+			x := make([]float64, len(ints))
+			for i, a := range ints {
+				x[i] = float64(a) / 100000
+			}
+			return x
+		}
+		soft, hard := render(.2), render(.95)
+		brightness := func(x []float64) float64 {
+			delta, energy := 0., 0.
+			for i := 1; i < len(x); i++ {
+				delta += math.Pow(x[i]-x[i-1], 2)
+				energy += x[i] * x[i]
+			}
+			return delta / energy
+		}
+		if brightness(soft) >= brightness(hard) {
+			t.Errorf("%s soft strike is not darker", name)
+		}
+		if soft[0] != 0 || soft[len(soft)-1] != 0 {
+			t.Errorf("%s has discontinuous endpoints", name)
 		}
 	}
 }

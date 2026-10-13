@@ -62,7 +62,8 @@ func pianoVelocity(freq, duration, velocity float64) []float64 {
 	var ps []partial
 	for n := 1.0; n <= 24; n++ {
 		f := n * freq * math.Sqrt(1+stiff*n*n)
-		amp := math.Sin(n*math.Pi*strikeAt) / n / (1 + (f/felt)*(f/felt))
+		amp := math.Sin(n*math.Pi*strikeAt) / n / (1 + math.Pow(f/felt, 2.4))
+		amp *= resonanceGain([]formant{{180, 150, .12}, {520, 400, .15}, {1600, 1100, .10}}, .85, f)
 		tail := loss(f, 0.3, 1.2, 0.8)
 		for _, c := range detune {
 			ps = append(ps, partial{
@@ -72,7 +73,10 @@ func pianoVelocity(freq, duration, velocity float64) []float64 {
 			})
 		}
 	}
-	return additive(sampleCount(duration), ps, 0.004-0.0025*v, 0.05)
+	x := additive(sampleCount(duration), ps, 0.004-0.0025*v, 0.05)
+	addStringExcitation(x, freq, v, 0, true)
+	finishInstrument(x, duration, .05)
+	return x
 }
 
 // bass is an electric bass guitar, played with the fingers. Its strings are

@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/piano/before.wav",
+      "sha256": "ecc8fb14af302a711aca2be1a0d4a5efc1c8b8ed9a658791817e59882433018e",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -5.912070978707145,
+      "rms_dbfs": -24.000263085613092,
+      "crest_db": 18.088192106905947,
+      "dc_fraction": -9.00273152071915e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/piano.wav",
+      "source_sha256": "815eee2bab161229d787680d2f0cc15c1243ef0967c733f05c5913901deb675c",
+      "gain": 3.515571354370981
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/piano/after.wav",
+      "sha256": "ecc8fb14af302a711aca2be1a0d4a5efc1c8b8ed9a658791817e59882433018e",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -5.912070978707145,
+      "rms_dbfs": -24.000263085613092,
+      "crest_db": 18.088192106905947,
+      "dc_fraction": -9.00273152071915e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/piano.wav",
+      "source_sha256": "815eee2bab161229d787680d2f0cc15c1243ef0967c733f05c5913901deb675c",
+      "gain": 3.515571354370981
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

@@ -1,0 +1,11 @@
+{
+  "duration_seconds": 64.54426303854875,
+  "channels": 2,
+  "sample_rate_hz": 44100,
+  "peak": 0.128143310546875,
+  "clipped_samples": 0,
+  "played_bars": 21,
+  "tempo_bpm": 80,
+  "source": "User-supplied screenshot, printed bars 1-15",
+  "play_order": "1-9, 1-6, 10-15"
+}

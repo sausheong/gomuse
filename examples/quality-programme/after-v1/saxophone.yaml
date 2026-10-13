@@ -1,0 +1,51 @@
+name: saxophone benchmark
+key: C
+length: 0.32
+envelope: ""
+harmonic: ""
+instrument: saxophone
+volume: 12000
+reverb: 0
+humanize: 0
+pan:
+    C1: 0
+sections:
+    - dynamic: p
+      C1:
+        - b2
+        - d4
+        - a5
+        - z
+        - .5:d4
+        - .5:d4
+        - .5:d4
+        - .5:d4
+        - 3:d4
+        - z
+      C2: []
+    - dynamic: mf
+      C1:
+        - b2
+        - d4
+        - a5
+        - z
+        - .5:d4
+        - .5:d4
+        - .5:d4
+        - .5:d4
+        - 3:d4
+        - z
+      C2: []
+    - dynamic: f
+      C1:
+        - b2
+        - d4
+        - a5
+        - z
+        - .5:d4
+        - .5:d4
+        - .5:d4
+        - .5:d4
+        - 3:d4
+        - z
+      C2: []

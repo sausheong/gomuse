@@ -1,0 +1,1867 @@
+# Misty 5 arrangement retained; refined clarinet and shared small-room sends.
+name: Misty 6 — clarinet in a small room
+key: Eb
+length: 0.9090909090909091
+instrument: piano
+instruments:
+  C1: clarinet
+  C2: piano
+  C3: upright-bass
+volume: 18000
+levels:
+  C1: 0.9
+  C2: 0.52
+  C3: 0.6
+pan:
+  C1: -0.12
+  C2: 0.25
+  C3: 0.02
+humanize: 0.18
+swing: 0
+reverb: 0.32
+performance:
+  C1:
+    articulation: legato
+    vibrato: 3
+  C2:
+    pedal: up
+sections:
+- dynamic: mp
+  C1:
+  - 4:z
+  - 4:z
+  - 4:z
+  C2:
+  - 0.5:e4-g4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:b4
+  - g4
+  - 0.5:d4-f4#
+  - 0.5:g4
+  - 0.5:b4b
+  - 0.5:g4
+  - 2:g4
+  - 0.5:c4-f4n
+  - 0.5:g4
+  - 0.5:g4
+  - 0.5:g4
+  - 0.5:b3-f4
+  - 0.5:d4
+  - d4
+  C3:
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:z
+  - 1.75:e2n
+  - 0.25:z
+  - 1.25:b1n
+  - 0.75:d2n
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:g2n
+  - 0.25:z
+  expression:
+    C2:
+      accents: {}
+      pedal: {}
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        8: -1
+        9: 0.5
+        11: -1
+- dynamic: mp
+  C1:
+  - 2:z
+  - z
+  - 0.5:b4
+  - 0.5:g4
+  - 3:d4
+  - 0.5:b3
+  - 0.5:c4
+  - 0.5:d4b
+  - 0.5:a4
+  - 0.5:a4
+  - 0.5:a4
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:e4
+  - 0.5:d4b
+  - 2:c4
+  - 0.333:z
+  - 0.333:g3
+  - 0.334:a3
+  - 0.333:c4
+  - 0.333:e4
+  - 0.334:g4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:a4
+  - 1.5:b4
+  - 0.5:a4
+  C2:
+  - 0.5:g3n-a3b-c4n-e4b
+  - 1.3:z
+  - 0.2:z
+  - 0.5:a3b-c4n-d4n
+  - 1.3:z
+  - 0.2:z
+  - 0.5:f3n-g3n-b3b-d4n
+  - 3.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:f3n-a3b-c4n-c4#
+  - 1.05:z
+  - 0.2:z
+  - 0.5:e3n-g3n-c4#
+  - 1.3:z
+  - 0.2:z
+  - 0.5:e3b-g3n-b3b-c4n
+  - 3.3:z
+  - 0.2:z
+  - 0.5:e3b-f3#-b3b-b3n
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3b-f3n-b3n
+  - 1.05:z
+  - 0.2:z
+  C3:
+  - 1.75:f2n
+  - 0.25:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.25:e2b
+  - 0.75:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.75:c2#
+  - 0.25:z
+  expression:
+    C1:
+      accents:
+        3: -0.9
+        4: -0.9
+        5: 0.8
+        6: -0.9
+        7: -0.9
+        8: -0.9
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: -0.9
+        13: -0.9
+        14: -0.9
+        15: -0.9
+        16: 0.8
+        18: -0.9
+        19: -0.9
+        20: -0.9
+        21: -0.9
+        22: -0.9
+        23: -0.9
+        24: -0.9
+        25: -0.9
+        26: -0.9
+        27: 0.2
+        28: -0.9
+      phrases:
+      - from: 3
+        to: 16
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 18
+        to: 28
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        3:
+          depth: 0
+        4:
+          depth: 0
+        5:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 0
+        13:
+          depth: 0
+        14:
+          depth: 0
+        15:
+          depth: 0
+        16:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        18:
+          depth: 0
+        19:
+          depth: 0
+        20:
+          depth: 0
+        21:
+          depth: 0
+        22:
+          depth: 0
+        23:
+          depth: 0
+        24:
+          depth: 0
+        25:
+          depth: 0
+        26:
+          depth: 0
+        27:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        28:
+          depth: 0
+      breaths:
+        16: 110
+        28: 65
+      slurs:
+      - from: 3
+        to: 16
+      - from: 18
+        to: 28
+    C2:
+      accents:
+        1: 0.4
+        4: -0.8
+        7: -0.8
+        11: 0.4
+        14: -0.8
+        17: -0.8
+        20: 0.4
+        24: -0.8
+      pedal:
+        1: down
+        3: up
+        4: down
+        6: up
+        7: down
+        9: up
+        10: up
+        11: down
+        13: up
+        14: down
+        16: up
+        17: down
+        19: up
+        20: down
+        22: up
+        23: up
+        24: down
+        26: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+        17: 0.5
+        19: -1
+- dynamic: mp
+  C1:
+  - 1.333:g4
+  - 0.333:a4
+  - 0.334:b4
+  - 1.333:e4
+  - 0.333:f4
+  - 0.334:g4
+  - 0.5:a4
+  - c4
+  - 0.5:c4
+  - 0.667:d4
+  - 0.667:e4
+  - 0.666:f4
+  - 4:g4
+  - 2:g4
+  - z
+  - 0.5:b4
+  - 0.5:g4
+  C2:
+  - 0.25:z
+  - 0.5:d3n-f3n-g3n-b3b
+  - 1.05:z
+  - 0.2:z
+  - 0.5:d3n-e3b-g3n-b3b
+  - 1.3:z
+  - 0.2:z
+  - 0.5:e3b-g3n-a3b-c4n
+  - 1.3:z
+  - 0.2:z
+  - 0.5:d3n-a3b-b3n
+  - 1.3:z
+  - 0.2:z
+  - 0.5:f3n-b3n-c4#
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3n-b3b-d4n
+  - 1.05:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:a3n-b3n-e4b
+  - 1.05:z
+  - 0.2:z
+  - 0.5:a3b-c4n-d4n
+  - 1.3:z
+  - 0.2:z
+  C3:
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:c2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:g2n
+  - 0.25:z
+  - 1.75:c2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 1.75:b1b
+  - 0.25:z
+  expression:
+    C1:
+      accents:
+        1: 0.2
+        2: -0.9
+        3: -0.9
+        4: 0.2
+        5: -0.9
+        6: -0.9
+        7: -0.9
+        8: 0.2
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: -0.9
+        13: 0.8
+        14: 0.8
+        16: -0.9
+        17: -0.9
+      phrases:
+      - from: 1
+        to: 13
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 14
+        to: 14
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 16
+        to: 17
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        5:
+          depth: 0
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 0
+        13:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        14:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        16:
+          depth: 0
+        17:
+          depth: 0
+      breaths:
+        13: 110
+        14: 110
+        17: 65
+      slurs:
+      - from: 1
+        to: 13
+      - from: 14
+        to: 14
+      - from: 16
+        to: 17
+    C2:
+      accents:
+        2: -0.8
+        5: 0.4
+        8: 0.4
+        11: -0.8
+        14: -0.8
+        18: 0.4
+        22: 0.4
+        25: -0.8
+      pedal:
+        1: up
+        2: down
+        4: up
+        5: down
+        7: up
+        8: down
+        10: up
+        11: down
+        13: up
+        14: down
+        16: up
+        17: up
+        18: down
+        20: up
+        21: up
+        22: down
+        24: up
+        25: down
+        27: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+  ritardando: 0.035
+- dynamic: mp
+  C1:
+  - 3:d4
+  - 0.5:b3
+  - 0.5:c4
+  - 0.5:d4b
+  - 0.5:c5
+  - 0.5:c5
+  - 0.5:c5
+  - 0.5:c5
+  - 0.5:b4
+  - 0.5:g4
+  - 0.5:e4
+  - 2:c4
+  - 0.333:z
+  - 0.333:g3
+  - 0.334:a3
+  - 0.333:c4
+  - 0.333:e4
+  - 0.334:g4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:a4
+  - 1.5:b4
+  - 0.5:a4
+  C2:
+  - 0.5:f3n-g3n-b3b-d4n
+  - 3.3:z
+  - 0.2:z
+  - 0.5:f3n-a3b-c4n-c4#
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3n-g3n-c4#
+  - 1.05:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3b-g3n-b3b-c4n
+  - 3.05:z
+  - 0.2:z
+  - 0.5:e3b-f3#-b3b-b3n
+  - 1.3:z
+  - 0.2:z
+  - 0.5:e3b-f3n-b3n
+  - 1.3:z
+  - 0.2:z
+  C3:
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.25:e2b
+  - 0.75:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.75:c2#
+  - 0.25:z
+  expression:
+    C1:
+      accents:
+        1: 0.8
+        2: -0.9
+        3: -0.9
+        4: -0.9
+        5: -0.9
+        6: -0.9
+        7: -0.9
+        8: -0.9
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: 0.8
+        14: -0.9
+        15: -0.9
+        16: -0.9
+        17: -0.9
+        18: -0.9
+        19: -0.9
+        20: -0.9
+        21: -0.9
+        22: -0.9
+        23: 0.2
+        24: -0.9
+      phrases:
+      - from: 1
+        to: 12
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 14
+        to: 24
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 0
+        5:
+          depth: 0
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        14:
+          depth: 0
+        15:
+          depth: 0
+        16:
+          depth: 0
+        17:
+          depth: 0
+        18:
+          depth: 0
+        19:
+          depth: 0
+        20:
+          depth: 0
+        21:
+          depth: 0
+        22:
+          depth: 0
+        23:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        24:
+          depth: 0
+      breaths:
+        12: 110
+        24: 65
+      slurs:
+      - from: 1
+        to: 12
+      - from: 14
+        to: 24
+    C2:
+      accents:
+        1: -0.8
+        4: 0.4
+        8: -0.8
+        12: -0.8
+        15: 0.4
+        18: -0.8
+      pedal:
+        1: down
+        3: up
+        4: down
+        6: up
+        7: up
+        8: down
+        10: up
+        11: up
+        12: down
+        14: up
+        15: down
+        17: up
+        18: down
+        20: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+- dynamic: mf
+  C1:
+  - 1.333:g4
+  - 0.333:a4
+  - 0.334:b4
+  - 1.333:e4
+  - 0.333:f4
+  - 0.334:g4
+  - 0.5:a4
+  - c4
+  - 0.5:c4
+  - 0.667:d4
+  - 0.667:e4
+  - 0.666:f4
+  - 4:e4
+  - 0.667:z
+  - 0.667:e4
+  - 0.666:f4
+  - 0.667:g4
+  - 0.667:b4
+  - 0.666:c5
+  C2:
+  - 0.5:d3n-f3n-g3n-b3b
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:d3n-e3b-g3n-b3b
+  - 1.05:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3b-g3n-a3b-c4n
+  - 1.05:z
+  - 0.2:z
+  - 0.5:d3n-a3b-b3n
+  - 1.3:z
+  - 0.2:z
+  - 0.35:d3n-f3n-g3n-b3b
+  - 0.45:z
+  - 0.2:z
+  - 0.35:d3n-e3b-g3n-b3b
+  - 0.45:z
+  - 0.2:z
+  - 0.35:e3b-g3n-a3b-c4n
+  - 0.45:z
+  - 0.2:z
+  - 0.35:d3n-a3b-b3n
+  - 0.45:z
+  - 0.2:z
+  - 0.5:f3n-g3n-b3b-c4n
+  - 3.3:z
+  - 0.2:z
+  C3:
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:c2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 1.75:b1b
+  - 0.25:z
+  - 0.85:e2b
+  - 0.15:z
+  - 0.85:c2n
+  - 0.15:z
+  - 0.85:f2n
+  - 0.15:z
+  - 0.85:b1b
+  - 0.15:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:a1n
+  expression:
+    C1:
+      accents:
+        1: 0.2
+        2: -0.9
+        3: -0.9
+        4: 0.2
+        5: -0.9
+        6: -0.9
+        7: -0.9
+        8: 0.2
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: -0.9
+        13: 0.8
+        15: -0.9
+        16: -0.9
+        17: -0.9
+        18: -0.9
+        19: -0.9
+      phrases:
+      - from: 1
+        to: 13
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 15
+        to: 19
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        5:
+          depth: 0
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 0
+        13:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        15:
+          depth: 0
+        16:
+          depth: 0
+        17:
+          depth: 0
+        18:
+          depth: 0
+        19:
+          depth: 0
+      breaths:
+        13: 110
+        19: 65
+      slurs:
+      - from: 1
+        to: 13
+      - from: 15
+        to: 19
+    C2:
+      accents:
+        1: -0.8
+        5: 0.4
+        9: 0.4
+        12: -0.8
+        15: -0.8
+        18: 0.4
+        21: -0.8
+        24: 0.4
+        27: 0.4
+      pedal:
+        1: down
+        3: up
+        4: up
+        5: down
+        7: up
+        8: up
+        9: down
+        11: up
+        12: down
+        14: up
+        15: down
+        17: up
+        18: down
+        20: up
+        21: down
+        23: up
+        24: down
+        26: up
+        27: down
+        29: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+        17: 0.5
+        19: -1
+        20: -1
+  ritardando: 0.035
+- dynamic: mf
+  C1:
+  - 0.5:d5b
+  - 0.5:d5b
+  - 0.5:d5b
+  - 2.5:d5b
+  - d5b
+  - 0.5:b4
+  - 0.5:c5
+  - 0.667:d5b
+  - 0.667:c5
+  - 0.666:b4
+  - 0.5:c5
+  - 0.5:c5
+  - 0.5:c5
+  - 2.5:c5
+  - 0.667:z
+  - 0.667:e4
+  - 0.666:f4
+  - 0.667:a4
+  - 0.667:b4
+  - 0.666:c5
+  C2:
+  - 0.25:z
+  - 0.5:f3n-a3b-c4n-c4#
+  - 3.05:z
+  - 0.2:z
+  - 0.5:f3n-g3n-c4#
+  - 3.3:z
+  - 0.2:z
+  - 0.5:g3n-b3b-c4n-e4b
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:f3n-b3b-c4n-e4b
+  - 1.05:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:g3n-b3b-c4n-e4b
+  - 1.05:z
+  - 0.2:z
+  - 0.35:a3b-c4n-d4n
+  - 0.45:z
+  - 0.2:z
+  - 0.35:f3#-b3b-c4n
+  - 0.45:z
+  - 0.2:z
+  C3:
+  - 1.75:b1b
+  - 0.25:z
+  - 1.25:f2n
+  - 0.75:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:g1n
+  - 1.75:a1b
+  - 0.25:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.75:a1b
+  - 0.25:z
+  - 0.85:b1b
+  - 0.15:z
+  - 0.85:e2b
+  - 0.15:z
+  expression:
+    C1:
+      accents:
+        1: -0.9
+        2: -0.9
+        3: -0.9
+        4: 0.8
+        5: 0.2
+        6: -0.9
+        7: -0.9
+        8: -0.9
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: -0.9
+        13: -0.9
+        14: 0.8
+        16: -0.9
+        17: -0.9
+        18: -0.9
+        19: -0.9
+        20: -0.9
+      phrases:
+      - from: 1
+        to: 14
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 16
+        to: 20
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 0
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        5:
+          depth: 0
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 0
+        13:
+          depth: 0
+        14:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        16:
+          depth: 0
+        17:
+          depth: 0
+        18:
+          depth: 0
+        19:
+          depth: 0
+        20:
+          depth: 0
+      breaths:
+        14: 110
+        20: 65
+      slurs:
+      - from: 1
+        to: 14
+      - from: 16
+        to: 20
+    C2:
+      accents:
+        2: -0.8
+        5: 0.4
+        8: -0.8
+        12: 0.4
+        16: 0.4
+        19: -0.8
+        22: 0.4
+      pedal:
+        1: up
+        2: down
+        4: up
+        5: down
+        7: up
+        8: down
+        10: up
+        11: up
+        12: down
+        14: up
+        15: up
+        16: down
+        18: up
+        19: down
+        21: up
+        22: down
+        24: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        8: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+        17: 0.5
+- dynamic: f
+  C1:
+  - 0.5:d5
+  - 0.5:d5
+  - 0.5:d5
+  - 0.5:c5
+  - 2:d5
+  - 0.5:d5
+  - 0.5:d5
+  - 0.5:d5
+  - 0.5:d5
+  - 0.667:f5
+  - 0.667:d5
+  - 0.666:c5
+  - 4:b4
+  - 2:b4
+  - z
+  - 0.5:b4
+  - 0.5:g4
+  C2:
+  - 0.5:e3n-g3n-b3n-c4n
+  - 3.3:z
+  - 0.2:z
+  - 0.5:e3n-f3#-c4n
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3b-g3n-a3n
+  - 1.05:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:d3n-a3b-c4n
+  - 1.05:z
+  - 0.2:z
+  - 0.5:g3n-b3b-c4#
+  - 1.3:z
+  - 0.2:z
+  - 0.5:g3n-a3b-c4n-e4b
+  - 1.3:z
+  - 0.2:z
+  - 0.35:a3b-b3n-d4n
+  - 0.45:z
+  - 0.2:z
+  - 0.35:a3b-c4n-d4n
+  - 0.45:z
+  - 0.2:z
+  C3:
+  - 1.75:a1n
+  - 0.25:z
+  - 1.25:e2n
+  - 0.75:z
+  - 1.75:d2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:e2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 0.85:b1b
+  - 0.15:z
+  - 0.85:b1b
+  - 0.15:z
+  expression:
+    C1:
+      accents:
+        1: -0.9
+        2: -0.9
+        3: -0.9
+        4: -0.9
+        5: 0.8
+        6: -0.9
+        7: -0.9
+        8: -0.9
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: -0.9
+        13: 0.8
+        14: 0.8
+        16: -0.9
+        17: -0.9
+      phrases:
+      - from: 1
+        to: 13
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 14
+        to: 14
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 16
+        to: 17
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 0
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 0
+        5:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 0
+        13:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        14:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        16:
+          depth: 0
+        17:
+          depth: 0
+      breaths:
+        13: 110
+        14: 110
+        17: 65
+      slurs:
+      - from: 1
+        to: 13
+      - from: 14
+        to: 14
+      - from: 16
+        to: 17
+    C2:
+      accents:
+        1: -0.8
+        4: 0.4
+        8: -0.8
+        12: -0.8
+        15: 0.4
+        18: 0.4
+        21: -0.8
+        24: 0.4
+      pedal:
+        1: down
+        3: up
+        4: down
+        6: up
+        7: up
+        8: down
+        10: up
+        11: up
+        12: down
+        14: up
+        15: down
+        17: up
+        18: down
+        20: up
+        21: down
+        23: up
+        24: down
+        26: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+        17: 0.5
+  ritardando: 0.035
+- dynamic: mp
+  C1:
+  - 3:d4
+  - 0.5:b3
+  - 0.5:c4
+  - 0.5:d4b
+  - 0.5:a4
+  - 0.5:a4
+  - 0.5:a4
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:f4
+  - 0.5:e4
+  - 2:c4
+  - 0.333:z
+  - 0.333:g3
+  - 0.334:a3
+  - 0.333:c4
+  - 0.333:e4
+  - 0.334:g4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:b4
+  - 0.5:a4
+  - 1.5:b4
+  - 0.5:a4
+  C2:
+  - 0.5:f3n-g3n-b3b-d4n
+  - 3.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:f3n-a3b-c4n-c4#
+  - 1.05:z
+  - 0.2:z
+  - 0.5:e3n-g3n-c4#
+  - 1.3:z
+  - 0.2:z
+  - 0.5:e3b-g3n-b3b-c4n
+  - 3.3:z
+  - 0.2:z
+  - 0.5:e3b-f3#-b3b-b3n
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3b-f3n-b3n
+  - 1.05:z
+  - 0.2:z
+  C3:
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.25:e2b
+  - 0.75:z
+  - 1.75:a1b
+  - 0.25:z
+  - 1.75:c2#
+  - 0.25:z
+  expression:
+    C1:
+      accents:
+        1: 0.8
+        2: -0.9
+        3: -0.9
+        4: -0.9
+        5: -0.9
+        6: -0.9
+        7: -0.9
+        8: -0.9
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: 0.8
+        14: -0.9
+        15: -0.9
+        16: -0.9
+        17: -0.9
+        18: -0.9
+        19: -0.9
+        20: -0.9
+        21: -0.9
+        22: -0.9
+        23: 0.2
+        24: -0.9
+      phrases:
+      - from: 1
+        to: 12
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 14
+        to: 24
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 0
+        5:
+          depth: 0
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        14:
+          depth: 0
+        15:
+          depth: 0
+        16:
+          depth: 0
+        17:
+          depth: 0
+        18:
+          depth: 0
+        19:
+          depth: 0
+        20:
+          depth: 0
+        21:
+          depth: 0
+        22:
+          depth: 0
+        23:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        24:
+          depth: 0
+      breaths:
+        12: 110
+        24: 65
+      slurs:
+      - from: 1
+        to: 12
+      - from: 14
+        to: 24
+    C2:
+      accents:
+        1: -0.8
+        5: 0.4
+        8: -0.8
+        11: -0.8
+        14: 0.4
+        18: -0.8
+      pedal:
+        1: down
+        3: up
+        4: up
+        5: down
+        7: up
+        8: down
+        10: up
+        11: down
+        13: up
+        14: down
+        16: up
+        17: up
+        18: down
+        20: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+- dynamic: mp
+  C1:
+  - 1.333:g4
+  - 0.333:a4
+  - 0.334:b4
+  - 1.333:e4
+  - 0.333:f4
+  - 0.334:g4
+  - 0.5:a4
+  - c4
+  - 0.5:c4
+  - 0.667:d4
+  - 0.667:e4
+  - 0.666:f4
+  - 4:e4
+  - 2:z
+  - z
+  - 0.5:b4
+  - 0.5:g4
+  C2:
+  - 0.25:z
+  - 0.5:d3n-f3n-g3n-b3b
+  - 1.05:z
+  - 0.2:z
+  - 0.5:d3n-e3b-g3n-b3b
+  - 1.3:z
+  - 0.2:z
+  - 0.5:e3b-g3n-a3b-c4n
+  - 1.3:z
+  - 0.2:z
+  - 0.5:d3n-a3b-b3n
+  - 1.3:z
+  - 0.2:z
+  - 0.5:d3n-f3n-g3n-b3b
+  - 1.3:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:d3n-f3#-a3b-b3b
+  - 1.05:z
+  - 0.2:z
+  - 0.25:z
+  - 0.5:e3b-g3n-a3b-c4n
+  - 1.05:z
+  - 0.2:z
+  - 0.35:f3#-a3b-d4n
+  - 0.45:z
+  - 0.2:z
+  - 0.35:a3b-c4n-d4n
+  - 0.45:z
+  - 0.2:z
+  C3:
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:c2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 1.75:b1b
+  - 0.25:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.75:e2n
+  - 0.25:z
+  - 1.75:f2n
+  - 0.25:z
+  - 0.85:b1b
+  - 0.15:z
+  - 0.85:b1b
+  - 0.15:z
+  expression:
+    C1:
+      accents:
+        1: 0.2
+        2: -0.9
+        3: -0.9
+        4: 0.2
+        5: -0.9
+        6: -0.9
+        7: -0.9
+        8: 0.2
+        9: -0.9
+        10: -0.9
+        11: -0.9
+        12: -0.9
+        13: 0.8
+        16: -0.9
+        17: -0.9
+      phrases:
+      - from: 1
+        to: 13
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      - from: 16
+        to: 17
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        2:
+          depth: 0
+        3:
+          depth: 0
+        4:
+          depth: 4
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        5:
+          depth: 0
+        6:
+          depth: 0
+        7:
+          depth: 0
+        8:
+          depth: 0
+        9:
+          depth: 0
+        10:
+          depth: 0
+        11:
+          depth: 0
+        12:
+          depth: 0
+        13:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        16:
+          depth: 0
+        17:
+          depth: 0
+      breaths:
+        13: 110
+        17: 65
+      slurs:
+      - from: 1
+        to: 13
+      - from: 16
+        to: 17
+    C2:
+      accents:
+        2: -0.8
+        5: 0.4
+        8: 0.4
+        11: -0.8
+        14: -0.8
+        18: 0.4
+        22: 0.4
+        25: -0.8
+        28: 0.4
+      pedal:
+        1: up
+        2: down
+        4: up
+        5: down
+        7: up
+        8: down
+        10: up
+        11: down
+        13: up
+        14: down
+        16: up
+        17: up
+        18: down
+        20: up
+        21: up
+        22: down
+        24: up
+        25: down
+        27: up
+        28: down
+        30: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+        13: 0.5
+        15: -1
+        17: 0.5
+  ritardando: 0.035
+- dynamic: p
+  C1:
+  - 4:e4
+  - 3:e4
+  - z
+  C2:
+  - 0.35:f3n-g3n-b3b-d4n
+  - 0.45:z
+  - 0.2:z
+  - 0.35:g3n-b3b-c4n-e4b
+  - 0.45:z
+  - 0.2:z
+  - 0.35:f3n-a3n-b3b-d4n
+  - 0.45:z
+  - 0.2:z
+  - 0.35:f3#-a3b-d4n
+  - 0.45:z
+  - 0.2:z
+  - 0.5:f3n-g3n-b3b-d4n
+  - 3.3:z
+  - 0.2:z
+  C3:
+  - 0.85:e2b
+  - 0.15:z
+  - 0.85:a1b
+  - 0.15:z
+  - 0.85:g2n
+  - 0.15:z
+  - 0.85:e2n
+  - 0.15:z
+  - 1.75:e2b
+  - 0.25:z
+  - 1.25:b1b
+  - 0.75:z
+  expression:
+    C1:
+      accents:
+        1: 0.8
+        2: 0.8
+      phrases:
+      - from: 1
+        to: 2
+        start_db: -1.8
+        peak_db: 0.8
+        end_db: -2.8
+        peak_at: 0.58
+        tone:
+          start: -0.3
+          peak: 0.2
+          end: -0.4
+      vibrato:
+        1:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+        2:
+          depth: 7
+          delay_ms: 350
+          rise_ms: 500
+          rate_hz: 4.8
+      breaths:
+        2: 110
+      slurs:
+      - from: 1
+        to: 2
+    C2:
+      accents:
+        1: -0.8
+        4: 0.4
+        7: -0.8
+        10: 0.4
+        13: 0.4
+      pedal:
+        1: down
+        3: up
+        4: down
+        6: up
+        7: down
+        9: up
+        10: down
+        12: up
+        13: down
+        15: up
+    C3:
+      accents:
+        1: 0.5
+        3: -1
+        5: 0.5
+        7: -1
+        9: 0.5
+        11: -1
+  ritardando: 0.22
+  hairpin: dim
+room:
+  preset: small
+  sends:
+    C1: 0.7
+    C2: 0.45
+    C3: 0.08

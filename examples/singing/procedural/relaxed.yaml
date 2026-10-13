@@ -1,0 +1,88 @@
+name: "Procedural phrase voice \u2014 relaxed"
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+swing: 0.65
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: relaxed
+sections:
+- C1:
+  - g3
+  - 0.5:a3
+  - 0.5:g3
+  - e3
+  - g3
+  C2:
+  - 4:z
+  scat:
+    syllables:
+    - doo
+    - +
+    - bah
+    - wah
+    - +
+    emphasis:
+    - 0.3
+    - 0.4
+    - 0.9
+    - 0.6
+    - 0.3
+- C1:
+  - a3
+  - 0.5:c4
+  - 0.5:a3
+  - g3
+  - z
+  C2:
+  - 4:z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - wah
+    - ''
+    emphasis:
+    - 0.8
+    - 0.5
+    - 0.4
+    - 0.8
+    - 0
+- C1:
+  - 2:e3
+  - g3
+  - a3
+  C2:
+  - 4:z
+  scat:
+    syllables:
+    - wah
+    - +
+    - doo
+    emphasis:
+    - 0.25
+    - 0.7
+    - 0.9
+- C1:
+  - g3
+  - e3
+  - c3
+  - z
+  C2:
+  - 4:z
+  scat:
+    syllables:
+    - bah
+    - doo
+    - +
+    - ''
+    emphasis:
+    - 0.9
+    - 0.3
+    - 0.2
+    - 0

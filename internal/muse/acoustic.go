@@ -11,17 +11,24 @@ func init() {
 // Upright bass is a pizzicato preset. Body resonances colour the string
 // harmonics; a quicker initial decay separates it from electric bass.
 func uprightBass(f, d, velocity float64) []float64 {
+	return uprightBassStroke(f, d, velocity, 0)
+}
+
+func uprightBassStroke(f, d, velocity float64, stroke int) []float64 {
 	v := playingVelocity(velocity)
 	var ps []partial
 	cutoff := 550 + 1500*v*v
 	for h := 1.0; h <= 32; h++ {
 		hz := f * h * math.Sqrt(1+0.00008*h*h)
 		body := resonanceGain([]formant{{95, 80, 0.7}, {210, 150, 0.45}, {650, 500, 0.2}}, 0.6, hz)
-		amp := math.Sin(math.Pi*h*0.18) / h * body / (1 + math.Pow(hz/cutoff, 2))
+		amp := math.Sin(math.Pi*h*(0.18+0.008*float64(stroke%3-1))) / h * body / (1 + math.Pow(hz/cutoff, 2))
 		rate := loss(hz, 0.9, 1.8, 0.8)
-		ps = append(ps, partial{hz, amp, [][2]float64{{0.7, rate * 3}, {0.3, rate}}})
+		ps = append(ps, partial{hz, amp, [][2]float64{{0.55 + 0.2*v, rate * 3.2}, {0.45 - 0.2*v, rate * .8}}})
 	}
-	return additive(sampleCount(d), ps, 0.008-0.004*v, 0.06)
+	x := additive(sampleCount(d), ps, 0.009-0.005*v, 0.06)
+	addStringExcitation(x, f, v, stroke, false)
+	finishInstrument(x, d, .06)
+	return x
 }
 
 // A harp's plucked spectrum has little string stiffness and a long low

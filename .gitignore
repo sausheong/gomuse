@@ -10,3 +10,6 @@
 *.wav
 # local secrets
 .env
+# optional local neural singing runtime, models and cache
+/.local/
+__pycache__/

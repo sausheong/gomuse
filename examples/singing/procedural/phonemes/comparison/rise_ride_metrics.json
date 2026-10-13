@@ -1,0 +1,16 @@
+{
+  "rise_ride_before": {
+    "seconds": 4.8,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5017334371861661,
+    "clipped_samples": 0
+  },
+  "rise_ride_after": {
+    "seconds": 4.8,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5115263083209295,
+    "clipped_samples": 0
+  }
+}

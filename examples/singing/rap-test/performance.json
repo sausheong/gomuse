@@ -1,0 +1,36 @@
+{
+  "engine": "macOS Reed (English US) speech",
+  "bpm": 92,
+  "bars": 4,
+  "events": [
+    {
+      "text": "Rent ate my check, but I still stand tall.",
+      "start_seconds": 0.2,
+      "duration_seconds": 2.4180498866213154,
+      "tempo_factor": 0.907217834024647
+    },
+    {
+      "text": "Five flights up, got my name on the wall.",
+      "start_seconds": 2.808684807256236,
+      "duration_seconds": 2.461655328798186,
+      "tempo_factor": 0.9229124380852147
+    },
+    {
+      "text": "Train runs late, so I move with the crowd.",
+      "start_seconds": 5.417392290249433,
+      "duration_seconds": 2.4096145124716553,
+      "tempo_factor": 0.8831854498572314
+    },
+    {
+      "text": "Small room, big dreams, New York lives loud.",
+      "start_seconds": 8.026077097505668,
+      "duration_seconds": 2.366235827664399,
+      "tempo_factor": 1.2371359603749335
+    }
+  ],
+  "seconds": 10.984784580498866,
+  "sample_rate": 44100,
+  "channels": 1,
+  "peak": 0.8499999999999999,
+  "clipped_samples": 0
+}

@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/clarinet/before.wav",
+      "sha256": "ecb38c31738a10c2f62069673b8a813924579fb45df74dccfc462f7f233b2cf1",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -15.071944809866697,
+      "rms_dbfs": -24.000267100677277,
+      "crest_db": 8.92832229081058,
+      "dc_fraction": -2.7654495565110594e-08,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/clarinet.wav",
+      "source_sha256": "d9e08e660e15881533a3fbd26d6fc692f4cddc5f4b85d0fccbf77db6d7548285",
+      "gain": 1.2251084694884458
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/clarinet/after.wav",
+      "sha256": "ecb38c31738a10c2f62069673b8a813924579fb45df74dccfc462f7f233b2cf1",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -15.071944809866697,
+      "rms_dbfs": -24.000267100677277,
+      "crest_db": 8.92832229081058,
+      "dc_fraction": -2.7654495565110594e-08,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/clarinet.wav",
+      "source_sha256": "d9e08e660e15881533a3fbd26d6fc692f4cddc5f4b85d0fccbf77db6d7548285",
+      "gain": 1.2251084694884458
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

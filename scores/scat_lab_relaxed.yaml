@@ -1,0 +1,72 @@
+name: "Scat Lab \u2014 relaxed"
+key: C
+length: 0.5
+instrument: piano
+volume: 10000
+humanize: 0
+swing: 0.7
+reverb: 0
+plain: true
+sections:
+- instruments:
+    C1: scat-doo-relaxed
+  C1:
+  - g3
+  - 0.5:a3
+  - 0.5:g3
+  - e3
+  - g3
+  C2:
+  - 4:z
+  ritardando: 0
+- instruments:
+    C1: scat-bah-relaxed
+  C1:
+  - 0.5:a3
+  - 0.5:c4
+  - a3
+  - g3
+  - e3
+  C2:
+  - 4:z
+  ritardando: 0
+- instruments:
+    C1: scat-wah-relaxed
+  C1:
+  - 2:g3
+  - e3
+  - z
+  C2:
+  - 4:z
+  ritardando: 0
+- instruments:
+    C1: scat-doo-relaxed
+  C1:
+  - e3
+  - 0.5:g3
+  - 0.5:a3
+  - c4
+  - a3
+  C2:
+  - 4:z
+  ritardando: 0
+- instruments:
+    C1: scat-bah-relaxed
+  C1:
+  - 0.5:f3
+  - 0.5:a3
+  - c4
+  - a3
+  - f3
+  C2:
+  - 4:z
+  ritardando: 0
+- instruments:
+    C1: scat-wah-relaxed
+  C1:
+  - 2:g3
+  - c3
+  - z
+  C2:
+  - 4:z
+  ritardando: 0

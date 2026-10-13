@@ -1,0 +1,111 @@
+name: stops
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  clarity: 0.7
+  breathiness: 0.04
+  breaths: 0
+sections:
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - buy
+    - ''
+    phonemes:
+    - []
+    - - B
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - die
+    - ''
+    phonemes:
+    - []
+    - - D
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - guy
+    - ''
+    phonemes:
+    - []
+    - - G
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - pie
+    - ''
+    phonemes:
+    - []
+    - - P
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - tie
+    - ''
+    phonemes:
+    - []
+    - - T
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - key
+    - ''
+    phonemes:
+    - []
+    - - K
+      - IY
+    - []

@@ -1,0 +1,36 @@
+{
+  "start_seconds": 14.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/misty-comparison/before.wav",
+      "sha256": "082e74f0c41252e1fb3976c1f5bd2d56c3348badca08c2b03179d5f2987f4f5b",
+      "duration_seconds": 30.0,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -2.770892880718076,
+      "rms_dbfs": -24.00026423629106,
+      "crest_db": 21.22937135557298,
+      "dc_fraction": -1.0272013807693217e-05,
+      "clipped_samples": 0,
+      "source": "scores/misty6.wav",
+      "source_sha256": "979561a0e16d30c2ebb9da3215d067a8d27e76ce289f1d0ccedaca66c508e172",
+      "gain": 4.712746650005668
+    },
+    {
+      "file": "examples/quality-programme/misty-comparison/after.wav",
+      "sha256": "be4bfde17391fb7e8200f199c9e61d975d06af896c896e2677758cf8a1868870",
+      "duration_seconds": 30.0,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -3.6703352491287604,
+      "rms_dbfs": -24.000255700487877,
+      "crest_db": 20.329920451359115,
+      "dc_fraction": 1.59713964253236e-05,
+      "clipped_samples": 0,
+      "source": "scores/misty_final.wav",
+      "source_sha256": "eca678694475dc8b63c9d03630411ef250ac99ff6cdb099dbd16003a953b0b70",
+      "gain": 1.4695655680172965
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

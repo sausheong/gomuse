@@ -1,0 +1,79 @@
+name: Existing Instrument Palette
+key: C
+length: 0.4
+instrument: piano
+volume: 10000
+humanize: 0
+reverb: 0.1
+pan: {C1: 0}
+sections:
+  - instrument: piano
+    dynamic: p
+    C1: [c3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: piano
+    dynamic: f
+    C1: [c3, c4, 2:c5, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: guitar
+    dynamic: p
+    C1: [e3, a3, 2:e4, a3, a3, a3, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: guitar
+    dynamic: f
+    C1: [e3, a3, 2:e4, a3, a3, a3, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: bass
+    dynamic: p
+    C1: [e1, a1, 2:e2, a1, a1, a1, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: bass
+    dynamic: f
+    C1: [e1, a1, 2:e2, a1, a1, a1, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: trumpet
+    dynamic: p
+    C1: [g3, c4, 2:g4, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: trumpet
+    dynamic: f
+    C1: [g3, c4, 2:g4, c4, c4, c4, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: saxophone
+    dynamic: p
+    C1: [c3, g3, 2:c4, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - instrument: saxophone
+    dynamic: f
+    C1: [c3, g3, 2:c4, g3, g3, g3, z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - dynamic: mf
+    C1: [16:z]
+    C2: [16:z]
+    C3: [16:z]
+    drums: [kick, snare, hat, openhat, crash, ride, tom1, tom2, tom3, clap, rim, cowbell, kick-hat, snare-hat, kick-ride, snare-crash]
+  - instruments: {C1: saxophone, C2: piano, C3: bass}
+    C1: [e4, g4, a4, g4, 2:e4, 2:c4]
+    C2: [4:c3-e3-g3, 4:f3-a3-c4]
+    C3: [2:c2, 2:g2, 2:f2, 2:c3]
+    drums: [kick-hat, hat, snare-hat, hat, kick-ride, ride, snare-ride, ride]

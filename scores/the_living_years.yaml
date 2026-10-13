@@ -1,0 +1,637 @@
+# The Living Years — Mike Rutherford and B. A. Robertson.
+# Manual transcription of the four supplied photographs, printed pages 248-251.
+# 4/4, four flats. "Moderately" interpreted as quarter note = 96 BPM.
+# C1: vocal melody on piano; C2: piano right hand; C3: left-hand part on bass.
+# Drums enter at played bar 45 (first chorus, about 1:50).
+# Later verses use rim clicks; choruses and coda use a snare backbeat.
+# No sung lyrics. Chord diagrams are represented by the written piano notes.
+# Muse limitation: ties across barlines reattack; sustained inner piano voices
+# are rearticulated when another voice moves. Within-bar ties are combined.
+# Verse-dependent small-note alternatives are used in verse 2 where printed.
+# D.S. and numbered endings are expanded. The coda is played twice, then the
+# printed optional ending replaces an indefinite repeat-and-fade.
+# The final fermata adds two beats. Bar numbers below count printed measures,
+# including alternate endings as separate bars; they are editorial references.
+name: The Living Years
+key: Ab
+length: 0.625
+instrument: piano
+instruments: {C3: bass}
+# Effective drums gain 1.25 relative to the original volume 5500.
+# Muse caps levels at 1, so master volume is multiplied by 1.25 and
+# pitched-channel levels divided by 1.25 to preserve their amplitudes.
+volume: 6875
+humanize: 0
+reverb: 0.18
+levels: {C1: 0.68, C2: 0.52, C3: 0.56, drums: 1.0}
+pan: {C1: 0, C2: 0.18, C3: -0.18, drums: 0}
+sections:
+
+  # Introduction
+  # Played bar 1; source p.248, written bar 1 — Ab
+  - C1: [4:z]
+    C2: [1.5:a3-c4-e4, 1.5:a3-b3-e4, a3-c4-e4]
+    C3: [4:a2-e3]
+    drums: [4:z]
+    dynamic: mf
+  # Played bar 2; source p.248, written bar 2 — Ab
+  - C1: [4:z]
+    C2: [1.5:a3-c4-e4, 1.5:a3-b3-e4, a3-c4-e4]
+    C3: [4:a2-e3]
+    drums: [4:z]
+  # Played bar 3; source p.248, written bar 3 — Gm
+  - C1: [4:z]
+    C2: [4:g3-b3-d4n]
+    C3: [4:g2-d3n]
+    drums: [4:z]
+  # Played bar 4; source p.248, written bar 4 — Gm
+  - C1: [4:z]
+    C2: [4:g3-b3-d4n]
+    C3: [4:g2-d3n]
+    drums: [4:z]
+  # Played bar 5; source p.248, written bar 5 — Bbm
+  - C1: [4:z]
+    C2: [1.5:b3-d4-f4, 1.5:b3-c4-f4, b3-d4-f4]
+    C3: [4:b2-f3]
+    drums: [4:z]
+  # Played bar 6; source p.248, written bar 6 — Bbm
+  - C1: [4:z]
+    C2: [1.5:b3-d4-f4, 1.5:b3-c4-f4, b3-d4-f4]
+    C3: [4:b2-f3]
+    drums: [4:z]
+  # Played bar 7; source p.248, written bar 7 — Eb
+  - C1: [4:z]
+    C2: [1.5:e4-g4, 1.5:e4-a4, e4-b4]
+    C3: [4:e3-b3]
+    drums: [4:z]
+  # Played bar 8; source p.248, written bar 8 — Eb
+  - C1: [4:z]
+    C2: [1.5:e4-c5, 1.5:e4-d5, e4-e5]
+    C3: [4:e3-b3]
+    drums: [4:z]
+  # Played bar 9; source p.248, written bar 9 — Ab
+  - C1: [4:z]
+    C2: [4:e4-a4-c5]
+    C3: [1.75:a2-a3, 0.25:a2-a3, 1.75:a2-a3, 0.25:a2-a3]
+    drums: [4:z]
+  # Played bar 10; source p.248, written bar 10 — Ab
+  - C1: [4:z]
+    C2: [4:e4-a4-c5]
+    C3: [1.75:a2-a3, 0.25:a2-a3, 1.75:a2-a3, 0.25:a2-a3]
+    drums: [4:z]
+  # Played bar 11; source p.248, written bar 11 — Ab
+  - C1: [4:z]
+    C2: [4:e4-a4-c5]
+    C3: [1.75:a2-a3, 0.25:a2-a3, 1.75:a2-a3, 0.25:a2-a3]
+    drums: [4:z]
+  # Played bar 12; source p.248, written bar 12 — Ab
+  - C1: [4:z]
+    C2: [4:e4-a4-c5]
+    C3: [1.75:a2-a3, 0.25:a2-a3, 2:a2-a3]
+    drums: [4:z]
+
+  # Verse 1
+  # Played bar 13; source p.248, written bar 13 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.75:e4-a4-c5, 0.25:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 14; source p.248, written bar 14 — Ab
+  - C1: [a4, 3:z]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 15; source p.248, written bar 15 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.75:d4-f4-c5, 0.25:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 16; source p.249, written bar 16 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 17; source p.249, written bar 17 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.5:e4-a4-c5, 0.5:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 18; source p.249, written bar 18 — Ab
+  - C1: [a4, 2.5:z, 0.5:f4]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:f4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 19; source p.249, written bar 19 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.5:d4-f4-c5, 0.5:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 20; source p.249, written bar 20 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 21; source p.249, written bar 21 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g4b-b4-e5, 0.25:e5, 0.5:g4b-b4-e5, 0.5:d5, 0.5:g4b-b4-d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [4:z]
+  # Played bar 22; source p.249, written bar 22 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g4b-b4-e5, 0.25:g4b-b4-e5, 0.5:g4b-b4-e5, 0.75:g4b-b4-d5, 1.5:c5, 0.25:z, 0.25:b4]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [4:z]
+  # Played bar 23; source p.249, written bar 23 — Bbm
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:f4-b4-e5, 0.25:e5, 0.5:f4-b4-e5, 0.5:f4-b4-d5, 0.5:f4-b4-d5, 1.5:c5, 0.25:c5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [4:z]
+  # Played bar 24; source p.249, written bar 24 — Bbm
+  - C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:f4-b4-e5, 0.5:e5, 0.75:b4-d5-f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:e4-a4-b4-d5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [4:z]
+  # Played bar 25; source p.250, written bar 25 — Eb7sus
+  - C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.25:e4-a4-b4-d5, 0.5:d5, 0.5:e4-a4-b4-d5, 0.5:c5, 0.75:e4-a4-c5, 1.5:e4-a4-b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [4:z]
+  # Played bar 26; source p.250, written bar 26 — Db/Eb, Eb
+  - C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [f4-a4-d5, f4-a4-e5, 0.75:e4-g4-c5, 0.25:b4, 0.75:a4, 0.25:c4-e4-a4]
+    C3: [2:e3-b3, 2:e3-b3]
+    drums: [4:z]
+  # Played bar 27; source p.250, written bar 27 — Ab; To Coda
+  - C1: [3:a4, z]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [4:z]
+  # Played bar 28; source p.250, written bar 28 — Ab; first verse ending
+  - C1: [3:z, c5]
+    C2: [3:c4-e4-a4, z]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+
+  # Verse 2
+  # Played bar 29; source p.248, written bar 13 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.75:e4-a4-c5, 0.25:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 30; source p.248, written bar 14 — Ab
+  - C1: [a4, 2.5:z, 0.5:a4]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 31; source p.248, written bar 15 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.75:d4-f4-c5, 0.25:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 32; source p.249, written bar 16 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 33; source p.249, written bar 17 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.5:e4-a4-c5, 0.5:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 34; source p.249, written bar 18 — Ab
+  - C1: [a4, 2:z, 0.5:b4, 0.5:d5]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:f4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+  # Played bar 35; source p.249, written bar 19 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.5:d4-f4-c5, 0.5:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 36; source p.249, written bar 20 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [4:z]
+  # Played bar 37; source p.249, written bar 21 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g4b-b4-e5, 0.25:e5, 0.5:g4b-b4-e5, 0.5:d5, 0.5:g4b-b4-d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [4:z]
+  # Played bar 38; source p.249, written bar 22 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g4b-b4-e5, 0.25:g4b-b4-e5, 0.5:g4b-b4-e5, 0.75:g4b-b4-d5, 1.5:c5, 0.25:z, 0.25:b4]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [4:z]
+  # Played bar 39; source p.249, written bar 23 — Bbm
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:f4-b4-e5, 0.25:e5, 0.5:f4-b4-e5, 0.5:f4-b4-d5, 0.5:f4-b4-d5, 1.5:c5, 0.25:c5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [4:z]
+  # Played bar 40; source p.249, written bar 24 — Bbm
+  - C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:f4-b4-e5, 0.5:e5, 0.75:b4-d5-f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:e4-a4-b4-d5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [4:z]
+  # Played bar 41; source p.250, written bar 25 — Eb7sus
+  - C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.25:e4-a4-b4-d5, 0.5:d5, 0.5:e4-a4-b4-d5, 0.5:c5, 0.75:e4-a4-c5, 1.5:e4-a4-b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [4:z]
+  # Played bar 42; source p.250, written bar 26 — Db/Eb, Eb
+  - C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [f4-a4-d5, f4-a4-e5, 0.75:e4-g4-c5, 0.25:b4, 0.75:a4, 0.25:c4-e4-a4]
+    C3: [2:e3-b3, 2:e3-b3]
+    drums: [4:z]
+  # Played bar 43; source p.250, written bar 27 — Ab; To Coda
+  - C1: [3:a4, z]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [4:z]
+  # Played bar 44; source p.250, written bar 29 — Ab; second/third verse ending
+  - C1: [2:z, c4, d4]
+    C2: [2:c4-e4-a4, c4, d4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [4:z]
+
+  # Chorus 1
+  # Played bar 45; source p.250, written bar 30 — Ab
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-crash-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 46; source p.250, written bar 31 — Ab
+  - C1: [e4, z, e4, a4]
+    C2: [2:a3-c4-e4, a3-c4-e4, a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 47; source p.250, written bar 32 — Db
+  - C1: [4:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 48; source p.250, written bar 33 — Db
+  - C1: [f4, z, f4, f4]
+    C2: [2:a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 49; source p.250, written bar 34 — Eb
+  - C1: [1.5:b4, 1.5:c5, d5]
+    C2: [1.5:e4-g4-b4, 1.5:e4-g4-c5, d5]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 50; source p.250, written bar 35 — Eb
+  - C1: [1.5:d5, 1.5:c5, b4]
+    C2: [1.5:e4-g4-d5, 1.5:e4-g4-c5, b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 51; source p.250, written bar 36 — Ab
+  - C1: [4:c5]
+    C2: [4:e4-a4-c5]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 52; source p.250, written bar 37 — Ab
+  - C1: [c5, z, c4, d4]
+    C2: [2:e4-a4-c5, c4, d4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 53; source p.250, written bar 38 — Ab
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 54; source p.250, written bar 39 — Ab
+  - C1: [e4, z, e4, a4]
+    C2: [2:a3-c4-e4, a3-c4-e4, a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 55; source p.250, written bar 40 — Db
+  - C1: [4:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 56; source p.250, written bar 41 — Db
+  - C1: [f4, z, f4, f4]
+    C2: [2:a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 57; source p.250, written bar 42 — Eb
+  - C1: [1.5:b4, 1.5:c5, d5]
+    C2: [1.5:e4-g4-b4, 1.5:e4-g4-c5, d5]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 58; source p.251, written bar 43 — Eb
+  - C1: [1.5:d5, 1.5:c5, b4]
+    C2: [1.5:e4-g4-d5, 1.5:e4-g4-c5, b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 59; source p.251, written bar 44 — Ab
+  - C1: [4:a4]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.25:snare, 0.25:tom1, 0.5:tom2]
+  # Played bar 60; source p.251, written bar 45 — Ab; first chorus ending, D.S.
+  - C1: [3:a4, 0.5:c5, 0.5:c5]
+    C2: [3:c4-e4-a4, 0.5:c5, 0.5:c5]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+
+  # Verse 3 (D.S.)
+  # Played bar 61; source p.248, written bar 13 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.75:e4-a4-c5, 0.25:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 62; source p.248, written bar 14 — Ab
+  - C1: [a4, 3:z]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 63; source p.248, written bar 15 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.75:d4-f4-c5, 0.25:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 64; source p.249, written bar 16 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 65; source p.249, written bar 17 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.5:e4-a4-c5, 0.5:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 66; source p.249, written bar 18 — Ab
+  - C1: [a4, 2.5:z, 0.5:f4]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:f4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 67; source p.249, written bar 19 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.5:d4-f4-c5, 0.5:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 68; source p.249, written bar 20 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 69; source p.249, written bar 21 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g4b-b4-e5, 0.25:e5, 0.5:g4b-b4-e5, 0.5:d5, 0.5:g4b-b4-d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 70; source p.249, written bar 22 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g4b-b4-e5, 0.25:g4b-b4-e5, 0.5:g4b-b4-e5, 0.75:g4b-b4-d5, 1.5:c5, 0.25:z, 0.25:b4]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 71; source p.249, written bar 23 — Bbm
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:f4-b4-e5, 0.25:e5, 0.5:f4-b4-e5, 0.5:f4-b4-d5, 0.5:f4-b4-d5, 1.5:c5, 0.25:c5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 72; source p.249, written bar 24 — Bbm
+  - C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:f4-b4-e5, 0.5:e5, 0.75:b4-d5-f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:e4-a4-b4-d5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 73; source p.250, written bar 25 — Eb7sus
+  - C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.25:e4-a4-b4-d5, 0.5:d5, 0.5:e4-a4-b4-d5, 0.5:c5, 0.75:e4-a4-c5, 1.5:e4-a4-b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 74; source p.250, written bar 26 — Db/Eb, Eb
+  - C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [f4-a4-d5, f4-a4-e5, 0.75:e4-g4-c5, 0.25:b4, 0.75:a4, 0.25:c4-e4-a4]
+    C3: [2:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 75; source p.250, written bar 27 — Ab; To Coda
+  - C1: [3:a4, z]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 76; source p.250, written bar 29 — Ab; second/third verse ending
+  - C1: [2:z, c4, d4]
+    C2: [2:c4-e4-a4, c4, d4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+
+  # Chorus 2
+  # Played bar 77; source p.250, written bar 30 — Ab
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-crash-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 78; source p.250, written bar 31 — Ab
+  - C1: [e4, z, e4, a4]
+    C2: [2:a3-c4-e4, a3-c4-e4, a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 79; source p.250, written bar 32 — Db
+  - C1: [4:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 80; source p.250, written bar 33 — Db
+  - C1: [f4, z, f4, f4]
+    C2: [2:a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 81; source p.250, written bar 34 — Eb
+  - C1: [1.5:b4, 1.5:c5, d5]
+    C2: [1.5:e4-g4-b4, 1.5:e4-g4-c5, d5]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 82; source p.250, written bar 35 — Eb
+  - C1: [1.5:d5, 1.5:c5, b4]
+    C2: [1.5:e4-g4-d5, 1.5:e4-g4-c5, b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 83; source p.250, written bar 36 — Ab
+  - C1: [4:c5]
+    C2: [4:e4-a4-c5]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 84; source p.250, written bar 37 — Ab
+  - C1: [c5, z, c4, d4]
+    C2: [2:e4-a4-c5, c4, d4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 85; source p.250, written bar 38 — Ab
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 86; source p.250, written bar 39 — Ab
+  - C1: [e4, z, e4, a4]
+    C2: [2:a3-c4-e4, a3-c4-e4, a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 87; source p.250, written bar 40 — Db
+  - C1: [4:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 88; source p.250, written bar 41 — Db
+  - C1: [f4, z, f4, f4]
+    C2: [2:a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 89; source p.250, written bar 42 — Eb
+  - C1: [1.5:b4, 1.5:c5, d5]
+    C2: [1.5:e4-g4-b4, 1.5:e4-g4-c5, d5]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 90; source p.251, written bar 43 — Eb
+  - C1: [1.5:d5, 1.5:c5, b4]
+    C2: [1.5:e4-g4-d5, 1.5:e4-g4-c5, b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 91; source p.251, written bar 44 — Ab
+  - C1: [4:a4]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.25:snare, 0.25:tom1, 0.5:tom2]
+  # Played bar 92; source p.251, written bar 46 — Ab; second chorus ending, D.S. al Coda
+  - C1: [3:a4, 0.5:z, 0.5:c5]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+
+  # Verse 4 (D.S. al Coda)
+  # Played bar 93; source p.248, written bar 13 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.75:e4-a4-c5, 0.25:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 94; source p.248, written bar 14 — Ab
+  - C1: [a4, 3:z]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 95; source p.248, written bar 15 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.75:d4-f4-c5, 0.25:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 96; source p.249, written bar 16 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 97; source p.249, written bar 17 — Ab
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:e4-a4-c5, 0.25:c5, 0.5:e4-a4-c5, 0.5:b4, 0.5:c4-e4-b4, 1.75:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 98; source p.249, written bar 18 — Ab
+  - C1: [a4, 2.5:z, 0.5:f4]
+    C2: [3:c4-e4-a4, 0.5:z, 0.5:f4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 99; source p.249, written bar 19 — Db
+  - C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d4-f4-c5, 0.25:c5, 0.5:d4-f4-c5, 0.5:b4, 2.25:d4-f4-b4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 100; source p.249, written bar 20 — Db
+  - C1: [3.75:z, 0.25:f4]
+    C2: [3:d4-f4-b4, 0.75:z, 0.25:f4]
+    C3: [1.75:d3-a3, 0.25:d3-a3, 2:d3-a3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 101; source p.249, written bar 21 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g4b-b4-e5, 0.25:e5, 0.5:g4b-b4-e5, 0.5:d5, 0.5:g4b-b4-d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 102; source p.249, written bar 22 — Gb
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g4b-b4-e5, 0.25:g4b-b4-e5, 0.5:g4b-b4-e5, 0.75:g4b-b4-d5, 1.5:c5, 0.25:z, 0.25:b4]
+    C3: [1.75:g2b-d3, 0.25:g2b-d3, 2:g2b-d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 103; source p.249, written bar 23 — Bbm
+  - C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:f4-b4-e5, 0.25:e5, 0.5:f4-b4-e5, 0.5:f4-b4-d5, 0.5:f4-b4-d5, 1.5:c5, 0.25:c5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 104; source p.249, written bar 24 — Bbm
+  - C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:f4-b4-e5, 0.5:e5, 0.75:b4-d5-f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:e4-a4-b4-d5]
+    C3: [1.75:b2-f3, 0.25:b2-f3, 2:b2-f3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 105; source p.250, written bar 25 — Eb7sus
+  - C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.25:e4-a4-b4-d5, 0.5:d5, 0.5:e4-a4-b4-d5, 0.5:c5, 0.75:e4-a4-c5, 1.5:e4-a4-b4]
+    C3: [1.75:e3-b3, 0.25:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 106; source p.250, written bar 26 — Db/Eb, Eb
+  - C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [f4-a4-d5, f4-a4-e5, 0.75:e4-g4-c5, 0.25:b4, 0.75:a4, 0.25:c4-e4-a4]
+    C3: [2:e3-b3, 2:e3-b3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+  # Played bar 107; source p.250, written bar 27 — Ab; To Coda
+  - C1: [3:a4, z]
+    C2: [4:c4-e4-a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat]
+
+  # Coda pickup
+  # Played bar 108; source p.251, written bar 47 — Ab; Coda pickup
+  - C1: [2:z, c4, d4]
+    C2: [2:c4-e4-a4, c4, d4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+
+  # Coda, pass 1
+  # Played bar 109; source p.251, written bar 48 — Ab; Coda repeat start
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-crash-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 110; source p.251, written bar 49 — Ab
+  - C1: [e4, z, e4, a4]
+    C2: [2:a3-c4-e4, a3-c4-e4, a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 111; source p.251, written bar 50 — Db
+  - C1: [4:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 1.75:d3, 0.25:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 112; source p.251, written bar 51 — Db; Coda repeat end
+  - C1: [f4, z, c4, d4]
+    C2: [2:a3-d4-f4, c4, d4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.25:snare, 0.25:tom1, 0.5:tom2]
+
+  # Coda, pass 2
+  # Played bar 113; source p.251, written bar 48 — Ab; Coda repeat start
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 1.75:a2-e3, 0.25:a2-e3]
+    drums: [0.5:kick-crash-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 114; source p.251, written bar 49 — Ab
+  - C1: [e4, z, e4, a4]
+    C2: [2:a3-c4-e4, a3-c4-e4, a4]
+    C3: [1.75:a2-e3, 0.25:a2-e3, 2:a2-e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 115; source p.251, written bar 50 — Db
+  - C1: [4:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.75:d3, 0.25:d3, 1.75:d3, 0.25:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+  # Played bar 116; source p.251, written bar 51 — Db; Coda repeat end
+  - C1: [f4, z, c4, d4]
+    C2: [2:a3-d4-f4, c4, d4]
+    C3: [1.75:d3, 0.25:d3, 2:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.25:snare, 0.25:tom1, 0.5:tom2]
+
+  # Optional ending
+  # Played bar 117; source p.251, written bar 52 — Ab; optional ending
+  - C1: [4:e4]
+    C2: [4:a3-c4-e4]
+    C3: [4:a2-e3]
+    drums: [kick-crash, 3:z]
+    fermata: 2

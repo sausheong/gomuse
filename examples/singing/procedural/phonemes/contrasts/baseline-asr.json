@@ -1,0 +1,70 @@
+[
+  {
+    "file": "examples/singing/procedural/phonemes/contrasts/stops.wav",
+    "sha256": "5d7947aec0a291d4a106774774869f9dbb818ecd2296c46f44bc99386dfeb437",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Bye!",
+        "avg_logprob": -1.3660133361816407,
+        "no_speech_prob": 0.37614747881889343
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/phonemes/contrasts/airflow.wav",
+    "sha256": "3c748fa8eded8f73233ff74304c848f3906d060550bd81e751a67bef3dc95573",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": " P, T, P, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I",
+        "avg_logprob": -0.07854719903733995,
+        "no_speech_prob": 0.5694382786750793
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/phonemes/contrasts/liquids.wav",
+    "sha256": "241264b9f765ff50308231bf0349ba6cf944a3bac6fede8269d95a2901d546f6",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.2,
+        "text": " Oh, oh, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me, me",
+        "avg_logprob": -0.09063772943284776,
+        "no_speech_prob": 0.5278854370117188
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/phonemes/contrasts/endings.wav",
+    "sha256": "c797524ec6e0686300a3850879701eec97ae7fa831d77430ea2b54c68b99bf80",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.2,
+        "text": " like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like, like",
+        "avg_logprob": -0.11864996380276151,
+        "no_speech_prob": 0.41053152084350586
+      }
+    ]
+  }
+]

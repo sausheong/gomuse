@@ -1,0 +1,51 @@
+name: bass benchmark
+key: C
+length: 0.32
+envelope: ""
+harmonic: ""
+instrument: bass
+volume: 12000
+reverb: 0
+humanize: 0
+pan:
+    C1: 0
+sections:
+    - dynamic: p
+      C1:
+        - e1
+        - a2
+        - g3
+        - z
+        - .5:a2
+        - .5:a2
+        - .5:a2
+        - .5:a2
+        - 3:a2
+        - z
+      C2: []
+    - dynamic: mf
+      C1:
+        - e1
+        - a2
+        - g3
+        - z
+        - .5:a2
+        - .5:a2
+        - .5:a2
+        - .5:a2
+        - 3:a2
+        - z
+      C2: []
+    - dynamic: f
+      C1:
+        - e1
+        - a2
+        - g3
+        - z
+        - .5:a2
+        - .5:a2
+        - .5:a2
+        - .5:a2
+        - 3:a2
+        - z
+      C2: []

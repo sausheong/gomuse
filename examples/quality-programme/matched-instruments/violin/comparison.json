@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/violin/before.wav",
+      "sha256": "007a06291eeeaff36191c02463ef542f2a0210d9d16efdcfa5ce36551076eb1c",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -15.463925301062485,
+      "rms_dbfs": -24.00026634327662,
+      "crest_db": 8.536341042214135,
+      "dc_fraction": -2.2460504012272564e-08,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/violin.wav",
+      "source_sha256": "7d4fd471c8d2aad401cffa4ae7e834f07cd6c336c2be8f1f0242df5f7f04d612",
+      "gain": 1.195455695341245
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/violin/after.wav",
+      "sha256": "007a06291eeeaff36191c02463ef542f2a0210d9d16efdcfa5ce36551076eb1c",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -15.463925301062485,
+      "rms_dbfs": -24.00026634327662,
+      "crest_db": 8.536341042214135,
+      "dc_fraction": -2.2460504012272564e-08,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/violin.wav",
+      "source_sha256": "7d4fd471c8d2aad401cffa4ae7e834f07cd6c336c2be8f1f0242df5f7f04d612",
+      "gain": 1.195455695341245
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

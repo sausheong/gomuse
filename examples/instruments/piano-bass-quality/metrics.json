@@ -1,0 +1,74 @@
+{
+  "before-raw": {
+    "duration_seconds": 14.76,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -9.642936671742886,
+    "rms_dbfs": -32.154904556211534,
+    "clipped_samples": 0
+  },
+  "piano-before": {
+    "duration_seconds": 7.2,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -0.30976138727055375,
+    "rms_dbfs": -22.999963126013185,
+    "clipped_samples": 0
+  },
+  "bass-before": {
+    "duration_seconds": 7.56,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -6.747886468569758,
+    "rms_dbfs": -23.000003127141394,
+    "clipped_samples": 0
+  },
+  "before": {
+    "duration_seconds": 15.16,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -0.30976138727055375,
+    "rms_dbfs": -23.11611205244002,
+    "clipped_samples": 0
+  },
+  "after-raw": {
+    "duration_seconds": 14.76,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -9.588404086063491,
+    "rms_dbfs": -32.0511638170243,
+    "clipped_samples": 0
+  },
+  "piano-after": {
+    "duration_seconds": 7.2,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -0.39561476711631965,
+    "rms_dbfs": -23.00000102613825,
+    "clipped_samples": 0
+  },
+  "bass-after": {
+    "duration_seconds": 7.56,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -6.806883881454038,
+    "rms_dbfs": -22.999998721492794,
+    "clipped_samples": 0
+  },
+  "after": {
+    "duration_seconds": 15.16,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -0.39561476711631965,
+    "rms_dbfs": -23.11612828380006,
+    "clipped_samples": 0
+  },
+  "misty5": {
+    "duration_seconds": 140.13829931972788,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -10.670815297378514,
+    "rms_dbfs": -34.09517132559265,
+    "clipped_samples": 0
+  }
+}

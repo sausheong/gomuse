@@ -1,0 +1,51 @@
+name: scat-wah-relaxed benchmark
+key: C
+length: 0.32
+envelope: ""
+harmonic: ""
+instrument: scat-wah-relaxed
+volume: 12000
+reverb: 0
+humanize: 0
+pan:
+    C1: 0
+sections:
+    - dynamic: p
+      C1:
+        - c3
+        - c4
+        - c5
+        - z
+        - .5:c4
+        - .5:c4
+        - .5:c4
+        - .5:c4
+        - 3:c4
+        - z
+      C2: []
+    - dynamic: mf
+      C1:
+        - c3
+        - c4
+        - c5
+        - z
+        - .5:c4
+        - .5:c4
+        - .5:c4
+        - .5:c4
+        - 3:c4
+        - z
+      C2: []
+    - dynamic: f
+      C1:
+        - c3
+        - c4
+        - c5
+        - z
+        - .5:c4
+        - .5:c4
+        - .5:c4
+        - .5:c4
+        - 3:c4
+        - z
+      C2: []

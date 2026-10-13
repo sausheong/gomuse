@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/trumpet/before.wav",
+      "sha256": "005990d145e8b6c85bf7b375b9c03793fc08aa3820f970605ed1c1729f6a1416",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -6.388239884503887,
+      "rms_dbfs": -24.000267700747365,
+      "crest_db": 17.61202781624348,
+      "dc_fraction": -6.5159325921103474e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/trumpet.wav",
+      "source_sha256": "84deded039afa491c6895fd07f9f975c9bdc3a6b10013a9736d981fdd13ed3b6",
+      "gain": 3.5856798254205984
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/trumpet/after.wav",
+      "sha256": "005990d145e8b6c85bf7b375b9c03793fc08aa3820f970605ed1c1729f6a1416",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -6.388239884503887,
+      "rms_dbfs": -24.000267700747365,
+      "crest_db": 17.61202781624348,
+      "dc_fraction": -6.5159325921103474e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/trumpet.wav",
+      "source_sha256": "84deded039afa491c6895fd07f9f975c9bdc3a6b10013a9736d981fdd13ed3b6",
+      "gain": 3.5856798254205984
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

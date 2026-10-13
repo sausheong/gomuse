@@ -1,0 +1,28 @@
+{
+  "before": {
+    "duration_seconds": 24.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -6.554637047842262,
+    "rms_dbfs": -23.000002660613717,
+    "clipped_samples": 0,
+    "source": "scores/how_deep_is_your_love_acoustic_expressive.wav",
+    "source_range_seconds": [
+      60,
+      84
+    ]
+  },
+  "after": {
+    "duration_seconds": 24.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -6.3821582963989885,
+    "rms_dbfs": -23.000000874692166,
+    "clipped_samples": 0,
+    "source": "scores/how_deep_is_your_love_phrase_shaped.wav",
+    "source_range_seconds": [
+      60,
+      84
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+# First phrase: ordinary articulation. Second: explicit gesture and, for winds/bows, tone curve.
+name: guitar hammer-on comparison
+key: C
+length: 0.35
+instrument: guitar
+volume: 14000
+humanize: 0
+reverb: 0
+pan:
+  C1: 0
+performance:
+  C1:
+    articulation: picked
+sections:
+- dynamic: mf
+  C1: &id001
+  - c3
+  - e3
+  - g3
+  - 2:c4
+  - z
+- dynamic: mf
+  C1: *id001
+  expression:
+    C1:
+      gestures:
+        2:
+          kind: hammer-on

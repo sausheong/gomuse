@@ -1,0 +1,33 @@
+[
+  {
+    "file": "examples/singing/procedural/phonemes/come_alive.wav",
+    "sha256": "816e338e699f7401ad26cd313aca82c95c90da46bc851313e81bad3959abfab2",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.92,
+        "text": " Heh, tama lai, hila, hila, hila",
+        "avg_logprob": -0.9083227106818447,
+        "no_speech_prob": 0.2324911504983902
+      },
+      {
+        "start": 6.12,
+        "end": 11.16,
+        "text": " Bright morning light, tari mii, hiya",
+        "avg_logprob": -0.9083227106818447,
+        "no_speech_prob": 0.2324911504983902
+      },
+      {
+        "start": 12.08,
+        "end": 17.080000000000002,
+        "text": " Weh, and rise, weh, and rise, weh, hiya, hiya",
+        "avg_logprob": -0.9083227106818447,
+        "no_speech_prob": 0.2324911504983902
+      }
+    ]
+  }
+]

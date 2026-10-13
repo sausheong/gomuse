@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/saxophone/before.wav",
+      "sha256": "b5b9f395ac8289b7b6fa74592d9e11aae169f47881e9b296728eed567bb283d6",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -8.860324179826602,
+      "rms_dbfs": -24.000260151425096,
+      "crest_db": 15.139935971598494,
+      "dc_fraction": -2.660376511178647e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/saxophone.wav",
+      "source_sha256": "3ee1da3b77d87dd983f77d52ccbd288c328de2fd9965690eba603df37adcffb7",
+      "gain": 2.7179476733365404
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/saxophone/after.wav",
+      "sha256": "b5b9f395ac8289b7b6fa74592d9e11aae169f47881e9b296728eed567bb283d6",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -8.860324179826602,
+      "rms_dbfs": -24.000260151425096,
+      "crest_db": 15.139935971598494,
+      "dc_fraction": -2.660376511178647e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/saxophone.wav",
+      "source_sha256": "3ee1da3b77d87dd983f77d52ccbd288c328de2fd9965690eba603df37adcffb7",
+      "gain": 2.7179476733365404
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

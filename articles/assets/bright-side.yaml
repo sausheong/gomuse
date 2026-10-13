@@ -1,0 +1,212 @@
+# Bright Side - an original bright, jazzy pop song, about a minute long.
+# F major, 4/4, 120 bpm with a light swing; one section per bar.
+# Form: intro (sax hook) | verse | chorus | sax solo | last chorus | ending.
+# Muse has three pitched channels plus drums, so the band shares them:
+#   C1 lead:   voice in the verses and choruses, saxophone in the intro and solo
+#   C2 chords: piano, handing over to guitar in the choruses
+#   C3 bass:   bass guitar throughout
+#   drums:     a rim-click groove in the intro, hi-hats in the verses, open
+#              hats in the choruses, the ride under the solo, tom fills
+#              into each new part
+name: Bright Side
+key: F
+length: 0.5        # quarter note = 120
+instrument: piano
+instruments: {C3: bass}
+levels: {C2: 0.5, C3: 0.75, drums: 0.8}
+swing: 0.25
+volume: 16000
+sections:
+  # -- Intro --
+  # bar 1 - Fmaj7
+  - dynamic: mf
+    instruments: {C1: saxophone}
+    C1: [0.5:c5, 0.5:d5, 0.5:e5, 0.5:g5, 2:f5]
+    C2: [1.5:a3-c4-e4-g4, 1:a3-c4-e4-g4, 1.5:z]
+    C3: [1.5:f2, 0.5:f2, 1:c3, 0.5:f2, 0.5:c3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # bar 2 - Dm7
+  - instruments: {C1: saxophone}
+    C1: [1:a4, 0.5:c5, 0.5:a4, 2:f4]
+    C2: [1.5:f3-a3-c4-e4, 1:f3-a3-c4-e4, 1.5:z]
+    C3: [1.5:d2, 0.5:d2, 1:a2, 0.5:d2, 0.5:a2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # bar 3 - Gm7
+  - instruments: {C1: saxophone}
+    C1: [0.5:b4, 0.5:a4, 0.5:g4, 0.5:f4, 1:d4, 1:f4]
+    C2: [1.5:f3-a3-b3-d4, 1:f3-a3-b3-d4, 1.5:z]
+    C3: [1.5:g2, 0.5:g2, 1:d3, 0.5:g2, 0.5:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # bar 4 - C7
+  - instruments: {C1: saxophone}
+    C1: [0.5:e4, 0.5:g4, 0.5:b4, 0.5:d5, 1:c5, 1:z]
+    C2: [1.5:e3-a3-b3-d4, 1:e3-a3-b3-d4, 1.5:z]
+    C3: [1.5:c2, 0.5:c2, 1:g2, 0.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:tom3, 0.5:snare]
+  # -- Verse --
+  # bar 5 - Fmaj7
+  - instruments: {C1: voice}
+    C1: [1:z, 0.5:c4, 0.5:f4, 1:a4, 1:a4]
+    C2: [1.5:a3-c4-e4-g4, 1:a3-c4-e4-g4, 1.5:z]
+    C3: [1.5:f2, 0.5:f2, 1:c3, 0.5:f2, 0.5:c3]
+    drums: [0.5:kick-crash, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 6 - Am7
+  - instruments: {C1: voice}
+    C1: [0.5:g4, 0.5:a4, 1:c5, 2:a4]
+    C2: [1.5:g3-c4-e4, 1:g3-c4-e4, 1.5:z]
+    C3: [1.5:a2, 0.5:a2, 1:e3, 0.5:a2, 0.5:e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 7 - Dm7
+  - instruments: {C1: voice}
+    C1: [1:z, 0.5:a4, 0.5:a4, 1:c5, 1:d5]
+    C2: [1.5:f3-a3-c4-e4, 1:f3-a3-c4-e4, 1.5:z]
+    C3: [1.5:d2, 0.5:d2, 1:a2, 0.5:d2, 0.5:a2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 8 - Gm7 C7
+  - instruments: {C1: voice}
+    C1: [0.5:c5, 0.5:b4, 1:a4, 1:g4, 1:e4]
+    C2: [1.5:f3-a3-b3-d4, 0.5:z, 1.5:e3-a3-b3-d4, 0.5:z]
+    C3: [1.5:g2, 0.5:d3, 1.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 9 - Fmaj7
+  - instruments: {C1: voice}
+    C1: [1:z, 0.5:c4, 0.5:f4, 1:a4, 1:c5]
+    C2: [1.5:a3-c4-e4-g4, 1:a3-c4-e4-g4, 1.5:z]
+    C3: [1.5:f2, 0.5:f2, 1:c3, 0.5:f2, 0.5:c3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 10 - Am7
+  - instruments: {C1: voice}
+    C1: [0.5:e5, 0.5:d5, 1:c5, 2:a4]
+    C2: [1.5:g3-c4-e4, 1:g3-c4-e4, 1.5:z]
+    C3: [1.5:a2, 0.5:a2, 1:e3, 0.5:a2, 0.5:e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 11 - Bbmaj7
+  - instruments: {C1: voice}
+    C1: [0.5:z, 0.5:f4, 0.5:g4, 0.5:a4, 1:d5, 1:c5]
+    C2: [1.5:a3-c4-d4-f4, 1:a3-c4-d4-f4, 1.5:z]
+    C3: [1.5:b1, 0.5:b1, 1:f2, 0.5:b1, 0.5:f2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 12 - C7sus C7
+  - hairpin: cresc
+    instruments: {C1: voice}
+    C1: [1.5:b4, 0.5:a4, 2:g4]
+    C2: [1.5:b3-d4-f4-g4, 0.5:z, 1.5:e3-a3-b3-d4, 0.5:z]
+    C3: [1.5:c2, 0.5:g2, 1.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:tom3, 0.5:snare]
+  # -- Chorus --
+  # bar 13 - Bbmaj7
+  - dynamic: f
+    instruments: {C1: voice, C2: guitar}
+    C1: [1:d5, 1:d5, 0.5:c5, 0.5:d5, 1:f5]
+    C2: [1:f3-a3-d4-f4, 0.5:f3-a3-d4-f4, 1:f3-a3-d4-f4, 0.5:f3-a3-d4-f4, 1:f3-a3-d4-f4]
+    C3: [1.5:b1, 0.5:b1, 1:f2, 0.5:b1, 0.5:f2]
+    drums: [0.5:kick-crash, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 14 - C7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [2:e5, 0.5:d5, 0.5:c5, 1:b4]
+    C2: [1:e3-g3-b3-c4, 0.5:e3-g3-b3-c4, 1:e3-g3-b3-c4, 0.5:e3-g3-b3-c4, 1:e3-g3-b3-c4]
+    C3: [1.5:c2, 0.5:c2, 1:g2, 0.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 15 - Am7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [1:c5, 1:c5, 0.5:a4, 0.5:c5, 1:e5]
+    C2: [1:e3-g3-c4-e4, 0.5:e3-g3-c4-e4, 1:e3-g3-c4-e4, 0.5:e3-g3-c4-e4, 1:e3-g3-c4-e4]
+    C3: [1.5:a2, 0.5:a2, 1:e3, 0.5:a2, 0.5:e3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 16 - Dm7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [3:d5, 1:z]
+    C2: [1:f3-a3-c4-d4, 0.5:f3-a3-c4-d4, 1:f3-a3-c4-d4, 0.5:f3-a3-c4-d4, 1:f3-a3-c4-d4]
+    C3: [1.5:d2, 0.5:d2, 1:a2, 0.5:d2, 0.5:a2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 17 - Gm7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [1:b4, 1:b4, 0.5:a4, 0.5:b4, 1:d5]
+    C2: [1:f3-b3-d4-g4, 0.5:f3-b3-d4-g4, 1:f3-b3-d4-g4, 0.5:f3-b3-d4-g4, 1:f3-b3-d4-g4]
+    C3: [1.5:g2, 0.5:g2, 1:d3, 0.5:g2, 0.5:d3]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 18 - C7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [2:c5, 0.5:b4, 0.5:a4, 1:g4]
+    C2: [1:e3-g3-b3-c4, 0.5:e3-g3-b3-c4, 1:e3-g3-b3-c4, 0.5:e3-g3-b3-c4, 1:e3-g3-b3-c4]
+    C3: [1.5:c2, 0.5:c2, 1:g2, 0.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 19 - Fmaj7 D7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [1.5:a4, 0.5:c5, 1:d5, 1:c5]
+    C2: [1:f3-a3-c4-e4, 0.5:f3-a3-c4-e4, 0.5:f3-a3-c4-e4, 1:f3#-a3-c4-d4, 1:f3#-a3-c4-d4]
+    C3: [1.5:f2, 0.5:c3, 1.5:d2, 0.5:a2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 20 - Gm7 C7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [1:b4, 1:a4, 1:g4, 1:e4]
+    C2: [1:f3-b3-d4-g4, 0.5:f3-b3-d4-g4, 0.5:f3-b3-d4-g4, 1:e3-g3-b3-c4, 1:e3-g3-b3-c4]
+    C3: [1.5:g2, 0.5:d3, 1.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:tom3, 0.5:snare]
+  # -- Sax solo --
+  # bar 21 - Fmaj7
+  - instruments: {C1: saxophone}
+    C1: [0.5:f4, 0.5:a4, 0.5:c5, 0.5:e5, 0.5:g5, 0.5:e5, 0.5:c5, 0.5:a4]
+    C2: [1.5:a3-c4-e4-g4, 1:a3-c4-e4-g4, 1.5:z]
+    C3: [1.5:f2, 0.5:f2, 1:c3, 0.5:f2, 0.5:c3]
+    drums: [0.5:kick-crash, 0.5:ride, 0.5:snare-ride, 0.5:ride, 0.5:kick-ride, 0.5:kick-ride, 0.5:snare-ride, 0.5:ride]
+  # bar 22 - Dm7
+  - instruments: {C1: saxophone}
+    C1: [0.5:d5, 0.5:f5, 0.5:a5, 0.5:g5, 1:f5, 0.5:d5, 0.5:c5]
+    C2: [1.5:f3-a3-c4-e4, 1:f3-a3-c4-e4, 1.5:z]
+    C3: [1.5:d2, 0.5:d2, 1:a2, 0.5:d2, 0.5:a2]
+    drums: [0.5:kick-ride, 0.5:ride, 0.5:snare-ride, 0.5:ride, 0.5:kick-ride, 0.5:kick-ride, 0.5:snare-ride, 0.5:ride]
+  # bar 23 - Gm7
+  - instruments: {C1: saxophone}
+    C1: [0.5:b4, 0.5:d5, 0.5:f5, 0.5:a5, 0.5:g5, 0.5:f5, 0.5:d5, 0.5:b4]
+    C2: [1.5:f3-a3-b3-d4, 1:f3-a3-b3-d4, 1.5:z]
+    C3: [1.5:g2, 0.5:g2, 1:d3, 0.5:g2, 0.5:d3]
+    drums: [0.5:kick-ride, 0.5:ride, 0.5:snare-ride, 0.5:ride, 0.5:kick-ride, 0.5:kick-ride, 0.5:snare-ride, 0.5:ride]
+  # bar 24 - C7
+  - instruments: {C1: saxophone}
+    C1: [0.5:g4, 0.5:b4, 0.5:d5, 0.5:e5, 1:c5, 1:z]
+    C2: [1.5:e3-a3-b3-d4, 1:e3-a3-b3-d4, 1.5:z]
+    C3: [1.5:c2, 0.5:c2, 1:g2, 0.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:tom3, 0.5:snare]
+  # -- Last chorus --
+  # bar 25 - Bbmaj7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [1:d5, 1:d5, 0.5:c5, 0.5:d5, 1:f5]
+    C2: [1:f3-a3-d4-f4, 0.5:f3-a3-d4-f4, 1:f3-a3-d4-f4, 0.5:f3-a3-d4-f4, 1:f3-a3-d4-f4]
+    C3: [1.5:b1, 0.5:b1, 1:f2, 0.5:b1, 0.5:f2]
+    drums: [0.5:kick-crash, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 26 - C7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [2:e5, 0.5:d5, 0.5:c5, 1:b4]
+    C2: [1:e3-g3-b3-c4, 0.5:e3-g3-b3-c4, 1:e3-g3-b3-c4, 0.5:e3-g3-b3-c4, 1:e3-g3-b3-c4]
+    C3: [1.5:c2, 0.5:c2, 1:g2, 0.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 27 - Am7 D7
+  - instruments: {C1: voice, C2: guitar}
+    C1: [1:c5, 1:c5, 1:d5, 1:c5]
+    C2: [1:e3-g3-c4-e4, 0.5:e3-g3-c4-e4, 0.5:e3-g3-c4-e4, 1:f3#-a3-c4-d4, 1:f3#-a3-c4-d4]
+    C3: [1.5:a2, 0.5:e3, 1.5:d2, 0.5:a2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:openhat]
+  # bar 28 - Gm7 C7
+  - hairpin: dim
+    instruments: {C1: voice, C2: guitar}
+    C1: [1:b4, 1:a4, 1:g4, 1:e4]
+    C2: [1:f3-b3-d4-g4, 0.5:f3-b3-d4-g4, 0.5:f3-b3-d4-g4, 1:e3-g3-b3-c4, 1:e3-g3-b3-c4]
+    C3: [1.5:g2, 0.5:d3, 1.5:c2, 0.5:g2]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:tom3, 0.5:snare]
+  # -- Ending --
+  # bar 29 - Fmaj7
+  - dynamic: mf
+    instruments: {C1: voice}
+    C1: [1.5:a4, 0.5:g4, 2:f4]
+    C2: [1.5:a3-c4-e4-g4, 1:a3-c4-e4-g4, 1.5:z]
+    C3: [1.5:f2, 0.5:f2, 1:c3, 0.5:f2, 0.5:c3]
+    drums: [0.5:kick-crash, 0.5:hat, 0.5:snare-hat, 0.5:hat, 0.5:kick-hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # bar 30 - Fmaj7
+  - ritardando: 0.25
+    fermata: 2
+    instruments: {C1: voice}
+    C1: [4:f4]
+    C2: [4:a3-c4-e4-g4]
+    C3: [4:f2]
+    drums: [kick-crash, 3:z]

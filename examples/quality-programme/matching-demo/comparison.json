@@ -1,0 +1,36 @@
+{
+  "start_seconds": 14.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matching-demo/before.wav",
+      "sha256": "929683857402a8703c454c1fe676e185e58993a30c0ac40c892b6486bdd3dd89",
+      "duration_seconds": 30.0,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -3.5255369865158857,
+      "rms_dbfs": -24.000266636791764,
+      "crest_db": 20.474729650275876,
+      "dc_fraction": -1.4723439695973876e-05,
+      "clipped_samples": 0,
+      "source": "examples/instruments/clarinet-room/misty5-before.wav",
+      "source_sha256": "966e88890f60ee49b5f1609a021d7072eec4e55a868a2f03c383252b6bd78be2",
+      "gain": 4.316282575743622
+    },
+    {
+      "file": "examples/quality-programme/matching-demo/after.wav",
+      "sha256": "082e74f0c41252e1fb3976c1f5bd2d56c3348badca08c2b03179d5f2987f4f5b",
+      "duration_seconds": 30.0,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -2.770892880718076,
+      "rms_dbfs": -24.00026423629106,
+      "crest_db": 21.22937135557298,
+      "dc_fraction": -1.0272013807693217e-05,
+      "clipped_samples": 0,
+      "source": "scores/misty6.wav",
+      "source_sha256": "979561a0e16d30c2ebb9da3215d067a8d27e76ce289f1d0ccedaca66c508e172",
+      "gain": 4.712746650005668
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

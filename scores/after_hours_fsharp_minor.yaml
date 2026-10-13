@@ -1,0 +1,116 @@
+# User-provided melody, arranged as 4 bars intro + 4 identical melody cycles.
+# F-sharp minor; explicit accidentals in neutral C key signature.
+# B13 voicing omits fifth and ninth. C#7alt voiced as C#7(b9,b13).
+# Beat 4 and its & are eighth notes. Other melody events are quarter notes.
+# Lead octaves chosen for the rising line and high E; final C is natural.
+name: After Hours - F Sharp Minor
+key: C
+length: 0.75
+instruments: {C1: voice, C2: electric-piano, C3: bass}
+volume: 6500
+levels: {C1: 0.85, C2: 0.40, C3: 0.62, drums: 0.28}
+pan: {C1: 0, C2: 0.28, C3: -0.08, drums: 0}
+humanize: 0.20
+swing: 0.12
+reverb: 0.28
+sections:
+  # Bar 1: F#m9
+  - C1: [4:z]
+    C2: [3.5:a3-c4#-e4-g4#, 0.5:z]
+    C3: [2:f2#, 1:c3#, 0.5:f2#, 0.5:z]
+    drums: [4:z]
+  # Bar 2: B13
+  - C1: [4:z]
+    C2: [3.5:a3-d4#-g4#, 0.5:z]
+    C3: [2:b1, 1:f2#, 0.5:b1, 0.5:z]
+    drums: [4:z]
+  # Bar 3: Emaj9
+  - C1: [4:z]
+    C2: [3.5:g3#-b3-d4#-f4#, 0.5:z]
+    C3: [2:e2, 1:b2, 0.5:e2, 0.5:z]
+    drums: [4:z]
+  # Bar 4: C#7alt
+  - C1: [4:z]
+    C2: [3.5:b3-d4-f4-a4, 0.5:z]
+    C3: [2:c2#, 1:g2#, 0.5:c2#, 0.5:z]
+    drums: [4:z]
+  # Bar 5: F#m9
+  - C1: [z, g4#, a4, 0.5:b4, 0.5:c5#]
+    C2: [3.5:a3-c4#-e4-g4#, 0.5:z]
+    C3: [2:f2#, 1:c3#, 0.5:f2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 6: B13
+  - C1: [e5, c5#, b4, z]
+    C2: [3.5:a3-d4#-g4#, 0.5:z]
+    C3: [2:b1, 1:f2#, 0.5:b1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 7: Emaj9
+  - C1: [z, f4#, g4#, 0.5:b4, 0.5:g4#]
+    C2: [3.5:g3#-b3-d4#-f4#, 0.5:z]
+    C3: [2:e2, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 8: C#7alt
+  - C1: [f4#, e4, c4#, c4n]
+    C2: [3.5:b3-d4-f4-a4, 0.5:z]
+    C3: [2:c2#, 1:g2#, 0.5:c2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 9: F#m9
+  - C1: [z, g4#, a4, 0.5:b4, 0.5:c5#]
+    C2: [3.5:a3-c4#-e4-g4#, 0.5:z]
+    C3: [2:f2#, 1:c3#, 0.5:f2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 10: B13
+  - C1: [e5, c5#, b4, z]
+    C2: [3.5:a3-d4#-g4#, 0.5:z]
+    C3: [2:b1, 1:f2#, 0.5:b1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 11: Emaj9
+  - C1: [z, f4#, g4#, 0.5:b4, 0.5:g4#]
+    C2: [3.5:g3#-b3-d4#-f4#, 0.5:z]
+    C3: [2:e2, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 12: C#7alt
+  - C1: [f4#, e4, c4#, c4n]
+    C2: [3.5:b3-d4-f4-a4, 0.5:z]
+    C3: [2:c2#, 1:g2#, 0.5:c2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 13: F#m9
+  - C1: [z, g4#, a4, 0.5:b4, 0.5:c5#]
+    C2: [3.5:a3-c4#-e4-g4#, 0.5:z]
+    C3: [2:f2#, 1:c3#, 0.5:f2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 14: B13
+  - C1: [e5, c5#, b4, z]
+    C2: [3.5:a3-d4#-g4#, 0.5:z]
+    C3: [2:b1, 1:f2#, 0.5:b1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 15: Emaj9
+  - C1: [z, f4#, g4#, 0.5:b4, 0.5:g4#]
+    C2: [3.5:g3#-b3-d4#-f4#, 0.5:z]
+    C3: [2:e2, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 16: C#7alt
+  - C1: [f4#, e4, c4#, c4n]
+    C2: [3.5:b3-d4-f4-a4, 0.5:z]
+    C3: [2:c2#, 1:g2#, 0.5:c2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 17: F#m9
+  - C1: [z, g4#, a4, 0.5:b4, 0.5:c5#]
+    C2: [3.5:a3-c4#-e4-g4#, 0.5:z]
+    C3: [2:f2#, 1:c3#, 0.5:f2#, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 18: B13
+  - C1: [e5, c5#, b4, z]
+    C2: [3.5:a3-d4#-g4#, 0.5:z]
+    C3: [2:b1, 1:f2#, 0.5:b1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 19: Emaj9
+  - C1: [z, f4#, g4#, 0.5:b4, 0.5:g4#]
+    C2: [3.5:g3#-b3-d4#-f4#, 0.5:z]
+    C3: [2:e2, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 20: C#7alt
+  - C1: [f4#, e4, c4#, c4n]
+    C2: [3.5:b3-d4-f4-a4, 0.5:z]
+    C3: [2:c2#, 1:g2#, 0.5:c2#, 0.5:z]
+    drums: [1:kick-hat, 1:rim, 2:z]

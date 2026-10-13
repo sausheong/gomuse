@@ -1,0 +1,18 @@
+{
+  "tentative": {
+    "duration_seconds": 6.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.369720458984375,
+    "rms": 0.09999698656334907,
+    "clipped_samples": 0
+  },
+  "exuberant": {
+    "duration_seconds": 6.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.464691162109375,
+    "rms": 0.09999694939857978,
+    "clipped_samples": 0
+  }
+}

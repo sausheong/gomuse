@@ -1,0 +1,70 @@
+[
+  {
+    "file": "examples/singing/procedural/words/robustness/slow.wav",
+    "sha256": "78b42c7a24a154c65b8e239e81bcb1829b509cf6b34df7422d3dc5f38fb6fc12",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Hey",
+        "avg_logprob": -0.6275389194488525,
+        "no_speech_prob": 0.6615744233131409
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/robustness/quick.wav",
+    "sha256": "ed4d22226d2103b8c66bd8c41f474d7d1843dd2ef4f8d1f6aa21af881d9563b9",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Hey",
+        "avg_logprob": -0.6982730180025101,
+        "no_speech_prob": 0.7174952030181885
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/robustness/low.wav",
+    "sha256": "2c857119054ecc01ace0d5ac87b960eb74a089d1c7249792e8001117c849d6e6",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " Hey",
+        "avg_logprob": -0.6202243566513062,
+        "no_speech_prob": 0.5994343161582947
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/robustness/high.wav",
+    "sha256": "c3ce7de2019747b6875d82ca51ca6bc5f69269995ac736034dec838f0e2c8e38",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " aye aye aye aye",
+        "avg_logprob": -0.8098865639079701,
+        "no_speech_prob": 0.632780134677887
+      }
+    ]
+  }
+]

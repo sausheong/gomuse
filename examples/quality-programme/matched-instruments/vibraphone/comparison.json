@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/vibraphone/before.wav",
+      "sha256": "fd180cc5748ace5709adcc4fa052c27ce277343832b4cf1c2f37b38225cd94af",
+      "duration_seconds": 10.139206349206349,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -11.483740512815363,
+      "rms_dbfs": -24.000267874838215,
+      "crest_db": 12.516527362022856,
+      "dc_fraction": 4.8298403524442346e-05,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/vibraphone.wav",
+      "source_sha256": "0097770c0c3efb6810f6441b9614f4d3b2fc3649503c0da25fbb19b7fdc99274",
+      "gain": 1.4413914864518886
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/vibraphone/after.wav",
+      "sha256": "fd180cc5748ace5709adcc4fa052c27ce277343832b4cf1c2f37b38225cd94af",
+      "duration_seconds": 10.139206349206349,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -11.483740512815363,
+      "rms_dbfs": -24.000267874838215,
+      "crest_db": 12.516527362022856,
+      "dc_fraction": 4.8298403524442346e-05,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/vibraphone.wav",
+      "source_sha256": "0097770c0c3efb6810f6441b9614f4d3b2fc3649503c0da25fbb19b7fdc99274",
+      "gain": 1.4413914864518886
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

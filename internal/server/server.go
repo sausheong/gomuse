@@ -272,11 +272,26 @@ func (s *Server) share(w http.ResponseWriter, r *http.Request) {
 		Name     string
 		Score    string
 		Filename string
-	}{id, sc.Name, string(score), "/static/tunes/" + id + ".wav"}
+		BaseURL  string // for the absolute URLs Open Graph previews need
+	}{id, sc.Name, string(score), "/static/tunes/" + id + ".wav", baseURL(r)}
 
 	if err := s.shareTmpl.Execute(w, &data); err != nil {
 		log.Printf("cannot render share page - %v", err)
 	}
+}
+
+// baseURL is the scheme and host the request came in on, e.g.
+// "https://example.com", so the share page's Open Graph tags point back at
+// whichever site is serving it. Behind a reverse proxy that terminates TLS
+// the connection itself is plain HTTP, so X-Forwarded-Proto is trusted for
+// the scheme (only "http" or "https"). The host is escaped by the template
+// and only ever reflected to the client that sent it.
+func baseURL(r *http.Request) string {
+	scheme := "http"
+	if r.TLS != nil || r.Header.Get("X-Forwarded-Proto") == "https" {
+		scheme = "https"
+	}
+	return scheme + "://" + r.Host
 }
 
 // String describes where the server keeps its generated files.

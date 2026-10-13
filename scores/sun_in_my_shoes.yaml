@@ -1,0 +1,796 @@
+# Original melody, lyrics and arrangement. 32 bars at 128 BPM, light swing.
+# Leif Lush low-register neural vocal; piano, walking bass and drums.
+name: Sun in My Shoes
+key: C
+length: 0.46875
+instrument: piano
+instruments:
+  C1: voice
+  C2: piano
+  C3: bass
+levels:
+  C1: 1
+  C2: 0.3
+  C3: 0.52
+  drums: 0.2
+pan:
+  C1: 0
+  C2: 0.23
+  C3: -0.08
+  drums: 0.05
+volume: 18000
+humanize: 0.02
+swing: 0.75
+reverb: 0.12
+singing:
+  channel: C1
+  language: en
+sections:
+- dynamic: mp
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 0.5:e4
+  - 0.5:g4
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:e4
+  - 0.5:d4
+  - 0.5:c4
+  - 0.5:e4
+  C3: &id001
+  - c2
+  - e2
+  - g2
+  - a2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 0.5:b3
+  - 0.5:d4
+  - 0.5:e4
+  - 0.5:g4
+  - 0.5:f4
+  - 0.5:e4
+  - 0.5:d4
+  - 0.5:b3
+  C3: &id002
+  - g2
+  - b2
+  - d3
+  - d2#
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - e3
+  - 0.5:g3
+  - 0.5:a3
+  - g3
+  - e3
+  lyrics:
+  - Rain
+  - 'on'
+  - the
+  - roof
+  - has
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - e3
+  - c3#
+  - e3
+  - z
+  lyrics:
+  - had
+  - its
+  - say
+  - ''
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  C3: &id003
+  - a2
+  - g2
+  - e2
+  - c2#
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - f3
+  - 0.5:a3
+  - 0.5:c4
+  - a3
+  - f3
+  lyrics:
+  - Now
+  - let
+  - the
+  - street
+  - lights
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  C3: &id004
+  - d2
+  - f2
+  - a2
+  - b2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - g3
+  - b3
+  - d4
+  - z
+  lyrics:
+  - fade
+  - to
+  - grey
+  - ''
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - g3
+  - 0.5:b3
+  - 0.5:d4
+  - b3
+  - g3
+  lyrics:
+  - I
+  - take
+  - my
+  - coat
+  - and
+  C2:
+  - 0.5:z
+  - g3-b3-d4
+  - 0.5:z
+  - g3-b3-d4
+  - z
+  C3:
+  - e2
+  - g2
+  - b2
+  - c3
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - a3
+  - g3
+  - e3
+  - z
+  lyrics:
+  - leave
+  - the
+  - blues
+  - ''
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  C3: *id003
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - f3
+  - 0.5:a3
+  - 0.5:c4
+  - a3
+  - f3
+  lyrics:
+  - Got
+  - a
+  - whole
+  - new
+  - beat
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mp
+  C1:
+  - b3
+  - a3
+  - g3
+  - z
+  lyrics:
+  - in
+  - these
+  - shoes
+  - ''
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - 0.5:ride
+  - 0.5:rim
+  - 0.5:tom1
+  - 0.5:snare
+- dynamic: mf
+  C1:
+  - g3
+  - 0.5:c4
+  - 0.5:d4
+  - e4
+  - c4
+  lyrics:
+  - Hey
+  - take
+  - my
+  - hand
+  - and
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3
+  - g3
+  - e3
+  - z
+  lyrics:
+  - catch
+  - that
+  - light
+  - ''
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  C3: *id003
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3
+  - 0.5:c4
+  - 0.5:d4
+  - c4
+  - a3
+  lyrics:
+  - We've
+  - got
+  - the
+  - sun
+  - to
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - b3
+  - a3
+  - g3
+  - z
+  lyrics:
+  - spend
+  - till
+  - night
+  - ''
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3
+  - 0.5:c4
+  - 0.5:d4
+  - c4
+  - a3
+  lyrics:
+  - 'No'
+  - grand
+  - plan
+  - just
+  - a
+  C2:
+  - 0.5:z
+  - a3-c4-d4
+  - 0.5:z
+  - a3-c4-d4
+  - z
+  C3: &id005
+  - f2
+  - a2
+  - c3
+  - c2#
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3b
+  - g3
+  - f3
+  - z
+  lyrics:
+  - sky
+  - so
+  - blue
+  - ''
+  C2:
+  - 0.5:z
+  - a3b-c4-d4
+  - 0.5:z
+  - a3b-c4-d4
+  - z
+  C3: &id006
+  - f2
+  - a2b
+  - c3
+  - b2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - g3
+  - 0.5:a3
+  - 0.5:c4
+  - e4
+  - d4
+  lyrics:
+  - Each
+  - step
+  - swings
+  - when
+  - I
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - b3
+  - d4
+  - g3
+  - z
+  lyrics:
+  - walk
+  - with
+  - you
+  - ''
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - 0.5:ride
+  - 0.5:rim
+  - 0.5:tom1
+  - 0.5:snare
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 0.5:e4
+  - 0.5:g4
+  - 0.5:b4
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:e4
+  - 0.5:d4
+  - 0.5:e4
+  C3:
+  - c2
+  - e2
+  - g2
+  - b2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 0.5:c4#
+  - 0.5:e4
+  - 0.5:g4
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:e4
+  - 0.5:c4#
+  - 0.5:e4
+  C3: *id003
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 0.5:f4
+  - 0.5:a4
+  - 0.5:c5
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:f4
+  - 0.5:e4
+  - 0.5:d4
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 0.5:b3
+  - 0.5:d4
+  - 0.5:f4
+  - 0.5:a4
+  - 0.5:g4
+  - 0.5:f4
+  - 0.5:e4
+  - 0.5:d4
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - 0.5:ride
+  - 0.5:rim
+  - 0.5:tom1
+  - 0.5:snare
+- dynamic: mf
+  C1:
+  - g3
+  - 0.5:c4
+  - 0.5:d4
+  - e4
+  - c4
+  lyrics:
+  - Hey
+  - take
+  - my
+  - hand
+  - and
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3
+  - g3
+  - e3
+  - z
+  lyrics:
+  - catch
+  - that
+  - light
+  - ''
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  C3: *id003
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3
+  - 0.5:c4
+  - 0.5:d4
+  - c4
+  - a3
+  lyrics:
+  - We've
+  - got
+  - the
+  - sun
+  - to
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - b3
+  - a3
+  - g3
+  - z
+  lyrics:
+  - spend
+  - till
+  - night
+  - ''
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3
+  - 0.5:c4
+  - 0.5:d4
+  - c4
+  - a3
+  lyrics:
+  - 'No'
+  - grand
+  - plan
+  - just
+  - a
+  C2:
+  - 0.5:z
+  - a3-c4-d4
+  - 0.5:z
+  - a3-c4-d4
+  - z
+  C3: *id005
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - a3b
+  - g3
+  - f3
+  - z
+  lyrics:
+  - sky
+  - so
+  - blue
+  - ''
+  C2:
+  - 0.5:z
+  - a3b-c4-d4
+  - 0.5:z
+  - a3b-c4-d4
+  - z
+  C3: *id006
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - g3
+  - 0.5:a3
+  - 0.5:c4
+  - e4
+  - d4
+  lyrics:
+  - Each
+  - step
+  - swings
+  - when
+  - I
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+- dynamic: mf
+  C1:
+  - b3
+  - g3
+  - c4
+  - z
+  lyrics:
+  - walk
+  - with
+  - you
+  - ''
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - 0.5:ride
+  - 0.5:rim
+  - 0.5:tom1
+  - 0.5:snare
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - e4-g4-a4
+  - 0.5:d4
+  - 0.5:e4
+  - g4
+  - e4
+  C3: *id001
+  drums:
+  - kick-ride
+  - rim-ride
+  - ride
+  - rim-hat
+- dynamic: mf
+  C1:
+  - 4:z
+  lyrics:
+  - ''
+  C2:
+  - 3:e3-g3-a3-c4
+  - z
+  C3:
+  - 3:c2
+  - z
+  drums:
+  - kick-crash
+  - 3:z
+  ritardando: 0

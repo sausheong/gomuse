@@ -1,0 +1,20 @@
+[
+  {
+    "file": "original.wav",
+    "seconds": 15.555555555555555,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.8499755859375,
+    "clipped_samples": 0,
+    "gain_db": 0.0
+  },
+  {
+    "file": "octave_lower.wav",
+    "seconds": 15.555555555555555,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.8233148604735462,
+    "clipped_samples": 0,
+    "gain_db": -0.2768099447178702
+  }
+]

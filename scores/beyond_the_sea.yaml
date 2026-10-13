@@ -1,0 +1,400 @@
+# Beyond the Sea — music by Charles Trenet; English lyrics by Jack Lawrence.
+# Transcribed from notation/beyond_the_sea_01.jpeg through _04.jpeg (pages 32–35).
+# Vocal and piano arrangement in F major, 4/4; pitches are at concert pitch.
+# Quarter = 108 is editorial: the source marks only “Moderately”.
+# C1: wordless vocal melody; C2: piano right hand; C3: piano left hand.
+# The intro has no vocal notes. Guitar chord diagrams are harmonic references.
+# Source bars 1–52, then 5–50, then second ending 53–54: 100 played bars.
+# Quarter-note triplets use balanced decimal durations totalling exactly 2 beats.
+# Vocal ties across barlines are merged. Muse has no independent note lengths
+# within a chord, so sustained piano notes rearticulate at some other-voice onsets.
+# Bass grace notes borrow 1/16 beat from their following note. Rolled chords
+# are simultaneous; lyrics, slurs and guitar diagrams are not encoded.
+# The crescendo across source bars 9–10 approximates the marking at 10;
+# its mf endpoint at 11 is editorial.
+# Manual transcription draft: chord voicings/accidentals still merit musical review.
+# Successful timing/render checks do not establish note-for-note source accuracy.
+name: Beyond the Sea
+key: F
+length: 0.5555555555555556
+instrument: piano
+instruments: {C1: voice, C2: piano, C3: piano}
+pan: {C1: 0, C2: 0.22, C3: -0.22}
+levels: {C1: 0.8, C2: 0.65, C3: 0.8}
+volume: 18000
+humanize: 0.05
+swing: 0
+reverb: 0.12
+sections:
+  # Source bar(s) 1; playback through bar 1
+  - dynamic: mp
+    C1: [4:z]
+    C2: [a5-a4, f5-a4, f5-b4, d5-b4]
+    C3: [2:f3-c4, 2:g3-d4]
+  # Source bar(s) 2; playback through bar 2
+  - dynamic: mp
+    C1: [4:z]
+    C2: [f5-f4-a4, d5-f4-a4, d5-g4, b4-g4]
+    C3: [2:d3-d4, 2:g3-b3]
+  # Source bar(s) 3; playback through bar 3
+  - dynamic: mp
+    C1: [4:z]
+    C2: [d5-g4, b4-g4, b4-b3-d4, g4-b3-d4]
+    C3: [2:g2-d3-b3, 2:g2-f3]
+  # Source bar(s) 4; playback through bar 4
+  - dynamic: mp
+    C1: [3:z, c4]
+    C2: [e4-b4-c5, g5-e4-b4-c5, c6-e4-b4-c5, c4]
+    C3: [3:c3-g3, z]
+  # Source bar(s) 5, 6; playback through bar 6
+  - dynamic: mp
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3, 2:b2, 2:c3]
+  # Source bar(s) 7; playback through bar 7
+  - dynamic: mp
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3]
+  # Source bar(s) 8; playback through bar 8
+  - dynamic: mp
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [2:b2, 2:c3]
+  # Source bar(s) 9, 10; playback through bar 10
+  - dynamic: mp
+    hairpin: cresc
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [0.0625:f2, 1.9375:f3, 2:e3, 2:d3, c3, b2]
+  # Source bar(s) 11; playback through bar 11
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [2:a2, 2:d3]
+  # Source bar(s) 12, 13; playback through bar 13
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [0.0625:b2, 1.9375:b3, 2:a3, 2:g3, c3, c3#]
+  # Source bar(s) 14; playback through bar 14
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [2:d3, 2:b2]
+  # Source bar(s) 15; playback through bar 15
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3n-f4]
+    C3: [2:g2, 2:c3]
+  # Source bar(s) 16; playback through bar 16
+  - dynamic: mf
+    C1: [2:c4, z, c4]
+    C2: [c4, 2:c4-e3-g3, c4-e3-g3]
+    C3: [2:c3, 2:b2b]
+  # Source bar(s) 17, 18; playback through bar 18
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-f3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [2:a2, 2:d3, 2:b2, 2:c3]
+  # Source bar(s) 19; playback through bar 19
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3]
+  # Source bar(s) 20; playback through bar 20
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [2:b2, 2:c3]
+  # Source bar(s) 21, 22; playback through bar 22
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [0.0625:f2, 1.9375:f3, 2:e3, 2:d3, c3, b2]
+  # Source bar(s) 23; playback through bar 23
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [2:a2, 2:d3]
+  # Source bar(s) 24, 25; playback through bar 25
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [0.0625:b2, 1.9375:b3, 2:a3, 2:g3, c3, c3#]
+  # Source bar(s) 26; playback through bar 26
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [2:d3, 2:b2]
+  # Source bar(s) 27; playback through bar 27
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3-d4-f4, g4, g4-b3-c4-e4]
+    C3: [2:g2, 2:c3]
+  # Source bar(s) 28; playback through bar 28
+  - dynamic: mf
+    C1: [2:f4, z, e4]
+    C2: [2:f4-a3-c4, g3#-d4, e4-g3#-d4]
+    C3: [2:f2-c3, 2:e2-b2n]
+  # Source bar(s) 29, 30; playback through bar 30
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4#, 0.666666:a4, 0.666667:b4n]
+    C2: [a4, a4-c4#-e4, a4, a4-a3-c4#-f4#, a4, a4-b3n-d4-f4#, 0.666667:g4#-d4-e4, 0.666666:a4-d4-e4, 0.666667:b4n-d4-e4]
+    C3: [0.0625:a2, 1.9375:a3, 0.0625:f2#, 1.9375:f3#, 0.0625:d2, 1.9375:d3, 0.0625:e2, 0.604167:e3, 0.666666:f3#, 0.666667:g3#]
+  # Source bar(s) 31; playback through bar 31
+  - dynamic: mf
+    C1: [3:c5#, a4]
+    C2: [c5#, 2:c5#-c4#-e4, a4-c4#-f4#]
+    C3: [0.0625:a2, 1.9375:a3, 0.0625:f2#, 1.9375:f3#]
+  # Source bar(s) 32; playback through bar 32
+  - dynamic: mf
+    C1: [2:b4n, 0.666667:g4#, 0.666666:f4#, 0.666667:e4]
+    C2: [b4n, b4n-b3n-d4-f4#, 0.666667:g4#-b3n-d4, 0.666666:f4#-b3n-d4, 0.666667:e4-b3n-d4]
+    C3: [0.0625:d2, 1.9375:d3, 0.0625:e2, 1.9375:e3]
+  # Source bar(s) 33, 34; playback through bar 34
+  - dynamic: mf
+    C1: [6:e4, z, g4n]
+    C2: [e4, e4-a3-c4#, e4, e4-a3-c4#, e4, e4-a3-c4#, e4, g4n-a3-c4n]
+    C3: [0.0625:a2, 1.9375:a3, 2:g3#, 2:f3#, e3, g2-g3n]
+  # Source bar(s) 35, 36; playback through bar 36
+  - dynamic: mf
+    C1: [6:c5, 0.666667:b4n, 0.666666:c5, 0.666667:d5]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-a4, c5, c5-f4-a4, 0.666667:b4n-f4-g4, 0.666666:c5-f4-g4, 0.666667:d5-f4-g4]
+    C3: [0.0625:c3, 1.9375:c4, 0.0625:a2, 1.9375:a3, 0.0625:f2, 1.9375:f3, 0.0625:g2, 0.604167:g3, 0.666666:a3, 0.666667:b3n]
+  # Source bar(s) 37; playback through bar 37
+  - dynamic: mf
+    C1: [3:e5, c5]
+    C2: [e5, e5-e4-g4, e5, c5-c4-e4-a4]
+    C3: [0.0625:c3, 1.9375:c4, 0.0625:a2, 1.9375:a3]
+  # Source bar(s) 38; playback through bar 38
+  - dynamic: mf
+    C1: [1.5:d5, 0.5:b4n, 0.666667:b4n, 0.666666:a4, 0.666667:g4]
+    C2: [d5, 0.5:d5-d4-a4, 0.5:b4n-d4-a4, 0.666667:b4n-f4-a4, 0.666666:a4-f4, 0.666667:g4-f4-a4]
+    C3: [0.0625:f2, 1.9375:f3, 0.0625:g2, 1.9375:g3]
+  # Source bar(s) 39, 40; playback through bar 40
+  - dynamic: mf
+    C1: [5:c5, z, z, c4]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-g4, c5, c5-a3-c4-f4, c5-a3-c4-g4, c4]
+    C3: [0.0625:c3, 1.9375:c4, 2:b3b, 2:a3, g3, z]
+  # Source bar(s) 41, 42; playback through bar 42
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3, 2:b2, 2:c3]
+  # Source bar(s) 43; playback through bar 43
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3]
+  # Source bar(s) 44; playback through bar 44
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [2:b2, 2:c3]
+  # Source bar(s) 45, 46; playback through bar 46
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [0.0625:f2, 1.9375:f3, 2:e3, 2:d3, c3, b2]
+  # Source bar(s) 47; playback through bar 47
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [2:a2, 2:d3]
+  # Source bar(s) 48, 49; playback through bar 49
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [0.0625:b2, 1.9375:b3, 2:a3, 2:g3, c3, c3#]
+  # Source bar(s) 50; playback through bar 50
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [2:d3, 2:b2]
+  # Source bar(s) 51; playback through bar 51
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3b-c4-e4]
+    C3: [2:g2, 2:c3]
+  # Source bar(s) 52; playback through bar 52
+  - dynamic: mf
+    C1: [2:f4, z, c4]
+    C2: [f4-a3-c4, c4-f4-a4, d4-f4-b4, g3-d4-e4]
+    C3: [2:f2-c3, g2, c2-c3]
+  # Source bar(s) 5, 6; playback through bar 54
+  - dynamic: mp
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3, 2:b2, 2:c3]
+  # Source bar(s) 7; playback through bar 55
+  - dynamic: mp
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3]
+  # Source bar(s) 8; playback through bar 56
+  - dynamic: mp
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [2:b2, 2:c3]
+  # Source bar(s) 9, 10; playback through bar 58
+  - dynamic: mp
+    hairpin: cresc
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [0.0625:f2, 1.9375:f3, 2:e3, 2:d3, c3, b2]
+  # Source bar(s) 11; playback through bar 59
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [2:a2, 2:d3]
+  # Source bar(s) 12, 13; playback through bar 61
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [0.0625:b2, 1.9375:b3, 2:a3, 2:g3, c3, c3#]
+  # Source bar(s) 14; playback through bar 62
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [2:d3, 2:b2]
+  # Source bar(s) 15; playback through bar 63
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3n-f4]
+    C3: [2:g2, 2:c3]
+  # Source bar(s) 16; playback through bar 64
+  - dynamic: mf
+    C1: [2:c4, z, c4]
+    C2: [c4, 2:c4-e3-g3, c4-e3-g3]
+    C3: [2:c3, 2:b2b]
+  # Source bar(s) 17, 18; playback through bar 66
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-f3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [2:a2, 2:d3, 2:b2, 2:c3]
+  # Source bar(s) 19; playback through bar 67
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3]
+  # Source bar(s) 20; playback through bar 68
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [2:b2, 2:c3]
+  # Source bar(s) 21, 22; playback through bar 70
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [0.0625:f2, 1.9375:f3, 2:e3, 2:d3, c3, b2]
+  # Source bar(s) 23; playback through bar 71
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [2:a2, 2:d3]
+  # Source bar(s) 24, 25; playback through bar 73
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [0.0625:b2, 1.9375:b3, 2:a3, 2:g3, c3, c3#]
+  # Source bar(s) 26; playback through bar 74
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [2:d3, 2:b2]
+  # Source bar(s) 27; playback through bar 75
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3-d4-f4, g4, g4-b3-c4-e4]
+    C3: [2:g2, 2:c3]
+  # Source bar(s) 28; playback through bar 76
+  - dynamic: mf
+    C1: [2:f4, z, e4]
+    C2: [2:f4-a3-c4, g3#-d4, e4-g3#-d4]
+    C3: [2:f2-c3, 2:e2-b2n]
+  # Source bar(s) 29, 30; playback through bar 78
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4#, 0.666666:a4, 0.666667:b4n]
+    C2: [a4, a4-c4#-e4, a4, a4-a3-c4#-f4#, a4, a4-b3n-d4-f4#, 0.666667:g4#-d4-e4, 0.666666:a4-d4-e4, 0.666667:b4n-d4-e4]
+    C3: [0.0625:a2, 1.9375:a3, 0.0625:f2#, 1.9375:f3#, 0.0625:d2, 1.9375:d3, 0.0625:e2, 0.604167:e3, 0.666666:f3#, 0.666667:g3#]
+  # Source bar(s) 31; playback through bar 79
+  - dynamic: mf
+    C1: [3:c5#, a4]
+    C2: [c5#, 2:c5#-c4#-e4, a4-c4#-f4#]
+    C3: [0.0625:a2, 1.9375:a3, 0.0625:f2#, 1.9375:f3#]
+  # Source bar(s) 32; playback through bar 80
+  - dynamic: mf
+    C1: [2:b4n, 0.666667:g4#, 0.666666:f4#, 0.666667:e4]
+    C2: [b4n, b4n-b3n-d4-f4#, 0.666667:g4#-b3n-d4, 0.666666:f4#-b3n-d4, 0.666667:e4-b3n-d4]
+    C3: [0.0625:d2, 1.9375:d3, 0.0625:e2, 1.9375:e3]
+  # Source bar(s) 33, 34; playback through bar 82
+  - dynamic: mf
+    C1: [6:e4, z, g4n]
+    C2: [e4, e4-a3-c4#, e4, e4-a3-c4#, e4, e4-a3-c4#, e4, g4n-a3-c4n]
+    C3: [0.0625:a2, 1.9375:a3, 2:g3#, 2:f3#, e3, g2-g3n]
+  # Source bar(s) 35, 36; playback through bar 84
+  - dynamic: mf
+    C1: [6:c5, 0.666667:b4n, 0.666666:c5, 0.666667:d5]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-a4, c5, c5-f4-a4, 0.666667:b4n-f4-g4, 0.666666:c5-f4-g4, 0.666667:d5-f4-g4]
+    C3: [0.0625:c3, 1.9375:c4, 0.0625:a2, 1.9375:a3, 0.0625:f2, 1.9375:f3, 0.0625:g2, 0.604167:g3, 0.666666:a3, 0.666667:b3n]
+  # Source bar(s) 37; playback through bar 85
+  - dynamic: mf
+    C1: [3:e5, c5]
+    C2: [e5, e5-e4-g4, e5, c5-c4-e4-a4]
+    C3: [0.0625:c3, 1.9375:c4, 0.0625:a2, 1.9375:a3]
+  # Source bar(s) 38; playback through bar 86
+  - dynamic: mf
+    C1: [1.5:d5, 0.5:b4n, 0.666667:b4n, 0.666666:a4, 0.666667:g4]
+    C2: [d5, 0.5:d5-d4-a4, 0.5:b4n-d4-a4, 0.666667:b4n-f4-a4, 0.666666:a4-f4, 0.666667:g4-f4-a4]
+    C3: [0.0625:f2, 1.9375:f3, 0.0625:g2, 1.9375:g3]
+  # Source bar(s) 39, 40; playback through bar 88
+  - dynamic: mf
+    C1: [5:c5, z, z, c4]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-g4, c5, c5-a3-c4-f4, c5-a3-c4-g4, c4]
+    C3: [0.0625:c3, 1.9375:c4, 2:b3b, 2:a3, g3, z]
+  # Source bar(s) 41, 42; playback through bar 90
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3, 2:b2, 2:c3]
+  # Source bar(s) 43; playback through bar 91
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [0.0625:f2, 1.9375:f3, 2:d3]
+  # Source bar(s) 44; playback through bar 92
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [2:b2, 2:c3]
+  # Source bar(s) 45, 46; playback through bar 94
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [0.0625:f2, 1.9375:f3, 2:e3, 2:d3, c3, b2]
+  # Source bar(s) 47; playback through bar 95
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [2:a2, 2:d3]
+  # Source bar(s) 48, 49; playback through bar 97
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [0.0625:b2, 1.9375:b3, 2:a3, 2:g3, c3, c3#]
+  # Source bar(s) 50; playback through bar 98
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [2:d3, 2:b2]
+  # Source bar(s) 53; playback through bar 99
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3b-c4-e4]
+    C3: [2:g2, 2:c3]
+  # Source bar(s) 54; playback through bar 100
+  - dynamic: mp
+    C1: [3:f4, z]
+    C2: [2:a3-f4, f4-a4-f5, z]
+    C3: [2:f2-c3, f2-c3-a3, z]

@@ -1,0 +1,38 @@
+# First phrase: ordinary articulation. Second: explicit gesture and, for winds/bows, tone curve.
+name: trumpet fall comparison
+key: C
+length: 0.35
+instrument: trumpet
+volume: 14000
+humanize: 0
+reverb: 0
+pan:
+  C1: 0
+performance:
+  C1:
+    articulation: legato
+sections:
+- dynamic: mf
+  C1: &id001
+  - c4
+  - e4
+  - g4
+  - 2:c5
+  - z
+- dynamic: mf
+  C1: *id001
+  expression:
+    C1:
+      gestures:
+        4:
+          kind: fall
+      phrases:
+      - from: 1
+        to: 4
+        start_db: -1
+        peak_db: 0
+        end_db: -2
+        tone:
+          start: -0.2
+          peak: 0.25
+          end: -0.3

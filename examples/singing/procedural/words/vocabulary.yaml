@@ -1,0 +1,122 @@
+name: vocabulary
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  breaths: 0
+  breathiness: 0.05
+sections:
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - hey
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - oh
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - my
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - you
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - stay
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - me
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - we
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - see
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - say
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - 'no'
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - so
+    - ''
+- C1:
+  - 1.6:g3
+  - 0.8:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - hi
+    - ''

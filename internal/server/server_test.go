@@ -334,6 +334,29 @@ sections:
 	if !strings.Contains(string(shareBody), "&lt;script&gt;") {
 		t.Fatalf("share page does not contain the expected escaped name: %s", shareBody)
 	}
+	// Open Graph URLs point back at whichever host served the page
+	if want := `content="` + ts.URL + "/share/" + id + `"`; !strings.Contains(string(shareBody), want) {
+		t.Fatalf("share page og:url should be %s; body: %s", want, shareBody)
+	}
+	if strings.Contains(string(shareBody), "sausheong.com") {
+		t.Fatal("share page still hard-codes the old domain")
+	}
+}
+
+func TestBaseURL(t *testing.T) {
+	r := httptest.NewRequest("GET", "/share/x", nil)
+	r.Host = "music.example.org"
+	if got := baseURL(r); got != "http://music.example.org" {
+		t.Fatalf("baseURL = %q, want http://music.example.org", got)
+	}
+	r.Header.Set("X-Forwarded-Proto", "https")
+	if got := baseURL(r); got != "https://music.example.org" {
+		t.Fatalf("baseURL behind a TLS proxy = %q, want https://music.example.org", got)
+	}
+	r.Header.Set("X-Forwarded-Proto", "javascript")
+	if got := baseURL(r); got != "http://music.example.org" {
+		t.Fatalf("baseURL with a bogus X-Forwarded-Proto = %q, want http", got)
+	}
 }
 
 func TestWebCreateOversizedBodyRejected(t *testing.T) {

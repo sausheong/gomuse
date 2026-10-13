@@ -1,0 +1,50 @@
+{
+  "vocabulary": {
+    "duration_seconds": 14.4,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.47198486328125,
+    "rms": 0.09999694424771621,
+    "clipped_samples": 0
+  },
+  "phrase": {
+    "duration_seconds": 6.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.426483154296875,
+    "rms": 0.0999969455749369,
+    "clipped_samples": 0
+  },
+  "check_one": {
+    "duration_seconds": 2.2,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.454010009765625,
+    "rms": 0.09999694996623318,
+    "clipped_samples": 0
+  },
+  "check_two": {
+    "duration_seconds": 2.5,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.38824462890625,
+    "rms": 0.09999692589379482,
+    "clipped_samples": 0
+  },
+  "check_three": {
+    "duration_seconds": 2.5,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.454437255859375,
+    "rms": 0.09999691777236974,
+    "clipped_samples": 0
+  },
+  "first_words": {
+    "duration_seconds": 5.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.49163818359375,
+    "rms": 0.09999693909192751,
+    "clipped_samples": 0
+  }
+}

@@ -1,0 +1,25 @@
+name: check_one
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  breaths: 0
+  breathiness: 0.05
+sections:
+- C1:
+  - 1.4:e3
+  - 2:g3
+  - z
+  C2:
+  - 4.4:z
+  scat:
+    syllables:
+    - oh
+    - my
+    - ''

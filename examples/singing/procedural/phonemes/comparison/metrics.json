@@ -1,0 +1,30 @@
+{
+  "phrase_after.wav": {
+    "duration": 18.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.536088048785098,
+    "clipped_samples": 0
+  },
+  "airflow_before.wav": {
+    "duration": 6.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5190532571086801,
+    "clipped_samples": 0
+  },
+  "airflow_after.wav": {
+    "duration": 6.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5442549384633633,
+    "clipped_samples": 0
+  },
+  "phrase_before.wav": {
+    "duration": 18.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5321817900688215,
+    "clipped_samples": 0
+  }
+}

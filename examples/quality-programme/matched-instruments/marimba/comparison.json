@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/marimba/before.wav",
+      "sha256": "c361cabf773eaa84adbd5587c04f55fb41b6b42351686e150adfd9020a48a8ee",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -10.082665831856916,
+      "rms_dbfs": -24.000268492703256,
+      "crest_db": 13.917602660846338,
+      "dc_fraction": -3.011602642670559e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/marimba.wav",
+      "source_sha256": "260acad6608b87b3a8240e4d286269015e595e7578c9a04283d3484165cd58e6",
+      "gain": 1.8302832639798152
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/marimba/after.wav",
+      "sha256": "c361cabf773eaa84adbd5587c04f55fb41b6b42351686e150adfd9020a48a8ee",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -10.082665831856916,
+      "rms_dbfs": -24.000268492703256,
+      "crest_db": 13.917602660846338,
+      "dc_fraction": -3.011602642670559e-06,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/marimba.wav",
+      "source_sha256": "260acad6608b87b3a8240e4d286269015e595e7578c9a04283d3484165cd58e6",
+      "gain": 1.8302832639798152
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

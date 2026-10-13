@@ -1,0 +1,34 @@
+name: Pedal and Pick
+key: C
+length: 0.5
+instrument: piano
+volume: 10000
+humanize: 0
+reverb: 0.08
+pan: {C1: 0}
+sections:
+  # Dry piano: rests damp each chord.
+  - performance: {C1: {pedal: up}}
+    C1: [c3-e3-g3, z, f3-a3-c4, z]
+  # Pedalled chord rings through the written rest.
+  - performance: {C1: {pedal: down}}
+    C1: [c3-e3-g3, 3:z]
+  - performance: {C1: {pedal: up}}
+    C1: [2:z]
+  - performance: {C1: {pedal: down}}
+    C1: [f3-a3-c4, 3:z]
+  - performance: {C1: {pedal: up}}
+    C1: [2:z]
+  # Alternating strokes, followed by shorter muted attacks.
+  - instrument: guitar
+    performance: {C1: {articulation: picked, strum: alternate, strum_ms: 55}}
+    C1: [c3-e3-g3-c4, c3-e3-g3-c4, f3-a3-c4, f3-a3-c4]
+  - instrument: guitar
+    performance: {C1: {articulation: palm-mute, strum: down, strum_ms: 25}}
+    C1: [0.5:c3-e3-g3, 0.5:c3-e3-g3, c3-e3-g3, 0.5:f3-a3-c4, 0.5:f3-a3-c4, f3-a3-c4]
+  - instrument: guitar
+    performance: {C1: {articulation: let-ring}}
+    C1: [c3, e3, g3, c4, 2:z]
+  - instrument: guitar
+    performance: {C1: {articulation: palm-mute}}
+    C1: [2:z]

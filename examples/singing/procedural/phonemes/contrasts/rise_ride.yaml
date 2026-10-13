@@ -1,0 +1,81 @@
+name: Rise and ride contrast
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  clarity: 0.7
+  breathiness: 0.04
+  breaths: 0
+sections:
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - rise
+    - ''
+    phonemes:
+    - []
+    - &id001
+      - R
+      - AY
+      - Z
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - ride
+    - ''
+    phonemes:
+    - []
+    - &id002
+      - R
+      - AY
+      - D
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - rise
+    - ''
+    phonemes:
+    - []
+    - *id001
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - ride
+    - ''
+    phonemes:
+    - []
+    - *id002
+    - []

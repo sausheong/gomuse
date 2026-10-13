@@ -1,0 +1,411 @@
+# Muse 2: reusable parts and musical form. Old phrase score retained alongside.
+# Notes and phrase boundaries are preserved; omitted tracks are silent.
+version: 2
+name: The Living Years — expressive saxophone and electric piano
+key: Ab
+tempo: 96
+meter: 4/4
+volume: 6875
+humanize: 0.18
+swing: 0
+reverb: 0.19
+
+tracks:
+  melody: {instrument: saxophone, playing: reflective-sax, level: 0.68, pan: -0.08}
+  keys: {instrument: electric-piano, playing: warm-keys, level: 0.52, pan: 0.24}
+  bass: {instrument: bass, playing: steady-bass, level: 0.56, pan: -0.12}
+  kit: {instrument: drums, level: 1.0, pan: 0}
+
+styles:
+  reflective-sax:
+    performance: {articulation: legato, swell: 0.12, vibrato: 0}
+    notes: {accent: -0.3, vibrato: {depth: 0}}
+    held: [{min_beats: 1.5, vibrato: {depth: 4, delay_ms: 280, rise_ms: 450, rate_hz: 5.1}}]
+    shape: {start_db: -1.4, peak_db: 0.5, end_db: -2, peak_at: 0.58, tone: {start: -0.25, peak: 0, end: -0.3}}
+    slur: true
+    breath_ms: 65
+  open-sax:
+    extends: reflective-sax
+    held: [{min_beats: 1.5, vibrato: {depth: 7, delay_ms: 280, rise_ms: 450, rate_hz: 5.1}}]
+    shape: {peak_db: 1.2, tone: {peak: 0.18}}
+  warm-keys:
+    notes: {accent: -0.6}
+  steady-bass:
+    notes: {accent: -0.6}
+
+marks:
+  lean: {accent: 0.9}
+  light: {accent: -1.8}
+  ground: {accent: 0.4}
+
+patterns:
+  ab_intro: 1.5:a3-c4-e4@ground 1.5:a3-b3-e4 a3-c4-e4 |
+  gm_intro: 4:g3-b3-d4n@ground |
+  bbm_intro: 1.5:b3-d4-f4@ground 1.5:b3-c4-f4 b3-d4-f4 |
+  ab_hold_high: 4:e4-a4-c5@ground |
+  ab_verse_open: 0.5:e4-a4-c5@ground 0.25:c5@light 0.75:e4-a4-c5 0.25:b4@light 0.5:c4-e4-b4 1.75:c4-e4-a4 |
+  ab_response: 3:c4-e4-a4@ground 0.5:z 0.5:a4 |
+  db_verse_open: 0.5:d4-f4-c5@ground 0.25:c5@light 0.75:d4-f4-c5 0.25:b4@light 2.25:d4-f4-b4 |
+  db_pickup: 3:d4-f4-b4@ground 0.75:z 0.25:f4@light |
+  ab_verse_answer: 0.5:e4-a4-c5@ground 0.25:c5@light 0.5:e4-a4-c5 0.5:b4 0.5:c4-e4-b4 1.75:c4-e4-a4 |
+  ab_pickup: 3:c4-e4-a4@ground 0.5:z 0.5:f4 |
+  db_verse_answer: 0.5:d4-f4-c5@ground 0.25:c5@light 0.5:d4-f4-c5 0.5:b4 2.25:d4-f4-b4 |
+  gb_verse: 0.5:g4b-b4-e5@ground 0.25:e5@light 0.5:g4b-b4-e5 0.5:d5 0.5:g4b-b4-d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 |
+  gb_response: 0.5:g4b-b4-e5@ground 0.25:g4b-b4-e5@light 0.5:g4b-b4-e5 0.75:g4b-b4-d5 1.5:c5 0.25:z 0.25:b4@light |
+  bbm_verse: 0.5:f4-b4-e5@ground 0.25:e5@light 0.5:f4-b4-e5 0.5:f4-b4-d5 0.5:f4-b4-d5 1.5:c5 0.25:c5@light |
+  bbm_response: 0.5:f4-b4-e5@ground 0.5:e5 0.75:b4-d5-f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:e4-a4-b4-d5@light |
+  eb_sus: 0.25:e4-a4-b4-d5@light 0.5:d5 0.5:e4-a4-b4-d5 0.5:c5 0.75:e4-a4-c5 1.5:e4-a4-b4 |
+  db_over_eb: f4-a4-d5@ground f4-a4-e5 0.75:e4-g4-c5 0.25:b4@light 0.75:a4 0.25:c4-e4-a4@light |
+  ab_hold: 4:c4-e4-a4@ground |
+  chorus_pickup: 2:c4-e4-a4@ground c4 d4 |
+  ab_low_hold: 4:a3-c4-e4@ground |
+  ab_low_answer: 2:a3-c4-e4@ground a3-c4-e4 a4 |
+  db_low_hold: 4:a3-d4-f4@ground |
+  db_low_answer: 2:a3-d4-f4@ground a3-d4-f4 a3-d4-f4 |
+  eb_rise: 1.5:e4-g4-b4@ground 1.5:e4-g4-c5 d5 |
+  eb_fall: 1.5:e4-g4-d5@ground 1.5:e4-g4-c5 b4 |
+  ab_high_answer: 2:e4-a4-c5@ground c4 d4 |
+  coda_pickup: 2:a3-d4-f4@ground c4 d4 |
+  ab_bass_hold: 4:a2-e3@ground |
+  gm_bass_hold: 4:g2-d3n@ground |
+  bbm_bass_hold: 4:b2-f3@ground |
+  eb_bass_hold: 4:e3-b3@ground |
+  ab_octave_pulse: 1.75:a2-a3@ground 0.25:a2-a3@light 1.75:a2-a3 0.25:a2-a3@light |
+  ab_bass_pulse: 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 |
+  db_bass_pulse: 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 |
+  gb_bass_pulse: 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 |
+  bbm_bass_pulse: 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 |
+  eb_bass_pulse: 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 |
+  eb_half_notes: 2:e3-b3@ground 2:e3-b3 |
+  ab_driving_bass: 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light |
+  db_single_bass: 1.75:d3@ground 0.25:d3@light 2:d3 |
+  db_driving_bass: 1.75:d3@ground 0.25:d3@light 1.75:d3 0.25:d3@light |
+  chorus_entry: 0.5:kick-crash-hat 0.5:hat 0.5:snare-hat 0.5:hat 0.5:kick-hat 0.5:hat 0.5:snare-hat 0.5:hat |
+  backbeat: 0.5:kick-hat 0.5:hat 0.5:snare-hat 0.5:hat 0.5:kick-hat 0.5:hat 0.5:snare-hat 0.5:hat |
+  short_fill: 0.5:kick-hat 0.5:hat 0.5:snare-hat 0.5:hat 0.5:kick-hat 0.5:hat 0.25:snare 0.25:tom1 0.5:tom2 |
+  verse_rim: 0.5:kick-hat 0.5:hat 0.5:rim-hat 0.5:hat 0.5:kick-hat 0.5:hat 0.5:rim-hat 0.5:hat |
+
+sections:
+
+  introduction:
+    dynamic: p
+    bars: 8
+    parts:
+      keys:
+        - {use: ab_intro, repeat: 2}
+        - {use: gm_intro, repeat: 2}
+        - {use: bbm_intro, repeat: 2}
+        - 1.5:e4-g4@ground 1.5:e4-a4 e4-b4 |
+        - 1.5:e4-c5@ground 1.5:e4-d5 e4-e5 |
+      bass: {sequence: [{use: ab_bass_hold, repeat: 2}, {use: gm_bass_hold, repeat: 2}, {use: bbm_bass_hold, repeat: 2}, {use: eb_bass_hold, repeat: 2}]}
+
+  introduction_continued:
+    dynamic: mp
+    bars: 4
+    parts:
+      keys: {use: ab_hold_high, repeat: 4}
+      bass:
+        - {use: ab_octave_pulse, repeat: 3}
+        - 1.75:a2-a3@ground 0.25:a2-a3@light 2:a2-a3 |
+
+  verse_1:
+    bars: 8
+    parts:
+      melody:
+        - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 0.5:b4 1.75:a4 | a4@lean
+        - 3:z |
+        - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 2.25:b4 |
+        - 3.75:z
+        - 0.25:f4@light | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 0.5:b4 1.75:a4 | a4@lean
+        - 2.5:z
+        - 0.5:f4 | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 2.25:b4 |
+        - 3.75:z
+        - 0.25:f4@light |
+      keys: {sequence: [ab_verse_open, ab_response, db_verse_open, db_pickup, ab_verse_answer, ab_pickup, db_verse_answer, db_pickup]}
+      bass: {sequence: [{use: ab_bass_pulse, repeat: 2}, {use: db_bass_pulse, repeat: 2}, {use: ab_bass_pulse, repeat: 2}, {use: db_bass_pulse, repeat: 2}]}
+
+  verse_1_2:
+    bars: 6
+    parts:
+      melody:
+        - 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.75:d5 c5
+        - 0.75:z
+        - 0.25:b4@light | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.75:c5
+        - 0.75:z
+        - 0.25:c5@light | 0.5:e5@lean 0.5:e5 0.75:f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:d5@light | 0.25:d5@light 0.5:d5 0.5:d5 0.5:c5 0.75:c5 0.5:b4
+        - z |
+        - d5@lean e5 0.75:c5 0.25:b4@light 0.75:a4 0.25:a4@light |
+      keys: {sequence: [gb_verse, gb_response, bbm_verse, bbm_response, eb_sus, db_over_eb]}
+      bass: {sequence: [{use: gb_bass_pulse, repeat: 2}, {use: bbm_bass_pulse, repeat: 2}, eb_bass_pulse, eb_half_notes]}
+
+  verse_1_3:
+    ritardando: 0.035
+    bars: 1
+    parts:
+      melody:
+        - 3:a4@lean
+        - z |
+      keys: {use: ab_hold}
+      bass: {use: ab_driving_bass}
+
+  verse_1_4:
+    bars: 1
+    parts:
+      melody:
+        - 3:z
+        - c5@lean |
+      keys: 3:c4-e4-a4@ground z |
+      bass: {use: ab_bass_pulse}
+
+  verse_2:
+    extends: verse_1
+    parts:
+      melody:
+        - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 0.5:b4 1.75:a4 | a4@lean
+        - 2.5:z
+        - 0.5:a4 | 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 2.25:b4 |
+        - 3.75:z
+        - 0.25:f4@light | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 0.5:b4 1.75:a4 | a4@lean
+        - 2:z
+        - 0.5:b4 0.5:d5 | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 2.25:b4 |
+        - 3.75:z
+        - 0.25:f4@light |
+
+  verse_2_2:
+    bars: 5
+    parts:
+      melody:
+        - 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.75:d5 c5
+        - 0.75:z
+        - 0.25:b4@light | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.75:c5
+        - 0.75:z
+        - 0.25:c5@light | 0.5:e5@lean 0.5:e5 0.75:f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:d5@light | 0.25:d5@light 0.5:d5 0.5:d5 0.5:c5 0.75:c5 0.5:b4
+        - z |
+      keys: {sequence: [gb_verse, gb_response, bbm_verse, bbm_response, eb_sus]}
+      bass: {sequence: [{use: gb_bass_pulse, repeat: 2}, {use: bbm_bass_pulse, repeat: 2}, eb_bass_pulse]}
+
+  verse_2_3:
+    hairpin: cresc
+    bars: 1
+    parts:
+      melody: d5@lean e5 0.75:c5 0.25:b4@light 0.75:a4 0.25:a4@light |
+      keys: {use: db_over_eb}
+      bass: {use: eb_half_notes}
+
+  verse_2_4:
+    extends: verse_1_3
+    hairpin: cresc
+
+  verse_2_5:
+    dynamic: mf
+    bars: 1
+    parts:
+      melody:
+        - 2:z
+        - c4@lean d4 |
+      keys: {use: chorus_pickup}
+      bass: {use: ab_bass_pulse}
+
+  chorus_1:
+    bars: 8
+    playing: {melody: open-sax}
+    parts:
+      melody:
+        - 4:e4@lean | e4@lean
+        - z
+        - e4 a4 | 4:f4@lean | f4@lean
+        - z
+        - f4 f4 | 1.5:b4@lean 1.5:c5 d5 | 1.5:d5@lean 1.5:c5 b4 | 4:c5@lean | c5@lean
+        - z
+        - c4 d4 |
+      keys: {sequence: [ab_low_hold, ab_low_answer, db_low_hold, db_low_answer, eb_rise, eb_fall, ab_hold_high, ab_high_answer]}
+      bass: {sequence: [{use: ab_bass_pulse, repeat: 2}, {use: db_single_bass, repeat: 2}, {use: eb_bass_pulse, repeat: 2}, ab_driving_bass, ab_bass_pulse]}
+      kit: {sequence: [chorus_entry, {use: backbeat, repeat: 7}]}
+
+  chorus_1_2:
+    bars: 6
+    playing: {melody: open-sax}
+    parts:
+      melody:
+        - 4:e4@lean | e4@lean
+        - z
+        - e4 a4 | 4:f4@lean | f4@lean
+        - z
+        - f4 f4 | 1.5:b4@lean 1.5:c5 d5 | 1.5:d5@lean 1.5:c5 b4 |
+      keys: {sequence: [ab_low_hold, ab_low_answer, db_low_hold, db_low_answer, eb_rise, eb_fall]}
+      bass: {sequence: [{use: ab_bass_pulse, repeat: 2}, {use: db_single_bass, repeat: 2}, {use: eb_bass_pulse, repeat: 2}]}
+      kit: {use: backbeat, repeat: 6}
+
+  chorus_1_3:
+    ritardando: 0.035
+    bars: 1
+    playing: {melody: open-sax}
+    parts:
+      melody: 4:a4@lean |
+      keys: {use: ab_hold}
+      bass: {use: ab_driving_bass}
+      kit: {use: short_fill}
+
+  chorus_1_4:
+    bars: 1
+    playing: {melody: open-sax}
+    parts:
+      melody: 3:a4@lean 0.5:c5 0.5:c5 |
+      keys: 3:c4-e4-a4@ground 0.5:c5 0.5:c5 |
+      bass: {use: ab_bass_pulse}
+      kit: {use: backbeat}
+
+  verse_3:
+    extends: verse_1
+    dynamic: mp
+    parts:
+      kit: {use: verse_rim, repeat: 8}
+
+  verse_3_2:
+    extends: verse_2_2
+    parts:
+      kit: {use: verse_rim, repeat: 5}
+
+  verse_3_3:
+    extends: verse_2_3
+    parts:
+      kit: {use: verse_rim}
+
+  verse_3_4:
+    extends: verse_1_3
+    hairpin: cresc
+    parts:
+      kit: {use: verse_rim}
+
+  verse_3_5:
+    extends: verse_2_5
+    parts:
+      kit: {use: verse_rim}
+
+  chorus_2_2:
+    extends: chorus_1_2
+    dynamic: f
+
+  chorus_2_4:
+    bars: 1
+    playing: {melody: open-sax}
+    parts:
+      melody:
+        - 3:a4@lean
+        - 0.5:z
+        - 0.5:c5 |
+      keys: {use: ab_hold}
+      bass: {use: ab_bass_pulse}
+      kit: {use: backbeat}
+
+  verse_4:
+    extends: verse_1
+    dynamic: p
+    parts:
+      kit: {use: verse_rim, repeat: 8}
+
+  verse_4_2:
+    extends: verse_2_2
+    dynamic: mp
+    parts:
+      kit: {use: verse_rim, repeat: 5}
+
+  verse_4_3:
+    extends: verse_2_3
+    ritardando: 0.035
+    parts:
+      kit: {use: verse_rim}
+
+  verse_4_4:
+    hairpin: cresc
+    bars: 1
+    parts:
+      melody:
+        - 3:a4@lean
+        - z |
+      keys: {use: ab_hold}
+      bass: {use: ab_driving_bass}
+      kit: {use: verse_rim}
+
+  coda_pickup:
+    extends: verse_2_5
+    parts:
+      kit: {use: backbeat}
+
+  coda:
+    bars: 3
+    parts:
+      melody:
+        - 4:e4@lean | e4@lean
+        - z
+        - e4 a4 | 4:f4@lean |
+      keys: {sequence: [ab_low_hold, ab_low_answer, db_low_hold]}
+      bass: {sequence: [ab_driving_bass, ab_bass_pulse, db_driving_bass]}
+      kit: {sequence: [chorus_entry, {use: backbeat, repeat: 2}]}
+
+  coda_2:
+    hairpin: dim
+    bars: 1
+    parts:
+      melody:
+        - f4@lean
+        - z
+        - c4 d4 |
+      keys: {use: coda_pickup}
+      bass: {use: db_single_bass}
+      kit: {use: short_fill}
+
+  coda_repeat:
+    extends: coda
+    dynamic: mp
+
+  coda_repeat_2:
+    extends: coda_2
+    ritardando: 0.12
+
+  ending:
+    dynamic: p
+    ritardando: 0.2
+    fermata: 3
+    bars: 1
+    parts:
+      melody: {notes: '4:e4@lean |', breath_ms: 0}
+      keys: {use: ab_low_hold}
+      bass: {use: ab_bass_hold}
+      kit: kick-crash 3:z |
+
+form:
+  - introduction
+  - introduction_continued
+  - verse_1
+  - verse_1_2
+  - verse_1_3
+  - verse_1_4
+  - verse_2
+  - verse_2_2
+  - verse_2_3
+  - verse_2_4
+  - verse_2_5
+  - chorus_1
+  - chorus_1_2
+  - chorus_1_3
+  - chorus_1_4
+  - verse_3
+  - verse_3_2
+  - verse_3_3
+  - verse_3_4
+  - verse_3_5
+  - chorus_1
+  - chorus_2_2
+  - chorus_1_3
+  - chorus_2_4
+  - verse_4
+  - verse_4_2
+  - verse_4_3
+  - verse_4_4
+  - coda_pickup
+  - coda
+  - coda_2
+  - coda_repeat
+  - coda_repeat_2
+  - ending

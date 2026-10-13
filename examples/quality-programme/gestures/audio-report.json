@@ -1,0 +1,122 @@
+[
+  {
+    "file": "examples/quality-programme/gestures/bass.wav",
+    "sha256": "4a7a489561340048e0ba60e7de4a70424a4002048cb88a0b642760b1f5ba9efa",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -16.995503079316492,
+    "rms_dbfs": -31.095049481639514,
+    "crest_db": 14.099546402323021,
+    "dc_fraction": 6.961060669035122e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/cello.wav",
+    "sha256": "c90ccaa461a9dbb9c6f7548b96117172e41e7040872292887c91b2783fe5eab1",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -29.520716315671617,
+    "rms_dbfs": -35.115005560672145,
+    "crest_db": 5.59428924500053,
+    "dc_fraction": -8.520673544457112e-07,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/drum-kit.wav",
+    "sha256": "703724f1b36be5ad594ad9aae5629249ed15984f4d876797b4597fde89735679",
+    "duration_seconds": 29.873990929705215,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -17.363295798687027,
+    "rms_dbfs": -38.118136259402526,
+    "crest_db": 20.7548404607155,
+    "dc_fraction": 1.773003225548705e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/electric-guitar.wav",
+    "sha256": "34d811ad5d32fd3cc8f4daeb1a2f34527dc0dc35875162325ee653df5e25cc77",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -18.867838900668268,
+    "rms_dbfs": -34.81152247739503,
+    "crest_db": 15.943683576726766,
+    "dc_fraction": 3.245148917335417e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/flute.wav",
+    "sha256": "0ab32858ae96260a5d810f83a9d450a6ff5c36e6a82d604c1a37f2006752ff85",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -27.033848219555242,
+    "rms_dbfs": -32.74097143710933,
+    "crest_db": 5.707123217554086,
+    "dc_fraction": 1.3534988811041946e-08,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/guitar.wav",
+    "sha256": "51a150697c55aac5b7c71199fe902bf4ba9603c968721584f21ba9b23111cda1",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -18.421147691685825,
+    "rms_dbfs": -32.16209269985717,
+    "crest_db": 13.740945008171346,
+    "dc_fraction": 2.7884783948508617e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/saxophone.wav",
+    "sha256": "f34774023a1ef8aae496b5fa05c7b8e91485ac0ead8db587056dcf54d1ba1f23",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -31.147281728772658,
+    "rms_dbfs": -38.168078856425,
+    "crest_db": 7.020797127652343,
+    "dc_fraction": 3.77387335084346e-08,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/trumpet.wav",
+    "sha256": "65e821fc0a97a6e01be2cc814220530d7bf016dfe4344f8dc21316817f66e5ca",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -30.378765256110785,
+    "rms_dbfs": -38.31556923512936,
+    "crest_db": 7.936803979018579,
+    "dc_fraction": 3.630561704608898e-08,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/upright-bass.wav",
+    "sha256": "f2d88b11a3c038fadd969d0072096e6cadf78c9b37cdfab4e603cd10a11c936a",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -18.727052168141483,
+    "rms_dbfs": -33.131091255011576,
+    "crest_db": 14.404039086870098,
+    "dc_fraction": 1.2087063478585423e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/gestures/violin.wav",
+    "sha256": "13153a53667bd8f786ad9104dc95b8d5595616166e42904c9d3d6feca7c8256d",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -29.83572033523849,
+    "rms_dbfs": -35.16201283434456,
+    "crest_db": 5.3262924991060725,
+    "dc_fraction": 4.745207841988823e-08,
+    "clipped_samples": 0
+  }
+]

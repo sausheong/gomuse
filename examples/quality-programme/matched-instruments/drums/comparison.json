@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/drums/before.wav",
+      "sha256": "2687bc8161ac06e95ec0a4b1987bec1601568f489f0697241cdd9738808578fe",
+      "duration_seconds": 10.183990929705216,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -6.1407090802247275,
+      "rms_dbfs": -24.000444833876745,
+      "crest_db": 17.859735753652018,
+      "dc_fraction": 5.578563052146142e-05,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/drums.wav",
+      "source_sha256": "fa88196df5b95ba8ae6995a08b161ec1d374a8b2d157cd7d200b7d8902f09602",
+      "gain": 3.249941108079442
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/drums/after.wav",
+      "sha256": "c6889dff843d974644d43bc1c56a89f6ad112e541806d9c6fb4a860ee052ed52",
+      "duration_seconds": 10.183990929705216,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -6.236919669104517,
+      "rms_dbfs": -24.000264900947545,
+      "crest_db": 17.76334523184303,
+      "dc_fraction": 5.838358686317672e-05,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/drums.wav",
+      "source_sha256": "74f539589133c05020227b12e718c944694b3574b9e676b3ded12e95cd9d2138",
+      "gain": 3.4257854750522974
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

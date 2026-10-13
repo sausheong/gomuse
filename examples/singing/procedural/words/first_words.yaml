@@ -1,0 +1,81 @@
+name: "First words \u2014 expressive phrase"
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  breaths: 0
+  breathiness: 0.05
+sections:
+- C1:
+  - 0.4:z
+  - 1.2:e3
+  - 1.6:g3
+  - 0.6:z
+  - 1.2:g3
+  - 1.2:a3
+  - 1.2:c4
+  - 1.6:a3
+  - z
+  C2:
+  - 10:z
+  scat:
+    syllables:
+    - ''
+    - oh
+    - my
+    - ''
+    - hey
+    - you
+    - stay
+    - +
+    - ''
+    gestures:
+    - {}
+    - pitch:
+      - -20
+      - 0
+      - -15
+    - pitch:
+      - 0
+      - 20
+      - -40
+    - {}
+    - pitch:
+      - -60
+      - 20
+      - 0
+      effort:
+      - 0.3
+      - 0.65
+      - 0.4
+    - pitch:
+      - -30
+      - 10
+      - 0
+      effort:
+      - 0.4
+      - 0.6
+      - 0.4
+    - pitch:
+      - -35
+      - 20
+      - 0
+      effort:
+      - 0.5
+      - 0.8
+      - 0.7
+    - pitch:
+      - 0
+      - -15
+      - -110
+      effort:
+      - 0.7
+      - 0.5
+      - 0.15
+    - {}

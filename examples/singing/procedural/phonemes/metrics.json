@@ -1,0 +1,10 @@
+{
+  "come_alive": {
+    "duration_seconds": 18.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5352783203125,
+    "rms": 0.09999692891180678,
+    "clipped_samples": 0
+  }
+}

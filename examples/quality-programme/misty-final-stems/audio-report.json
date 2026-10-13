@@ -1,0 +1,62 @@
+[
+  {
+    "file": "examples/quality-programme/misty-final-stems/C1.wav",
+    "sha256": "f2c2162f5e794fa21efde689c78c46045ef14065a0d50df4acabb548e6aa60d2",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -14.632355831505537,
+    "rms_dbfs": -26.838827107630735,
+    "crest_db": 12.206471276125196,
+    "dc_fraction": 1.487269377392455e-07,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/misty-final-stems/C2.wav",
+    "sha256": "fb345ced65ac2524393f94a678b4fb7af37b24eb98b3d5f57cfca19438e944fc",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -1.5851094527756373,
+    "rms_dbfs": -29.60924386732078,
+    "crest_db": 28.024134414545145,
+    "dc_fraction": 3.8649327143912694e-07,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/misty-final-stems/C3.wav",
+    "sha256": "6ed9bc7873902805836796be9d9962a9cec52bac68663889a1943fd76fc7940d",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -9.610015765666917,
+    "rms_dbfs": -33.458129635312076,
+    "crest_db": 23.84811386964516,
+    "dc_fraction": 1.056267531717647e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/misty-final-stems/master.wav",
+    "sha256": "eca678694475dc8b63c9d03630411ef250ac99ff6cdb099dbd16003a953b0b70",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -1.000151903819357,
+    "rms_dbfs": -24.501991573941844,
+    "crest_db": 23.50183967012249,
+    "dc_fraction": 1.1050767928242974e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/misty-final-stems/room.wav",
+    "sha256": "f696d5cbddca0d81d3b88895f5f9c3bfef238938dca4c63015b3838f921bb80a",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -23.86461280451597,
+    "rms_dbfs": -44.26264577961187,
+    "crest_db": 20.398032975095894,
+    "dc_fraction": -4.015424619612911e-08,
+    "clipped_samples": 0
+  }
+]

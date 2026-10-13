@@ -1,0 +1,23 @@
+name: Piano and upright bass sound study
+key: C
+length: 0.45
+instrument: piano
+volume: 14000
+humanize: 0
+reverb: 0
+sections:
+- dynamic: p
+  performance: {C1: {pedal: up}}
+  C1: [c3, e3, g3, c4, 2:c3-e3-g3-b3, 2:z]
+- dynamic: f
+  performance: {C1: {pedal: down}}
+  C1: [c3, e3, g3, c4, 2:c3-e3-g3-b3, 2:z]
+- dynamic: mf
+  instruments: {C1: upright-bass}
+  C1: [c2, c2, c2, c2, g2, e2, 2:c2]
+- dynamic: p
+  instruments: {C1: upright-bass}
+  C1: [c2, g2, e2, c2]
+- dynamic: f
+  instruments: {C1: upright-bass}
+  C1: [c2, g2, e2, c2]

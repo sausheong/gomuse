@@ -39,6 +39,7 @@ func humanizeAmount(s *Score) float64 {
 
 // tempoSection describes one section for the tempo map.
 type tempoSection struct {
+	rubato   float64
 	written  float64 // written length in seconds
 	perf     float64 // performed start, in seconds
 	rit      float64 // ritardando: the local duration factor ends at 1+rit
@@ -86,7 +87,7 @@ func buildTempoMap(s *Score, t *tune) tempoMap {
 		}
 		ts := tempoSection{
 			written: d, perf: at, rit: rit, beat: beat, swing: s.Swing,
-			fermata: sec.Fermata * beat,
+			fermata: sec.Fermata * beat, rubato: sec.Rubato,
 		}
 		ts.duration = d*(1+rit/2) + ts.fermata
 		at += ts.duration
@@ -117,6 +118,9 @@ func (ts tempoSection) at(u float64, end bool) float64 {
 	u = ts.swung(u)
 	if atEnd {
 		u = ts.written
+	}
+	if ts.written > 0 && ts.rubato != 0 && !atEnd {
+		u -= ts.rubato * ts.written * math.Sin(2*math.Pi*u/ts.written) / (2 * math.Pi)
 	}
 	p := ts.perf + u
 	if ts.written > 0 {
@@ -158,7 +162,18 @@ func applyTiming(s *Score, t *tune) {
 				endAt := ts.at(u+n.length, true)
 				u += n.length
 				if len(n.pitch) > 0 || len(n.kit) > 0 {
-					startAt += jitterFor(rnd, h, c)
+					variation := h
+					if s.Ensemble != nil {
+						if v, ok := s.Ensemble.Variation[channelNames[c]]; ok {
+							variation *= v
+						}
+					}
+					startAt += jitterFor(rnd, variation, c)
+					if s.Ensemble != nil {
+						offset := s.Ensemble.OffsetsMS[channelNames[c]] / 1000
+						limit := math.Min(.04, (endAt-startAt)*.25)
+						startAt += math.Max(-limit, math.Min(limit, offset))
+					}
 					startAt = math.Max(0, startAt)
 				}
 				n.placed = true
@@ -167,6 +182,11 @@ func applyTiming(s *Score, t *tune) {
 				n.hold = math.Max(minHold, endAt-float64(n.start)/sampleRate)
 				if len(n.pitch) > 1 {
 					n.spread = chordSpread(rnd, h, ins, n.hold, len(n.pitch))
+					if s.Ensemble != nil {
+						if total, ok := s.Ensemble.ChordSpreadMS[channelNames[c]]; ok {
+							n.spread = math.Min(total/1000, n.hold/2) / float64(len(n.pitch)-1)
+						}
+					}
 				}
 			}
 		}

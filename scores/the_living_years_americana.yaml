@@ -1,0 +1,3975 @@
+# The Living Years — Americana folk arrangement.
+# Original supplied-score melody and 117-bar form preserved.
+# Straight eighths at 88 BPM, picked acoustic-guitar melody, fingerpicked
+# verses, broader acoustic strums in choruses, and root/fifth upright bass.
+# Drums enter at played bar 45; rim clicks and a simple kick/hat pulse.
+# Requested effective drum gain 1.25 retained via volume compensation.
+# Arrangement rather than literal piano transcription. Instrumental, no vocals.
+# Cross-bar melody ties rearticulate; coda twice, then the optional ending.
+name: The Living Years — Americana folk
+key: Ab
+length: 0.6818181818181818
+instrument: guitar
+instruments: {C1: guitar, C2: guitar, C3: upright-bass}
+volume: 6875
+humanize: 0.3
+swing: 0
+reverb: 0.14
+levels: {C1: 0.68, C2: 0.52, C3: 0.56, drums: 1.0}
+pan: {C1: -0.16, C2: 0.22, C3: -0.04, drums: 0}
+performance:
+  C1: {articulation: picked}
+  C2: {articulation: let-ring}
+sections:
+
+  # Played bar 1; source p.248, written bar 1 — Ab
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:a3-c4-e4, 1.5:a3-b3-e4, a3-c4-e4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 2; source p.248, written bar 2 — Ab
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:a3-c4-e4, 1.5:a3-b3-e4, a3-c4-e4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 3; source p.248, written bar 3 — Gm
+  - dynamic: p
+    C1: [4:z]
+    C2: [4:g3-b3-d4n]
+    C3: [1.75:g1, 0.25:z, 1.75:d2n, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 4; source p.248, written bar 4 — Gm
+  - dynamic: p
+    C1: [4:z]
+    C2: [4:g3-b3-d4n]
+    C3: [1.75:g1, 0.25:z, 1.75:d2n, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 5; source p.248, written bar 5 — Bbm
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:b3-d4-f4, 1.5:b3-c4-f4, b3-d4-f4]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 6; source p.248, written bar 6 — Bbm
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:b3-d4-f4, 1.5:b3-c4-f4, b3-d4-f4]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 7; source p.248, written bar 7 — Eb
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:e4-g4, 1.5:e4-a4, e4-b4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 8; source p.248, written bar 8 — Eb
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:e4-c5, 1.5:e4-d5, e4-e5]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: picked
+        strum: down
+        strum_ms: 28
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 9; source p.248, written bar 9 — Ab
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 10; source p.248, written bar 10 — Ab
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 11; source p.248, written bar 11 — Ab
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 12; source p.248, written bar 12 — Ab
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 13; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 14; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 3:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 15; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 16; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 17; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 18; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:f4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 19; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 20; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 21; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:b3, 0.5:g3b, 0.5:d3, 0.5:g3b, 0.5:d4, 0.5:b3]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+          9: -0.6
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 22; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:d4, 0.5:b3, 0.5:d3, 0.5:g3b, 0.5:b3, 0.5:g3b]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          7: -0.6
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 23; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:b2, 0.5:b3, 0.5:d4, 0.5:b3, 0.5:f3, 0.5:b3, 0.5:f4, 0.5:d4]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 24; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:b2, 0.5:b3, 0.5:f4, 0.5:d4, 0.5:f3, 0.5:b3, 0.5:d4, 0.5:b3]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 25; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.5:e3, 0.5:d4, 0.5:a4, 0.5:d4, 0.5:b3, 0.5:d4, 0.5:b4, 0.5:a4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 26; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:e3, 0.5:e4, 0.5:g4, 0.5:e4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 27; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    C1: [3:a4, z]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 28; source p.250, written bar 28 — Ab; first verse ending
+  - dynamic: mp
+    C1: [3:z, c5]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 29; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 30; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 31; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 32; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 33; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 34; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2:z, 0.5:b4, 0.5:d5]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 35; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 36; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 37; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:b3, 0.5:g3b, 0.5:d3, 0.5:g3b, 0.5:d4, 0.5:b3]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+          9: -0.6
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 38; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:d4, 0.5:b3, 0.5:d3, 0.5:g3b, 0.5:b3, 0.5:g3b]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          7: -0.6
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 39; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:b2, 0.5:b3, 0.5:d4, 0.5:b3, 0.5:f3, 0.5:b3, 0.5:f4, 0.5:d4]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 40; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:b2, 0.5:b3, 0.5:f4, 0.5:d4, 0.5:f3, 0.5:b3, 0.5:d4, 0.5:b3]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 41; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.5:e3, 0.5:d4, 0.5:a4, 0.5:d4, 0.5:b3, 0.5:d4, 0.5:b4, 0.5:a4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 42; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:e3, 0.5:e4, 0.5:g4, 0.5:e4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 43; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    hairpin: cresc
+    C1: [3:a4, z]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 44; source p.250, written bar 29 — Ab; second/third verse ending
+  - dynamic: mp
+    hairpin: cresc
+    C1: [2:z, c4, d4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [4:z]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+          3: -0.6
+        phrases:
+        - from: 2
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 45; source p.250, written bar 30 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 46; source p.250, written bar 31 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 47; source p.250, written bar 32 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 48; source p.250, written bar 33 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 49; source p.250, written bar 34 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 50; source p.250, written bar 35 — Eb
+  - dynamic: mf
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 51; source p.250, written bar 36 — Ab
+  - dynamic: mf
+    C1: [4:c5]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 52; source p.250, written bar 37 — Ab
+  - dynamic: mf
+    C1: [c5, z, c4, d4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 53; source p.250, written bar 38 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 54; source p.250, written bar 39 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 55; source p.250, written bar 40 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 56; source p.250, written bar 41 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 57; source p.250, written bar 42 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 58; source p.251, written bar 43 — Eb
+  - dynamic: mf
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 59; source p.251, written bar 44 — Ab
+  - dynamic: mf
+    C1: [4:a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, 0.5:rim, 0.5:tom2]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 60; source p.251, written bar 45 — Ab; first chorus ending, D.S.
+  - dynamic: mf
+    C1: [3:a4, 0.5:c5, 0.5:c5]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 61; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 62; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 3:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 63; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 64; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 65; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 66; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:f4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 67; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 68; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 69; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:b3, 0.5:g3b, 0.5:d3, 0.5:g3b, 0.5:d4, 0.5:b3]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+          9: -0.6
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 70; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:d4, 0.5:b3, 0.5:d3, 0.5:g3b, 0.5:b3, 0.5:g3b]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          7: -0.6
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 71; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:b2, 0.5:b3, 0.5:d4, 0.5:b3, 0.5:f3, 0.5:b3, 0.5:f4, 0.5:d4]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 72; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:b2, 0.5:b3, 0.5:f4, 0.5:d4, 0.5:f3, 0.5:b3, 0.5:d4, 0.5:b3]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 73; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.5:e3, 0.5:d4, 0.5:a4, 0.5:d4, 0.5:b3, 0.5:d4, 0.5:b4, 0.5:a4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 74; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:e3, 0.5:e4, 0.5:g4, 0.5:e4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 75; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    hairpin: cresc
+    C1: [3:a4, z]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 76; source p.250, written bar 29 — Ab; second/third verse ending
+  - dynamic: mp
+    hairpin: cresc
+    C1: [2:z, c4, d4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+          3: -0.6
+        phrases:
+        - from: 2
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 77; source p.250, written bar 30 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 78; source p.250, written bar 31 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 79; source p.250, written bar 32 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 80; source p.250, written bar 33 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 81; source p.250, written bar 34 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 82; source p.250, written bar 35 — Eb
+  - dynamic: mf
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 83; source p.250, written bar 36 — Ab
+  - dynamic: mf
+    C1: [4:c5]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 84; source p.250, written bar 37 — Ab
+  - dynamic: mf
+    C1: [c5, z, c4, d4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 85; source p.250, written bar 38 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 86; source p.250, written bar 39 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 87; source p.250, written bar 40 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 88; source p.250, written bar 41 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 89; source p.250, written bar 42 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 90; source p.251, written bar 43 — Eb
+  - dynamic: mf
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [e3, 0.75:e3-b3-e4-g4-b4, 0.25:z, 0.5:b3, 0.5:e4-g4-b4, 0.75:e3-b3-e4-g4-b4, 0.25:z]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 91; source p.251, written bar 44 — Ab
+  - dynamic: mf
+    C1: [4:a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, 0.5:rim, 0.5:tom2]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 92; source p.251, written bar 46 — Ab; second chorus ending, D.S. al Coda
+  - dynamic: mf
+    C1: [3:a4, 0.5:z, 0.5:c5]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 93; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 94; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 3:z]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 95; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 96; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 97; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 98; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:f4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 99; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:a3, 0.5:d4, 0.5:a4, 0.5:f4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 100; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:d3, 0.5:d4, 0.5:a4, 0.5:f4, 0.5:a3, 0.5:d4, 0.5:f4, 0.5:d4]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 101; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:b3, 0.5:g3b, 0.5:d3, 0.5:g3b, 0.5:d4, 0.5:b3]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+          9: -0.6
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 102; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [0.5:g2b, 0.5:g3b, 0.5:d4, 0.5:b3, 0.5:d3, 0.5:g3b, 0.5:b3, 0.5:g3b]
+    C3: [1.75:g1b, 0.25:z, 1.75:d2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          7: -0.6
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 103; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:b2, 0.5:b3, 0.5:d4, 0.5:b3, 0.5:f3, 0.5:b3, 0.5:f4, 0.5:d4]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 104; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:b2, 0.5:b3, 0.5:f4, 0.5:d4, 0.5:f3, 0.5:b3, 0.5:d4, 0.5:b3]
+    C3: [1.75:b1, 0.25:z, 1.75:f2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+          7: -0.6
+          8: -0.6
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 105; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.5:e3, 0.5:d4, 0.5:a4, 0.5:d4, 0.5:b3, 0.5:d4, 0.5:b4, 0.5:a4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 106; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [0.5:d3, 0.5:d4, 0.5:f4, 0.5:d4, 0.5:e3, 0.5:e4, 0.5:g4, 0.5:e4]
+    C3: [1.75:e2, 0.25:z, 1.75:b2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          2: -0.6
+          3: -0.6
+          4: -0.6
+          5: -0.6
+          6: -0.6
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 107; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    C1: [3:a4, z]
+    C2: [0.5:a2, 0.5:a3, 0.5:c4, 0.5:a3, 0.5:e3, 0.5:a3, 0.5:e4, 0.5:c4]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 108; source p.251, written bar 47 — Ab; Coda pickup
+  - dynamic: mp
+    C1: [2:z, c4, d4]
+    C2: [0.5:a2, 0.5:a3, 0.5:e4, 0.5:c4, 0.5:e3, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, rim-hat]
+    performance:
+      C2:
+        articulation: let-ring
+    expression:
+      C1:
+        accents:
+          2: 0.6
+          3: -0.6
+        phrases:
+        - from: 2
+          to: 3
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          3: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+          7: -1.3
+          8: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 109; source p.251, written bar 48 — Ab; Coda repeat start
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 110; source p.251, written bar 49 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 111; source p.251, written bar 50 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 112; source p.251, written bar 51 — Db; Coda repeat end
+  - dynamic: mf
+    C1: [f4, z, c4, d4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, 0.5:rim, 0.5:tom2]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 113; source p.251, written bar 48 — Ab; Coda repeat start
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 114; source p.251, written bar 49 — Ab
+  - dynamic: mf
+    hairpin: dim
+    C1: [e4, z, e4, a4]
+    C2: [a2, 0.75:a2-e3-a3-c4-e4, 0.25:z, 0.5:e3, 0.5:a3-c4-e4, 0.75:a2-e3-a3-c4-e4, 0.25:z]
+    C3: [1.75:a1, 0.25:z, 1.75:e2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 115; source p.251, written bar 50 — Db
+  - dynamic: mf
+    hairpin: dim
+    C1: [4:f4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.5:hat]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 116; source p.251, written bar 51 — Db; Coda repeat end
+  - dynamic: mf
+    hairpin: dim
+    ritardando: 0.1
+    C1: [f4, z, c4, d4]
+    C2: [d3, 0.75:d3-a3-d4-f4-a4, 0.25:z, 0.5:a3, 0.5:d4-f4-a4, 0.75:d3-a3-d4-f4-a4, 0.25:z]
+    C3: [1.75:d2, 0.25:z, 1.75:a2, 0.25:z]
+    drums: [kick-hat, rim-hat, kick-hat, 0.5:rim, 0.5:tom2]
+    performance:
+      C2:
+        articulation: picked
+        strum: alternate
+        strum_ms: 42
+    expression:
+      C1:
+        accents:
+          1: 0.6
+          3: -0.6
+          4: -0.6
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.5
+          peak_db: 0.7
+          end_db: -1.8
+          peak_at: 0.6
+      C2:
+        accents:
+          1: 0.6
+          2: -1.3
+          4: -1.3
+          5: -1.3
+          6: -1.3
+      C3:
+        accents:
+          1: 0.6
+          3: -0.6
+
+  # Played bar 117; source p.251, written bar 52 — Ab; optional ending
+  - dynamic: p
+    ritardando: 0.2
+    fermata: 3
+    C1: [4:e4]
+    C2: [4:a2-e3-a3-c4-e4]
+    C3: [4:a1]
+    drums: [kick, 3:z]
+    performance:
+      C2:
+        articulation: let-ring
+        strum: down
+        strum_ms: 85
+    expression:
+      C1:
+        accents:
+          1: 0.6
+      C2:
+        accents:
+          1: 0.6
+      C3:
+        accents:
+          1: 0.6

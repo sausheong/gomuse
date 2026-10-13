@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/cello/before.wav",
+      "sha256": "425b858a01b40fabaa04391db2c49c714db4eb2eb8f013c75f09fbbd3af9d35c",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -15.312726993335604,
+      "rms_dbfs": -24.000264944817992,
+      "crest_db": 8.687537951482387,
+      "dc_fraction": 7.70395287620949e-07,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/cello.wav",
+      "source_sha256": "c87e417f8fde776b3ea77f65fc63218b7a5745e3047019782cddbc1475d62e79",
+      "gain": 1.1900682572166477
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/cello/after.wav",
+      "sha256": "425b858a01b40fabaa04391db2c49c714db4eb2eb8f013c75f09fbbd3af9d35c",
+      "duration_seconds": 9.85920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -15.312726993335604,
+      "rms_dbfs": -24.000264944817992,
+      "crest_db": 8.687537951482387,
+      "dc_fraction": 7.70395287620949e-07,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/cello.wav",
+      "source_sha256": "c87e417f8fde776b3ea77f65fc63218b7a5745e3047019782cddbc1475d62e79",
+      "gain": 1.1900682572166477
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

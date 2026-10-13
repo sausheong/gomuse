@@ -23,13 +23,19 @@ func flute(f, d, v float64) []float64 {
 
 func clarinet(f, d, v float64) []float64 {
 	v = playingVelocity(v)
-	upper := max(0.0, min(1.0, (f-350)/650))
+	upper := clarinetRegister(f)
 	w := wind{
 		resonances: []formant{{1100, 1600, 0.6}, {2800, 1800, 0.2}}, floor: 0.5,
 		tilt: 1.8 - 0.5*v, even: 0.08 + 0.45*upper, bright: 0.16,
 		attack: 0.045 - 0.02*v, sustain: 0.85, settle: 0.15, damp: 0.055,
 		scoopTime: 0.03, vibDepth: 2, vibRate: 5, vibDelay: 0.5,
-		air: true, breath: 0.008, chiff: 0.02 * v, seed: 0xc1a,
+		air: true, breath: 0.004 + 0.009*v*v, chiff: 0.012 * v, seed: 0xc1a,
 	}
 	return windNote(w, f, d)
+}
+
+// Smooth the reed spectrum through the low-to-upper register transition.
+func clarinetRegister(f float64) float64 {
+	u := max(0.0, min(1.0, (f-300)/800))
+	return u * u * (3 - 2*u)
 }

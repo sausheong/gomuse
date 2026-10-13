@@ -1,0 +1,53 @@
+name: Complete drum kit dynamics
+key: C
+instrument: piano
+length: 0.65
+volume: 12000
+humanize: 0
+reverb: 0
+sections:
+- dynamic: p
+  drums:
+  - kick
+  - snare
+  - hat
+  - openhat
+  - crash
+  - ride
+  - tom1
+  - tom2
+  - tom3
+  - clap
+  - rim
+  - cowbell
+  - 3:z
+- dynamic: mf
+  drums:
+  - kick
+  - snare
+  - hat
+  - openhat
+  - crash
+  - ride
+  - tom1
+  - tom2
+  - tom3
+  - clap
+  - rim
+  - cowbell
+  - 3:z
+- dynamic: f
+  drums:
+  - kick
+  - snare
+  - hat
+  - openhat
+  - crash
+  - ride
+  - tom1
+  - tom2
+  - tom3
+  - clap
+  - rim
+  - cowbell
+  - 3:z

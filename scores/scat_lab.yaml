@@ -1,0 +1,263 @@
+# Procedural source/filter scat. First six bars relaxed, next six punchy.
+name: "Scat Lab \u2014 relaxed then punchy"
+key: C
+length: 0.5
+instrument: piano
+volume: 10000
+humanize: 0
+swing: 0.7
+reverb: 0.08
+levels:
+  C1: 0.65
+  C2: 0.28
+  C3: 0.45
+  drums: 0.16
+pan:
+  C1: 0
+  C2: 0.25
+  C3: -0.1
+instruments:
+  C3: bass
+sections:
+- instruments:
+    C1: scat-doo-relaxed
+  C1: &id001
+  - g3
+  - 0.5:a3
+  - 0.5:g3
+  - e3
+  - g3
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: &id002
+  - c2
+  - e2
+  - g2
+  - a2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-bah-relaxed
+  C1: &id003
+  - 0.5:a3
+  - 0.5:c4
+  - a3
+  - g3
+  - e3
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  C3: &id004
+  - a2
+  - g2
+  - e2
+  - c2#
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-wah-relaxed
+  C1: &id005
+  - 2:g3
+  - e3
+  - z
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  C3: &id006
+  - d2
+  - f2
+  - a2
+  - c3
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-doo-relaxed
+  C1: &id007
+  - e3
+  - 0.5:g3
+  - 0.5:a3
+  - c4
+  - a3
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: &id008
+  - g2
+  - b2
+  - d3
+  - e3
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-bah-relaxed
+  C1: &id009
+  - 0.5:f3
+  - 0.5:a3
+  - c4
+  - a3
+  - f3
+  C2:
+  - 0.5:z
+  - a3-c4-d4
+  - 0.5:z
+  - a3-c4-d4
+  - z
+  C3: &id010
+  - f2
+  - a2
+  - c3
+  - b2
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-wah-relaxed
+  C1: &id011
+  - 2:g3
+  - c3
+  - z
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: &id012
+  - c2
+  - g2
+  - c2
+  - z
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-doo-punchy
+  C1: *id001
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id002
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-bah-punchy
+  C1: *id003
+  C2:
+  - 0.5:z
+  - g3-c4#-e4
+  - 0.5:z
+  - g3-c4#-e4
+  - z
+  C3: *id004
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-wah-punchy
+  C1: *id005
+  C2:
+  - 0.5:z
+  - f3-a3-c4-e4
+  - 0.5:z
+  - f3-a3-c4-e4
+  - z
+  C3: *id006
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-doo-punchy
+  C1: *id007
+  C2:
+  - 0.5:z
+  - f3-b3-e4
+  - 0.5:z
+  - f3-b3-e4
+  - z
+  C3: *id008
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-bah-punchy
+  C1: *id009
+  C2:
+  - 0.5:z
+  - a3-c4-d4
+  - 0.5:z
+  - a3-c4-d4
+  - z
+  C3: *id010
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0
+- instruments:
+    C1: scat-wah-punchy
+  C1: *id011
+  C2:
+  - 0.5:z
+  - e3-g3-a3-c4
+  - 0.5:z
+  - e3-g3-a3-c4
+  - z
+  C3: *id012
+  drums:
+  - kick-ride
+  - rim-ride
+  - kick-ride
+  - rim-ride
+  ritardando: 0

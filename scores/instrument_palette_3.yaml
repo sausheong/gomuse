@@ -1,0 +1,204 @@
+# Original audition, with soft and loud phrases for each new instrument.
+name: Expanded Instrument Palette
+key: C
+length: 0.32
+instrument: piano
+volume: 7500
+humanize: 0
+reverb: 0.12
+pan: {C1: 0, C2: -0.25, C3: 0.25}
+sections:
+  - label: trombone p
+    instrument: trombone
+    dynamic: p
+    C1: [c3, g3, 2:c4, 0.5:g3, 0.5:g3, g3, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: trombone f
+    instrument: trombone
+    dynamic: f
+    C1: [c3, g3, 2:c4, 0.5:g3, 0.5:g3, g3, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: french-horn p
+    instrument: french-horn
+    dynamic: p
+    C1: [c3, g3, 2:c5, 0.5:g3, 0.5:g3, g3, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: french-horn f
+    instrument: french-horn
+    dynamic: f
+    C1: [c3, g3, 2:c5, 0.5:g3, 0.5:g3, g3, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: oboe p
+    instrument: oboe
+    dynamic: p
+    C1: [c4, a4, 2:c6, 0.5:a4, 0.5:a4, a4, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: oboe f
+    instrument: oboe
+    dynamic: f
+    C1: [c4, a4, 2:c6, 0.5:a4, 0.5:a4, a4, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: bassoon p
+    instrument: bassoon
+    dynamic: p
+    C1: [c2, g2, 2:c4, 0.5:g2, 0.5:g2, g2, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: bassoon f
+    instrument: bassoon
+    dynamic: f
+    C1: [c2, g2, 2:c4, 0.5:g2, 0.5:g2, g2, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: string-ensemble p
+    instrument: string-ensemble
+    dynamic: p
+    C1: [c3, c4, 2:c5, 0.5:c4, 0.5:c4, c4, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: string-ensemble f
+    instrument: string-ensemble
+    dynamic: f
+    C1: [c3, c4, 2:c5, 0.5:c4, 0.5:c4, c4, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: nylon-guitar p
+    instrument: nylon-guitar
+    dynamic: p
+    C1: [e2, a3, 2:e5, 0.5:a3, 0.5:a3, a3, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: nylon-guitar f
+    instrument: nylon-guitar
+    dynamic: f
+    C1: [e2, a3, 2:e5, 0.5:a3, 0.5:a3, a3, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: glockenspiel p
+    instrument: glockenspiel
+    dynamic: p
+    C1: [c4, g5, 2:c6, 0.5:g5, 0.5:g5, g5, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: glockenspiel f
+    instrument: glockenspiel
+    dynamic: f
+    C1: [c4, g5, 2:c6, 0.5:g5, 0.5:g5, g5, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: xylophone p
+    instrument: xylophone
+    dynamic: p
+    C1: [c4, g5, 2:c6, 0.5:g5, 0.5:g5, g5, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: xylophone f
+    instrument: xylophone
+    dynamic: f
+    C1: [c4, g5, 2:c6, 0.5:g5, 0.5:g5, g5, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: tubular-bells p
+    instrument: tubular-bells
+    dynamic: p
+    C1: [c3, g4, 2:c5, 0.5:g4, 0.5:g4, g4, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: tubular-bells f
+    instrument: tubular-bells
+    dynamic: f
+    C1: [c3, g4, 2:c5, 0.5:g4, 0.5:g4, g4, 2:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [8:z]
+  - label: shaker
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [shaker, shaker, 2:shaker, 0.5:shaker, 0.5:shaker, shaker, 2:z]
+  - label: tambourine
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [tambourine, tambourine, 2:tambourine, 0.5:tambourine, 0.5:tambourine, tambourine, 2:z]
+  - label: conga
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [conga, conga, 2:conga, 0.5:conga, 0.5:conga, conga, 2:z]
+  - label: bongo
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [bongo, bongo, 2:bongo, 0.5:bongo, 0.5:bongo, bongo, 2:z]
+  - label: claves
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [claves, claves, 2:claves, 0.5:claves, 0.5:claves, claves, 2:z]
+  - label: triangle
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [triangle, triangle, 2:triangle, 0.5:triangle, 0.5:triangle, triangle, 2:z]
+  - label: brushtap
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [brushtap, brushtap, 2:brushtap, 0.5:brushtap, 0.5:brushtap, brushtap, 2:z]
+  - label: brushsweep
+    dynamic: mf
+    C1: [8:z]
+    C2: [8:z]
+    C3: [8:z]
+    drums: [brushsweep, brushsweep, 2:brushsweep, 0.5:brushsweep, 0.5:brushsweep, brushsweep, 2:z]
+  - label: Chamber ensemble
+    instruments: {C1: oboe, C2: string-ensemble, C3: bassoon}
+    dynamic: mf
+    C1: [e4, g4, 2:c5, b4, g4, 2:e4]
+    C2: [4:c3-e3-g3, 4:g3-b3-d4]
+    C3: [2:c2, 2:g2, 2:g2, 2:d3]
+    drums: [8:z]
+  - label: Bossa colours
+    instruments: {C1: trombone, C2: nylon-guitar, C3: upright-bass}
+    performance: {C1: {articulation: legato}, C2: {articulation: picked, strum: alternate}}
+    C1: [e3, g3, 2:a3, g3, e3, 2:d3]
+    C2: [c3-e3-g3-b3, z, c3-e3-g3-b3, z, d3-f3-a3-c4, z, d3-f3-a3-c4, z]
+    C3: [2:c2, 2:g2, 2:d2, 2:a2]
+    drums: [shaker-conga, shaker, shaker-bongo, shaker, shaker-conga, shaker, shaker-bongo, shaker]
+  - label: Horn and bells
+    instruments: {C1: french-horn, C2: tubular-bells, C3: string-ensemble}
+    C1: [g3, a3, 2:c4, b3, g3, 2:c4]
+    C2: [4:c4, 4:g3]
+    C3: [4:c3-e3-g3, 4:g2-b2-d3]
+    drums: [triangle, 7:z]

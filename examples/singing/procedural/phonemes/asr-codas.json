@@ -1,0 +1,33 @@
+[
+  {
+    "file": "examples/singing/procedural/phonemes/come_alive.wav",
+    "sha256": "fa99bb0501045ca55f324ce16f7a94376275ee79f8a5f0d909dc7e6760aadf7d",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.96,
+        "text": " E-t-a-m-a-ligh, e-ligh-t-a-ligh",
+        "avg_logprob": -0.7225343812595714,
+        "no_speech_prob": 0.24042291939258575
+      },
+      {
+        "start": 6.16,
+        "end": 11.200000000000001,
+        "text": " Bright morning light, e-re-me-i-er",
+        "avg_logprob": -0.7225343812595714,
+        "no_speech_prob": 0.24042291939258575
+      },
+      {
+        "start": 12.16,
+        "end": 17.12,
+        "text": " We can rise, we can rise, you and I",
+        "avg_logprob": -0.7225343812595714,
+        "no_speech_prob": 0.24042291939258575
+      }
+    ]
+  }
+]

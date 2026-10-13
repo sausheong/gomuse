@@ -1,0 +1,4210 @@
+# Revised arrangement: 104 BPM swing, rootless 9th/13th voicings,
+# dominant approaches, syncopated comping, walking bass and jazz ride pattern.
+# The Living Years — expressive jazz-piano arrangement.
+# Based on the transcription of supplied pages 248-251; melody and form retained.
+# Arrangement, not a literal transcription: extended harmony, syncopated piano,
+# upright bass, medium swing, per-note touch and event-indexed sustain pedal.
+# Drums enter at the first chorus (played bar 45), as in the previous version.
+# Requested effective drum gain 1.25 retained via master-volume compensation.
+# Cross-bar melody ties still rearticulate. Coda twice, then optional ending.
+name: The Living Years — expressive jazz piano
+key: Ab
+length: 0.5769230769230769
+instrument: piano
+instruments: {C3: upright-bass}
+volume: 6875
+humanize: 0.22
+swing: 0.75
+reverb: 0.17
+levels: {C1: 0.68, C2: 0.52, C3: 0.56, drums: 1.0}
+pan: {C1: -0.08, C2: 0.22, C3: -0.12, drums: 0}
+performance:
+  C1: {pedal: up}
+  C2: {pedal: up}
+sections:
+
+  # Played bar 1; source p.248, written bar 1 — Ab
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:a3-c4-e4-g3, 1.5:a3-b3-e4-g3, 0.875:a3-c4-e4-g3, 0.125:z]
+    C3: [1.75:a1, 0.25:z, 1.5:e2, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          4: up
+        accents:
+          1: -2.5
+          2: -3.5
+          3: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 2; source p.248, written bar 2 — Ab
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:a3-c4-e4-g3, 1.5:a3-b3-e4-g3, 0.875:a3-c4-e4-g3, 0.125:z]
+    C3: [1.75:a1, 0.25:z, 1.5:e2, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          4: up
+        accents:
+          1: -2.5
+          2: -3.5
+          3: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 3; source p.248, written bar 3 — Gm
+  - dynamic: p
+    C1: [4:z]
+    C2: [3.875:g3-b3-d4n-f3, 0.125:z]
+    C3: [1.75:g1, 0.25:z, 1.5:d2n, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          2: up
+        accents:
+          1: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 4; source p.248, written bar 4 — Gm
+  - dynamic: p
+    C1: [4:z]
+    C2: [3.875:g3-b3-d4n-f3, 0.125:z]
+    C3: [1.75:g1, 0.25:z, 1.5:d2n, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          2: up
+        accents:
+          1: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 5; source p.248, written bar 5 — Bbm
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:b3-d4-f4-a3, 1.5:b3-c4-f4-a3, 0.875:b3-d4-f4-a3, 0.125:z]
+    C3: [1.75:b1, 0.25:z, 1.5:f2, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          4: up
+        accents:
+          1: -2.5
+          2: -3.5
+          3: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 6; source p.248, written bar 6 — Bbm
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:b3-d4-f4-a3, 1.5:b3-c4-f4-a3, 0.875:b3-d4-f4-a3, 0.125:z]
+    C3: [1.75:b1, 0.25:z, 1.5:f2, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          4: up
+        accents:
+          1: -2.5
+          2: -3.5
+          3: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 7; source p.248, written bar 7 — Eb
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:e4-g4-d4, 1.5:e4-a4-d4, 0.875:e4-b4-d4, 0.125:z]
+    C3: [1.75:e2, 0.25:z, 1.5:b2, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          4: up
+        accents:
+          1: -2.5
+          2: -3.5
+          3: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 8; source p.248, written bar 8 — Eb
+  - dynamic: p
+    C1: [4:z]
+    C2: [1.5:e4-c5-d4, 1.5:e4-d5-d4, 0.875:e4-e5-d4, 0.125:z]
+    C3: [1.75:e2, 0.25:z, 1.5:b2, 0.5:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          4: up
+        accents:
+          1: -2.5
+          2: -3.5
+          3: -2.5
+      C3:
+        accents:
+          1: -1
+          3: -2
+
+  # Played bar 9; source p.248, written bar 9 — Ab
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 10; source p.248, written bar 10 — Ab
+  - dynamic: mp
+    C1: [4:z]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 11; source p.248, written bar 11 — Ab
+  - dynamic: mp
+    hairpin: cresc
+    C1: [4:z]
+    C2: [0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 12; source p.248, written bar 12 — Ab
+  - dynamic: mp
+    hairpin: cresc
+    C1: [4:z]
+    C2: [0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:z, 0.5:c4n-f4n-b4b-e5b, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 13; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 14; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 3:z]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 15; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 16; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 17; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 18; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:f4]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 19; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 20; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:f4n-b4n-d5n-a5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:f2n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 21; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.75:b3b-f4n-a4b-e5b, 0.75:z, 0.5:b3b-e4b-a4b-d5b, 0.5:z, 0.5:b3b-f4n-a4b-e5b, 0.5:b3b-e4b-a4b-d5b, 0.5:z]
+    C3: [1.75:g2b, 0.25:z, 1.75:d3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          7: -1.5
+          8: -0.4
+          9: -0.4
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 22; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [z, 0.5:b3b-f4n-a4b-e5b, z, 0.5:b3b-e4b-a4b-d5b, 0.5:a4n-e5b-g5b-d6b, 0.5:z]
+    C3: [1.75:g2b, 0.25:z, 1.75:d3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          7: -1.5
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 23; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:d4b-a4b-c5n-e5b, z, 0.5:d4b-f4n-c5n-g5n, 0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:d4b-f4n-c5n-g5n, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 24; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:z, 0.5:d4b-f4n-c5n-g5n, z, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3b, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+          7: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 25; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.75:a4b-d5b-f5n-b5b, 0.75:z, 0.5:a4b-d5b-f5n-b5b, 0.5:z, 0.5:a4b-d5b-f5n-b5b, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [1.75:e3b, 0.25:z, 1.75:b3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: -1.5
+          2: -0.4
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 26; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [z, 0.5:g4n-d5b-f5n-c6n, z, 0.5:g4n-d5b-f5n-c6n, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [1.75:e3b, 0.25:z, 1.75:b3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 27; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    C1: [3:a4, z]
+    C2: [0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 28; source p.250, written bar 28 — Ab; first verse ending
+  - dynamic: mp
+    C1: [3:z, c5]
+    C2: [0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:z, 0.5:c4n-f4n-b4b-e5b, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          2: 0.7
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 29; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 30; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:a4]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 31; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 32; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 33; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 34; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2:z, 0.5:b4, 0.5:d5]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [1.75:a2b, 0.25:z, 1.75:e3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 35; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 36; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:f4n-b4n-d5n-a5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:f2n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 37; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.75:b3b-f4n-a4b-e5b, 0.75:z, 0.5:b3b-e4b-a4b-d5b, 0.5:z, 0.5:b3b-f4n-a4b-e5b, 0.5:b3b-e4b-a4b-d5b, 0.5:z]
+    C3: [1.75:g2b, 0.25:z, 1.75:d3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          7: -1.5
+          8: -0.4
+          9: -0.4
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 38; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [z, 0.5:b3b-f4n-a4b-e5b, z, 0.5:b3b-e4b-a4b-d5b, 0.5:a4n-e5b-g5b-d6b, 0.5:z]
+    C3: [1.75:g2b, 0.25:z, 1.75:d3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          7: -1.5
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 39; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:d4b-a4b-c5n-e5b, z, 0.5:d4b-f4n-c5n-g5n, 0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:d4b-f4n-c5n-g5n, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 40; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:z, 0.5:d4b-f4n-c5n-g5n, z, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3b, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+          7: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 41; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.75:a4b-d5b-f5n-b5b, 0.75:z, 0.5:a4b-d5b-f5n-b5b, 0.5:z, 0.5:a4b-d5b-f5n-b5b, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [1.75:e3b, 0.25:z, 1.75:b3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: -1.5
+          2: -0.4
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 42; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [z, 0.5:g4n-d5b-f5n-c6n, z, 0.5:g4n-d5b-f5n-c6n, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [1.75:e3b, 0.25:z, 1.75:b3b, 0.25:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+
+  # Played bar 43; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    hairpin: cresc
+    C1: [3:a4, z]
+    C2: [0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 44; source p.250, written bar 29 — Ab; second/third verse ending
+  - dynamic: mp
+    hairpin: cresc
+    C1: [2:z, c4, d4]
+    C2: [0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:z, 0.5:c4n-f4n-b4b-e5b, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [4:z]
+    expression:
+      C1:
+        accents:
+          2: 0.7
+          3: -0.4
+        phrases:
+        - from: 2
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 45; source p.250, written bar 30 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [0.75:c3n-g3n-b3b-f4n, 0.75:z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride-crash, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 46; source p.250, written bar 31 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [z, 0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:c4n-g4b-a4n-e5n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 47; source p.250, written bar 32 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [0.5:f3n-c4n-e4b-b4b, z, 0.5:f3n-b3b-e4b-a4b, 0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:f3n-b3b-e4b-a4b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 48; source p.250, written bar 33 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:z, 0.5:f3n-b3b-e4b-a4b, z, 0.5:d4n-a4b-b4n-g5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 49; source p.250, written bar 34 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [0.75:g3n-d4b-f4n-c5n, 0.75:z, 0.5:g3n-d4b-f4n-c5n, 0.5:z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-f4n-c5n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:b3b, 0.1:z, 0.9:f3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 50; source p.250, written bar 35 — Eb
+  - dynamic: mf
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [z, 0.5:g3n-d4b-f4n-c5n, z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-e4n-b4n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:b3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 51; source p.250, written bar 36 — Ab
+  - dynamic: mf
+    C1: [4:c5]
+    C2: [0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 52; source p.250, written bar 37 — Ab
+  - dynamic: mf
+    C1: [c5, z, c4, d4]
+    C2: [0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:z, 0.5:c3n-f3n-b3b-e4b, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 53; source p.250, written bar 38 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [0.75:c3n-g3n-b3b-f4n, 0.75:z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 54; source p.250, written bar 39 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [z, 0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:c4n-g4b-a4n-e5n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 55; source p.250, written bar 40 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [0.5:f3n-c4n-e4b-b4b, z, 0.5:f3n-b3b-e4b-a4b, 0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:f3n-b3b-e4b-a4b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 56; source p.250, written bar 41 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:z, 0.5:f3n-b3b-e4b-a4b, z, 0.5:d4n-a4b-b4n-g5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 57; source p.250, written bar 42 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [0.75:g3n-d4b-f4n-c5n, 0.75:z, 0.5:g3n-d4b-f4n-c5n, 0.5:z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-f4n-c5n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:b3b, 0.1:z, 0.9:f3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 58; source p.251, written bar 43 — Eb
+  - dynamic: mf
+    hairpin: dim
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [z, 0.5:g3n-d4b-f4n-c5n, z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-e4n-b4n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:b3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 59; source p.251, written bar 44 — Ab
+  - dynamic: mf
+    C1: [4:a4]
+    C2: [0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:snare]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 60; source p.251, written bar 45 — Ab; first chorus ending, D.S.
+  - dynamic: mf
+    C1: [3:a4, 0.5:c5, 0.5:c5]
+    C2: [0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:z, 0.5:c3n-f3n-b3b-e4b, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 61; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 62; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 3:z]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 63; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 64; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 65; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 66; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:f4]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 67; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 68; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:f4n-b4n-d5n-a5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:f2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 69; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.75:b3b-f4n-a4b-e5b, 0.75:z, 0.5:b3b-e4b-a4b-d5b, 0.5:z, 0.5:b3b-f4n-a4b-e5b, 0.5:b3b-e4b-a4b-d5b, 0.5:z]
+    C3: [0.9:g2b, 0.1:z, 0.9:b2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:a2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          7: -1.5
+          8: -0.4
+          9: -0.4
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 70; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [z, 0.5:b3b-f4n-a4b-e5b, z, 0.5:b3b-e4b-a4b-d5b, 0.5:a4n-e5b-g5b-d6b, 0.5:z]
+    C3: [0.9:g2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:b2b, 0.1:z, 0.9:a2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          7: -1.5
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 71; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:d4b-a4b-c5n-e5b, z, 0.5:d4b-f4n-c5n-g5n, 0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:d4b-f4n-c5n-g5n, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 72; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:z, 0.5:d4b-f4n-c5n-g5n, z, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3b, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+          7: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 73; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.75:a4b-d5b-f5n-b5b, 0.75:z, 0.5:a4b-d5b-f5n-b5b, 0.5:z, 0.5:a4b-d5b-f5n-b5b, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:b3b, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: -1.5
+          2: -0.4
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 74; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [z, 0.5:g4n-d5b-f5n-c6n, z, 0.5:g4n-d5b-f5n-c6n, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:b3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 75; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    hairpin: cresc
+    C1: [3:a4, z]
+    C2: [0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 76; source p.250, written bar 29 — Ab; second/third verse ending
+  - dynamic: mp
+    hairpin: cresc
+    C1: [2:z, c4, d4]
+    C2: [0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:z, 0.5:c4n-f4n-b4b-e5b, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          2: 0.7
+          3: -0.4
+        phrases:
+        - from: 2
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 77; source p.250, written bar 30 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [0.75:c3n-g3n-b3b-f4n, 0.75:z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride-crash, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 78; source p.250, written bar 31 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [z, 0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:c4n-g4b-a4n-e5n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 79; source p.250, written bar 32 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [0.5:f3n-c4n-e4b-b4b, z, 0.5:f3n-b3b-e4b-a4b, 0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:f3n-b3b-e4b-a4b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 80; source p.250, written bar 33 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:z, 0.5:f3n-b3b-e4b-a4b, z, 0.5:d4n-a4b-b4n-g5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 81; source p.250, written bar 34 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [0.75:g3n-d4b-f4n-c5n, 0.75:z, 0.5:g3n-d4b-f4n-c5n, 0.5:z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-f4n-c5n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:b3b, 0.1:z, 0.9:f3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 82; source p.250, written bar 35 — Eb
+  - dynamic: mf
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [z, 0.5:g3n-d4b-f4n-c5n, z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-e4n-b4n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:b3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 83; source p.250, written bar 36 — Ab
+  - dynamic: mf
+    C1: [4:c5]
+    C2: [0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 84; source p.250, written bar 37 — Ab
+  - dynamic: mf
+    C1: [c5, z, c4, d4]
+    C2: [0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:z, 0.5:c3n-f3n-b3b-e4b, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 85; source p.250, written bar 38 — Ab
+  - dynamic: mf
+    C1: [4:e4]
+    C2: [0.75:c3n-g3n-b3b-f4n, 0.75:z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 86; source p.250, written bar 39 — Ab
+  - dynamic: mf
+    C1: [e4, z, e4, a4]
+    C2: [z, 0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:c4n-g4b-a4n-e5n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 87; source p.250, written bar 40 — Db
+  - dynamic: mf
+    C1: [4:f4]
+    C2: [0.5:f3n-c4n-e4b-b4b, z, 0.5:f3n-b3b-e4b-a4b, 0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:f3n-b3b-e4b-a4b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 88; source p.250, written bar 41 — Db
+  - dynamic: mf
+    C1: [f4, z, f4, f4]
+    C2: [0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:z, 0.5:f3n-b3b-e4b-a4b, z, 0.5:d4n-a4b-b4n-g5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 89; source p.250, written bar 42 — Eb
+  - dynamic: mf
+    C1: [1.5:b4, 1.5:c5, d5]
+    C2: [0.75:g3n-d4b-f4n-c5n, 0.75:z, 0.5:g3n-d4b-f4n-c5n, 0.5:z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-f4n-c5n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:b3b, 0.1:z, 0.9:f3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 90; source p.251, written bar 43 — Eb
+  - dynamic: mf
+    hairpin: dim
+    C1: [1.5:d5, 1.5:c5, b4]
+    C2: [z, 0.5:g3n-d4b-f4n-c5n, z, 0.5:g3n-d4b-f4n-c5n, 0.5:g3n-d4b-e4n-b4n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:b3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 91; source p.251, written bar 44 — Ab
+  - dynamic: mf
+    C1: [4:a4]
+    C2: [0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:snare]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 92; source p.251, written bar 46 — Ab; second chorus ending, D.S. al Coda
+  - dynamic: mf
+    C1: [3:a4, 0.5:z, 0.5:c5]
+    C2: [0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:z, 0.5:c3n-f3n-b3b-e4b, z, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 93; source p.248, written bar 13 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 94; source p.248, written bar 14 — Ab
+  - dynamic: mp
+    C1: [a4, 3:z]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 95; source p.248, written bar 15 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.75:c5, 0.25:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -1.5
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 96; source p.249, written bar 16 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 97; source p.249, written bar 17 — Ab
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 0.5:b4, 1.75:a4]
+    C2: [0.75:c4n-g4n-b4b-f5n, 0.75:z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 98; source p.249, written bar 18 — Ab
+  - dynamic: mp
+    C1: [a4, 2.5:z, 0.5:f4]
+    C2: [z, 0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:c5n-g5b-a5n-e6n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+        phrases:
+        - from: 1
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 99; source p.249, written bar 19 — Db
+  - dynamic: mp
+    C1: [0.5:c5, 0.25:c5, 0.5:c5, 0.5:b4, 2.25:b4]
+    C2: [0.5:f4n-c5n-e5b-b5b, z, 0.5:f4n-b4b-e5b-a5b, 0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:f4n-b4b-e5b-a5b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+        phrases:
+        - from: 1
+          to: 5
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 100; source p.249, written bar 20 — Db
+  - dynamic: mp
+    C1: [3.75:z, 0.25:f4]
+    C2: [0.5:z, 0.5:f4n-c5n-e5b-b5b, 0.5:z, 0.5:f4n-b4b-e5b-a5b, z, 0.5:f4n-b4n-d5n-a5n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:f2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          2: -1.5
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 101; source p.249, written bar 21 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.5:c5, 0.25:c5, 0.5:c5, 0.5:d5]
+    C2: [0.75:b3b-f4n-a4b-e5b, 0.75:z, 0.5:b3b-e4b-a4b-d5b, 0.5:z, 0.5:b3b-f4n-a4b-e5b, 0.5:b3b-e4b-a4b-d5b, 0.5:z]
+    C3: [0.9:g2b, 0.1:z, 0.9:b2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:a2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          7: -1.5
+          8: -0.4
+          9: -0.4
+        phrases:
+        - from: 1
+          to: 9
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 102; source p.249, written bar 22 — Gb
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.75:d5, c5, 0.75:z, 0.25:b4]
+    C2: [z, 0.5:b3b-f4n-a4b-e5b, z, 0.5:b3b-e4b-a4b-d5b, 0.5:a4n-e5b-g5b-d6b, 0.5:z]
+    C3: [0.9:g2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:b2b, 0.1:z, 0.9:a2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          7: -1.5
+        phrases:
+        - from: 1
+          to: 7
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 103; source p.249, written bar 23 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.25:e5, 0.5:e5, 0.5:d5, 0.5:d5, 0.75:c5, 0.75:z, 0.25:c5]
+    C2: [0.5:d4b-a4b-c5n-e5b, z, 0.5:d4b-f4n-c5n-g5n, 0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:d4b-f4n-c5n-g5n, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -1.5
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 104; source p.249, written bar 24 — Bbm
+  - dynamic: mp
+    C1: [0.5:e5, 0.5:e5, 0.75:f5, 0.25:d5, d5, 0.25:b4, 0.5:b4, 0.25:d5]
+    C2: [0.5:z, 0.5:d4b-a4b-c5n-e5b, 0.5:z, 0.5:d4b-f4n-c5n-g5n, z, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [0.9:b2b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:d3b, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+          7: -0.4
+          8: -1.5
+        phrases:
+        - from: 1
+          to: 8
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 105; source p.250, written bar 25 — Eb7sus
+  - dynamic: mp
+    C1: [0.25:d5, 0.5:d5, 0.5:d5, 0.5:c5, 0.75:c5, 0.5:b4, z]
+    C2: [0.75:a4b-d5b-f5n-b5b, 0.75:z, 0.5:a4b-d5b-f5n-b5b, 0.5:z, 0.5:a4b-d5b-f5n-b5b, 0.5:d5n-a5b-b5n-g6b, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:b3b, 0.1:z, 0.9:d3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: -1.5
+          2: -0.4
+          3: -0.4
+          4: -0.4
+          5: -0.4
+          6: -0.4
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 106; source p.250, written bar 26 — Db/Eb, Eb
+  - dynamic: mp
+    C1: [d5, e5, 0.75:c5, 0.25:b4, 0.75:a4, 0.25:a4]
+    C2: [z, 0.5:g4n-d5b-f5n-c6n, z, 0.5:g4n-d5b-f5n-c6n, 0.5:g4n-d5b-e5n-b5n, 0.5:z]
+    C3: [0.9:e3b, 0.1:z, 0.9:b3b, 0.1:z, 0.9:g3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          2: -0.4
+          3: -0.4
+          4: -1.5
+          5: -0.4
+          6: -1.5
+        phrases:
+        - from: 1
+          to: 6
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 107; source p.250, written bar 27 — Ab; To Coda
+  - dynamic: mp
+    hairpin: cresc
+    C1: [3:a4, z]
+    C2: [0.5:c4n-g4n-b4b-f5n, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 108; source p.251, written bar 47 — Ab; Coda pickup
+  - dynamic: mp
+    hairpin: cresc
+    C1: [2:z, c4, d4]
+    C2: [0.5:z, 0.5:c4n-g4n-b4b-f5n, 0.5:z, 0.5:c4n-f4n-b4b-e5b, z, 0.5:c4n-f4n-b4b-e5b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:ride, 0.5:kick, 0.5:ride-hat-snare, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          2: 0.7
+          3: -0.4
+        phrases:
+        - from: 2
+          to: 3
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 109; source p.251, written bar 48 — Ab; Coda repeat start
+  - dynamic: mp
+    C1: [4:e4]
+    C2: [0.75:c3n-g3n-b3b-f4n, 0.75:z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride-crash, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 110; source p.251, written bar 49 — Ab
+  - dynamic: mp
+    C1: [e4, z, e4, a4]
+    C2: [z, 0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:c4n-g4b-a4n-e5n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 111; source p.251, written bar 50 — Db
+  - dynamic: mp
+    C1: [4:f4]
+    C2: [0.5:f3n-c4n-e4b-b4b, z, 0.5:f3n-b3b-e4b-a4b, 0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:f3n-b3b-e4b-a4b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 112; source p.251, written bar 51 — Db; Coda repeat end
+  - dynamic: mp
+    C1: [f4, z, c4, d4]
+    C2: [0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:z, 0.5:f3n-b3b-e4b-a4b, z, 0.5:g3n-d4b-e4n-b4n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:snare]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 113; source p.251, written bar 48 — Ab; Coda repeat start
+  - dynamic: mp
+    C1: [4:e4]
+    C2: [0.75:c3n-g3n-b3b-f4n, 0.75:z, 0.5:c3n-f3n-b3b-e4b, 0.5:z, 0.5:c3n-g3n-b3b-f4n, 0.5:c3n-f3n-b3b-e4b, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:e3b, 0.1:z, 0.9:b2b, 0.1:z]
+    drums: [kick-ride-crash, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 114; source p.251, written bar 49 — Ab
+  - dynamic: mp
+    hairpin: dim
+    C1: [e4, z, e4, a4]
+    C2: [z, 0.5:c3n-g3n-b3b-f4n, z, 0.5:c3n-f3n-b3b-e4b, 0.5:c4n-g4b-a4n-e5n, 0.5:z]
+    C3: [0.9:a2b, 0.1:z, 0.9:e3b, 0.1:z, 0.9:c3n, 0.1:z, 0.9:c3n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: down
+          6: up
+        accents:
+          2: -1.2
+          4: -1.2
+          5: -1.2
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 115; source p.251, written bar 50 — Db
+  - dynamic: mp
+    hairpin: dim
+    C1: [4:f4]
+    C2: [0.5:f3n-c4n-e4b-b4b, z, 0.5:f3n-b3b-e4b-a4b, 0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:f3n-b3b-e4b-a4b, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:a3b, 0.1:z, 0.9:e3b, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, ride, 0.5:ride-hat-rim, 0.5:ride]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+          2: up
+          3: down
+          4: up
+          5: down
+          6: down
+          7: up
+        accents:
+          1: -1.2
+          3: 0.5
+          5: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 116; source p.251, written bar 51 — Db; Coda repeat end
+  - dynamic: mp
+    hairpin: dim
+    ritardando: 0.12
+    C1: [f4, z, c4, d4]
+    C2: [0.5:z, 0.5:f3n-c4n-e4b-b4b, 0.5:z, 0.5:f3n-b3b-e4b-a4b, z, 0.5:g3n-d4b-e4n-b4n, 0.5:z]
+    C3: [0.9:d3b, 0.1:z, 0.9:a3b, 0.1:z, 0.9:f3n, 0.1:z, 0.9:g2n, 0.1:z]
+    drums: [kick-ride, 0.5:ride-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom2, 0.5:snare]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+          3: -0.4
+          4: -0.4
+        phrases:
+        - from: 1
+          to: 4
+          start_db: -0.8
+          peak_db: 0.8
+          end_db: -2
+          peak_at: 0.55
+      C2:
+        pedal:
+          1: up
+          2: down
+          3: up
+          4: down
+          5: up
+          6: down
+          7: up
+        accents:
+          2: -1.2
+          4: -1.2
+          6: 0.5
+      C3:
+        accents:
+          1: 0.4
+          3: -0.6
+          5: 0.4
+          7: -0.6
+
+  # Played bar 117; source p.251, written bar 52 — Ab; optional ending
+  - dynamic: p
+    ritardando: 0.22
+    fermata: 3
+    C1: [4:e4]
+    C2: [4:c3n-f3n-b3b-e4b]
+    C3: [4:a1b]
+    drums: [kick-ride, 3:z]
+    expression:
+      C1:
+        accents:
+          1: 0.7
+      C2:
+        pedal:
+          1: down
+        accents:
+          1: -2.5
+      C3:
+        accents:
+          1: -1

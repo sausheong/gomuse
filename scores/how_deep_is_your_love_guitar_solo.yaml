@@ -1,0 +1,227 @@
+# How Deep Is Your Love — Barry, Robin and Maurice Gibb.
+# Solo-guitar arrangement by Mark Yong, from the two supplied JPEG pages.
+# Sources: notation/how_deep_is_your_love_guitar_solo_01.jpeg and _02.jpeg.
+# A major; sounding pitches are one octave below the printed guitar staff.
+# Moderato Ritmico: quarter = 96 is an editorial tempo, not a printed metronome mark.
+# C1 melody/chords, C2 independent inner notes, C3 bass; guitar throughout.
+# Source labels follow the printed numbers; the two cells near the ornamented
+# fermata are called 11a/11b because the subsequent printed numbering is offset.
+# Form interpretation: intro 1–4; 5–27 twice; 28–30; D.S. 18–30 without repeats;
+# then continue into the written ending 31–36 instead of looping at D.S. again.
+# There is no explicit To Coda marker; this finite ending traversal is editorial.
+# Exact matching cross-bar ties are merged; partial chord ties may rearticulate.
+# Grace note in 11a uses 1/16 beat borrowed from its main note. Fermata holds and
+# ritardando amounts are editorial. Splits at fermatas may retrigger the bass.
+# Fingerings, barre positions and slurs are omitted.
+# Draft transcription: dense chord voicings and accidentals warrant musical review.
+# Timing and WAV checks verify alignment/rendering, not note-for-note accuracy.
+name: How Deep Is Your Love — guitar solo
+key: A
+length: 0.625
+instrument: guitar
+instruments: {C1: guitar, C2: guitar, C3: guitar}
+pan: {C1: 0, C2: 0.08, C3: -0.08}
+levels: {C1: 1, C2: 0.75, C3: 0.85}
+volume: 22000
+humanize: 0.1
+swing: 0
+reverb: 0.16
+sections:
+  # Source 1
+  - dynamic: mp
+    C1: [0.5:z, 0.5:e3, 0.5:a3, b3, a3-c4, 0.5:e3]
+    C2: [4:z]
+    C3: [4:a2]
+  # Source 2
+  - dynamic: mp
+    C1: [0.5:z, 0.5:e3, 0.5:a3, b3, a3-c4, 0.5:e3]
+    C2: [4:z]
+    C3: [4:g2]
+  # Source 3
+  - dynamic: mp
+    C1: [0.5:z, 0.5:a3, 0.5:d4-f4, d4-a4, d4-f4, 0.5:a3]
+    C2: [4:z]
+    C3: [4:f2]
+  # Source 4
+  - dynamic: mp
+    C1: [0.5:z, 0.5:e3, 0.5:g3, c4-d4, 0.5:e3, 0.5:a3, 0.5:b3]
+    C2: [4:z]
+    C3: [4:e2]
+  # Source 5, 6, 7, 8, 9, 10
+  - dynamic: mp
+    C1: [a3-c4, 0.5:c4, 0.5:a3, b3, 0.5:c4, 1.5:f3-a3, c4-e4, 0.5:g3#, 0.5:a3, 0.5:b3, 0.5:a3-c4, 0.5:c4, 0.5:c4, 0.5:c4, 0.5:a3, b3, 0.5:c4, 1.5:e3-a3, e3-a3, 0.5:z, 0.5:a3, 0.5:b3, c4, 0.5:e3-g3-c4, 0.5:e3-g3-c4, 0.5:a3, 0.5:d3-f3-c4, d4, g3-b3, a3-c4, a3, 0.5:a3, 0.5:b3, 0.5:c4]
+    C2: [4:z, 4:z, 4:z, 4:z, 4:z, 4:z]
+    C3: [2:d3, 2:b2, 1.5:f2, 0.5:f2, 2:f2, 2:c3, 2:d3, 1.5:a2, 0.5:a2, 2:e2, 2:b2, 2:d3, 2:f2, 2:f2]
+  # Source 11a, beats 1 to 4; fermata split
+  - dynamic: mp
+    fermata: 1
+    C1: [0.5:d4, 0.5:d4, 0.5:d4, 0.5:d4, 0.0625:c4, 0.9375:d4]
+    C2: [0.5:a3, 2.5:z]
+    C3: [3:d3]
+  # Source 11a, beats 4 to 5; fermata split
+  - dynamic: mp
+    C1: [0.5:a3, 0.5:g3]
+    C2: [z]
+    C3: [d3]
+  # Source 11b, 12, 13, 14, 15
+  - dynamic: mp
+    C1: [g3, e3-g3, 0.5:z, 0.5:g3, 0.5:g3, a3-c4-f4, a3-c4-f4, a3-c4-f4, 0.5:a3-c4-a4, 0.5:f4, b3-e4-b4, b3-d4-f4, b3-e4, 0.5:b3-e4, 0.5:b3-f4, a3-d4-a4, 0.5:d4-f4, 0.5:a3-d4, 0.5:d4-f4, 0.5:d4-f4, 0.5:e4, 0.5:c4, b3-e4, c4, 1.5:g3-b3, 0.5:a3, 0.5:b3]
+    C2: [4:z, 4:z, 4:z, 4:z, 4:z]
+    C3: [1.5:a2, 0.5:a2, 2:a2, 2:d3, 2:d3, 2:c3, 2:c3, 2:b2, 2:b2, 2:g2, 2:g2]
+  # Source 16, 17
+  - dynamic: mf
+    ritardando: 0.22
+    hairpin: cresc
+    C1: [g3-c4, b3-e4, 0.5:b3-f4, a4, 1.5:c5, 0.5:z, 0.5:b3-d4-c5, 0.5:b3-d4-c5, 0.5:b3-d4-c5, 0.5:b3-d4-c5, 0.5:b3-d4-c5]
+    C2: [4:z, 4:z]
+    C3: [2:c3, 2:c3, 4:a2]
+  # Source 18, 19
+  - dynamic: mf
+    C1: [0.5:z, 0.5:c4-e4, 0.5:e4-a4, c4-g4, c4-f4, c4-e4, e4-a4, c4-a4, c4-g4, 0.5:z]
+    C2: [4:z, 4:z]
+    C3: [4:a2, 2:c3, 1.5:c3, 0.5:d3]
+  # Source 20
+  - dynamic: mf
+    C1: [0.5:z, 0.5:f3, 0.5:a3, 0.5:b3, c4, 0.5:d4, 0.5:a3]
+    C2: [2:z, 0.5:z, 1.5:a3]
+    C3: [2:d3, 2:e3]
+  # Source 21
+  - dynamic: mf
+    C1: [a3, a3-c4, f3#-g3#-b3, g3-b3]
+    C2: [0.5:z, 0.5:f3, 0.5:z, 0.5:e3, 2:z]
+    C3: [2:z, 2:f3#]
+  # Source 22
+  - dynamic: f
+    C1: [0.5:a3-c4-e4, 0.5:e4, 0.5:e4, 0.5:c4, 0.5:a3-c4-e4, a3-c4-f4, 0.5:g3-b3-e4]
+    C2: [4:z]
+    C3: [2:c3, 2:c3]
+  # Source 23
+  - dynamic: f
+    C1: [g3-b3-e4, g3-b3, 0.666667:a3n-c4-f4, 0.666666:a3#-c4-g4, 0.666667:c4-e4-a4n]
+    C2: [4:z]
+    C3: [1.5:e2, 0.5:f2, 0.666667:d3, 0.666666:b2, 0.666667:d3]
+  # Source 24, 25, 26, 27
+  - dynamic: mf
+    C1: [a3-c4#-e4, g3-b3, 0.5:z, 0.5:d4, 0.5:d4, 0.5:a3-c4-f4n, a3#-c4-f4n, a3#-c4-f4n, 0.5:f4n, c4-e4, 1.5:c4n-d4, g3-b3, 0.5:z, 0.5:d4, 0.5:e4, 1.5:d4-f4n, d4-f4n, 0.5:e4, c4, 0.5:a3-c4]
+    C2: [4:z, 4:z, 4:z, 4:z]
+    C3: [1.5:a2, 0.5:a2, 2:a2, 1.5:f2, 0.5:f2, 2:f2, 1.5:c3, 0.5:c3, 2:c3, 1.5:d3, 0.5:d3, 2:d3]
+  # Source 5, 6, 7, 8, 9, 10
+  - dynamic: mp
+    C1: [a3-c4, 0.5:c4, 0.5:a3, b3, 0.5:c4, 1.5:f3-a3, c4-e4, 0.5:g3#, 0.5:a3, 0.5:b3, 0.5:a3-c4, 0.5:c4, 0.5:c4, 0.5:c4, 0.5:a3, b3, 0.5:c4, 1.5:e3-a3, e3-a3, 0.5:z, 0.5:a3, 0.5:b3, c4, 0.5:e3-g3-c4, 0.5:e3-g3-c4, 0.5:a3, 0.5:d3-f3-c4, d4, g3-b3, a3-c4, a3, 0.5:a3, 0.5:b3, 0.5:c4]
+    C2: [4:z, 4:z, 4:z, 4:z, 4:z, 4:z]
+    C3: [2:d3, 2:b2, 1.5:f2, 0.5:f2, 2:f2, 2:c3, 2:d3, 1.5:a2, 0.5:a2, 2:e2, 2:b2, 2:d3, 2:f2, 2:f2]
+  # Source 11a
+  - dynamic: mp
+    C1: [0.5:d4, 0.5:d4, 0.5:d4, 0.5:d4, 0.0625:c4, 0.9375:d4, 0.5:a3, 0.5:g3]
+    C2: [0.5:a3, 3.5:z]
+    C3: [4:d3]
+  # Source 11b, 12, 13, 14, 15
+  - dynamic: mp
+    C1: [g3, e3-g3, 0.5:z, 0.5:g3, 0.5:g3, a3-c4-f4, a3-c4-f4, a3-c4-f4, 0.5:a3-c4-a4, 0.5:f4, b3-e4-b4, b3-d4-f4, b3-e4, 0.5:b3-e4, 0.5:b3-f4, a3-d4-a4, 0.5:d4-f4, 0.5:a3-d4, 0.5:d4-f4, 0.5:d4-f4, 0.5:e4, 0.5:c4, b3-e4, c4, 1.5:g3-b3, 0.5:a3, 0.5:b3]
+    C2: [4:z, 4:z, 4:z, 4:z, 4:z]
+    C3: [1.5:a2, 0.5:a2, 2:a2, 2:d3, 2:d3, 2:c3, 2:c3, 2:b2, 2:b2, 2:g2, 2:g2]
+  # Source 16, 17
+  - dynamic: mf
+    ritardando: 0.22
+    hairpin: cresc
+    C1: [g3-c4, b3-e4, 0.5:b3-f4, a4, 1.5:c5, 0.5:z, 0.5:b3-d4-c5, 0.5:b3-d4-c5, 0.5:b3-d4-c5, 0.5:b3-d4-c5, 0.5:b3-d4-c5]
+    C2: [4:z, 4:z]
+    C3: [2:c3, 2:c3, 4:a2]
+  # Source 18, 19
+  - dynamic: mf
+    C1: [0.5:z, 0.5:c4-e4, 0.5:e4-a4, c4-g4, c4-f4, c4-e4, e4-a4, c4-a4, c4-g4, 0.5:z]
+    C2: [4:z, 4:z]
+    C3: [4:a2, 2:c3, 1.5:c3, 0.5:d3]
+  # Source 20
+  - dynamic: mf
+    C1: [0.5:z, 0.5:f3, 0.5:a3, 0.5:b3, c4, 0.5:d4, 0.5:a3]
+    C2: [2:z, 0.5:z, 1.5:a3]
+    C3: [2:d3, 2:e3]
+  # Source 21
+  - dynamic: mf
+    C1: [a3, a3-c4, f3#-g3#-b3, g3-b3]
+    C2: [0.5:z, 0.5:f3, 0.5:z, 0.5:e3, 2:z]
+    C3: [2:z, 2:f3#]
+  # Source 22
+  - dynamic: f
+    C1: [0.5:a3-c4-e4, 0.5:e4, 0.5:e4, 0.5:c4, 0.5:a3-c4-e4, a3-c4-f4, 0.5:g3-b3-e4]
+    C2: [4:z]
+    C3: [2:c3, 2:c3]
+  # Source 23
+  - dynamic: f
+    C1: [g3-b3-e4, g3-b3, 0.666667:a3n-c4-f4, 0.666666:a3#-c4-g4, 0.666667:c4-e4-a4n]
+    C2: [4:z]
+    C3: [1.5:e2, 0.5:f2, 0.666667:d3, 0.666666:b2, 0.666667:d3]
+  # Source 24, 25, 26, 27, 28, 29
+  - dynamic: mf
+    C1: [a3-c4#-e4, g3-b3, 0.5:z, 0.5:d4, 0.5:d4, 0.5:a3-c4-f4n, a3#-c4-f4n, a3#-c4-f4n, 0.5:f4n, c4-e4, 1.5:c4n-d4, g3-b3, 0.5:z, 0.5:d4, 0.5:e4, 1.5:d4-f4n, d4-f4n, 0.5:e4, c4, 1.5:a3-c4, 0.5:c4, 0.5:a3, b3, 0.5:c4, 1.5:f3-a3, 0.5:f3-a3, 0.5:e3, 0.5:b3, 0.5:g3, 0.5:b3-e4, 0.5:b3-e4]
+    C2: [4:z, 4:z, 4:z, 4:z, 4:z, 4:z]
+    C3: [1.5:a2, 0.5:a2, 2:a2, 1.5:f2, 0.5:f2, 2:f2, 1.5:c3, 0.5:c3, 2:c3, 1.5:d3, 0.5:d3, 2:d3, 2:d3, 2:b2, 2:c3, 2:c3]
+  # Source 30
+  - dynamic: mp
+    ritardando: 0.22
+    C1: [0.5:e4, 0.5:b3, 0.5:b3-g4, 0.5:b3-g4, 0.5:g4, 0.5:e4, 0.5:c4-e4-a4, 0.5:b3-d4-a4]
+    C2: [4:z]
+    C3: [2:b2, 2:b2]
+  # Source 18, 19
+  - dynamic: mf
+    C1: [0.5:z, 0.5:c4-e4, 0.5:e4-a4, c4-g4, c4-f4, c4-e4, e4-a4, c4-a4, c4-g4, 0.5:z]
+    C2: [4:z, 4:z]
+    C3: [4:a2, 2:c3, 1.5:c3, 0.5:d3]
+  # Source 20
+  - dynamic: mf
+    C1: [0.5:z, 0.5:f3, 0.5:a3, 0.5:b3, c4, 0.5:d4, 0.5:a3]
+    C2: [2:z, 0.5:z, 1.5:a3]
+    C3: [2:d3, 2:e3]
+  # Source 21
+  - dynamic: mf
+    C1: [a3, a3-c4, f3#-g3#-b3, g3-b3]
+    C2: [0.5:z, 0.5:f3, 0.5:z, 0.5:e3, 2:z]
+    C3: [2:z, 2:f3#]
+  # Source 22
+  - dynamic: f
+    C1: [0.5:a3-c4-e4, 0.5:e4, 0.5:e4, 0.5:c4, 0.5:a3-c4-e4, a3-c4-f4, 0.5:g3-b3-e4]
+    C2: [4:z]
+    C3: [2:c3, 2:c3]
+  # Source 23
+  - dynamic: f
+    C1: [g3-b3-e4, g3-b3, 0.666667:a3n-c4-f4, 0.666666:a3#-c4-g4, 0.666667:c4-e4-a4n]
+    C2: [4:z]
+    C3: [1.5:e2, 0.5:f2, 0.666667:d3, 0.666666:b2, 0.666667:d3]
+  # Source 24, 25, 26, 27, 28, 29
+  - dynamic: mf
+    C1: [a3-c4#-e4, g3-b3, 0.5:z, 0.5:d4, 0.5:d4, 0.5:a3-c4-f4n, a3#-c4-f4n, a3#-c4-f4n, 0.5:f4n, c4-e4, 1.5:c4n-d4, g3-b3, 0.5:z, 0.5:d4, 0.5:e4, 1.5:d4-f4n, d4-f4n, 0.5:e4, c4, 1.5:a3-c4, 0.5:c4, 0.5:a3, b3, 0.5:c4, 1.5:f3-a3, 0.5:f3-a3, 0.5:e3, 0.5:b3, 0.5:g3, 0.5:b3-e4, 0.5:b3-e4]
+    C2: [4:z, 4:z, 4:z, 4:z, 4:z, 4:z]
+    C3: [1.5:a2, 0.5:a2, 2:a2, 1.5:f2, 0.5:f2, 2:f2, 1.5:c3, 0.5:c3, 2:c3, 1.5:d3, 0.5:d3, 2:d3, 2:d3, 2:b2, 2:c3, 2:c3]
+  # Source 30
+  - dynamic: mp
+    ritardando: 0.22
+    C1: [0.5:e4, 0.5:b3, 0.5:b3-g4, 0.5:b3-g4, 0.5:g4, 0.5:e4, 0.5:c4-e4-a4, 0.5:b3-d4-a4]
+    C2: [4:z]
+    C3: [2:b2, 2:b2]
+  # Source 31, 32
+  - dynamic: mp
+    C1: [0.5:z, 0.5:c4-e4, 0.5:e4-a4, c4-g4, c4-f4, c4-e4, e4-a4, c4-a4, c4-g4, 0.5:z]
+    C2: [4:z, 4:z]
+    C3: [4:a2, 2:c3, 1.5:c3, 0.5:d3]
+  # Source 33, beats 1 to 4.5; fermata split
+  - dynamic: p
+    fermata: 2
+    C1: [0.5:z, 0.5:a3, 0.5:b3, 0.5:c4, 1.5:a3-c4-f4]
+    C2: [3.5:z]
+    C3: [2:d3, 1.5:b2-d3]
+  # Source 33, beats 4.5 to 5; fermata split
+  - dynamic: p
+    C1: [0.5:a3]
+    C2: [0.5:z]
+    C3: [0.5:b2-d3]
+  # Source 34
+  - dynamic: mp
+    C1: [2:b3, 0.5:e3, 0.5:f3, 0.333333:g3, 0.333334:a3, 0.333333:b3]
+    C2: [4:z]
+    C3: [2:b2-d3, 2:e2]
+  # Source 35, 36
+  - dynamic: mp
+    C1: [2:b3, 0.5:d4, 0.5:e4, 0.333333:f4, 0.333334:g4, 4.333333:a4]
+    C2: [2:f3-a3, 2:z, 4:c4-e4]
+    C3: [8:a2]

@@ -1,0 +1,30 @@
+[
+  {
+    "file": "examples/singing/procedural/words/phrase.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.5600000000000005,
+        "text": " Hey, you stay, hey, you stay",
+        "avg_logprob": -0.8171007484197617,
+        "no_speech_prob": 0.2957044243812561
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/vocabulary.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 14.0,
+        "text": " A, O, my, you, say, me, we, see, say, no, so, I",
+        "avg_logprob": -0.3851875949364442,
+        "no_speech_prob": 0.6095855832099915
+      }
+    ]
+  }
+]

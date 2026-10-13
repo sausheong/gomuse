@@ -1,0 +1,38 @@
+[
+  {
+    "file": "scores/misty_final.wav",
+    "sha256": "eca678694475dc8b63c9d03630411ef250ac99ff6cdb099dbd16003a953b0b70",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -1.000151903819357,
+    "rms_dbfs": -24.501991573941844,
+    "crest_db": 23.50183967012249,
+    "dc_fraction": 1.1050767928242974e-05,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/ensembles/acoustic_ballad.wav",
+    "sha256": "7ef2463c418783704af35aa08e29d0c01bd3a67fefa9d3d5b7930535314a8a5e",
+    "duration_seconds": 23.459274376417234,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -5.6348656134667205,
+    "rms_dbfs": -23.000266744232704,
+    "crest_db": 17.36540113076598,
+    "dc_fraction": 7.69642940452782e-06,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/ensembles/fuller_ensemble.wav",
+    "sha256": "bd0c1a24d341136bc3a835038db281885839e8b0f927d8f568db52397c2d5db4",
+    "duration_seconds": 16.440294784580498,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -5.813159569340729,
+    "rms_dbfs": -23.00026450651853,
+    "crest_db": 17.187104937177804,
+    "dc_fraction": 0.0001310956640782324,
+    "clipped_samples": 0
+  }
+]

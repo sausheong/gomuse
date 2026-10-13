@@ -1,0 +1,38 @@
+# First phrase: ordinary articulation. Second: explicit gesture and, for winds/bows, tone curve.
+name: cello bow-change comparison
+key: C
+length: 0.35
+instrument: cello
+volume: 14000
+humanize: 0
+reverb: 0
+pan:
+  C1: 0
+performance:
+  C1:
+    articulation: legato
+sections:
+- dynamic: mf
+  C1: &id001
+  - c3
+  - e3
+  - g3
+  - 2:c4
+  - z
+- dynamic: mf
+  C1: *id001
+  expression:
+    C1:
+      gestures:
+        2:
+          kind: bow-change
+      phrases:
+      - from: 1
+        to: 4
+        start_db: -1
+        peak_db: 0
+        end_db: -2
+        tone:
+          start: -0.2
+          peak: 0.25
+          end: -0.3

@@ -1,0 +1,819 @@
+# Sweet Child O' Mine — draft transcription of supplied pages 354–360.
+# Written pitch in D major, then E minor; no recording-style detuning applied.
+# Medium Rock is printed without BPM; quarter = 120 is editorial.
+# C1: electric guitar opening and instrumental rendering of the vocal melody.
+# C2: reduced piano RH harmony; C3: piano LH. No drums are printed or added.
+# Opening 1–6 is unaccompanied electric guitar; printed bass enters in bar 7.
+# Piano inner voices are reduced; cross-bar ties may rearticulate. Lyrics,
+# slurs, grace notes and guitar bends are not encoded. Photo reading is a draft,
+# not a verified note-for-note engraving. Source bar numbers are counted here.
+# Ad-lib solo (66–71): only printed accompaniment, with no invented lead notes.
+# Form: 1–56, D.S. 25–48, coda 57–65, solo 66–69 x3,
+# 66–68 then ending 4 (70–71), 72–75 x4, 76–79 x2, 80–83 x4, 84–95.
+# The unnumbered repeat at 76–79 is played twice.
+# Muse electric-guitar instrument is supplied in internal/muse/electric_guitar.go.
+name: Sweet Child O' Mine — electric guitar and piano
+key: D
+length: 0.5
+instrument: piano
+instruments: {C1: electric-guitar, C2: piano, C3: piano}
+volume: 14000
+levels: {C1: 1, C2: 0.45, C3: 0.65}
+pan: {C1: -0.12, C2: 0.3, C3: -0.15}
+humanize: 0.06
+swing: 0
+reverb: 0.14
+sections:
+  # Playback 1; page 354, source bar 1
+  - dynamic: mp
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [4:z]
+  # Playback 2; page 354, source bar 2
+  - dynamic: mp
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [4:z]
+  # Playback 3; page 354, source bar 3
+  - dynamic: mp
+    C1: [0.5:e4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [4:z]
+  # Playback 4; page 354, source bar 4
+  - dynamic: mp
+    C1: [0.5:e4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [4:z]
+  # Playback 5; page 354, source bar 5
+  - dynamic: mp
+    C1: [0.5:g4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [4:z]
+  # Playback 6; page 354, source bar 6
+  - dynamic: mp
+    C1: [0.5:g4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [4:z]
+  # Playback 7; page 354, source bar 7
+  - dynamic: mp
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [2:z, 0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3]
+  # Playback 8; page 354, source bar 8
+  - dynamic: mp
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:f5, 0.5:e5, 0.5:a4]
+    C2: [4:z]
+    C3: [0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3, 0.5:d3-a3, 0.5:a2]
+  # Playback 9; page 354, source bar 9
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:d4-f4-a4-d5]
+    C3: [1.5:d3, 0.5:f3, 0.5:f3, 0.5:d3, 0.5:f3, 0.5:g3]
+  # Playback 10; page 354, source bar 10
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:d4-f4-a4-d5]
+    C3: [a3, 0.5:b3, 0.5:a3, 0.5:g3, 0.5:f3, 0.5:e3, 0.5:a2]
+  # Playback 11; page 354, source bar 11
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:c4n-e4-g4-c5n]
+    C3: [1.5:c3n, 0.5:g3, 1.5:g3, 0.5:c3n]
+  # Playback 12; page 354, source bar 12
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:c4n-e4-g4-c5n]
+    C3: [0.5:f3n, 0.5:e3, 0.5:c3n, 0.5:f3n, 0.5:g3, 0.5:e3, 0.5:d3, 0.5:f2n]
+  # Playback 13; page 354, source bar 13
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:b3-d4-g4-b4]
+    C3: [3:g2, 0.5:z, 0.5:d3]
+  # Playback 14; page 354, source bar 14
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:b3-d4-g4-b4]
+    C3: [2:g3, 1.5:g3, 0.5:d3]
+  # Playback 15; page 354, source bar 15
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:a3-d4-f4-a4]
+    C3: [0.5:g3, 0.5:f3, 0.5:d3, 0.5:f3, 0.5:f3, 0.5:d3, e3]
+  # Playback 16; page 354, source bar 16
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:a3-d4-f4-a4]
+    C3: [0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:e3, 0.5:f3]
+  # Playback 17; page 355, source bar 17
+  - dynamic: mf
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [1.5:d2, 0.5:g2, 1.5:g2, 0.5:a2]
+  # Playback 18; page 355, source bar 18
+  - dynamic: mf
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [1.5:a2, 0.5:g2, 0.5:a2, 0.5:c3, 0.5:a2, 0.5:d2]
+  # Playback 19; page 355, source bar 19
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [1.5:f2n, 0.5:e2, 1.5:e2, 0.5:d2]
+  # Playback 20; page 355, source bar 20
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [1.5:c2n, 0.5:c2n, 0.5:f2n, 0.5:e2, 0.5:d2, 0.5:c2n]
+  # Playback 21; page 355, source bar 21
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [1.5:g1, 0.5:a1, 1.5:a1, 0.5:b1]
+  # Playback 22; page 355, source bar 22
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [0.5:b1, 0.5:g2, 0.5:a2, 0.5:b2, 0.5:c3n, 0.5:b1, 0.5:c2n, 0.5:d2]
+  # Playback 23; page 355, source bar 23
+  - dynamic: mf
+    C1: [0.5:d4, 0.5:d5, 0.5:a4, 0.5:g4, 0.5:g5, 0.5:a4, 0.5:f5, 0.5:a4]
+    C2: [4:z]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2, 0.5:d2]
+  # Playback 24; page 355, source bar 24
+  - dynamic: mf
+    C1: [4:a3-d4-f4]
+    C2: [4:z]
+    C3: [0.5:f2, 0.5:a2, 0.5:b1, 0.5:d2, f2, e2]
+  # Playback 25; page 355, source bar 25; D
+  - dynamic: mf
+    C1: [0.5:a4, 0.5:a4, 0.5:a4, 1.5:a4, 0.5:g4, 0.5:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 26; page 355, source bar 26; D
+  - dynamic: mf
+    C1: [g4, 0.5:a4, 0.5:f4, e4, 0.5:d4, 0.5:g4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:e2, f2, d2]
+  # Playback 27; page 355, source bar 27; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:d4, 1.5:g4, f4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 28; page 355, source bar 28; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:e4, 1.5:d4, 0.5:e4, 0.5:a4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 29; page 355, source bar 29; G
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:d4, 1:a4, 0.5:a4, 0.5:g4, 0.5:f4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2]
+  # Playback 30; page 355, source bar 30; G
+  - dynamic: mf
+    C1: [0.5:a4, 0.5:g4, 0.5:f4, 0.5:a4, 0.5:a4, a4, 0.5:a4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:a2, b2, c3n]
+  # Playback 31; page 356, source bar 31; D
+  - dynamic: mf
+    C1: [0.5:g4, 3.5:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2, 0.5:e2]
+  # Playback 32; page 356, source bar 32; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:a4, 1:a3-d4-g4, 0.5:a3-d4-a4, 2:a3-d4-g4]
+    C3: [0.5:d2, 0.5:d3, 0.5:a2, 0.5:d3, e3, e3]
+  # Playback 33; page 356, source bar 33; D
+  - dynamic: mf
+    C1: [0.5:a4, a4, 1.5:a4, 0.5:g4, 0.5:e4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 34; page 356, source bar 34; D
+  - dynamic: mf
+    C1: [0.5:g4, a4, 1.5:f4, a4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, e2, c2n]
+  # Playback 35; page 356, source bar 35; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:d4, g4, 0.5:g4, 0.5:f4, 0.5:d4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 36; page 356, source bar 36; C
+  - dynamic: mf
+    C1: [0.5:g4, a4, g4, 0.5:f4, 0.5:g4, 0.5:e4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 37; page 356, source bar 37; G
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:g4, 0.5:f4, 1.5:g4, 0.5:d4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2]
+  # Playback 38; page 356, source bar 38; G
+  - dynamic: mf
+    C1: [0.5:f4, 0.5:f4, f4, 0.5:e4, f4, 0.5:e4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:f2, f2, f2]
+  # Playback 39; page 356, source bar 39; D
+  - dynamic: mf
+    C1: [0.5:e4, 3.5:d4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2, 0.5:e2]
+  # Playback 40; page 356, source bar 40; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:a3-d4-g4, 0.5:f4, 0.5:g4, 0.5:a3-d4-f4, 2:a3-d4-f4]
+    C3: [1.5:d2, 1:d2, 0.5:e2, 0.5:f2, 0.5:g2]
+  # Playback 41; page 356, source bar 41; A
+  - dynamic: mf
+    C1: [3:a4, 0.5:g4, 0.5:f4]
+    C2: [4:a3-c4-e4]
+    C3: [0.5:a2-e3-a3, 0.5:z, 0.5:z, 0.5:a2-e3-a3, 1.5:a2-e3-a3, 0.5:a2]
+  # Playback 42; page 356, source bar 42; C
+  - dynamic: mf
+    C1: [0.5:f4, 0.5:e4, d4, e4, 0.5:e4, 0.5:f4]
+    C2: [4:g3-c4n-e4]
+    C3: [0.5:c3n-g3, 0.5:z, 0.5:z, 0.5:c3n-g3, 2:c3n-g3]
+  # Playback 43; page 357, source bar 43; D
+  - dynamic: mf
+    C1: [0.5:g4, 2.5:g4, 0.5:z, 0.5:z]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 44; page 357, source bar 44; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:a3-d4-g4, 0.5:f4, 0.5:e4, 0.5:f4, 2:d4]
+    C3: [1.5:d2, 0.5:b1, 0.5:e2, 0.5:d2, 0.5:c2n, 0.5:a1]
+  # Playback 45; page 357, source bar 45; A
+  - dynamic: mf
+    C1: [1.5:a4, 1:g4, f4, 0.5:g4]
+    C2: [4:a3-c4-e4]
+    C3: [0.5:a2-e3-a3, 0.5:z, 0.5:z, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 46; page 357, source bar 46; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, e4, g4, 0.5:a4, 0.5:e4]
+    C2: [4:g3-c4n-e4]
+    C3: [0.5:c3n-g3, 0.5:z, 0.5:z, 0.5:c3n-g3, 2:c3n-g3]
+  # Playback 47; page 357, source bar 47; D5
+  - dynamic: mf
+    C1: [4:d4]
+    C2: [4:a3-d4]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2-a2-d3, 0.25:c3n, 0.25:c3#]
+  # Playback 48; page 357, source bar 48; D5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [3:d4-a4-d5, 0.5:z, 0.5:a4]
+    C3: [0.5:d3, 0.5:d3, 0.5:d3, 1:d3, 0.5:d3, 0.5:d2, 0.5:d2]
+  # Playback 49; page 357, source bar 49; D
+  - dynamic: mf
+    C1: [1.5:a4, 0.5:g4, 1.5:g4, 0.5:c5]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 50; page 357, source bar 50; D
+  - dynamic: mf
+    C1: [1.5:b4, 0.5:a4, 1.5:a4, 0.5:d5]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 51; page 357, source bar 51; C
+  - dynamic: mf
+    C1: [1.5:c5n, 0.5:b4, 1.5:b4, 0.5:e5]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 52; page 357, source bar 52; C
+  - dynamic: mf
+    C1: [1.5:d5, 0.5:c5n, 1.5:c5n, 0.5:f5]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 53; page 357, source bar 53; G
+  - dynamic: mf
+    C1: [2:g4, 0.5:f4, 0.5:g4, 0.5:f4, 0.5:e4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2]
+  # Playback 54; page 357, source bar 54; G
+  - dynamic: mf
+    C1: [g4, 0.5:c5n, 0.5:d5, e5, 0.5:d5, 0.5:f4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:a2, 2:b2]
+  # Playback 55; page 357, source bar 55; D
+  - dynamic: mf
+    C1: [3.5:d4-f4, 0.5:b3]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:e2, 1.5:e2, 0.5:e2]
+  # Playback 56; page 357, source bar 56; D
+  - dynamic: mf
+    C1: [1.5:a3-d4-g4, 0.5:a3-d4-g4, 2:a3-d4-f4]
+    C2: [4:a3-d4-f4]
+    C3: [0.5:e2, e2, 0.5:e2, a2, g2]
+  # Playback 57; page 355, source bar 25; D
+  - dynamic: mf
+    C1: [0.5:a4, 0.5:a4, 0.5:a4, 1.5:a4, 0.5:g4, 0.5:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 58; page 355, source bar 26; D
+  - dynamic: mf
+    C1: [g4, 0.5:a4, 0.5:f4, e4, 0.5:d4, 0.5:g4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:e2, f2, d2]
+  # Playback 59; page 355, source bar 27; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:d4, 1.5:g4, f4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 60; page 355, source bar 28; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:e4, 1.5:d4, 0.5:e4, 0.5:a4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 61; page 355, source bar 29; G
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:d4, 1:a4, 0.5:a4, 0.5:g4, 0.5:f4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2]
+  # Playback 62; page 355, source bar 30; G
+  - dynamic: mf
+    C1: [0.5:a4, 0.5:g4, 0.5:f4, 0.5:a4, 0.5:a4, a4, 0.5:a4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:a2, b2, c3n]
+  # Playback 63; page 356, source bar 31; D
+  - dynamic: mf
+    C1: [0.5:g4, 3.5:f4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2, 0.5:e2]
+  # Playback 64; page 356, source bar 32; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:a4, 1:a3-d4-g4, 0.5:a3-d4-a4, 2:a3-d4-g4]
+    C3: [0.5:d2, 0.5:d3, 0.5:a2, 0.5:d3, e3, e3]
+  # Playback 65; page 356, source bar 33; D
+  - dynamic: mf
+    C1: [0.5:a4, a4, 1.5:a4, 0.5:g4, 0.5:e4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 66; page 356, source bar 34; D
+  - dynamic: mf
+    C1: [0.5:g4, a4, 1.5:f4, a4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, e2, c2n]
+  # Playback 67; page 356, source bar 35; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:d4, g4, 0.5:g4, 0.5:f4, 0.5:d4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 68; page 356, source bar 36; C
+  - dynamic: mf
+    C1: [0.5:g4, a4, g4, 0.5:f4, 0.5:g4, 0.5:e4]
+    C2: [4:g3-c4n-e4]
+    C3: [1.5:c2n, 0.5:c2n, 2:c2n]
+  # Playback 69; page 356, source bar 37; G
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, 0.5:g4, 0.5:f4, 1.5:g4, 0.5:d4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:g2, 2:g2]
+  # Playback 70; page 356, source bar 38; G
+  - dynamic: mf
+    C1: [0.5:f4, 0.5:f4, f4, 0.5:e4, f4, 0.5:e4]
+    C2: [4:g3-b3-d4]
+    C3: [1.5:g2, 0.5:f2, f2, f2]
+  # Playback 71; page 356, source bar 39; D
+  - dynamic: mf
+    C1: [0.5:e4, 3.5:d4]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2, 0.5:e2]
+  # Playback 72; page 356, source bar 40; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:a3-d4-g4, 0.5:f4, 0.5:g4, 0.5:a3-d4-f4, 2:a3-d4-f4]
+    C3: [1.5:d2, 1:d2, 0.5:e2, 0.5:f2, 0.5:g2]
+  # Playback 73; page 356, source bar 41; A
+  - dynamic: mf
+    C1: [3:a4, 0.5:g4, 0.5:f4]
+    C2: [4:a3-c4-e4]
+    C3: [0.5:a2-e3-a3, 0.5:z, 0.5:z, 0.5:a2-e3-a3, 1.5:a2-e3-a3, 0.5:a2]
+  # Playback 74; page 356, source bar 42; C
+  - dynamic: mf
+    C1: [0.5:f4, 0.5:e4, d4, e4, 0.5:e4, 0.5:f4]
+    C2: [4:g3-c4n-e4]
+    C3: [0.5:c3n-g3, 0.5:z, 0.5:z, 0.5:c3n-g3, 2:c3n-g3]
+  # Playback 75; page 357, source bar 43; D
+  - dynamic: mf
+    C1: [0.5:g4, 2.5:g4, 0.5:z, 0.5:z]
+    C2: [4:a3-d4-f4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 76; page 357, source bar 44; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:a3-d4-g4, 0.5:f4, 0.5:e4, 0.5:f4, 2:d4]
+    C3: [1.5:d2, 0.5:b1, 0.5:e2, 0.5:d2, 0.5:c2n, 0.5:a1]
+  # Playback 77; page 357, source bar 45; A
+  - dynamic: mf
+    C1: [1.5:a4, 1:g4, f4, 0.5:g4]
+    C2: [4:a3-c4-e4]
+    C3: [0.5:a2-e3-a3, 0.5:z, 0.5:z, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 78; page 357, source bar 46; C
+  - dynamic: mf
+    C1: [0.5:g4, 0.5:f4, e4, g4, 0.5:a4, 0.5:e4]
+    C2: [4:g3-c4n-e4]
+    C3: [0.5:c3n-g3, 0.5:z, 0.5:z, 0.5:c3n-g3, 2:c3n-g3]
+  # Playback 79; page 357, source bar 47; D5
+  - dynamic: mf
+    C1: [4:d4]
+    C2: [4:a3-d4]
+    C3: [1.5:d2, 0.5:d2, 1.5:d2-a2-d3, 0.25:c3n, 0.25:c3#]
+  # Playback 80; page 357, source bar 48; D5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [3:d4-a4-d5, 0.5:z, 0.5:a4]
+    C3: [0.5:d3, 0.5:d3, 0.5:d3, 1:d3, 0.5:d3, 0.5:d2, 0.5:d2]
+  # Playback 81; page 358, source bar 57; D
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:a3-d4-f4]
+    C3: [0.5:d3, 0.5:e2, 0.5:f2, 0.5:e2, 0.5:g2, 0.5:f2, 0.5:g2#, 0.5:f2]
+  # Playback 82; page 358, source bar 58; A5
+  - dynamic: mf
+    C1: [1.5:a4, 0.5:c5n, 0.5:c5n, d5, 0.5:e5]
+    C2: [1.5:a4, 0.5:c5n, 0.5:c5n, d5, 0.5:e5]
+    C3: [0.5:a2-e3-a3, 0.5:z, 0.5:z, 0.5:a2-e3-a3, 1.5:a2-e3-a3, 0.5:b2-f3-b3]
+  # Playback 83; page 358, source bar 59; C5
+  - dynamic: mf
+    C1: [0.5:e5, 0.5:e5, e5, 0.5:f5, 0.5:e5, 0.5:d5, 0.5:e5]
+    C2: [0.5:e5, 0.5:e5, e5, 0.5:f5, 0.5:e5, 0.5:d5, 0.5:e5]
+    C3: [0.5:c3n-g3-c4n, 0.5:z, 0.5:z, 0.5:c3n-g3-c4n, 2:c3n-g3-c4n]
+  # Playback 84; page 358, source bar 60; D5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:c5n, 0.5:a4, 0.5:g4, 2:g4]
+    C2: [0.5:b4, 0.5:c5n, 0.5:a4, 0.5:g4, 2:g4]
+    C3: [1.5:d2, 0.5:d2, 2:d2]
+  # Playback 85; page 358, source bar 61; D5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:a4, 0.5:g4, 0.5:b4, 0.5:c5n, 1.5:d5]
+    C2: [0.5:b4, 0.5:a4, 0.5:g4, 0.5:b4, 0.5:c5n, 1.5:d5]
+    C3: [0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3, 0.5:d3]
+  # Playback 86; page 358, source bar 62; A5
+  - dynamic: mf
+    C1: [1.5:e5, 0.5:e5, 0.5:e5, e5, 0.25:d5, 0.25:d5]
+    C2: [1.5:e5, 0.5:e5, 0.5:e5, e5, 0.25:d5, 0.25:d5]
+    C3: [0.5:a2-e3-a3, 0.5:z, 0.5:z, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 87; page 358, source bar 63; C5
+  - dynamic: mf
+    C1: [0.5:a4, 0.5:g4, e4, f4, 0.5:g4, 0.5:a4]
+    C2: [0.5:a4, 0.5:g4, e4, f4, 0.5:g4, 0.5:a4]
+    C3: [0.5:c3n-g3-c4n, 0.5:z, 0.5:z, 0.5:c3n-g3-c4n, 2:c3n-g3-c4n]
+  # Playback 88; page 358, source bar 64; D5
+  - dynamic: mf
+    C1: [0.5:e4, 3.5:d4]
+    C2: [0.5:e4, 3.5:d4]
+    C3: [0.5:d2, 0.5:d2, 0.5:d2, 0.5:d2, 0.5:d2, 0.5:d2, 0.5:d2, 0.5:d2]
+  # Playback 89; page 358, source bar 65; D5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:d3-g3, 0.5:d3-g3, 0.5:d3-g3, 0.5:d3-g3, 0.5:d3-g3, 0.5:c3n-f3, 0.5:d3#-g3#, 0.5:z]
+    C3: [0.5:a1, 0.5:a1, 0.5:a1, 0.5:a1, 0.5:a1, 0.5:g1, 0.5:a1#, 0.5:z]
+  # Playback 90; page 358, source bar 66; E5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 2:e2-b2-e3]
+  # Playback 91; page 358, source bar 67; C5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:c2n-g2-c3n, 0.5:c2n-g2-c3n, 2:c2n-g2-c3n]
+  # Playback 92; page 358, source bar 68; B5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:b1-f2-b2, 0.5:b1-f2-b2, 2:b1-f2-b2]
+  # Playback 93; page 358, source bar 69; A5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a1-e2-a2, 0.5:a1-e2-a2, 0.5:a1-e2, 0.5:d2, 0.5:f2, 0.5:e2]
+  # Playback 94; page 358, source bar 66; E5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 2:e2-b2-e3]
+  # Playback 95; page 358, source bar 67; C5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:c2n-g2-c3n, 0.5:c2n-g2-c3n, 2:c2n-g2-c3n]
+  # Playback 96; page 358, source bar 68; B5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:b1-f2-b2, 0.5:b1-f2-b2, 2:b1-f2-b2]
+  # Playback 97; page 358, source bar 69; A5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a1-e2-a2, 0.5:a1-e2-a2, 0.5:a1-e2, 0.5:d2, 0.5:f2, 0.5:e2]
+  # Playback 98; page 358, source bar 66; E5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 2:e2-b2-e3]
+  # Playback 99; page 358, source bar 67; C5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:c2n-g2-c3n, 0.5:c2n-g2-c3n, 2:c2n-g2-c3n]
+  # Playback 100; page 358, source bar 68; B5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:b1-f2-b2, 0.5:b1-f2-b2, 2:b1-f2-b2]
+  # Playback 101; page 358, source bar 69; A5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a1-e2-a2, 0.5:a1-e2-a2, 0.5:a1-e2, 0.5:d2, 0.5:f2, 0.5:e2]
+  # Playback 102; page 358, source bar 66; E5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 2:e2-b2-e3]
+  # Playback 103; page 358, source bar 67; C5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:c2n-g2-c3n, 0.5:c2n-g2-c3n, 2:c2n-g2-c3n]
+  # Playback 104; page 358, source bar 68; B5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:b1-f2-b2, 0.5:b1-f2-b2, 2:b1-f2-b2]
+  # Playback 105; page 359, source bar 70; A5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [0.5:e2, 0.5:f2-a2-e3, 0.5:a2, 0.5:f2-a2-e3, 0.5:a2, 0.5:f2-a2-e3, 0.5:a2, 0.5:g2]
+  # Playback 106; page 359, source bar 71; A5; guitar solo ad lib. (lead not written)
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [0.5:a2, 0.5:f2-a2-e3, 0.5:a2, 0.5:g2-b2-d3, 0.5:g2, 0.5:f2, 0.5:e2, 0.5:d2]
+  # Playback 107; page 359, source bar 72; E5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 108; page 359, source bar 73; G5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 1.5:g2-d3-g3, 0.5:e2-g3]
+  # Playback 109; page 359, source bar 74; A5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 110; page 359, source bar 75; C5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, d3-f3-a3, g2-b2-d3]
+  # Playback 111; page 359, source bar 72; E5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 112; page 359, source bar 73; G5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 1.5:g2-d3-g3, 0.5:e2-g3]
+  # Playback 113; page 359, source bar 74; A5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 114; page 359, source bar 75; C5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, d3-f3-a3, g2-b2-d3]
+  # Playback 115; page 359, source bar 72; E5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 116; page 359, source bar 73; G5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 1.5:g2-d3-g3, 0.5:e2-g3]
+  # Playback 117; page 359, source bar 74; A5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 118; page 359, source bar 75; C5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, d3-f3-a3, g2-b2-d3]
+  # Playback 119; page 359, source bar 72; E5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 120; page 359, source bar 73; G5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 1.5:g2-d3-g3, 0.5:e2-g3]
+  # Playback 121; page 359, source bar 74; A5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 122; page 359, source bar 75; C5
+  - dynamic: mf
+    C1: [4:z]
+    C2: [4:z]
+    C3: [0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, 0.5:c3n-e3-g3, d3-f3-a3, g2-b2-d3]
+  # Playback 123; page 359, source bar 76; E5
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C2: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C3: [e2-b2-e3, 0.5:z, 0.5:e2-b2-e3, z, 0.5:z, 0.5:f2-c3-f3]
+  # Playback 124; page 359, source bar 77; G5
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d4, 0.5:b3, a3, 0.5:a3, g3]
+    C2: [0.5:e4, 0.5:d4, 0.5:b3, a3, 0.5:a3, g3]
+    C3: [g2-d3-g3, 0.5:z, 0.5:g2-d3-g3, 2:z]
+  # Playback 125; page 359, source bar 78; A5
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C2: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C3: [a2-e3-a3, 0.5:z, 0.5:a2-e3-a3, 2:z]
+  # Playback 126; page 359, source bar 79; C
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:z, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, d4-f4-a4, b3-d4-g4]
+    C3: [0.5:z, 0.5:c3n, 0.5:c3n, 0.5:d3, d3, g2]
+  # Playback 127; page 359, source bar 76; E5
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C2: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C3: [e2-b2-e3, 0.5:z, 0.5:e2-b2-e3, z, 0.5:z, 0.5:f2-c3-f3]
+  # Playback 128; page 359, source bar 77; G5
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d4, 0.5:b3, a3, 0.5:a3, g3]
+    C2: [0.5:e4, 0.5:d4, 0.5:b3, a3, 0.5:a3, g3]
+    C3: [g2-d3-g3, 0.5:z, 0.5:g2-d3-g3, 2:z]
+  # Playback 129; page 359, source bar 78; A5
+  - dynamic: mf
+    C1: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C2: [0.5:e4, 0.5:d4, 0.5:b3, 2.5:a3]
+    C3: [a2-e3-a3, 0.5:z, 0.5:a2-e3-a3, 2:z]
+  # Playback 130; page 359, source bar 79; C
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:z, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, d4-f4-a4, b3-d4-g4]
+    C3: [0.5:z, 0.5:c3n, 0.5:c3n, 0.5:d3, d3, g2]
+  # Playback 131; page 359, source bar 80; E5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C2: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 132; page 359, source bar 81; G5
+  - dynamic: mf
+    C1: [z, 2:e5, e5]
+    C2: [z, 2:e5, e5]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 2:g2-d3-g3]
+  # Playback 133; page 359, source bar 82; A5
+  - dynamic: mf
+    C1: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C2: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 134; page 359, source bar 83; C
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, d4-f4-a4, b3-d4-g4]
+    C3: [0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, d3-a3-d4, g2-d3-g3]
+  # Playback 135; page 359, source bar 80; E5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C2: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 136; page 359, source bar 81; G5
+  - dynamic: mf
+    C1: [z, 2:e5, e5]
+    C2: [z, 2:e5, e5]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 2:g2-d3-g3]
+  # Playback 137; page 359, source bar 82; A5
+  - dynamic: mf
+    C1: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C2: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 138; page 359, source bar 83; C
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, d4-f4-a4, b3-d4-g4]
+    C3: [0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, d3-a3-d4, g2-d3-g3]
+  # Playback 139; page 359, source bar 80; E5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C2: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 140; page 359, source bar 81; G5
+  - dynamic: mf
+    C1: [z, 2:e5, e5]
+    C2: [z, 2:e5, e5]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 2:g2-d3-g3]
+  # Playback 141; page 359, source bar 82; A5
+  - dynamic: mf
+    C1: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C2: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 142; page 359, source bar 83; C
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, d4-f4-a4, b3-d4-g4]
+    C3: [0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, d3-a3-d4, g2-d3-g3]
+  # Playback 143; page 359, source bar 80; E5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C2: [0.5:b4, 0.5:a4, 0.5:c5n, 0.5:a4, 2:a4]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 144; page 359, source bar 81; G5
+  - dynamic: mf
+    C1: [z, 2:e5, e5]
+    C2: [z, 2:e5, e5]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 2:g2-d3-g3]
+  # Playback 145; page 359, source bar 82; A5
+  - dynamic: mf
+    C1: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C2: [0.5:f5, 0.5:e5, 0.5:c5n, 0.5:b4, 0.5:b4, 1.5:a4]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 146; page 359, source bar 83; C
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, 0.5:c4n-e4-g4, d4-f4-a4, b3-d4-g4]
+    C3: [0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, 0.5:c3n-g3-c4n, d3-a3-d4, g2-d3-g3]
+  # Playback 147; page 360, source bar 84; E5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:a4, 0.5:g4, 0.5:b4, 0.5:a4#, 1.5:b4]
+    C2: [0.5:b4, 0.5:a4, 0.5:g4, 0.5:b4, 0.5:a4#, 1.5:b4]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 148; page 360, source bar 85; G5
+  - dynamic: mf
+    C1: [z, 2:b4, 0.5:d5, 0.5:b4]
+    C2: [z, 2:b4, 0.5:d5, 0.5:b4]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 2:g2-d3-g3]
+  # Playback 149; page 360, source bar 86; A5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:b4, 0.5:e5, 0.5:b4, 0.5:a4, 1.5:g4]
+    C2: [0.5:b4, 0.5:b4, 0.5:e5, 0.5:b4, 0.5:a4, 1.5:g4]
+    C3: [1.5:a2-e3-a3, 0.5:a2-e3-a3, 2:a2-e3-a3]
+  # Playback 150; page 360, source bar 87; E5 D5 B5 Bb5 A5 G5
+  - dynamic: mf
+    C1: [0.667:e5, 0.667:d5, 0.666:b4, 0.667:b4b, 0.667:a4, 0.666:g4]
+    C2: [0.667:e5, 0.667:d5, 0.666:b4, 0.667:b4b, 0.667:a4, 0.666:g4]
+    C3: [0.667:e3-b3-e4, 0.667:d3-a3-d4, 0.666:b2-f3-b3, 0.667:b2b-f3n-b3b, 0.667:a2-e3-a3, 0.666:g2-d3-g3]
+  # Playback 151; page 360, source bar 88; E5
+  - dynamic: mf
+    C1: [2:e4, 0.5:z, b4n, 0.25:a4, 0.25:g4]
+    C2: [2:e4, 0.5:z, b4n, 0.25:a4, 0.25:g4]
+    C3: [1.5:e2-b2-e3, 0.5:e2-b2-e3, 1.5:e2-b2-e3, 0.5:f2-c3-f3]
+  # Playback 152; page 360, source bar 89; G5
+  - dynamic: mf
+    C1: [2:e4, 0.5:z, 0.5:c5n, 0.5:b4, 0.5:b4]
+    C2: [2:e4, 0.5:z, 0.5:c5n, 0.5:b4, 0.5:b4]
+    C3: [1.5:g2-d3-g3, 0.5:g2-d3-g3, 2:g2-d3-g3]
+  # Playback 153; page 360, source bar 90; A5
+  - dynamic: mf
+    C1: [0.5:b4, 0.5:d5, 0.5:b4, 0.5:d5, 0.5:b4, 0.5:b4, 0.5:a4, 0.5:g4]
+    C2: [0.5:b4, 0.5:d5, 0.5:b4, 0.5:d5, 0.5:b4, 0.5:b4, 0.5:a4, 0.5:g4]
+    C3: [4:a2-e3-a3]
+  # Playback 154; page 360, source bar 91; C5
+  - dynamic: mf
+    ritardando: 0.2
+    C1: [0.5:b4, 0.5:d5, 0.5:b4, 0.5:d5, 0.5:e5, 0.5:d5, 0.5:b4, 0.5:b4]
+    C2: [2:g3-c4n-e4, 2:a3-d4-f4]
+    C3: [2:c3n, 2:d3]
+  # Playback 155; page 360, source bar 92; E5
+  - dynamic: mf
+    C1: [0.25:a4, 0.25:g4, 3.5:e4]
+    C2: [0.25:a4, 0.25:g4, 3.5:e4]
+    C3: [4:e2-b2-e3]
+  # Playback 156; page 360, source bar 93; E5
+  - dynamic: mf
+    C1: [1.5:e4, 0.5:d4, 2:d4]
+    C2: [1.5:e4, 0.5:d4, 2:d4]
+    C3: [2:e2-g2, 2:d2]
+  # Playback 157; page 360, source bar 94; E5
+  - dynamic: mf
+    fermata: 2
+    C1: [4:e4]
+    C2: [4:e4]
+    C3: [4:e2-b2-e3-g3]
+  # Playback 158; page 360, source bar 95; E5
+  - dynamic: mf
+    fermata: 2
+    C1: [4:z]
+    C2: [0.5:e3, 0.5:b3, 0.5:e4, 2.5:g4#]
+    C3: [4:e2-b2-e3-g3]

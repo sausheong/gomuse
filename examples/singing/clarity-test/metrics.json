@@ -1,0 +1,18 @@
+[
+  {
+    "file": "current.wav",
+    "seconds": 15.555555555555555,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.655487060546875,
+    "clipped_samples": 0
+  },
+  {
+    "file": "clearer.wav",
+    "seconds": 15.555555555555555,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.89996337890625,
+    "clipped_samples": 0
+  }
+]

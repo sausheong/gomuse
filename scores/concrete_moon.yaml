@@ -1,0 +1,159 @@
+# Original hip-hop instrumental: 24 bars, 4/4, 96 BPM = 60 seconds.
+# Form: 4-bar intro, 8-bar verse, 4-bar hook, 4-bar breakdown, 4-bar final hook.
+# Each part totals four beats per bar; final rests allow a natural finish.
+name: Concrete Moon
+key: C
+length: 0.625
+instrument: piano
+instruments: {C1: guitar, C2: piano, C3: bass}
+volume: 18000
+levels: {C1: 0.46, C2: 0.28, C3: 0.95, drums: 0.85}
+pan: {C1: 0.22, C2: -0.24, C3: 0, drums: 0}
+humanize: 0
+swing: 0.22
+reverb: 0.12
+sections:
+  # Bar 1
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.75:a3-c4-e4-g4, 0.75:z, 0.5:a3-c4-e4-g4, 1.5:z, 0.5:a3-c4-e4-g4]
+    C3: [4:z]
+    drums: [0.5:hat, 0.5:z, 0.5:hat, 0.5:z, 0.5:hat, 0.5:z, 0.5:hat, 0.5:z]
+  # Bar 2
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.75:f3-a3-c4-e4, 0.75:z, 0.5:f3-a3-c4-e4, 1.5:z, 0.5:f3-a3-c4-e4]
+    C3: [4:z]
+    drums: [0.5:hat, 0.5:z, 0.5:hat, 0.5:z, 0.5:hat, 0.5:z, 0.5:hat, 0.5:z]
+  # Bar 3
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.75:c3-e3-g3-b3, 0.75:z, 0.5:c3-e3-g3-b3, 1.5:z, 0.5:c3-e3-g3-b3]
+    C3: [1.5:c2, 0.5:z, 0.75:c2, 0.25:g2, 0.5:c2, 0.5:z]
+    drums: [kick-hat, snare-hat, kick-hat, snare-hat]
+  # Bar 4
+  - dynamic: mp
+    C1: [4:z]
+    C2: [0.75:e3-g3#-b3-d4, 0.75:z, 0.5:e3-g3#-b3-d4, 1.5:z, 0.5:e3-g3#-b3-d4]
+    C3: [1.5:e2, 0.5:z, 0.75:e2, 0.25:b1, 0.5:e2, 0.5:z]
+    drums: [kick-hat, snare-hat, kick-hat, snare-hat]
+  # Bar 5
+  - dynamic: mf
+    C1: [2:z, 0.5:e5, 0.5:c5, 1:z]
+    C2: [0.75:a3-c4-e4-g4, 0.75:z, 0.5:a3-c4-e4-g4, 1.5:z, 0.5:a3-c4-e4-g4]
+    C3: [1.5:a1, 0.5:z, 0.75:a1, 0.25:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 6
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.75:f3-a3-c4-e4, 0.75:z, 0.5:f3-a3-c4-e4, 1.5:z, 0.5:f3-a3-c4-e4]
+    C3: [1.5:f1, 0.5:z, 0.75:f1, 0.25:c2, 0.5:f1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 7
+  - dynamic: mf
+    C1: [2:z, 0.5:e5, 0.5:c5, 1:z]
+    C2: [0.75:c3-e3-g3-b3, 0.75:z, 0.5:c3-e3-g3-b3, 1.5:z, 0.5:c3-e3-g3-b3]
+    C3: [1.5:c2, 0.5:z, 0.75:c2, 0.25:g2, 0.5:c2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 8
+  - dynamic: mf
+    C1: [4:z]
+    C2: [0.75:e3-g3#-b3-d4, 0.75:z, 0.5:e3-g3#-b3-d4, 1.5:z, 0.5:e3-g3#-b3-d4]
+    C3: [1.5:e2, 0.5:z, 0.75:e2, 0.25:b1, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.25:hat, 0.25:snare]
+  # Bar 9
+  - dynamic: mf
+    C1: [0.5:z, 0.5:e5, 0.5:g5, 0.5:e5, 1:c5, 0.5:a4, 0.5:z]
+    C2: [0.75:a3-c4-e4-g4, 0.75:z, 0.5:a3-c4-e4-g4, 1.5:z, 0.5:a3-c4-e4-g4]
+    C3: [1.5:a1, 0.5:z, 0.75:a1, 0.25:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 10
+  - dynamic: mf
+    C1: [1:z, 0.5:c5, 0.5:e5, 0.5:c5, 0.5:a4, 1:g4]
+    C2: [0.75:f3-a3-c4-e4, 0.75:z, 0.5:f3-a3-c4-e4, 1.5:z, 0.5:f3-a3-c4-e4]
+    C3: [1.5:f1, 0.5:z, 0.75:f1, 0.25:c2, 0.5:f1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 11
+  - dynamic: mf
+    C1: [0.5:z, 0.5:g4, 0.5:c5, 0.5:e5, 1:d5, 1:c5]
+    C2: [0.75:c3-e3-g3-b3, 0.75:z, 0.5:c3-e3-g3-b3, 1.5:z, 0.5:c3-e3-g3-b3]
+    C3: [1.5:c2, 0.5:z, 0.75:c2, 0.25:g2, 0.5:c2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 12
+  - dynamic: mf
+    C1: [1:b4, 0.5:a4, 0.5:g4#, 0.5:e4, 0.5:z, 0.5:g4#, 0.5:b4]
+    C2: [0.75:e3-g3#-b3-d4, 0.75:z, 0.5:e3-g3#-b3-d4, 1.5:z, 0.5:e3-g3#-b3-d4]
+    C3: [1.5:e2, 0.5:z, 0.75:e2, 0.25:b1, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.25:hat, 0.25:snare]
+  # Bar 13
+  - dynamic: mf
+    C1: [0.5:z, 0.5:e5, 0.5:g5, 0.5:e5, 1:c5, 0.5:a4, 0.5:z]
+    C2: [0.75:a3-c4-e4-g4, 0.75:z, 0.5:a3-c4-e4-g4, 1.5:z, 0.5:a3-c4-e4-g4]
+    C3: [1.5:a1, 0.5:z, 0.75:a1, 0.25:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 14
+  - dynamic: mf
+    C1: [1:z, 0.5:c5, 0.5:e5, 0.5:c5, 0.5:a4, 1:g4]
+    C2: [0.75:f3-a3-c4-e4, 0.75:z, 0.5:f3-a3-c4-e4, 1.5:z, 0.5:f3-a3-c4-e4]
+    C3: [1.5:f1, 0.5:z, 0.75:f1, 0.25:c2, 0.5:f1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 15
+  - dynamic: mf
+    C1: [0.5:z, 0.5:g4, 0.5:c5, 0.5:e5, 1:d5, 1:c5]
+    C2: [0.75:c3-e3-g3-b3, 0.75:z, 0.5:c3-e3-g3-b3, 1.5:z, 0.5:c3-e3-g3-b3]
+    C3: [1.5:c2, 0.5:z, 0.75:c2, 0.25:g2, 0.5:c2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 16
+  - dynamic: mf
+    C1: [1:b4, 0.5:a4, 0.5:g4#, 0.5:e4, 0.5:z, 0.5:g4#, 0.5:b4]
+    C2: [0.75:e3-g3#-b3-d4, 0.75:z, 0.5:e3-g3#-b3-d4, 1.5:z, 0.5:e3-g3#-b3-d4]
+    C3: [1.5:e2, 0.5:z, 0.75:e2, 0.25:b1, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.25:hat, 0.25:snare]
+  # Bar 17
+  - dynamic: mp
+    C1: [2:e5, 2:z]
+    C2: [2:a3-c4-e4-g4, 2:z]
+    C3: [1.5:a1, 0.5:z, 0.75:a1, 0.25:e2, 0.5:a1, 0.5:z]
+    drums: [kick-hat, z, snare-hat, z]
+  # Bar 18
+  - dynamic: mp
+    C1: [4:z]
+    C2: [2:f3-a3-c4-e4, 2:z]
+    C3: [1.5:f1, 0.5:z, 0.75:f1, 0.25:c2, 0.5:f1, 0.5:z]
+    drums: [kick-hat, z, snare-hat, z]
+  # Bar 19
+  - dynamic: mp
+    C1: [2:e5, 2:z]
+    C2: [2:c3-e3-g3-b3, 2:z]
+    C3: [1.5:c2, 0.5:z, 0.75:c2, 0.25:g2, 0.5:c2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 20
+  - dynamic: mp
+    C1: [4:z]
+    C2: [2:e3-g3#-b3-d4, 2:z]
+    C3: [1.5:e2, 0.5:z, 0.75:e2, 0.25:b1, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.25:hat, 0.25:snare]
+  # Bar 21
+  - dynamic: mf
+    C1: [0.5:z, 0.5:e5, 0.5:g5, 0.5:e5, 1:c5, 0.5:a4, 0.5:z]
+    C2: [0.75:a3-c4-e4-g4, 0.75:z, 0.5:a3-c4-e4-g4, 1.5:z, 0.5:a3-c4-e4-g4]
+    C3: [1.5:a1, 0.5:z, 0.75:a1, 0.25:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 22
+  - dynamic: mf
+    C1: [1:z, 0.5:c5, 0.5:e5, 0.5:c5, 0.5:a4, 1:g4]
+    C2: [0.75:f3-a3-c4-e4, 0.75:z, 0.5:f3-a3-c4-e4, 1.5:z, 0.5:f3-a3-c4-e4]
+    C3: [1.5:f1, 0.5:z, 0.75:f1, 0.25:c2, 0.5:f1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 23
+  - dynamic: mf
+    C1: [0.5:z, 0.5:g4, 0.5:c5, 0.5:e5, 1:d5, 1:c5]
+    C2: [0.75:c3-e3-g3-b3, 0.75:z, 0.5:c3-e3-g3-b3, 1.5:z, 0.5:c3-e3-g3-b3]
+    C3: [1.5:c2, 0.5:z, 0.75:c2, 0.25:g2, 0.5:c2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:snare-hat, 0.25:hat, 0.25:kick, 0.5:hat, 0.5:kick-hat, 0.5:snare-hat, 0.5:hat]
+  # Bar 24
+  - dynamic: mf
+    C1: [1:a4, 3:z]
+    C2: [1:a3-c4-e4-g4, 3:z]
+    C3: [1:a1, 3:z]
+    drums: [kick-hat, 3:z]

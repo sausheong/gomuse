@@ -23,15 +23,20 @@ var (
 )
 
 type comb struct {
-	buf    []float64
-	i      int
-	filter float64
+	feedback, damping float64
+	buf               []float64
+	i                 int
+	filter            float64
 }
 
 func (c *comb) process(in float64) float64 {
 	out := c.buf[c.i]
-	c.filter = out*(1-roomDamp) + c.filter*roomDamp
-	c.buf[c.i] = in + c.filter*roomFeedback
+	damp, feedback := roomDamp, roomFeedback
+	if c.feedback != 0 {
+		damp, feedback = c.damping, c.feedback
+	}
+	c.filter = out*(1-damp) + c.filter*damp
+	c.buf[c.i] = in + c.filter*feedback
 	if c.i++; c.i == len(c.buf) {
 		c.i = 0
 	}

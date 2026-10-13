@@ -32,18 +32,26 @@ type drum struct {
 const drumVariants = 4
 
 var drumKit = map[string]*drum{
-	"kick":    {level: 1, length: 0.6, render: kick},
-	"snare":   {level: 0.85, length: 0.35, render: snare},
-	"hat":     {level: 0.4, length: 0.15, render: hat(0.03)},
-	"openhat": {level: 0.45, length: 0.8, render: hat(0.3)},
-	"crash":   {level: 0.5, length: 3, render: crash},
-	"ride":    {level: 0.4, length: 2.5, render: ride},
-	"tom1":    {level: 0.8, length: 0.7, render: tom(200)},
-	"tom2":    {level: 0.8, length: 0.7, render: tom(150)},
-	"tom3":    {level: 0.8, length: 0.8, render: tom(105)},
-	"clap":    {level: 0.7, length: 0.35, render: clap},
-	"rim":     {level: 0.6, length: 0.08, render: rim},
-	"cowbell": {level: 0.5, length: 0.5, render: cowbell},
+	"shaker":     {level: .35, length: .25, render: shaker},
+	"tambourine": {level: .4, length: .7, render: tambourine},
+	"conga":      {level: .7, length: .65, render: handDrum(190)},
+	"bongo":      {level: .6, length: .4, render: handDrum(340)},
+	"claves":     {level: .45, length: .15, render: claves},
+	"triangle":   {level: .3, length: 2.5, render: triangleHit},
+	"brushtap":   {level: .6, length: .4, render: brushTap},
+	"brushsweep": {level: .5, length: 1, render: brushSweep},
+	"kick":       {level: 1, length: 0.6, render: kick},
+	"snare":      {level: 0.85, length: 0.35, render: snare},
+	"hat":        {level: 0.4, length: 0.15, render: hat(0.03)},
+	"openhat":    {level: 0.45, length: 0.8, render: hat(0.3)},
+	"crash":      {level: 0.5, length: 3, render: crash},
+	"ride":       {level: 0.4, length: 2.5, render: ride},
+	"tom1":       {level: 0.8, length: 0.7, render: tom(200)},
+	"tom2":       {level: 0.8, length: 0.7, render: tom(150)},
+	"tom3":       {level: 0.8, length: 0.8, render: tom(105)},
+	"clap":       {level: 0.7, length: 0.35, render: clap},
+	"rim":        {level: 0.6, length: 0.08, render: rim},
+	"cowbell":    {level: 0.5, length: 0.5, render: cowbell},
 }
 
 // drumAliases are the short names a drum part can use
@@ -134,13 +142,27 @@ func drumNames() string {
 func (n note) kitData(vol int) []int {
 	longest := 0
 	for _, name := range n.kit {
-		longest = max(longest, len(drumKit[name].samples[0]))
+		longest = max(longest, drumNoteLength(n, name))
 	}
 	data := make([]int, longest)
 	for _, name := range n.kit {
 		d := drumKit[name]
-		x := d.samples[n.hit%drumVariants]
+		x := drumNoteSamples(n, name)
+		// Softer strikes excite fewer upper modes. Filter each piece separately
+		// so simultaneous kick/cymbal hits cannot colour one another. Unset
+		// velocity retains the original kit, including plain-score playback.
+		velocity := n.velocity
+		state := 0.0
+		cutoff := 2500 + 14500*velocity*velocity
+		if name == "kick" || strings.HasPrefix(name, "tom") {
+			cutoff = 700 + 10000*velocity*velocity
+		}
+		alpha := 1 - math.Exp(-2*math.Pi*cutoff/sampleRate)
 		for k, v := range x {
+			if velocity > 0 {
+				state += alpha * (v - state)
+				v = state * math.Min(1, float64(len(x)-1-k)/float64(sampleCount(.002)))
+			}
 			data[k] += int(float64(vol) * d.level * v)
 		}
 	}
@@ -151,7 +173,7 @@ func (n note) kitData(vol int) []int {
 func drumLength(n note) int {
 	longest := 0
 	for _, name := range n.kit {
-		longest = max(longest, len(drumKit[name].samples[0]))
+		longest = max(longest, drumNoteLength(n, name))
 	}
 	return longest
 }

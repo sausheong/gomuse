@@ -1,0 +1,37 @@
+{
+  "placement": [
+    {
+      "cache_file": "ds-86d537d5daea6946-depth0.60-steps20.wav",
+      "start_sample": 16518,
+      "frames": 274432,
+      "score_end_seconds": 6.50462962962963
+    },
+    {
+      "cache_file": "ds-18037984d0914c61-depth0.60-steps20.wav",
+      "start_sample": 289428,
+      "frames": 327168,
+      "score_end_seconds": 13.88888888888889
+    }
+  ],
+  "alignment_note": "Native cached phrase audio, aligned by score end minus eight-frame tail. Timing quantisation approximately 11.6 ms; not a GUI mixdown export.",
+  "clips": [
+    {
+      "file": "beyond_the_sea_adapter_15s_matched.wav",
+      "seconds": 15.555555555555555,
+      "sample_rate": 44100,
+      "channels": 1,
+      "gain_db": -1.1259678319472828,
+      "peak": 0.533141862389793,
+      "clipped_samples": 0
+    },
+    {
+      "file": "beyond_the_sea_openutau_15s_matched.wav",
+      "seconds": 15.555555555555555,
+      "sample_rate": 44100,
+      "channels": 1,
+      "gain_db": 0.0,
+      "peak": 0.7060546875,
+      "clipped_samples": 0
+    }
+  ]
+}

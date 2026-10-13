@@ -1,0 +1,18 @@
+{
+  "voice": {
+    "duration_seconds": 24.6,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.581634521484375,
+    "rms": 0.11999632549839688,
+    "clipped_samples": 0
+  },
+  "band": {
+    "duration_seconds": 26.70498866213152,
+    "sample_rate": 44100,
+    "channels": 2,
+    "peak": 0.63775634765625,
+    "rms": 0.11999634282547246,
+    "clipped_samples": 0
+  }
+}

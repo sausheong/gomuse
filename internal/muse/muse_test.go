@@ -1,6 +1,7 @@
 package muse
 
 import (
+	"context"
 	"io/fs"
 
 	"github.com/sausheong/gomuse/scores"
@@ -500,7 +501,8 @@ func TestSampleScoresProduceValidWAV(t *testing.T) {
 
 			var s Score
 			out := filepath.Join(t.TempDir(), "out")
-			if _, err := Parse(&s, data, out, 0); err != nil {
+			// Neural fixtures use deterministic audio; this checks score rendering, not model quality.
+			if _, err := ParseWithSinger(context.Background(), &s, data, out, 0, &recordingSinger{}); err != nil {
 				t.Fatalf("Parse(%s) returned error: %v", f, err)
 			}
 

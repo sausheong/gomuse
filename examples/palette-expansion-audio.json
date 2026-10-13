@@ -1,0 +1,26 @@
+[
+  {
+    "file": "scores/instrument_palette_3.wav",
+    "sha256": "dfec43560b28d2b4abd9f75e776729be2cf41fa1edd9e5011aae02f039806e23",
+    "duration_seconds": 76.49600907029479,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -13.977544778672296,
+    "rms_dbfs": -33.024237653548546,
+    "crest_db": 19.046692874876253,
+    "dc_fraction": 5.959061023371697e-06,
+    "clipped_samples": 0
+  },
+  {
+    "file": "scores/tone_controls_demo.wav",
+    "sha256": "c4cd7a867e1b773fdf742a97e41ebf0e9052b2982d8f2e5b2a94c20c6777509c",
+    "duration_seconds": 30.459501133786848,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -1.9928441464834932,
+    "rms_dbfs": -17.890501029780218,
+    "crest_db": 15.897656883296724,
+    "dc_fraction": -7.579162882643043e-07,
+    "clipped_samples": 0
+  }
+]

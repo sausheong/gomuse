@@ -1,0 +1,16 @@
+{
+  "duration_seconds": 319.1622222222222,
+  "sample_rate": 44100,
+  "channels": 2,
+  "sample_width_bytes": 2,
+  "peak_sample": 10171,
+  "peak_dbfs": -10.161725612948791,
+  "rms_dbfs": -31.215585433752228,
+  "clipped_samples": 0,
+  "source_bars": 95,
+  "played_bars": 158,
+  "beats_per_channel": 632,
+  "quarter_note_bpm": 120,
+  "transcription_status": "Draft photo transcription with reduced piano inner voices; ad-lib lead not supplied by the score.",
+  "yaml_sha256": "4796bd88b4fdc97396abee94137694ce98bf3b9a1dcc5c3036e6abd0fb915e27"
+}

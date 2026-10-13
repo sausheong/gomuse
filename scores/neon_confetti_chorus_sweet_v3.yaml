@@ -1,0 +1,420 @@
+name: Young and Free - Sweet vocal revision
+key: C
+length: 0.4838709677419355
+envelope: pluck
+harmonic: bright
+instruments:
+  C2: piano
+  C3: bass
+levels:
+  C1: 1
+  C2: 0.28
+  C3: 0.52
+  drums: 0.4
+pan:
+  C1: 0
+  C2: 0.25
+  C3: 0
+  drums: 0
+volume: 17500
+reverb: 0.08
+humanize: 0.04
+swing: 0
+singing:
+  channel: C1
+  language: en
+sections:
+- dynamic: mp
+  C1:
+  - 4:z
+  C2:
+  - 0.5:a5
+  - 0.25:g5
+  - 0.25:a5
+  - 0.5:c6
+  - 0.5:a5
+  - 0.5:g5
+  - 0.5:e5
+  - 1:g5
+  C3:
+  - 4:z
+  drums:
+  - 1:hat
+  - 1:hat
+  - 1:hat
+  - 1:hat
+  lyrics:
+  - ''
+  instruments:
+    C2: piano
+    C3: bass
+- dynamic: mp
+  C1:
+  - 4:z
+  C2:
+  - 0.5:b5
+  - 0.5:a5
+  - 0.5:g5
+  - 0.5:d5
+  - 0.5:g5
+  - 0.25:a5
+  - 0.25:g5
+  - 1:d5
+  C3:
+  - 4:z
+  drums:
+  - 1:hat
+  - 1:hat
+  - 1:hat
+  - 1:hat
+  lyrics:
+  - ''
+  instruments:
+    C2: piano
+    C3: bass
+- dynamic: mf
+  C1:
+  - 0.5:e4
+  - 0.5:g4
+  - 1.5:a4
+  - 0.5:g4
+  - 1:a4
+  C2:
+  - 0.5:z
+  - 1.5:f3-a3-c4
+  - 0.5:z
+  - 1:f3-a3-c4
+  - 0.5:z
+  C3:
+  - 0.75:f2
+  - 0.25:z
+  - 0.5:f2
+  - 0.5:c3
+  - 0.75:f2
+  - 0.25:z
+  - 0.5:c3
+  - 0.5:f2
+  drums:
+  - 0.5:kick-crash
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - We
+  - '[er]'
+  - young
+  - +
+  - let
+- dynamic: mf
+  C1:
+  - 0.5:a4
+  - 1:g4
+  - 2:g4
+  - 0.5:z
+  C2:
+  - 0.5:z
+  - 1.5:g3-b3-d4
+  - 0.5:z
+  - 1:g3-b3-d4
+  - 0.5:z
+  C3:
+  - 0.75:g2
+  - 0.25:z
+  - 0.5:g2
+  - 0.5:d3
+  - 0.75:g2
+  - 0.25:z
+  - 0.5:d3
+  - 0.5:g2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - the
+  - world
+  - wait
+  - ''
+- dynamic: mf
+  C1:
+  - 0.5:e4
+  - 0.5:g4
+  - 1:g4
+  - 0.5:g4
+  - 0.5:e4
+  - 1:g4
+  C2:
+  - 0.5:z
+  - 1.5:e3-g3-b3
+  - 0.5:z
+  - 1:e3-g3-b3
+  - 0.5:z
+  C3:
+  - 0.75:e2
+  - 0.25:z
+  - 0.5:e2
+  - 0.5:b2
+  - 0.75:e2
+  - 0.25:z
+  - 0.5:b2
+  - 0.5:e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - Take
+  - my
+  - hand
+  - we
+  - can
+  - find
+- dynamic: mf
+  C1:
+  - 0.5:g4
+  - 0.5:a4
+  - 2:g4
+  - 0.5:e4
+  - 0.5:z
+  C2:
+  - 0.5:z
+  - 1.5:a3-c4-e4
+  - 0.5:z
+  - 1:a3-c4-e4
+  - 0.5:z
+  C3:
+  - 0.75:a2
+  - 0.25:z
+  - 0.5:a2
+  - 0.5:e3
+  - 0.75:a2
+  - 0.25:z
+  - 0.5:e3
+  - 0.5:a2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - '[aa r]'
+  - way
+  - +
+  - +
+  - ''
+- dynamic: mf
+  C1:
+  - 0.5:e4
+  - 0.5:g4
+  - 1:a4
+  - 0.5:g4
+  - 0.5:a4
+  - 1:a4
+  C2:
+  - 0.5:z
+  - 1.5:f3-a3-c4
+  - 0.5:z
+  - 1:f3-a3-c4
+  - 0.5:z
+  C3:
+  - 0.75:f2
+  - 0.25:z
+  - 0.5:f2
+  - 0.5:c3
+  - 0.75:f2
+  - 0.25:z
+  - 0.5:c3
+  - 0.5:f2
+  drums:
+  - 0.5:kick-crash
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - We
+  - can
+  - dance
+  - +
+  - till
+  - the
+- dynamic: mf
+  C1:
+  - 1:b4
+  - 2:a4
+  - 0.5:g4
+  - 0.5:z
+  C2:
+  - 0.5:z
+  - 1.5:g3-b3-d4
+  - 0.5:z
+  - 1:g3-b3-d4
+  - 0.5:z
+  C3:
+  - 0.75:g2
+  - 0.25:z
+  - 0.5:g2
+  - 0.5:d3
+  - 0.75:g2
+  - 0.25:z
+  - 0.5:d3
+  - 0.5:g2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - stars
+  - fade
+  - +
+  - ''
+- dynamic: mf
+  C1:
+  - 0.5:g4
+  - 0.5:e4
+  - 1:g4
+  - 0.5:g4
+  - 0.5:e4
+  - 1:g4
+  C2:
+  - 0.5:z
+  - 1.5:e3-g3-b3
+  - 0.5:z
+  - 1:e3-g3-b3
+  - 0.5:z
+  C3:
+  - 0.75:e2
+  - 0.25:z
+  - 0.5:e2
+  - 0.5:b2
+  - 0.75:e2
+  - 0.25:z
+  - 0.5:b2
+  - 0.5:e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - All
+  - we
+  - need
+  - is
+  - this
+  - night
+- dynamic: mf
+  C1:
+  - 0.5:g4
+  - 2:a4
+  - 1:e4
+  - 0.5:z
+  C2:
+  - 0.5:z
+  - 1.5:a3-c4-e4
+  - 0.5:z
+  - 1:a3-c4-e4
+  - 0.5:z
+  C3:
+  - 0.75:a2
+  - 0.25:z
+  - 0.5:a2
+  - 0.5:e3
+  - 0.75:a2
+  - 0.25:z
+  - 0.5:e3
+  - 0.5:a2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:kick-snare-hat
+  - 0.5:openhat
+  lyrics:
+  - right
+  - here
+  - +
+  - ''
+- dynamic: mp
+  C1:
+  - 4:z
+  C2:
+  - 0.5:g5
+  - 0.25:e5
+  - 0.25:g5
+  - 0.5:b5
+  - 0.5:g5
+  - 0.5:e5
+  - 0.5:d5
+  - 1:e5
+  C3:
+  - 0.75:e2
+  - 0.25:z
+  - 0.5:e2
+  - 0.5:b2
+  - 0.75:e2
+  - 0.25:z
+  - 0.5:b2
+  - 0.5:e2
+  drums:
+  - 0.5:kick-hat
+  - 0.5:hat
+  - 0.5:snare-hat
+  - 0.5:hat
+  - 0.5:kick-hat
+  - 0.5:kick-hat
+  - 0.5:snare-hat
+  - 0.5:openhat
+  lyrics:
+  - ''
+  instruments:
+    C2: piano
+    C3: bass
+- dynamic: mp
+  C1:
+  - 4:z
+  C2:
+  - 4:c4-e4-g4
+  C3:
+  - 4:c2
+  drums:
+  - 1:kick-crash
+  - 3:z
+  lyrics:
+  - ''
+  instruments:
+    C2: piano
+    C3: bass

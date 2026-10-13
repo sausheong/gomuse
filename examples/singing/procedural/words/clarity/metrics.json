@@ -1,0 +1,26 @@
+{
+  "before": {
+    "duration_seconds": 5.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.49163818359375,
+    "rms": 0.09999693909192751,
+    "clipped_samples": 0
+  },
+  "clear": {
+    "duration_seconds": 5.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.53570556640625,
+    "rms": 0.09999693520977736,
+    "clipped_samples": 0
+  },
+  "compact": {
+    "duration_seconds": 4.3,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.5152587890625,
+    "rms": 0.09999693582327218,
+    "clipped_samples": 0
+  }
+}

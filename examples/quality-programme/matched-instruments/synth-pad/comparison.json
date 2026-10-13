@@ -1,0 +1,36 @@
+{
+  "start_seconds": 0.0,
+  "reports": [
+    {
+      "file": "examples/quality-programme/matched-instruments/synth-pad/before.wav",
+      "sha256": "cbda6fa68be55f577d1c99adc479a9f464f9832c1aa962bcd22a5250bbc74db1",
+      "duration_seconds": 10.33920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -11.464867853652454,
+      "rms_dbfs": -24.000266512359524,
+      "crest_db": 12.53539865870707,
+      "dc_fraction": -3.996422024444632e-07,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/baseline-v1/synth-pad.wav",
+      "source_sha256": "a4e6a3b0312170d94e8cf341433b9afe4b8191cae298ce07b31424bcb679aeac",
+      "gain": 2.0063530326828714
+    },
+    {
+      "file": "examples/quality-programme/matched-instruments/synth-pad/after.wav",
+      "sha256": "cbda6fa68be55f577d1c99adc479a9f464f9832c1aa962bcd22a5250bbc74db1",
+      "duration_seconds": 10.33920634920635,
+      "channels": 2,
+      "sample_rate": 44100,
+      "peak_dbfs": -11.464867853652454,
+      "rms_dbfs": -24.000266512359524,
+      "crest_db": 12.53539865870707,
+      "dc_fraction": -3.996422024444632e-07,
+      "clipped_samples": 0,
+      "source": "examples/quality-programme/after-v1/synth-pad.wav",
+      "source_sha256": "a4e6a3b0312170d94e8cf341433b9afe4b8191cae298ce07b31424bcb679aeac",
+      "gain": 2.0063530326828714
+    }
+  ],
+  "method": "RMS matched with 10 ms edge fades; common target reduced if needed for peak headroom. Not perceptual LUFS."
+}

@@ -1,0 +1,8 @@
+{
+  "frames": 191651,
+  "gain": 1,
+  "name": "cello bow-change comparison",
+  "rounding": "summed stems may differ from master by a few 16-bit units due to rounding",
+  "sample_rate": 44100,
+  "stems": "dry panned C1/C2/C3/drums plus shared room; all tracks use the same gain"
+}

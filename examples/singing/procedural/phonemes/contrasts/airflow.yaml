@@ -1,0 +1,95 @@
+name: airflow
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  clarity: 0.7
+  breathiness: 0.04
+  breaths: 0
+sections:
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - fee
+    - ''
+    phonemes:
+    - []
+    - - F
+      - IY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - see
+    - ''
+    phonemes:
+    - []
+    - - S
+      - IY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - he
+    - ''
+    phonemes:
+    - []
+    - - HH
+      - IY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - vie
+    - ''
+    phonemes:
+    - []
+    - - V
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - zoo
+    - ''
+    phonemes:
+    - []
+    - - Z
+      - UW
+    - []

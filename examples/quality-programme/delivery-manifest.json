@@ -1,0 +1,34 @@
+{
+  "validation": {
+    "make_check": "passed",
+    "muse_full_suite_seconds": 459.062,
+    "targeted_race": "passed",
+    "python_audio_tools": "passed",
+    "git_diff_check": "passed"
+  },
+  "artifacts": {
+    "scores/misty_final.yaml": "12104013f5aa03c306d9399e24f09f419bb2dafefe6f70e9e57aa81c544930c7",
+    "scores/misty_final.wav": "eca678694475dc8b63c9d03630411ef250ac99ff6cdb099dbd16003a953b0b70",
+    "scores/misty_final.metrics.json": "6fcf23982625fdcca9a94d540ba109ced4d88a5ce961991749d724cd3f48949f",
+    "docs/sound-quality-programme.md": "a6e4822245f008a9e850f26bff6b17ef42fe6c22e36f6aeb8dbd2c32501dd246",
+    "examples/quality-programme/README.md": "f01ff9a6c58b15523d9565b00025080070d7ced250f43e8ee99752cfc776245d",
+    "examples/quality-programme/ensembles/audio-report.json": "db53ccfaeffed67fc053572e32d49528fdb4305a00d563ffcf119d5f7e9bc98a",
+    "examples/quality-programme/ensembles/fuller_ensemble.yaml": "ae8effa884796250fcb744000d48ae0ca6bbd8f45905d4dd3e867d7089119af3",
+    "examples/quality-programme/ensembles/arrangement-audit.json": "779b0a071cbcd081e33353230c2d5896497e1c634959f0790d3d1e97235c58b0",
+    "examples/quality-programme/ensembles/fuller_ensemble.wav": "bd0c1a24d341136bc3a835038db281885839e8b0f927d8f568db52397c2d5db4",
+    "examples/quality-programme/ensembles/acoustic_ballad.yaml": "2a02de1be71c89a6dad93a0f77c33631efc14cc748e4ce366971a3970b57f05a",
+    "examples/quality-programme/ensembles/acoustic_ballad.wav": "7ef2463c418783704af35aa08e29d0c01bd3a67fefa9d3d5b7930535314a8a5e",
+    "examples/quality-programme/misty-final-stems/room.wav": "f696d5cbddca0d81d3b88895f5f9c3bfef238938dca4c63015b3838f921bb80a",
+    "examples/quality-programme/misty-final-stems/master.wav": "eca678694475dc8b63c9d03630411ef250ac99ff6cdb099dbd16003a953b0b70",
+    "examples/quality-programme/misty-final-stems/reconstruction-check.json": "62177927152982f502e916a340eeb0ba0427d8bfaeefa3e7864b15df634bc575",
+    "examples/quality-programme/misty-final-stems/audio-report.json": "85fe5732771cc59ddb31b6a8864dbc526c0e3e1256522a51f81bf7a52fa5b468",
+    "examples/quality-programme/misty-final-stems/score.yaml": "12104013f5aa03c306d9399e24f09f419bb2dafefe6f70e9e57aa81c544930c7",
+    "examples/quality-programme/misty-final-stems/C3.wav": "6ed9bc7873902805836796be9d9962a9cec52bac68663889a1943fd76fc7940d",
+    "examples/quality-programme/misty-final-stems/C2.wav": "fb345ced65ac2524393f94a678b4fb7af37b24eb98b3d5f57cfca19438e944fc",
+    "examples/quality-programme/misty-final-stems/C1.wav": "f2c2162f5e794fa21efde689c78c46045ef14065a0d50df4acabb548e6aa60d2",
+    "examples/quality-programme/misty-final-stems/manifest.json": "024233192a772e0a327821313ee16b133c7dad92dc33f246bb68995436da45bc",
+    "examples/quality-programme/misty-comparison/before.wav": "082e74f0c41252e1fb3976c1f5bd2d56c3348badca08c2b03179d5f2987f4f5b",
+    "examples/quality-programme/misty-comparison/after.wav": "be4bfde17391fb7e8200f199c9e61d975d06af896c896e2677758cf8a1868870",
+    "examples/quality-programme/misty-comparison/comparison.json": "9fd183c46ef8257d68a82bc6999b52e664c0810d059fd01beebea2758c957a42"
+  }
+}

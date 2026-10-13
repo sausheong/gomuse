@@ -1,0 +1,33 @@
+[
+  {
+    "file": "examples/singing/procedural/phonemes/come_alive.wav",
+    "sha256": "3dfb57157ba5a76efed981265c39848fc5d37a2c0f8744568136b5be9281a328",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.92,
+        "text": " Heh, ah, ah, lie, hee, lah, lah, lah",
+        "avg_logprob": -0.15632812923855252,
+        "no_speech_prob": 0.2457786351442337
+      },
+      {
+        "start": 4.92,
+        "end": 11.16,
+        "text": " A light morning light, a-e-me-i-r",
+        "avg_logprob": -0.9627492345612625,
+        "no_speech_prob": 0.49466976523399353
+      },
+      {
+        "start": 11.16,
+        "end": 17.08,
+        "text": " We and rise, we and ride you and I",
+        "avg_logprob": -0.9627492345612625,
+        "no_speech_prob": 0.49466976523399353
+      }
+    ]
+  }
+]

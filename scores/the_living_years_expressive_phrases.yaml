@@ -1,0 +1,507 @@
+# Compact expressive score. | marks bar boundaries; notes and durations are unchanged.
+# Phrase styles replace event tables; saxophone phrases now continue across barlines.
+# Full expanded reference: the_living_years_expressive_expanded.yaml.
+name: The Living Years — expressive saxophone and electric piano
+key: Ab
+length: 0.625
+instrument: electric-piano
+instruments: {C1: saxophone, C2: electric-piano, C3: bass}
+volume: 6875
+humanize: 0.18
+swing: 0
+reverb: 0.19
+levels: {C1: 0.68, C2: 0.52, C3: 0.56, drums: 1.0}
+pan: {C1: -0.08, C2: 0.24, C3: -0.12, drums: 0}
+playing: {C1: reflective-sax, C2: warm-keys, C3: steady-bass}
+playing_styles:
+  reflective-sax:
+    performance: {articulation: legato, swell: 0.12, vibrato: 0}
+    notes: {accent: -0.3, vibrato: {depth: 0}}
+    held: [{min_beats: 1.5, vibrato: {depth: 4, delay_ms: 280, rise_ms: 450, rate_hz: 5.1}}]
+    shape: {start_db: -1.4, peak_db: 0.5, end_db: -2, peak_at: 0.58, tone: {start: -0.25, peak: 0, end: -0.3}}
+    slur: true
+    breath_ms: 65
+  open-sax:
+    performance: {articulation: legato, swell: 0.12, vibrato: 0}
+    notes: {accent: -0.3, vibrato: {depth: 0}}
+    held: [{min_beats: 1.5, vibrato: {depth: 7, delay_ms: 280, rise_ms: 450, rate_hz: 5.1}}]
+    shape: {start_db: -1.4, peak_db: 1.2, end_db: -2, peak_at: 0.58, tone: {start: -0.25, peak: 0.18, end: -0.3}}
+    slur: true
+    breath_ms: 65
+  warm-keys:
+    notes: {accent: -0.6}
+  steady-bass:
+    notes: {accent: -0.6}
+marks:
+  lean: {accent: 0.9}
+  light: {accent: -1.8}
+  ground: {accent: 0.4}
+sections:
+
+- label: Introduction (1–8)
+  dynamic: p
+  drums: ['4:z', '4:z', '4:z', '4:z', '4:z', '4:z', '4:z', '4:z']
+  parts:
+    C1:
+    - 4:z | 4:z | 4:z | 4:z | 4:z | 4:z | 4:z | 4:z
+    C2:
+    - 1.5:a3-c4-e4@ground 1.5:a3-b3-e4 a3-c4-e4 | 1.5:a3-c4-e4@ground 1.5:a3-b3-e4 a3-c4-e4 | 4:g3-b3-d4n@ground | 4:g3-b3-d4n@ground | 1.5:b3-d4-f4@ground 1.5:b3-c4-f4 b3-d4-f4 | 1.5:b3-d4-f4@ground 1.5:b3-c4-f4 b3-d4-f4 | 1.5:e4-g4@ground 1.5:e4-a4 e4-b4 | 1.5:e4-c5@ground 1.5:e4-d5 e4-e5
+    C3:
+    - 4:a2-e3@ground | 4:a2-e3@ground | 4:g2-d3n@ground | 4:g2-d3n@ground | 4:b2-f3@ground | 4:b2-f3@ground | 4:e3-b3@ground | 4:e3-b3@ground
+
+- label: Introduction continued (9–12)
+  dynamic: mp
+  drums: ['4:z', '4:z', '4:z', '4:z']
+  parts:
+    C1:
+    - 4:z | 4:z | 4:z | 4:z
+    C2:
+    - 4:e4-a4-c5@ground | 4:e4-a4-c5@ground | 4:e4-a4-c5@ground | 4:e4-a4-c5@ground
+    C3:
+    - 1.75:a2-a3@ground 0.25:a2-a3@light 1.75:a2-a3 0.25:a2-a3@light | 1.75:a2-a3@ground 0.25:a2-a3@light 1.75:a2-a3 0.25:a2-a3@light | 1.75:a2-a3@ground 0.25:a2-a3@light 1.75:a2-a3 0.25:a2-a3@light | 1.75:a2-a3@ground 0.25:a2-a3@light 2:a2-a3
+
+- label: Verse 1 (13–20)
+  drums: ['4:z', '4:z', '4:z', '4:z', '4:z', '4:z', '4:z', '4:z']
+  parts:
+    C1:
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 0.5:b4 1.75:a4 | a4@lean
+    - 3:z
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 0.5:b4 1.75:a4 | a4@lean
+    - 2.5:z
+    - 0.5:f4 | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light
+    C2:
+    - 0.5:e4-a4-c5@ground 0.25:c5@light 0.75:e4-a4-c5 0.25:b4@light 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:a4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.75:d4-f4-c5 0.25:b4@light 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light | 0.5:e4-a4-c5@ground 0.25:c5@light 0.5:e4-a4-c5 0.5:b4 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:f4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.5:d4-f4-c5 0.5:b4 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3
+
+- label: Verse 1 (21–26)
+  drums: ['4:z', '4:z', '4:z', '4:z', '4:z', '4:z']
+  parts:
+    C1:
+    - 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.75:d5 c5
+    - 0.75:z
+    - 0.25:b4@light | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.75:c5
+    - 0.75:z
+    - 0.25:c5@light | 0.5:e5@lean 0.5:e5 0.75:f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:d5@light | 0.25:d5@light 0.5:d5 0.5:d5 0.5:c5 0.75:c5 0.5:b4
+    - z
+    - d5@lean e5 0.75:c5 0.25:b4@light 0.75:a4 0.25:a4@light
+    C2:
+    - 0.5:g4b-b4-e5@ground 0.25:e5@light 0.5:g4b-b4-e5 0.5:d5 0.5:g4b-b4-d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:g4b-b4-e5@ground 0.25:g4b-b4-e5@light 0.5:g4b-b4-e5 0.75:g4b-b4-d5 1.5:c5 0.25:z 0.25:b4@light | 0.5:f4-b4-e5@ground 0.25:e5@light 0.5:f4-b4-e5 0.5:f4-b4-d5 0.5:f4-b4-d5 1.5:c5 0.25:c5@light | 0.5:f4-b4-e5@ground 0.5:e5 0.75:b4-d5-f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:e4-a4-b4-d5@light | 0.25:e4-a4-b4-d5@light 0.5:d5 0.5:e4-a4-b4-d5 0.5:c5 0.75:e4-a4-c5 1.5:e4-a4-b4 | f4-a4-d5@ground f4-a4-e5 0.75:e4-g4-c5 0.25:b4@light 0.75:a4 0.25:c4-e4-a4@light
+    C3:
+    - 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 2:e3-b3@ground 2:e3-b3
+
+- label: Verse 1 (27)
+  ritardando: 0.035
+  drums: ['4:z']
+  parts:
+    C1:
+    - 3:a4@lean
+    - z
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light
+
+- label: Verse 1 (28)
+  drums: ['4:z']
+  parts:
+    C1:
+    - 3:z
+    - c5@lean
+    C2:
+    - 3:c4-e4-a4@ground z
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Verse 2 (29–36)
+  drums: ['4:z', '4:z', '4:z', '4:z', '4:z', '4:z', '4:z', '4:z']
+  parts:
+    C1:
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 0.5:b4 1.75:a4 | a4@lean
+    - 2.5:z
+    - 0.5:a4 | 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 0.5:b4 1.75:a4 | a4@lean
+    - 2:z
+    - 0.5:b4 0.5:d5 | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light
+    C2:
+    - 0.5:e4-a4-c5@ground 0.25:c5@light 0.75:e4-a4-c5 0.25:b4@light 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:a4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.75:d4-f4-c5 0.25:b4@light 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light | 0.5:e4-a4-c5@ground 0.25:c5@light 0.5:e4-a4-c5 0.5:b4 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:f4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.5:d4-f4-c5 0.5:b4 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3
+
+- label: Verse 2 (37–41)
+  drums: ['4:z', '4:z', '4:z', '4:z', '4:z']
+  parts:
+    C1:
+    - 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.75:d5 c5
+    - 0.75:z
+    - 0.25:b4@light | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.75:c5
+    - 0.75:z
+    - 0.25:c5@light | 0.5:e5@lean 0.5:e5 0.75:f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:d5@light | 0.25:d5@light 0.5:d5 0.5:d5 0.5:c5 0.75:c5 0.5:b4
+    - z
+    C2:
+    - 0.5:g4b-b4-e5@ground 0.25:e5@light 0.5:g4b-b4-e5 0.5:d5 0.5:g4b-b4-d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:g4b-b4-e5@ground 0.25:g4b-b4-e5@light 0.5:g4b-b4-e5 0.75:g4b-b4-d5 1.5:c5 0.25:z 0.25:b4@light | 0.5:f4-b4-e5@ground 0.25:e5@light 0.5:f4-b4-e5 0.5:f4-b4-d5 0.5:f4-b4-d5 1.5:c5 0.25:c5@light | 0.5:f4-b4-e5@ground 0.5:e5 0.75:b4-d5-f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:e4-a4-b4-d5@light | 0.25:e4-a4-b4-d5@light 0.5:d5 0.5:e4-a4-b4-d5 0.5:c5 0.75:e4-a4-c5 1.5:e4-a4-b4
+    C3:
+    - 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3
+
+- label: Verse 2 (42)
+  hairpin: cresc
+  drums: ['4:z']
+  parts:
+    C1:
+    - d5@lean e5 0.75:c5 0.25:b4@light 0.75:a4 0.25:a4@light
+    C2:
+    - f4-a4-d5@ground f4-a4-e5 0.75:e4-g4-c5 0.25:b4@light 0.75:a4 0.25:c4-e4-a4@light
+    C3:
+    - 2:e3-b3@ground 2:e3-b3
+
+- label: Verse 2 (43)
+  hairpin: cresc
+  ritardando: 0.035
+  drums: ['4:z']
+  parts:
+    C1:
+    - 3:a4@lean
+    - z
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light
+
+- label: Verse 2 (44)
+  dynamic: mf
+  drums: ['4:z']
+  parts:
+    C1:
+    - 2:z
+    - c4@lean d4
+    C2:
+    - 2:c4-e4-a4@ground c4 d4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Chorus 1 (45–52)
+  playing: {C1: open-sax}
+  drums: ['0.5:kick-crash-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 4:e4@lean | e4@lean
+    - z
+    - e4 a4 | 4:f4@lean | f4@lean
+    - z
+    - f4 f4 | 1.5:b4@lean 1.5:c5 d5 | 1.5:d5@lean 1.5:c5 b4 | 4:c5@lean | c5@lean
+    - z
+    - c4 d4
+    C2:
+    - 4:a3-c4-e4@ground | 2:a3-c4-e4@ground a3-c4-e4 a4 | 4:a3-d4-f4@ground | 2:a3-d4-f4@ground a3-d4-f4 a3-d4-f4 | 1.5:e4-g4-b4@ground 1.5:e4-g4-c5 d5 | 1.5:e4-g4-d5@ground 1.5:e4-g4-c5 b4 | 4:e4-a4-c5@ground | 2:e4-a4-c5@ground c4 d4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Chorus 1 (53–58)
+  playing: {C1: open-sax}
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 4:e4@lean | e4@lean
+    - z
+    - e4 a4 | 4:f4@lean | f4@lean
+    - z
+    - f4 f4 | 1.5:b4@lean 1.5:c5 d5 | 1.5:d5@lean 1.5:c5 b4
+    C2:
+    - 4:a3-c4-e4@ground | 2:a3-c4-e4@ground a3-c4-e4 a4 | 4:a3-d4-f4@ground | 2:a3-d4-f4@ground a3-d4-f4 a3-d4-f4 | 1.5:e4-g4-b4@ground 1.5:e4-g4-c5 d5 | 1.5:e4-g4-d5@ground 1.5:e4-g4-c5 b4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3
+
+- label: Chorus 1 (59)
+  playing: {C1: open-sax}
+  ritardando: 0.035
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.25:snare', '0.25:tom1', '0.5:tom2']
+  parts:
+    C1:
+    - 4:a4@lean
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light
+
+- label: Chorus 1 (60)
+  playing: {C1: open-sax}
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 3:a4@lean 0.5:c5 0.5:c5
+    C2:
+    - 3:c4-e4-a4@ground 0.5:c5 0.5:c5
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Verse 3 (61–68)
+  dynamic: mp
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 0.5:b4 1.75:a4 | a4@lean
+    - 3:z
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 0.5:b4 1.75:a4 | a4@lean
+    - 2.5:z
+    - 0.5:f4 | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light
+    C2:
+    - 0.5:e4-a4-c5@ground 0.25:c5@light 0.75:e4-a4-c5 0.25:b4@light 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:a4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.75:d4-f4-c5 0.25:b4@light 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light | 0.5:e4-a4-c5@ground 0.25:c5@light 0.5:e4-a4-c5 0.5:b4 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:f4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.5:d4-f4-c5 0.5:b4 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3
+
+- label: Verse 3 (69–73)
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.75:d5 c5
+    - 0.75:z
+    - 0.25:b4@light | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.75:c5
+    - 0.75:z
+    - 0.25:c5@light | 0.5:e5@lean 0.5:e5 0.75:f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:d5@light | 0.25:d5@light 0.5:d5 0.5:d5 0.5:c5 0.75:c5 0.5:b4
+    - z
+    C2:
+    - 0.5:g4b-b4-e5@ground 0.25:e5@light 0.5:g4b-b4-e5 0.5:d5 0.5:g4b-b4-d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:g4b-b4-e5@ground 0.25:g4b-b4-e5@light 0.5:g4b-b4-e5 0.75:g4b-b4-d5 1.5:c5 0.25:z 0.25:b4@light | 0.5:f4-b4-e5@ground 0.25:e5@light 0.5:f4-b4-e5 0.5:f4-b4-d5 0.5:f4-b4-d5 1.5:c5 0.25:c5@light | 0.5:f4-b4-e5@ground 0.5:e5 0.75:b4-d5-f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:e4-a4-b4-d5@light | 0.25:e4-a4-b4-d5@light 0.5:d5 0.5:e4-a4-b4-d5 0.5:c5 0.75:e4-a4-c5 1.5:e4-a4-b4
+    C3:
+    - 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3
+
+- label: Verse 3 (74)
+  hairpin: cresc
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - d5@lean e5 0.75:c5 0.25:b4@light 0.75:a4 0.25:a4@light
+    C2:
+    - f4-a4-d5@ground f4-a4-e5 0.75:e4-g4-c5 0.25:b4@light 0.75:a4 0.25:c4-e4-a4@light
+    C3:
+    - 2:e3-b3@ground 2:e3-b3
+
+- label: Verse 3 (75)
+  hairpin: cresc
+  ritardando: 0.035
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 3:a4@lean
+    - z
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light
+
+- label: Verse 3 (76)
+  dynamic: mf
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 2:z
+    - c4@lean d4
+    C2:
+    - 2:c4-e4-a4@ground c4 d4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Chorus 2 (77–84)
+  playing: {C1: open-sax}
+  drums: ['0.5:kick-crash-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 4:e4@lean | e4@lean
+    - z
+    - e4 a4 | 4:f4@lean | f4@lean
+    - z
+    - f4 f4 | 1.5:b4@lean 1.5:c5 d5 | 1.5:d5@lean 1.5:c5 b4 | 4:c5@lean | c5@lean
+    - z
+    - c4 d4
+    C2:
+    - 4:a3-c4-e4@ground | 2:a3-c4-e4@ground a3-c4-e4 a4 | 4:a3-d4-f4@ground | 2:a3-d4-f4@ground a3-d4-f4 a3-d4-f4 | 1.5:e4-g4-b4@ground 1.5:e4-g4-c5 d5 | 1.5:e4-g4-d5@ground 1.5:e4-g4-c5 b4 | 4:e4-a4-c5@ground | 2:e4-a4-c5@ground c4 d4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Chorus 2 (85–90)
+  dynamic: f
+  playing: {C1: open-sax}
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 4:e4@lean | e4@lean
+    - z
+    - e4 a4 | 4:f4@lean | f4@lean
+    - z
+    - f4 f4 | 1.5:b4@lean 1.5:c5 d5 | 1.5:d5@lean 1.5:c5 b4
+    C2:
+    - 4:a3-c4-e4@ground | 2:a3-c4-e4@ground a3-c4-e4 a4 | 4:a3-d4-f4@ground | 2:a3-d4-f4@ground a3-d4-f4 a3-d4-f4 | 1.5:e4-g4-b4@ground 1.5:e4-g4-c5 d5 | 1.5:e4-g4-d5@ground 1.5:e4-g4-c5 b4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:d3@ground 0.25:d3@light 2:d3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3
+
+- label: Chorus 2 (91)
+  playing: {C1: open-sax}
+  ritardando: 0.035
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.25:snare', '0.25:tom1', '0.5:tom2']
+  parts:
+    C1:
+    - 4:a4@lean
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light
+
+- label: Chorus 2 (92)
+  playing: {C1: open-sax}
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 3:a4@lean
+    - 0.5:z
+    - 0.5:c5
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Verse 4 (93–100)
+  dynamic: p
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 0.5:b4 1.75:a4 | a4@lean
+    - 3:z
+    - 0.5:c5@lean 0.25:c5@light 0.75:c5 0.25:b4@light 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 0.5:b4 1.75:a4 | a4@lean
+    - 2.5:z
+    - 0.5:f4 | 0.5:c5@lean 0.25:c5@light 0.5:c5 0.5:b4 2.25:b4
+    - 3.75:z
+    - 0.25:f4@light
+    C2:
+    - 0.5:e4-a4-c5@ground 0.25:c5@light 0.75:e4-a4-c5 0.25:b4@light 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:a4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.75:d4-f4-c5 0.25:b4@light 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light | 0.5:e4-a4-c5@ground 0.25:c5@light 0.5:e4-a4-c5 0.5:b4 0.5:c4-e4-b4 1.75:c4-e4-a4 | 3:c4-e4-a4@ground 0.5:z 0.5:f4 | 0.5:d4-f4-c5@ground 0.25:c5@light 0.5:d4-f4-c5 0.5:b4 2.25:d4-f4-b4 | 3:d4-f4-b4@ground 0.75:z 0.25:f4@light
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3 | 1.75:d3-a3@ground 0.25:d3-a3@light 2:d3-a3
+
+- label: Verse 4 (101–105)
+  dynamic: mp
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.75:d5 c5
+    - 0.75:z
+    - 0.25:b4@light | 0.5:e5@lean 0.25:e5@light 0.5:e5 0.5:d5 0.5:d5 0.75:c5
+    - 0.75:z
+    - 0.25:c5@light | 0.5:e5@lean 0.5:e5 0.75:f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:d5@light | 0.25:d5@light 0.5:d5 0.5:d5 0.5:c5 0.75:c5 0.5:b4
+    - z
+    C2:
+    - 0.5:g4b-b4-e5@ground 0.25:e5@light 0.5:g4b-b4-e5 0.5:d5 0.5:g4b-b4-d5 0.5:c5 0.25:c5@light 0.5:c5 0.5:d5 | 0.5:g4b-b4-e5@ground 0.25:g4b-b4-e5@light 0.5:g4b-b4-e5 0.75:g4b-b4-d5 1.5:c5 0.25:z 0.25:b4@light | 0.5:f4-b4-e5@ground 0.25:e5@light 0.5:f4-b4-e5 0.5:f4-b4-d5 0.5:f4-b4-d5 1.5:c5 0.25:c5@light | 0.5:f4-b4-e5@ground 0.5:e5 0.75:b4-d5-f5 0.25:d5@light d5 0.25:b4@light 0.5:b4 0.25:e4-a4-b4-d5@light | 0.25:e4-a4-b4-d5@light 0.5:d5 0.5:e4-a4-b4-d5 0.5:c5 0.75:e4-a4-c5 1.5:e4-a4-b4
+    C3:
+    - 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:g2b-d3@ground 0.25:g2b-d3@light 2:g2b-d3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:b2-f3@ground 0.25:b2-f3@light 2:b2-f3 | 1.75:e3-b3@ground 0.25:e3-b3@light 2:e3-b3
+
+- label: Verse 4 (106)
+  hairpin: cresc
+  ritardando: 0.035
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - d5@lean e5 0.75:c5 0.25:b4@light 0.75:a4 0.25:a4@light
+    C2:
+    - f4-a4-d5@ground f4-a4-e5 0.75:e4-g4-c5 0.25:b4@light 0.75:a4 0.25:c4-e4-a4@light
+    C3:
+    - 2:e3-b3@ground 2:e3-b3
+
+- label: Verse 4 (107)
+  hairpin: cresc
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:rim-hat', '0.5:hat']
+  parts:
+    C1:
+    - 3:a4@lean
+    - z
+    C2:
+    - 4:c4-e4-a4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light
+
+- label: Coda pickup (108)
+  dynamic: mf
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 2:z
+    - c4@lean d4
+    C2:
+    - 2:c4-e4-a4@ground c4 d4
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3
+
+- label: Coda (109–111)
+  drums: ['0.5:kick-crash-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 4:e4@lean | e4@lean
+    - z
+    - e4 a4 | 4:f4@lean
+    C2:
+    - 4:a3-c4-e4@ground | 2:a3-c4-e4@ground a3-c4-e4 a4 | 4:a3-d4-f4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3@ground 0.25:d3@light 1.75:d3 0.25:d3@light
+
+- label: Coda (112)
+  hairpin: dim
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.25:snare', '0.25:tom1', '0.5:tom2']
+  parts:
+    C1:
+    - f4@lean
+    - z
+    - c4 d4
+    C2:
+    - 2:a3-d4-f4@ground c4 d4
+    C3:
+    - 1.75:d3@ground 0.25:d3@light 2:d3
+
+- label: Coda repeat (113–115)
+  dynamic: mp
+  drums: ['0.5:kick-crash-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat']
+  parts:
+    C1:
+    - 4:e4@lean | e4@lean
+    - z
+    - e4 a4 | 4:f4@lean
+    C2:
+    - 4:a3-c4-e4@ground | 2:a3-c4-e4@ground a3-c4-e4 a4 | 4:a3-d4-f4@ground
+    C3:
+    - 1.75:a2-e3@ground 0.25:a2-e3@light 1.75:a2-e3 0.25:a2-e3@light | 1.75:a2-e3@ground 0.25:a2-e3@light 2:a2-e3 | 1.75:d3@ground 0.25:d3@light 1.75:d3 0.25:d3@light
+
+- label: Coda repeat (116)
+  hairpin: dim
+  ritardando: 0.12
+  drums: ['0.5:kick-hat', '0.5:hat', '0.5:snare-hat', '0.5:hat', '0.5:kick-hat', '0.5:hat', '0.25:snare', '0.25:tom1', '0.5:tom2']
+  parts:
+    C1:
+    - f4@lean
+    - z
+    - c4 d4
+    C2:
+    - 2:a3-d4-f4@ground c4 d4
+    C3:
+    - 1.75:d3@ground 0.25:d3@light 2:d3
+
+- label: Ending (117)
+  dynamic: p
+  ritardando: 0.2
+  fermata: 3
+  drums: [kick-crash, '3:z']
+  parts:
+    C1:
+    - notes: 4:e4@lean
+      breath_ms: 0
+    C2:
+    - 4:a3-c4-e4@ground
+    C3:
+    - 4:a2-e3@ground

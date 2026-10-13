@@ -1,0 +1,335 @@
+# Tears In Heaven — Eric Clapton and Will Jennings; guitar arrangement by Thomas Liauw.
+# Sources: notation/tears_in_heaven_01.jpeg, _02.jpeg, _03.jpeg.
+# Source numbering: pickup = 0, first complete bar = 1; 59 numbered bars.
+# 4/4, D major; bridge 25–32 changes to C major (explicit naturals below).
+# Guitar notation transposed down one octave to sounding pitch.
+# Tempo: quarter = 86, editorial (no metronome marking visible in the images).
+# C1 melody/upper chords, C2 inner voice, C3 bass. Guitar throughout.
+# Form: pickup; 1–4 twice; 5–22; 5–20; 23–50; D.S. 5–18; coda 51–59.
+# The D.S. return takes no repeats and jumps to the coda at the printed To Coda.
+# Sixteenth triplets total exactly half a beat. Engraved cross-bar ties are merged
+# in phrase sections; source references identify each included bar.
+# Fingering, barre positions and slurs are omitted. Guitar synthesis supplies ring-over.
+# No printed dynamics are visible: mf and the closing softer level are editorial.
+# Final ritardando and fermata are interpreted as a gradual 25% slowdown and a
+# two-beat extra hold. The closing 1.5 beats of rests balance the half-beat pickup.
+# Manual transcription, cross-checked against the images and older tears.full.yaml.
+# Validation checks durations/rendering, not independent note-for-note accuracy.
+name: Tears In Heaven
+key: D
+length: 0.6976744186046512
+instrument: guitar
+instruments: {C1: guitar, C2: guitar, C3: guitar}
+pan: {C1: 0, C2: 0.08, C3: -0.08}
+levels: {C1: 1, C2: 0.75, C3: 0.85}
+volume: 24000
+humanize: 0.1
+swing: 0
+reverb: 0.16
+sections:
+  # Source pickup | starts at playback beat 0
+  - dynamic: mf
+    C1: [0.5:z]
+    C2: [0.5:z]
+    C3: [0.25:a2, 0.25:c3]
+  # Source bars 1, 2 | starts at playback beat 0.5
+  - dynamic: mf
+    C1: [0.5:z, 0.5:a3, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [4:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 0.5:b2, 0.5:z, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 3 | starts at playback beat 8.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [0.5:b2, b2, 0.5:b2, 0.5:a2, 0.5:a2, 0.5:a2, 0.5:a2]
+  # Source bars 4 | starts at playback beat 12.500000
+  - dynamic: mf
+    C1: [d4-f4, d4-f4, d4-f4, 0.5:d4-f4, 0.5:z]
+    C2: [4:z]
+    C3: [0.5:d3, d3, 0.5:d3, 0.5:d3, d3, 0.25:a2, 0.25:c3]
+  # Source bars 1, 2 | starts at playback beat 16.500000
+  - dynamic: mf
+    C1: [0.5:z, 0.5:a3, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [4:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 0.5:b2, 0.5:z, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 3 | starts at playback beat 24.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [0.5:b2, b2, 0.5:b2, 0.5:a2, 0.5:a2, 0.5:a2, 0.5:a2]
+  # Source bars 4 | starts at playback beat 28.500000
+  - dynamic: mf
+    C1: [d4-f4, d4-f4, d4-f4, 0.5:d4-f4, 0.5:z]
+    C2: [4:z]
+    C3: [0.5:d3, d3, 0.5:d3, 0.5:d3, d3, 0.25:a2, 0.25:c3]
+  # Source bars 5, 6 | starts at playback beat 32.500000
+  - dynamic: mf
+    C1: [z, 0.5:f4, 0.5:d4, a4, 0.5:a4, 3.5:f4, z]
+    C2: [0.5:z, 1.5:a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3]
+    C3: [2:d3, 2:c3, 2:b2, 2:a2]
+  # Source bars 7 | starts at playback beat 40.500000
+  - dynamic: mf
+    C1: [z, 0.5:g4, 0.5:g4, 0.5:f4, 0.5:e4, 0.5:d4, 0.5:f4]
+    C2: [0.5:z, 1.5:b3, 2:z]
+    C3: [2:g2, 2:d3]
+  # Source bars 8 | starts at playback beat 44.500000
+  - dynamic: mf
+    C1: [3:e4, z]
+    C2: [0.5:z, 0.5:a3, 0.5:d4, 0.5:a3, 0.5:z, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [2:a2, 2:a2]
+  # Source bars 9, 10 | starts at playback beat 48.500000
+  - dynamic: mf
+    C1: [z, 0.5:f4, 0.5:d4, a4, 0.5:e4, 3.5:f4, z]
+    C2: [0.5:z, 1.5:a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3]
+    C3: [2:d3, 2:c3, 2:b2, 2:a2]
+  # Source bars 11 | starts at playback beat 56.500000
+  - dynamic: mf
+    C1: [z, 0.5:g4, 0.5:g4, 0.5:f4, 0.5:e4, 0.5:d4, 0.5:f4]
+    C2: [0.5:z, 1.5:b3, 2:z]
+    C3: [2:g2, 2:d3]
+  # Source bars 12 | starts at playback beat 60.500000
+  - dynamic: mf
+    C1: [3:e4, z]
+    C2: [0.5:z, 0.5:a3, 0.5:d4, 0.5:a3, 0.5:z, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [2:a2, 2:a2]
+  # Source bars 13, 14 | starts at playback beat 64.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:d4, d4, 0.5:e4, 3.5:c4, z]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3]
+    C3: [2:b2, 2:b2, 2:a2#, 2:a2#]
+  # Source bars 15, 16 | starts at playback beat 72.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:c4n, c4n, 0.5:d4, 2.5:b3, e4, f4]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:f3, 0.5:z, 0.5:d3#, 0.5:a3, 0.5:d3#, 2:z]
+    C3: [2:a2, 2:a2, 2:b2, 2:b2]
+  # Source bars 17, 18 | starts at playback beat 80.500000
+  - dynamic: mf
+    C1: [1.5:g4, 0.5:e4, e4, 0.5:d4, 2.5:c4, 0.5:z, 0.5:f4, 0.5:e4, 0.5:e4]
+    C2: [0.5:z, 0.5:g3, b3, 0.5:z, 1.5:g3, 0.5:z, 0.5:e3, 0.5:a3, 0.5:e3, 2:z]
+    C3: [2:e2, 2:e2, 2:a2, 2:a2]
+  # Source bars 19, 20 | starts at playback beat 88.500000
+  - dynamic: mf
+    C1: [d4, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [0.5:z, 0.5:a3, 3:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 0.5:b2, 0.5:z, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 21 | starts at playback beat 96.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [0.5:b2, b2, 0.5:b2, 0.5:a2, 0.5:a2, 0.5:a2, 0.5:a2]
+  # Source bars 22 | starts at playback beat 100.500000
+  - dynamic: mf
+    C1: [d4-f4, d4-f4, d4-f4, 0.5:d4-f4, 0.5:z]
+    C2: [4:z]
+    C3: [0.5:d3, d3, 0.5:d3, 0.5:d3, d3, 0.25:a2, 0.25:c3]
+  # Source bars 5, 6 | starts at playback beat 104.500000
+  - dynamic: mf
+    C1: [z, 0.5:f4, 0.5:d4, a4, 0.5:a4, 3.5:f4, z]
+    C2: [0.5:z, 1.5:a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3]
+    C3: [2:d3, 2:c3, 2:b2, 2:a2]
+  # Source bars 7 | starts at playback beat 112.500000
+  - dynamic: mf
+    C1: [z, 0.5:g4, 0.5:g4, 0.5:f4, 0.5:e4, 0.5:d4, 0.5:f4]
+    C2: [0.5:z, 1.5:b3, 2:z]
+    C3: [2:g2, 2:d3]
+  # Source bars 8 | starts at playback beat 116.500000
+  - dynamic: mf
+    C1: [3:e4, z]
+    C2: [0.5:z, 0.5:a3, 0.5:d4, 0.5:a3, 0.5:z, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [2:a2, 2:a2]
+  # Source bars 9, 10 | starts at playback beat 120.500000
+  - dynamic: mf
+    C1: [z, 0.5:f4, 0.5:d4, a4, 0.5:e4, 3.5:f4, z]
+    C2: [0.5:z, 1.5:a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3]
+    C3: [2:d3, 2:c3, 2:b2, 2:a2]
+  # Source bars 11 | starts at playback beat 128.500000
+  - dynamic: mf
+    C1: [z, 0.5:g4, 0.5:g4, 0.5:f4, 0.5:e4, 0.5:d4, 0.5:f4]
+    C2: [0.5:z, 1.5:b3, 2:z]
+    C3: [2:g2, 2:d3]
+  # Source bars 12 | starts at playback beat 132.500000
+  - dynamic: mf
+    C1: [3:e4, z]
+    C2: [0.5:z, 0.5:a3, 0.5:d4, 0.5:a3, 0.5:z, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [2:a2, 2:a2]
+  # Source bars 13, 14 | starts at playback beat 136.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:d4, d4, 0.5:e4, 3.5:c4, z]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3]
+    C3: [2:b2, 2:b2, 2:a2#, 2:a2#]
+  # Source bars 15, 16 | starts at playback beat 144.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:c4n, c4n, 0.5:d4, 2.5:b3, e4, f4]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:f3, 0.5:z, 0.5:d3#, 0.5:a3, 0.5:d3#, 2:z]
+    C3: [2:a2, 2:a2, 2:b2, 2:b2]
+  # Source bars 17, 18 | starts at playback beat 152.500000
+  - dynamic: mf
+    C1: [1.5:g4, 0.5:e4, e4, 0.5:d4, 2.5:c4, 0.5:z, 0.5:f4, 0.5:e4, 0.5:e4]
+    C2: [0.5:z, 0.5:g3, b3, 0.5:z, 1.5:g3, 0.5:z, 0.5:e3, 0.5:a3, 0.5:e3, 2:z]
+    C3: [2:e2, 2:e2, 2:a2, 2:a2]
+  # Source bars 19, 20 | starts at playback beat 160.500000
+  - dynamic: mf
+    C1: [d4, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [0.5:z, 0.5:a3, 3:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 0.5:b2, 0.5:z, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 23 | starts at playback beat 168.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [0.5:b2, b2, 0.5:b2, 0.5:a2, 0.5:a2, 0.5:a2, 0.5:a2]
+  # Source bars 24 | starts at playback beat 172.500000
+  - dynamic: mf
+    C1: [d4-f4, d4-f4, d4-f4, 0.5:d4-f4, 0.5:z]
+    C2: [4:z]
+    C3: [0.5:d3, d3, 0.5:d3, 0.5:d3, d3, 0.25:d3, 0.25:e3]
+  # Source bars 25, 26, 27, 28 | starts at playback beat 176.500000
+  - dynamic: mf
+    C1: [z, 0.5:a4, 0.5:a4, g4, 0.5:g4, 1.5:f4n, 0.5:f4n, 0.5:d4, g4, 0.5:d4, 7.5:e4, z]
+    C2: [0.5:z, 1.5:c4n, 0.5:z, 1.5:c4n, 0.5:z, 1.5:a3, 0.5:z, 1.5:g3, 0.5:z, 0.5:g3, 0.5:c4n, 0.5:g3, 0.5:z, 0.5:g3, 0.5:b3, 0.5:g3, 0.5:z, 0.5:a3, 0.5:c4n, 0.5:a3, 0.5:z, 0.5:g3, 0.5:c4n, 0.5:g3]
+    C3: [2:f3n, 2:e3, 2:d3, 2:b2, 2:c3n, 2:b2, 2:a2, 2:g2]
+  # Source bars 29, 30, 31, 32 | starts at playback beat 192.500000
+  - dynamic: mf
+    C1: [z, 0.5:a4, 0.5:a4, g4, 0.5:g4, 1.5:f4n, 0.5:f4n, 0.5:d4, g4, 0.5:g4, 2.5:e4, 0.5:z, 0.5:e4, 0.5:g4, 4.5:a4]
+    C2: [0.5:z, 1.5:c4n, 0.5:z, 1.5:c4n, 0.5:z, 1.5:a3, 0.5:z, 1.5:g3, 0.5:z, 0.5:g3, 0.5:c4n, 0.5:g3, 2:z, z, c4#-e4, d4-f4n, e4-g4]
+    C3: [2:f3n, 2:e3, 2:d3, 2:b2, 2:c3n, 2:b2, 4:a2]
+  # Source bars 33, 34 | starts at playback beat 208.500000
+  - dynamic: mf
+    C1: [0.5:z, 0.5:a3, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [4:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 1.5:b2, 0.5:c3, 0.5:d3, c3, a2]
+  # Source bars 35 | starts at playback beat 216.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [b2, 0.5:g3, 0.5:a3, f3, 0.25:e3, 0.25:f3, 0.25:e3, 0.25:d3]
+  # Source bars 36 | starts at playback beat 220.500000
+  - dynamic: mf
+    C1: [4:c4-e4]
+    C2: [4:z]
+    C3: [e3, e2, f2, g2]
+  # Source bars 37, 38 | starts at playback beat 224.500000
+  - dynamic: mf
+    C1: [0.5:z, 0.5:a3, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [4:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 1.5:b2, 0.5:c3, 0.5:d3, c3, a2]
+  # Source bars 39 | starts at playback beat 232.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [b2, 0.5:g3, 0.5:a3, f3, 0.25:e3, 0.25:f3, 0.25:e3, 0.25:d3]
+  # Source bars 40 | starts at playback beat 236.500000
+  - dynamic: mf
+    C1: [c4-e4, c4-e4, d4-f4, e4-g4]
+    C2: [4:z]
+    C3: [4:e3]
+  # Source bars 41, 42 | starts at playback beat 240.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:d4, d4, 0.5:e4, 3.5:c4, z]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3]
+    C3: [2:b2, 2:b2, 2:a2#, 2:a2#]
+  # Source bars 43, 44 | starts at playback beat 248.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:c4n, c4n, 0.5:d4, 2.5:b3, e4, f4]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:f3, 0.5:z, 0.5:d3#, 0.5:a3, 0.5:d3#, 2:z]
+    C3: [2:a2, 2:a2, 2:b2, 2:b2]
+  # Source bars 45, 46 | starts at playback beat 256.500000
+  - dynamic: mf
+    C1: [1.5:g4, 0.5:e4, e4, 0.5:d4, 2.5:c4, 0.5:z, 0.5:f4, 0.5:e4, 0.5:e4]
+    C2: [0.5:z, 0.5:g3, b3, 0.5:z, 1.5:g3, 0.5:z, 0.5:e3, 0.5:a3, 0.5:e3, 2:z]
+    C3: [2:e2, 2:e2, 2:a2, 2:a2]
+  # Source bars 47, 48 | starts at playback beat 264.500000
+  - dynamic: mf
+    C1: [d4, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [0.5:z, 0.5:a3, 3:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 0.5:b2, 0.5:z, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 49 | starts at playback beat 272.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [0.5:b2, b2, 0.5:b2, 0.5:a2, 0.5:a2, 0.5:a2, 0.5:a2]
+  # Source bars 50 | starts at playback beat 276.500000
+  - dynamic: mf
+    C1: [d4-f4, d4-f4, d4-f4, 0.5:d4-f4, 0.5:z]
+    C2: [4:z]
+    C3: [0.5:d3, d3, 0.5:d3, 0.5:d3, d3, 0.25:a2, 0.25:c3]
+  # Source bars 5, 6 | starts at playback beat 280.500000
+  - dynamic: mf
+    C1: [z, 0.5:f4, 0.5:d4, a4, 0.5:a4, 3.5:f4, z]
+    C2: [0.5:z, 1.5:a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3]
+    C3: [2:d3, 2:c3, 2:b2, 2:a2]
+  # Source bars 7 | starts at playback beat 288.500000
+  - dynamic: mf
+    C1: [z, 0.5:g4, 0.5:g4, 0.5:f4, 0.5:e4, 0.5:d4, 0.5:f4]
+    C2: [0.5:z, 1.5:b3, 2:z]
+    C3: [2:g2, 2:d3]
+  # Source bars 8 | starts at playback beat 292.500000
+  - dynamic: mf
+    C1: [3:e4, z]
+    C2: [0.5:z, 0.5:a3, 0.5:d4, 0.5:a3, 0.5:z, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [2:a2, 2:a2]
+  # Source bars 9, 10 | starts at playback beat 296.500000
+  - dynamic: mf
+    C1: [z, 0.5:f4, 0.5:d4, a4, 0.5:e4, 3.5:f4, z]
+    C2: [0.5:z, 1.5:a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3, 0.5:z, 0.5:f3, 0.5:b3-d4, 0.5:f3]
+    C3: [2:d3, 2:c3, 2:b2, 2:a2]
+  # Source bars 11 | starts at playback beat 304.500000
+  - dynamic: mf
+    C1: [z, 0.5:g4, 0.5:g4, 0.5:f4, 0.5:e4, 0.5:d4, 0.5:f4]
+    C2: [0.5:z, 1.5:b3, 2:z]
+    C3: [2:g2, 2:d3]
+  # Source bars 12 | starts at playback beat 308.500000
+  - dynamic: mf
+    C1: [3:e4, z]
+    C2: [0.5:z, 0.5:a3, 0.5:d4, 0.5:a3, 0.5:z, 0.5:a3, 0.5:c4, 0.5:a3]
+    C3: [2:a2, 2:a2]
+  # Source bars 13, 14 | starts at playback beat 312.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:d4, d4, 0.5:e4, 3.5:c4, z]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:a3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3, 0.5:z, 0.5:f3, 0.5:a3#, 0.5:f3]
+    C3: [2:b2, 2:b2, 2:a2#, 2:a2#]
+  # Source bars 15, 16 | starts at playback beat 320.500000
+  - dynamic: mf
+    C1: [1.5:z, 0.5:c4n, c4n, 0.5:d4, 2.5:b3, e4, f4]
+    C2: [0.5:z, 0.5:f3, a3, 0.5:z, 1.5:f3, 0.5:z, 0.5:d3#, 0.5:a3, 0.5:d3#, 2:z]
+    C3: [2:a2, 2:a2, 2:b2, 2:b2]
+  # Source bars 17, 18 | starts at playback beat 328.500000
+  - dynamic: mf
+    C1: [1.5:g4, 0.5:e4, e4, 0.5:d4, 2.5:c4, 0.5:z, 0.5:f4, 0.5:e4, 0.5:e4]
+    C2: [0.5:z, 0.5:g3, b3, 0.5:z, 1.5:g3, 0.5:z, 0.5:e3, 0.5:a3, 0.5:e3, 2:z]
+    C3: [2:e2, 2:e2, 2:a2, 2:a2]
+  # Source bars 51, 52 | starts at playback beat 336.500000
+  - dynamic: mf
+    C1: [d4, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, e4, f4]
+    C2: [0.5:z, 0.5:a3, 3:z, 4:z]
+    C3: [2:d3, c3, 0.5:z, b2, b2, 0.5:b2, 2:b2]
+  # Source bars 53, 54 | starts at playback beat 344.500000
+  - dynamic: mf
+    C1: [g4, 0.5:z, 0.5:e4, e4, 0.5:d4, 2.5:c4, 0.5:z, 0.5:f4, 0.5:e4, 0.5:e4]
+    C2: [0.5:z, 0.5:g3, b3, 0.5:z, 1.5:g3, 0.5:z, 0.5:e3, 0.5:a3, 0.5:e3, 2:z]
+    C3: [2:e2, 2:e2, 2:a2, 2:a2]
+  # Source bars 55, 56 | starts at playback beat 352.500000
+  - dynamic: mf
+    C1: [d4, 0.166667:f4, 0.166666:g4, 0.166667:f4, 0.5:d4, e4-a4, 0.5:e4-a4, 1.5:a3-d4-f4, a3-d4-f4, a3-d4-f4, a3-d4-f4]
+    C2: [0.5:z, 0.5:a3, 3:z, 4:z]
+    C3: [2:d3, 0.5:c3, 0.5:c3, 0.5:z, 0.5:b2, 0.5:z, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 57 | starts at playback beat 360.500000
+  - dynamic: mf
+    C1: [d4-g4, d4-g4, d4-g4, c4-g4]
+    C2: [4:z]
+    C3: [0.5:b2, b2, 0.5:b2, 0.5:a2, a2, 0.5:a2]
+  # Source bars 58, 59 | starts at playback beat 364.500000
+  - dynamic: mp
+    ritardando: 0.25
+    C1: [0.25:z, 0.25:a3, 0.25:d4, 0.25:f4, 0.25:g4, 0.25:f4, 0.25:e4, 0.25:d4, 0.5:f4, 0.5:a4]
+    C2: [3:z]
+    C3: [2:d3, z]
+  # Tied final A, including the half-note in source bar 59.
+  - dynamic: p
+    fermata: 2
+    C1: [3:a4]
+    C2: [3:z]
+    C3: [3:z]
+  - dynamic: p
+    C1: [1.5:z]
+    C2: [1.5:z]
+    C3: [1.5:z]

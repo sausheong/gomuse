@@ -1,0 +1,119 @@
+# Source: all 15 bars visible in the user-supplied screenshot.
+# Melody transcribed at written pitch; accompaniment newly arranged from chord symbols.
+# 4/4, chosen tempo 80 BPM. No music beyond the supplied crop is added.
+# Playback: 1-9, 1-6, 10-15 (21 played bars). The ambiguous repeat at 12 is not taken.
+# Cross-bar ties in bars 4-6 are merged; slurs between different pitches remain separate.
+# F-sharps follow key G; explicit naturals used for D minor and F major.
+name: Eternal Flame - supplied page with bass and drums
+key: G
+length: 0.75
+instrument: piano
+instruments: {C1: piano, C2: electric-piano, C3: bass}
+volume: 13000
+levels: {C1: 1, C2: 0.28, C3: 0.55, drums: 0.25}
+pan: {C1: 0, C2: -0.25, C3: 0, drums: 0.1}
+humanize: 0.25
+reverb: 0.15
+sections:
+  # Printed bar(s) 1
+  - dynamic: mp
+    C1: ["z", ".5:b3", ".25:c4", "1.25:d4", "z"]
+    C2: ["1.5:g3-b3-d4", ".5:z", "1.5:g3-b3-d4", ".5:z"]
+    C3: ["1.5:g2", ".5:d3", "1.5:e2", ".5:b2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 2
+  - dynamic: mp
+    C1: [".5:d4", ".5:d4", ".5:e4", "1.5:d4", ".5:g3", ".5:a3"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:a3-d4-f4", ".5:z"]
+    C3: ["1.5:c2", ".5:g2", "1.5:d2", ".5:a2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 3
+  - dynamic: mp
+    C1: ["z", ".5:b3", ".25:d4", ".75:g4", ".5:g4", ".5:g4", ".5:g4"]
+    C2: ["1.5:g3-b3-d4", ".5:z", "1.5:g3-b3-d4", ".5:z"]
+    C3: ["1.5:g2", ".5:d3", "1.5:e2", ".5:b2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 4, 5, 6
+  - dynamic: mp
+    C1: [".5:e4", ".5:e4", "z", ".5:e4", ".5:d4", ".5:g3", ".25:a3", "1.25:b3", ".5:g4", ".5:g4", "f4", ".5:b4", "1.5:b4", "z", ".5:e4", ".5:f4", ".5:g4", ".5:e4"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:a3-d4-f4", ".5:z", "1.5:g3-b3-d4", ".5:z", "1.5:a3-d4#-f4", ".5:z", "1.5:g3-b3-d4", ".5:z", "1.5:g3-c4#-e4", ".5:z"]
+    C3: ["1.5:c2", ".5:g2", "1.5:d2", ".5:a2", "1.5:e2", ".5:b2", "1.5:b1", ".5:f2", "1.5:e2", ".5:b2", "1.5:a1", ".5:e2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 7
+  - dynamic: mp
+    C1: ["1.5:a4", ".5:d4", "2:d4"]
+    C2: ["1.5:a3-d4-f4", ".5:z", "1.5:f3-b3-d4", ".5:z"]
+    C3: ["1.5:d2", ".5:a2", "1.5:b1", ".5:f2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 8
+  - dynamic: mp
+    C1: ["d4", "d4", ".5:d4", ".5:d4", "z"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:g3-c4-e4", ".5:z"]
+    C3: ["1.5:a1", ".5:e2", "1.5:a1", ".5:e2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 9
+  - dynamic: mp
+    C1: ["d4", "g4", ".5:f4", "g4", ".5:d4"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:g3-c4-e4", ".5:z"]
+    C3: ["1.5:a1", ".5:e2", "1.5:a1", ".5:e2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 1
+  - dynamic: mp
+    C1: ["z", ".5:b3", ".25:c4", "1.25:d4", "z"]
+    C2: ["1.5:g3-b3-d4", ".5:z", "1.5:g3-b3-d4", ".5:z"]
+    C3: ["1.5:g2", ".5:d3", "1.5:e2", ".5:b2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 2
+  - dynamic: mp
+    C1: [".5:d4", ".5:d4", ".5:e4", "1.5:d4", ".5:g3", ".5:a3"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:a3-d4-f4", ".5:z"]
+    C3: ["1.5:c2", ".5:g2", "1.5:d2", ".5:a2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 3
+  - dynamic: mp
+    C1: ["z", ".5:b3", ".25:d4", ".75:g4", ".5:g4", ".5:g4", ".5:g4"]
+    C2: ["1.5:g3-b3-d4", ".5:z", "1.5:g3-b3-d4", ".5:z"]
+    C3: ["1.5:g2", ".5:d3", "1.5:e2", ".5:b2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 4, 5, 6
+  - dynamic: mp
+    C1: [".5:e4", ".5:e4", "z", ".5:e4", ".5:d4", ".5:g3", ".25:a3", "1.25:b3", ".5:g4", ".5:g4", "f4", ".5:b4", "1.5:b4", "z", ".5:e4", ".5:f4", ".5:g4", ".5:e4"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:a3-d4-f4", ".5:z", "1.5:g3-b3-d4", ".5:z", "1.5:a3-d4#-f4", ".5:z", "1.5:g3-b3-d4", ".5:z", "1.5:g3-c4#-e4", ".5:z"]
+    C3: ["1.5:c2", ".5:g2", "1.5:d2", ".5:a2", "1.5:e2", ".5:b2", "1.5:b1", ".5:f2", "1.5:e2", ".5:b2", "1.5:a1", ".5:e2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 10
+  - dynamic: mp
+    C1: ["1.5:a4", ".5:d4", "1.5:d4", ".5:d4"]
+    C2: ["1.5:a3-d4-f4", ".5:z", "1.5:a3-b3-d4", ".5:z"]
+    C3: ["1.5:d2", ".5:a2", "1.5:b1", ".5:f2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 11
+  - dynamic: mp
+    C1: ["c5", "b4", ".5:a4", "1.5:g4"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:g3-c4-e4", ".5:z"]
+    C3: ["1.5:a1", ".5:e2", "1.5:a1", ".5:e2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 12
+  - dynamic: mp
+    C1: ["c5", "b4", ".5:a4", "g4", ".5:a4"]
+    C2: ["1.5:g3-c4-e4", ".5:z", "1.5:g3-c4-e4", ".5:z"]
+    C3: ["1.5:a1", ".5:e2", "1.5:a1", ".5:e2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 13
+  - dynamic: mp
+    C1: ["z", ".5:a4", ".25:a4", "1.25:a4", "z"]
+    C2: ["1.5:a3-d4-f4", ".5:z", "1.5:a3-d4-f4n", ".5:z"]
+    C3: ["1.5:d2", ".5:a2", "1.5:d2", ".5:a2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 14
+  - dynamic: mp
+    C1: [".5:g4", ".5:g4", ".5:g4", ".25:f4", ".5:g4", ".25:f4", ".5:d4", ".25:d4", ".75:e4"]
+    C2: ["1.5:g3-b3-d4", ".5:z", "1.5:a3-d4-f4", ".5:z"]
+    C3: ["1.5:d2", ".5:g2", "1.5:d2", ".5:a2"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]
+  # Printed bar(s) 15
+  - dynamic: mp
+    C1: ["f4n", ".5:z", ".5:a4", ".5:g4", ".5:d4", ".25:z", ".25:d4", ".25:d4", ".25:d4"]
+    C2: ["1.5:a3-c4-f4n", ".5:z", "1.5:g3-b3-d4", ".5:z"]
+    C3: ["1.5:f2n", ".5:c3", "1.5:g2", ".5:d3"]
+    drums: [".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat", ".5:kick-hat", ".5:hat", ".5:rim-hat", ".5:hat"]

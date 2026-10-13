@@ -1,0 +1,38 @@
+[
+  {
+    "file": "examples/quality-programme/stem-demo/C1.wav",
+    "sha256": "c90ccaa461a9dbb9c6f7548b96117172e41e7040872292887c91b2783fe5eab1",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -29.520716315671617,
+    "rms_dbfs": -35.115005560672145,
+    "crest_db": 5.59428924500053,
+    "dc_fraction": -8.520673544457112e-07,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/stem-demo/master.wav",
+    "sha256": "c90ccaa461a9dbb9c6f7548b96117172e41e7040872292887c91b2783fe5eab1",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -29.520716315671617,
+    "rms_dbfs": -35.115005560672145,
+    "crest_db": 5.59428924500053,
+    "dc_fraction": -8.520673544457112e-07,
+    "clipped_samples": 0
+  },
+  {
+    "file": "examples/quality-programme/stem-demo/room.wav",
+    "sha256": "892b3d37cfcbd63b5729536e3b22a94cf2c4801c1e86c3db46de512a8f96f2c5",
+    "duration_seconds": 4.345827664399093,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": null,
+    "rms_dbfs": null,
+    "crest_db": null,
+    "dc_fraction": 0.0,
+    "clipped_samples": 0
+  }
+]

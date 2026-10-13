@@ -1,0 +1,93 @@
+# Original chill R&B instrumental. 16 bars of 4/4 at 64 BPM.
+# Harmony: Fmaj9 / Em7 / Am9 / G6/9; final resolution to Cmaj9.
+name: Slow Window Light
+key: C
+length: 0.9375
+instruments: {C1: electric-piano, C2: electric-piano, C3: bass}
+volume: 7000
+levels: {C1: 0.95, C2: 0.32, C3: 0.65, drums: 0.34}
+pan: {C1: -0.08, C2: 0.3, C3: 0, drums: 0}
+humanize: 0.25
+swing: 0.18
+reverb: 0.24
+sections:
+  # Bar 1
+  - C1: [0.5:z, 0.5:e4, 0.5:g4, 1:a4, 0.5:g4, 1:e4]
+    C2: [1.5:a3-c4-e4-g4, 0.5:z, 1.5:a3-c4-e4-g4, 0.5:z]
+    C3: [1.5:f2, 0.5:z, 1:c3, 0.5:f2, 0.5:z]
+    drums: [1:kick, 1:rim, 1:hat, 1:rim-hat]
+  # Bar 2
+  - C1: [0.5:z, 0.5:d4, 0.5:e4, 1:g4, 0.5:e4, 1:c4]
+    C2: [1.5:g3-b3-d4-e4, 0.5:z, 1.5:g3-b3-d4-e4, 0.5:z]
+    C3: [1.5:e2, 0.5:z, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 3
+  - C1: [0.5:z, 0.5:e4, 0.5:g4, 1:a4, 0.5:c5, 1:b4]
+    C2: [1.5:g3-b3-c4-e4, 0.5:z, 1.5:g3-b3-c4-e4, 0.5:z]
+    C3: [1.5:a1, 0.5:z, 1:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 4
+  - C1: [1:a4, 0.5:g4, 0.5:e4, 1:d4, 1:z]
+    C2: [1.5:a3-b3-d4-e4, 0.5:z, 1.5:a3-b3-d4-e4, 0.5:z]
+    C3: [1.5:g1, 0.5:z, 1:d2, 0.5:g1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 5
+  - C1: [0.5:z, 0.5:e4, 0.5:g4, 1:a4, 0.5:g4, 1:e4]
+    C2: [1.5:a3-c4-e4-g4, 0.5:z, 1.5:a3-c4-e4-g4, 0.5:z]
+    C3: [1.5:f2, 0.5:z, 1:c3, 0.5:f2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 6
+  - C1: [0.5:g4, 0.5:a4, 1:g4, 0.5:e4, 0.5:d4, 1:c4]
+    C2: [1.5:g3-b3-d4-e4, 0.5:z, 1.5:g3-b3-d4-e4, 0.5:z]
+    C3: [1.5:e2, 0.5:z, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 7
+  - C1: [0.5:e4, 0.5:g4, 1:a4, 0.5:c5, 0.5:b4, 0.5:a4, 0.5:g4]
+    C2: [1.5:g3-b3-c4-e4, 0.5:z, 1.5:g3-b3-c4-e4, 0.5:z]
+    C3: [1.5:a1, 0.5:z, 1:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 8
+  - C1: [1:e4, 0.5:d4, 0.5:c4, 1:d4, 1:z]
+    C2: [1.5:a3-b3-d4-e4, 0.5:z, 1.5:a3-b3-d4-e4, 0.5:z]
+    C3: [1.5:g1, 0.5:z, 1:d2, 0.5:g1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 9
+  - C1: [0.5:z, 0.5:a4, 0.5:c5, 1:e5, 0.5:d5, 1:c5]
+    C2: [1.5:a3-c4-e4-g4, 0.5:z, 1.5:a3-c4-e4-g4, 0.5:z]
+    C3: [1.5:f2, 0.5:z, 1:c3, 0.5:f2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 10
+  - C1: [0.5:b4, 0.5:a4, 1:g4, 0.5:e4, 0.5:g4, 1:a4]
+    C2: [1.5:g3-b3-d4-e4, 0.5:z, 1.5:g3-b3-d4-e4, 0.5:z]
+    C3: [1.5:e2, 0.5:z, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 11
+  - C1: [1:c5, 0.5:b4, 0.5:a4, 0.5:g4, 0.5:e4, 1:g4]
+    C2: [1.5:g3-b3-c4-e4, 0.5:z, 1.5:g3-b3-c4-e4, 0.5:z]
+    C3: [1.5:a1, 0.5:z, 1:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 12
+  - C1: [0.5:a4, 0.5:g4, 1:e4, 1:d4, 1:z]
+    C2: [1.5:a3-b3-d4-e4, 0.5:z, 1.5:a3-b3-d4-e4, 0.5:z]
+    C3: [1.5:g1, 0.5:z, 1:d2, 0.5:g1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 13
+  - C1: [0.5:z, 0.5:e4, 0.5:g4, 1:a4, 0.5:g4, 1:e4]
+    C2: [1.5:a3-c4-e4-g4, 0.5:z, 1.5:a3-c4-e4-g4, 0.5:z]
+    C3: [1.5:f2, 0.5:z, 1:c3, 0.5:f2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 14
+  - C1: [0.5:z, 0.5:d4, 0.5:e4, 1:g4, 0.5:e4, 1:c4]
+    C2: [1.5:g3-b3-d4-e4, 0.5:z, 1.5:g3-b3-d4-e4, 0.5:z]
+    C3: [1.5:e2, 0.5:z, 1:b2, 0.5:e2, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 15
+  - C1: [0.5:e4, 0.5:g4, 1:a4, 0.5:g4, 0.5:e4, 0.5:d4, 0.5:b3]
+    C2: [1.5:g3-b3-c4-e4, 0.5:z, 1.5:g3-b3-c4-e4, 0.5:z]
+    C3: [1.5:a1, 0.5:z, 1:e2, 0.5:a1, 0.5:z]
+    drums: [0.5:kick-hat, 0.5:hat, 0.5:rim-hat, 0.5:hat, 0.5:z, 0.5:kick-hat, 0.5:rim-hat, 0.5:hat]
+  # Bar 16
+  - C1: [3:c4, 1:z]
+    C2: [3:e3-g3-b3-d4, 1:z]
+    C3: [3:c2, 1:z]
+    drums: [1:kick-hat, 3:z]

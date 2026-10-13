@@ -1,6 +1,7 @@
 package muse
 
 import (
+	"context"
 	"fmt"
 	"math"
 	"os"
@@ -19,15 +20,27 @@ const maxChordPitches = 16
 
 // Score represents the musical score
 type Score struct {
-	Name       string   `yaml:"name"`
-	Key        string   `yaml:"key"`
-	Length     float64  `yaml:"length"`
-	Envelope   string   `yaml:"envelope"`
-	Harmonic   string   `yaml:"harmonic"`
-	Instrument string   `yaml:"instrument,omitempty"`
-	Volume     int      `yaml:"volume"`
-	Reverb     *float64 `yaml:"reverb,omitempty"` // 0 to 1; unset means defaultReverb
-	Plain      bool     `yaml:"plain,omitempty"`  // play exactly as written: no ring-over, accents or reverb
+	Tone               map[string]ToneControls   `yaml:"tone,omitempty"`
+	Playing            map[string]string         `yaml:"playing,omitempty"`
+	PlayingStyles      map[string]PlayingStyle   `yaml:"playing_styles,omitempty"`
+	Marks              map[string]NoteMark       `yaml:"marks,omitempty"`
+	Calibration        bool                      `yaml:"calibration,omitempty"`
+	Mix                map[string]ChannelMix     `yaml:"mix,omitempty"`
+	PerformancePresets map[string]Performance    `yaml:"performance_presets,omitempty"`
+	ExpressionPresets  map[string]NoteExpression `yaml:"expression_presets,omitempty"`
+	Ensemble           *Ensemble                 `yaml:"ensemble,omitempty"`
+	Mastering          *Mastering                `yaml:"mastering,omitempty"`
+	Room               *RoomSettings             `yaml:"room,omitempty"`
+	Performance        map[string]Performance    `yaml:"performance,omitempty"`
+	Name               string                    `yaml:"name"`
+	Key                string                    `yaml:"key"`
+	Length             float64                   `yaml:"length"`
+	Envelope           string                    `yaml:"envelope"`
+	Harmonic           string                    `yaml:"harmonic"`
+	Instrument         string                    `yaml:"instrument,omitempty"`
+	Volume             int                       `yaml:"volume"`
+	Reverb             *float64                  `yaml:"reverb,omitempty"` // 0 to 1; unset means defaultReverb
+	Plain              bool                      `yaml:"plain,omitempty"`  // play exactly as written: no ring-over, accents or reverb
 	// Humanize scales the small random timing and loudness variations, 0 to
 	// 1; unset means the default (see timing.go)
 	Humanize *float64 `yaml:"humanize,omitempty"`
@@ -44,16 +57,25 @@ type Score struct {
 	// in place of the default balance (see channelGains in expression.go)
 	Levels   map[string]float64 `yaml:"levels,omitempty"`
 	Sections []Section          `yaml:"sections"`
+	Singing  *Singing           `yaml:"singing,omitempty"`
+	Scat     *Scat              `yaml:"scat,omitempty"`
 }
 
 // Section represents a section of music. C1 and C2 are the left and right
 // channels; C3, if present, is a centre channel mixed into both.
 type Section struct {
-	Length     float64 `yaml:"length,omitempty"`
-	Envelope   string  `yaml:"envelope,omitempty"`
-	Harmonic   string  `yaml:"harmonic,omitempty"`
-	Instrument string  `yaml:"instrument,omitempty"`
-	Volume     int     `yaml:"volume,omitempty"`
+	Tone        map[string]ToneControls    `yaml:"tone,omitempty"`
+	Playing     map[string]string          `yaml:"playing,omitempty"`
+	Label       string                     `yaml:"label,omitempty"`
+	Parts       map[string][]WrittenPhrase `yaml:"parts,omitempty"`
+	Rubato      float64                    `yaml:"rubato,omitempty"`
+	Expression  map[string]NoteExpression  `yaml:"expression,omitempty"`
+	Performance map[string]Performance     `yaml:"performance,omitempty"`
+	Length      float64                    `yaml:"length,omitempty"`
+	Envelope    string                     `yaml:"envelope,omitempty"`
+	Harmonic    string                     `yaml:"harmonic,omitempty"`
+	Instrument  string                     `yaml:"instrument,omitempty"`
+	Volume      int                        `yaml:"volume,omitempty"`
 	// Dynamic is the dynamic marking at the start of the section: ppp, pp,
 	// p, mp, mf, f, ff or fff; it lasts until the next one (see dynamics.go)
 	Dynamic string `yaml:"dynamic,omitempty"`
@@ -69,10 +91,12 @@ type Section struct {
 	Instruments map[string]string `yaml:"instruments,omitempty"`
 	// Drums is the drum part: each entry names the drums struck together,
 	// e.g. kick-hat or 0.5:snare (see drums.go)
-	Drums []string `yaml:"drums,omitempty"`
-	C1    []string `yaml:"C1"`
-	C2    []string `yaml:"C2"`
-	C3    []string `yaml:"C3,omitempty"`
+	Drums  []string     `yaml:"drums,omitempty"`
+	C1     []string     `yaml:"C1"`
+	C2     []string     `yaml:"C2"`
+	C3     []string     `yaml:"C3,omitempty"`
+	Lyrics []string     `yaml:"lyrics,omitempty"`
+	Scat   *ScatSection `yaml:"scat,omitempty"`
 }
 
 // ParseFile reads a score file (filename+".yaml") and writes the resulting
@@ -93,12 +117,21 @@ func ParseFile(s *Score, filename string) (name string, err error) {
 // allowed in any one channel; maxSamples <= 0 means unlimited. A score that
 // would exceed the cap is rejected before any audio is synthesised.
 func Parse(s *Score, score []byte, outfile string, maxSamples int) (name string, err error) {
+	return ParseWithSinger(context.Background(), s, score, outfile, maxSamples, nil)
+}
+
+// ParseWithSinger enables an explicitly supplied, local singing backend.
+// Parse and the web server never execute a backend from score contents.
+func ParseWithSinger(ctx context.Context, s *Score, score []byte, outfile string, maxSamples int, singer Singer) (name string, err error) {
 	err = yaml.Unmarshal(score, s)
 	if err != nil {
 		err = fmt.Errorf("cannot unmarshal score file > %v", err)
 		return
 	}
 	name = s.Name
+	if s.Singing != nil && singer == nil {
+		return name, fmt.Errorf("this score requires a neural singer; render with muse -singer <local-config.json> <score>")
+	}
 
 	var t tune
 	if t, err = buildTune(s); err != nil {
@@ -126,6 +159,16 @@ func Parse(s *Score, score []byte, outfile string, maxSamples int) (name string,
 		}
 	}
 
+	if s.Singing != nil {
+		if err = attachSinging(ctx, s, &t, singer); err != nil {
+			return name, err
+		}
+	}
+	if s.Scat != nil {
+		if err = attachScat(ctx, s, &t); err != nil {
+			return name, err
+		}
+	}
 	var data []int
 	data, err = t.encode()
 	if err != nil {
@@ -151,7 +194,15 @@ func Check(s *Score) error {
 
 // buildTune turns every note string in the score into a note
 func buildTune(s *Score) (tune, error) {
-	for _, validate := range []func(*Score) error{validateDynamics, validateTiming, validateParts} {
+	expanded, err := expandWrittenScore(s)
+	if err != nil {
+		return tune{}, err
+	}
+	s = expanded
+	if err := validateSinging(s); err != nil {
+		return tune{}, err
+	}
+	for _, validate := range []func(*Score) error{validateTone, validateMix, validateEnsemble, validateMastering, validateRoom, validateNoteExpression, validateDynamics, validateTiming, validateParts, validatePerformance, validateScat} {
 		if err := validate(s); err != nil {
 			return tune{}, err
 		}
@@ -199,7 +250,18 @@ func buildTune(s *Score) (tune, error) {
 	expressive(s, &t)
 	applyDynamics(s, &t)
 	applyTiming(s, &t)
+	applyNoteExpression(s, &t)
+	applyCalibration(s, &t)
+	for _, ch := range t.channels() {
+		prepareStringPerformance(ch)
+	}
+	if err := validatePreparedGestures(&t); err != nil {
+		return tune{}, err
+	}
 	t.reverb = reverbAmount(s)
+	t.room = s.Room
+	t.mastering = s.Mastering
+	t.mix = s.Mix
 	t.pan = pans(s, &t)
 	return t, nil
 }
@@ -222,7 +284,11 @@ func channelSamples(notes []note) int {
 		if n.placed && n.hold > 0 {
 			played = n.hold
 		}
+		played = math.Max(played, n.sustainHold)
 		played += n.release + n.spread*float64(width-1)
+		if n.performance != nil && pluckedInstrument(n.instrumentName) {
+			played += 0.12
+		}
 		if len(n.kit) > 0 {
 			// every drum rings for its own length, however short the note
 			total += max(sampleCount(played), drumLength(n)) * len(n.kit)
@@ -241,7 +307,33 @@ func makeChannelNote(noteString string, section Section, score Score, channel st
 	} else if ins, ok := score.Instruments[channel]; ok && section.Instrument == "" {
 		section.Instrument = ins
 	}
-	return makeNote(noteString, section, score)
+	n, err := makeNote(noteString, section, score)
+	if err != nil {
+		return n, err
+	}
+	p, err := performanceFor(score, section, channel)
+	if err != nil {
+		return n, err
+	}
+	if p != nil && p.enabled() {
+		if err := validateInstrumentPerformance(n, *p); err != nil {
+			return n, err
+		}
+		n.performance = p
+		// Include the phrase renderer's tail in pre-render sample limits,
+		// including plain scores whose legacy release is zero.
+		n.release = math.Max(n.release, 0.1)
+		if sustainedInstrument(n.instrumentName) {
+			n.release = math.Max(n.release, profileFor(n.instrumentName, 440, .7).release)
+		}
+		if n.instrumentName == "piano" || pluckedInstrument(n.instrumentName) {
+			n.release = math.Max(n.release, 0.18)
+		}
+	}
+	if err := toneFor(score, section, channel, &n); err != nil {
+		return n, err
+	}
+	return n, nil
 }
 
 // make a note
@@ -293,16 +385,17 @@ func makeNote(noteString string, section Section, score Score) (n note, err erro
 
 	// default returned note
 	n = note{
-		pitch:       []int{},
-		accidental:  []int{},
-		explicit:    []bool{},
-		length:      length,
-		env:         envFn,
-		har:         harFn,
-		ins:         insFn,
-		velocityIns: velocityInstruments[ins],
-		vol:         vol,
-		gain:        1,
+		pitch:          []int{},
+		accidental:     []int{},
+		explicit:       []bool{},
+		length:         length,
+		env:            envFn,
+		har:            harFn,
+		ins:            insFn,
+		velocityIns:    velocityInstruments[ins],
+		instrumentName: ins,
+		vol:            vol,
+		gain:           1,
 	}
 	if ins != "" && !score.Plain {
 		n.release = releases[ins]

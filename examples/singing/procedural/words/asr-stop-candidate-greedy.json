@@ -1,0 +1,36 @@
+[
+  {
+    "file": "examples/singing/procedural/words/first_words.wav",
+    "sha256": "440e101af2b3fad46908ed349b7637b9bdf9e4ed407cd0f94addf21496720429",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.5,
+        "text": " Oh my, hey you stay",
+        "avg_logprob": -0.9117394553290473,
+        "no_speech_prob": 0.18525315821170807
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/phrase.wav",
+    "sha256": "f2a9e8e55967393ac2cbfc0075ad5aa34d4526fba0104e7ffda5349fa8656acc",
+    "model": ".local/word-eval/base.en",
+    "beam": 1,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.5600000000000005,
+        "text": " Hey, you stay, hey, you stay",
+        "avg_logprob": -0.8411829223235449,
+        "no_speech_prob": 0.2367997020483017
+      }
+    ]
+  }
+]

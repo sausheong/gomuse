@@ -1,0 +1,5 @@
+# Optional runtime only; the Go binary has no dependency on these packages.
+numpy==2.5.3
+onnxruntime==1.30.0
+PyYAML==6.0.3
+cmudict==1.1.3

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "scores/misty_final.wav",
+    "sha256": "eca678694475dc8b63c9d03630411ef250ac99ff6cdb099dbd16003a953b0b70",
+    "duration_seconds": 139.9725850340136,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -1.000151903819357,
+    "rms_dbfs": -24.501991573941844,
+    "crest_db": 23.50183967012249,
+    "dc_fraction": 1.1050767928242974e-05,
+    "clipped_samples": 0
+  }
+]

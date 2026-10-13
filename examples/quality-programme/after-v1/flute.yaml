@@ -1,0 +1,51 @@
+name: flute benchmark
+key: C
+length: 0.32
+envelope: ""
+harmonic: ""
+instrument: flute
+volume: 12000
+reverb: 0
+humanize: 0
+pan:
+    C1: 0
+sections:
+    - dynamic: p
+      C1:
+        - c4
+        - c5
+        - c6
+        - z
+        - .5:c5
+        - .5:c5
+        - .5:c5
+        - .5:c5
+        - 3:c5
+        - z
+      C2: []
+    - dynamic: mf
+      C1:
+        - c4
+        - c5
+        - c6
+        - z
+        - .5:c5
+        - .5:c5
+        - .5:c5
+        - .5:c5
+        - 3:c5
+        - z
+      C2: []
+    - dynamic: f
+      C1:
+        - c4
+        - c5
+        - c6
+        - z
+        - .5:c5
+        - .5:c5
+        - .5:c5
+        - .5:c5
+        - 3:c5
+        - z
+      C2: []

@@ -1,0 +1,34 @@
+{
+  "relaxed": {
+    "duration_seconds": 8.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.475860595703125,
+    "rms": 0.09999694182934202,
+    "clipped_samples": 0
+  },
+  "playful": {
+    "duration_seconds": 8.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.4666748046875,
+    "rms": 0.09999693323826173,
+    "clipped_samples": 0
+  },
+  "assertive": {
+    "duration_seconds": 8.0,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.44549560546875,
+    "rms": 0.09999694160309076,
+    "clipped_samples": 0
+  },
+  "jazz_demo": {
+    "duration_seconds": 26.52891156462585,
+    "sample_rate": 44100,
+    "channels": 2,
+    "peak": 0.672698974609375,
+    "rms": 0.12740753081155076,
+    "clipped_samples": 0
+  }
+}

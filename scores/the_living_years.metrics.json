@@ -1,0 +1,25 @@
+{
+  "played_bars": 117,
+  "beats_per_channel": 468,
+  "duration_seconds": 294.71215419501135,
+  "channels": 2,
+  "sample_rate_hz": 44100,
+  "sample_width_bits": 16,
+  "peak_sample": 5835,
+  "peak_dbfs": -14.99,
+  "clipped_samples": 0,
+  "validation": "All three pitched channels and drums have four beats in every bar; freshly rendered with Muse.",
+  "limitations": "Manual transcription; overlapping piano voices and barline ties rearticulate. Playback tempo 96 BPM chosen for Moderately; two coda passes and optional ending.",
+  "instrumentation": {
+    "C1": "piano",
+    "C2": "piano",
+    "C3": "bass",
+    "drums": "synthesised kit"
+  },
+  "drum_entrance_bar": 45,
+  "drum_entrance_seconds": 110,
+  "drum_level": 1.0,
+  "effective_drum_gain": 1.25,
+  "master_volume": 6875,
+  "gain_reference_volume": 5500
+}

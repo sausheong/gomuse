@@ -1,0 +1,14 @@
+[
+  {
+    "file": "original.wav",
+    "seconds": 15.6,
+    "peak": 0.8499755859375,
+    "clipped_samples": 0
+  },
+  {
+    "file": "expressive.wav",
+    "seconds": 15.6,
+    "peak": 0.7236865039998207,
+    "clipped_samples": 0
+  }
+]

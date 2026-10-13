@@ -1,0 +1,102 @@
+name: Word phrase, lower register
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  breaths: 0
+  breathiness: 0.05
+sections:
+- C1:
+  - 0.2:z
+  - 1.2:e3
+  - 1.2:f3
+  - 2.4:a3
+  - z
+  C2:
+  - 6:z
+  scat:
+    syllables:
+    - ''
+    - hey
+    - you
+    - stay
+    - ''
+    gestures:
+    - {}
+    - pitch:
+      - -60
+      - 20
+      - 0
+      effort:
+      - 0.3
+      - 0.65
+      - 0.4
+    - pitch:
+      - -30
+      - 10
+      - 0
+      effort:
+      - 0.4
+      - 0.6
+      - 0.4
+    - pitch:
+      - -50
+      - 15
+      - 0
+      - -100
+      effort:
+      - 0.5
+      - 0.8
+      - 0.6
+      - 0.2
+    - {}
+- C1:
+  - 0.2:z
+  - 1.2:e3
+  - 1.2:f3
+  - 2.4:a3
+  - z
+  C2:
+  - 6:z
+  scat:
+    syllables:
+    - ''
+    - hey
+    - you
+    - stay
+    - ''
+    gestures:
+    - {}
+    - pitch:
+      - -60
+      - 20
+      - 0
+      effort:
+      - 0.3
+      - 0.65
+      - 0.4
+    - pitch:
+      - -30
+      - 10
+      - 0
+      effort:
+      - 0.4
+      - 0.6
+      - 0.4
+    - pitch:
+      - -50
+      - 15
+      - 0
+      - -100
+      effort:
+      - 0.5
+      - 0.8
+      - 0.6
+      - 0.2
+    - {}

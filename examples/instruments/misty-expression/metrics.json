@@ -1,0 +1,28 @@
+{
+  "misty2": {
+    "duration_seconds": 30.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -5.569189406131406,
+    "rms_dbfs": -24.999997029561094,
+    "clipped_samples": 0,
+    "source_range_seconds": [
+      14,
+      44
+    ],
+    "source_score_sha256": "d7bd0d7b5aaca008b545c2333d111b3c2890938d51beafd385b3801741637b84"
+  },
+  "misty3": {
+    "duration_seconds": 30.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -5.564157899509759,
+    "rms_dbfs": -25.00004553278348,
+    "clipped_samples": 0,
+    "source_range_seconds": [
+      14,
+      44
+    ],
+    "source_score_sha256": "1e30e7c5fb594db9eaa561c488810a985af50fc78ac081d162b126d93b52a138"
+  }
+}

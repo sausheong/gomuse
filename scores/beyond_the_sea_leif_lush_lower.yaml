@@ -1,0 +1,559 @@
+# Vocal melody lowered one octave; accompaniment retains original pitches.
+# Beyond the Sea — English neural vocal with piano, bass guitar and drums.
+# Music: Charles Trenet. English lyrics: Jack Lawrence.
+# Melody and English lyric underlay from the four user-supplied score photos,
+# printed pages 32–35. Uses the printed "He's" / "his" alternatives.
+# Voice: Leif DS v111, Lush mode. Voice by JaimeSynth; model by tigermeat.
+# Voicebank publisher: https://leifly.carrd.co/
+# Use .local/singing/leif-lush.json with the local neural backend.
+# Accompaniment and repeat form retained from beyond_the_sea_band.yaml.
+# English lyrics repeat on the second pass; French lyrics are not sung.
+# Explicit phonemes split multi-syllable words at the printed note boundaries.
+# Manual transcription: retained piano voicing/accidental approximation limits.
+# Form: 1–52, 5–50, 53–54; 100 bars, 400 beats; quarter=108.
+# Local neural backend required; originals remain unchanged.
+# Delivered WAV has a final uniform peak-normalisation to 85% full scale.
+name: Beyond the Sea — Leif Lush lower-register vocal and band
+key: F
+length: 0.5555555555555556
+instrument: piano
+instruments:
+  C1: voice
+  C2: piano
+  C3: bass
+pan:
+  C1: 0
+  C2: 0.28
+  C3: 0
+  drums: 0.06
+levels:
+  C1: 1
+  C2: 0.30
+  C3: 0.55
+  drums: 0.24
+volume: 18000
+humanize: 0.03
+swing: 0.6
+reverb: 0.14
+singing: {channel: C1, language: en}
+sections:
+  # Source bar(s) 1; played bars 1–1
+  - dynamic: mp
+    C1: [4:z]
+    lyrics: [""]
+    C2: [a5-a4, f5-a4, f5-b4, d5-b4]
+    C3: [2:f2, 2:g2]
+    drums: [kick-ride, rim-hat, ride, rim-hat]
+  # Source bar(s) 2; played bars 2–2
+  - dynamic: mp
+    C1: [4:z]
+    lyrics: [""]
+    C2: [f5-f4-a4, d5-f4-a4, d5-g4, b4-g4]
+    C3: [2:d2, 2:g2]
+    drums: [kick-ride, rim-hat, ride, rim-hat]
+  # Source bar(s) 3; played bars 3–3
+  - dynamic: mp
+    C1: [4:z]
+    lyrics: [""]
+    C2: [d5-g4, b4-g4, b4-b3-d4, g4-b3-d4]
+    C3: [2:g2, 2:d3]
+    drums: [kick-ride, rim-hat, ride, rim-hat]
+  # Source bar(s) 4; played bars 4–4
+  - dynamic: mp
+    C1: [3:z, c3]
+    lyrics: ["", "Some"]
+    C2: [e4-b4-c5, g5-e4-b4-c5, c6-e4-b4-c5, c4]
+    C3: [c2, e2, g2, e2]
+    drums: [ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom2]
+  # Source bar(s) 5, 6; played bars 5–6
+  - dynamic: mp
+    C1: [6:f3, 0.666667:e3, 0.666666:f3, 0.666667:g3]
+    lyrics: ["where", "[b ih]", "[y aa n d]", "the"]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 7; played bars 7–7
+  - dynamic: mp
+    C1: [3:a3, f3]
+    lyrics: ["sea", "Some"]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 8; played bars 8–8
+  - dynamic: mp
+    C1: [2:g3, 0.666667:e3, 0.666666:d3, 0.666667:c3]
+    lyrics: ["where", "[w ey]", "[t ih ng]", "for"]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 9, 10; played bars 9–10
+  - dynamic: mp
+    hairpin: cresc
+    C1: [6:a3, 0.666667:g3, 0.666666:a3, 0.666667:b3]
+    lyrics: ["me", "My", "[l ah v]", "[er]"]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 11; played bars 11–11
+  - dynamic: mf
+    C1: [1.5:c4, 0.5:f3, 1.5:f3, 0.5:f3]
+    lyrics: ["stands", "on", "[g ow l d]", "[ax n]"]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 12, 13; played bars 12–13
+  - dynamic: mf
+    C1: [5:d4, d4, 0.666667:c4, 0.666666:a3, 0.666667:g3]
+    lyrics: ["sands", "And", "[w aa ch]", "[ih z]", "the"]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 14; played bars 14–14
+  - dynamic: mf
+    C1: [2:f3, d3, f3]
+    lyrics: ["ships", "that", "go"]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 15; played bars 15–15
+  - dynamic: mf
+    C1: [4:g3]
+    lyrics: ["[s ey l]"]
+    C2: [g4, g4-b3n-f4, g4, g4-b3n-f4]
+    C3: [g2, b2n, d3, b1n]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 16; played bars 16–16
+  - dynamic: mf
+    C1: [2:c3, z, c3]
+    lyrics: ["[ih ng]", "", "Some"]
+    C2: [c4, 2:c4-e3-g3, c4-e3-g3]
+    C3: [c2, e2, b2b, c3]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 17, 18; played bars 17–18
+  - dynamic: mf
+    C1: [6:f3, 0.666667:e3, 0.666666:f3, 0.666667:g3]
+    lyrics: ["where", "[b ih]", "[y aa n d]", "the"]
+    C2: [f4, f4-f3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [a2, c3, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 19; played bars 19–19
+  - dynamic: mf
+    C1: [3:a3, f3]
+    lyrics: ["sea", "He's"]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 20; played bars 20–20
+  - dynamic: mf
+    C1: [2:g3, 0.666667:e3, 0.666666:d3, 0.666667:c3]
+    lyrics: ["there", "[w aa ch]", "[ih ng]", "for"]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 21, 22; played bars 21–22
+  - dynamic: mf
+    C1: [6:a3, 0.666667:g3, 0.666666:a3, 0.666667:b3]
+    lyrics: ["me", "If", "I", "could"]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 23; played bars 23–23
+  - dynamic: mf
+    C1: [1.5:c4, 0.5:f3, 1.5:f3, 0.5:f3]
+    lyrics: ["fly", "like", "birds", "on"]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 24, 25; played bars 24–25
+  - dynamic: mf
+    C1: [5:d4, d4, 0.666667:c4, 0.666666:a3, 0.666667:g3]
+    lyrics: ["high", "Then", "straight", "to", "his"]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 26; played bars 26–26
+  - dynamic: mf
+    C1: [2:f3, d3, f3]
+    lyrics: ["arms", "I'd", "go"]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 27; played bars 27–27
+  - dynamic: mf
+    C1: [4:g3]
+    lyrics: ["[s ey l]"]
+    C2: [g4, g4-b3-d4-f4, g4, g4-b3-c4-e4]
+    C3: [g2, b2b, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 28; played bars 28–28
+  - dynamic: mf
+    C1: [2:f3, z, e3]
+    lyrics: ["[ih ng]", "", "It's"]
+    C2: [2:f4-a3-c4, g3#-d4, e4-g3#-d4]
+    C3: [f2, a2, e2, g2#]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 29, 30; played bars 29–30
+  - dynamic: mf
+    C1: [6:a3, 0.666667:g3#, 0.666666:a3, 0.666667:b3n]
+    lyrics: ["far", "[b ih]", "[y aa n d]", "a"]
+    C2: [a4, a4-c4#-e4, a4, a4-a3-c4#-f4#, a4, a4-b3n-d4-f4#, 0.666667:g4#-d4-e4, 0.666666:a4-d4-e4, 0.666667:b4n-d4-e4]
+    C3: [a2, c3#, f2#, a2, d2, f2#, e2, g2#]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 31; played bars 31–31
+  - dynamic: mf
+    C1: [3:c4#, a3]
+    lyrics: ["star", "It's"]
+    C2: [c5#, 2:c5#-c4#-e4, a4-c4#-f4#]
+    C3: [a2, c3#, f2#, a2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 32; played bars 32–32
+  - dynamic: mf
+    C1: [2:b3n, 0.666667:g3#, 0.666666:f3#, 0.666667:e3]
+    lyrics: ["near", "[b ih]", "[y aa n d]", "the"]
+    C2: [b4n, b4n-b3n-d4-f4#, 0.666667:g4#-b3n-d4, 0.666666:f4#-b3n-d4, 0.666667:e4-b3n-d4]
+    C3: [d2, f2#, e2, g2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 33, 34; played bars 33–34
+  - dynamic: mf
+    C1: [6:e3, z, g3n]
+    lyrics: ["moon", "", "I"]
+    C2: [e4, e4-a3-c4#, e4, e4-a3-c4#, e4, e4-a3-c4#, e4, g4n-a3-c4n]
+    C3: [a2, c3#, g2#, a2, f2#, a2, e2, g2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 35, 36; played bars 35–36
+  - dynamic: mf
+    C1: [6:c4, 0.666667:b3n, 0.666666:c4, 0.666667:d4]
+    lyrics: ["know", "[b ih]", "[y aa n d]", "a"]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-a4, c5, c5-f4-a4, 0.666667:b4n-f4-g4, 0.666666:c5-f4-g4, 0.666667:d5-f4-g4]
+    C3: [c2, e2, a2, c3, f2, a2, g2, b2n]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 37; played bars 37–37
+  - dynamic: mf
+    C1: [3:e4, c4]
+    lyrics: ["doubt", "My"]
+    C2: [e5, e5-e4-g4, e5, c5-c4-e4-a4]
+    C3: [c2, e2, a2, c3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 38; played bars 38–38
+  - dynamic: mf
+    C1: [1.5:d4, 0.5:b3n, 0.666667:b3n, 0.666666:a3, 0.666667:g3]
+    lyrics: ["heart", "will", "[l iy d]", "me", "there"]
+    C2: [d5, 0.5:d5-d4-a4, 0.5:b4n-d4-a4, 0.666667:b4n-f4-a4, 0.666666:a4-f4, 0.666667:g4-f4-a4]
+    C3: [f2, a2, g2, b2n]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 39, 40; played bars 39–40
+  - dynamic: mf
+    C1: [5:c4, z, z, c3]
+    lyrics: ["soon", "", "", "We'll"]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-g4, c5, c5-a3-c4-f4, c5-a3-c4-g4, c4]
+    C3: [c2, e2, b2b, c3, a2, c3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 41, 42; played bars 41–42
+  - dynamic: mf
+    C1: [6:f3, 0.666667:e3, 0.666666:f3, 0.666667:g3]
+    lyrics: ["meet", "[b ih]", "[y aa n d]", "the"]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 43; played bars 43–43
+  - dynamic: mf
+    C1: [3:a3, f3]
+    lyrics: ["shore", "We'll"]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 44; played bars 44–44
+  - dynamic: mf
+    C1: [2:g3, 0.666667:e3, 0.666666:d3, 0.666667:c3]
+    lyrics: ["kiss", "just", "as", "[b ih]"]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 45, 46; played bars 45–46
+  - dynamic: mf
+    C1: [6:a3, 0.666667:g3, 0.666666:a3, 0.666667:b3]
+    lyrics: ["[f ao r]", "[hh ae]", "[p iy]", "we'll"]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 47; played bars 47–47
+  - dynamic: mf
+    C1: [1.5:c4, 0.5:f3, 1.5:f3, 0.5:f3]
+    lyrics: ["be", "[b ih]", "[y aa n d]", "the"]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 48, 49; played bars 48–49
+  - dynamic: mf
+    C1: [5:d4, d4, 0.666667:c4, 0.666666:a3, 0.666667:g3]
+    lyrics: ["sea", "And", "[n eh v]", "[er]", "[ax]"]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 50; played bars 50–50
+  - dynamic: mf
+    C1: [2:f3, d3, f3]
+    lyrics: ["[g eh n]", "I'll", "go"]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 51; played bars 51–51
+  - dynamic: mf
+    C1: [4:g3]
+    lyrics: ["[s ey l]"]
+    C2: [g4, g4-b3n-f4, g4, g4-b3b-c4-e4]
+    C3: [g2, b2n, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 52; played bars 52–52
+  - dynamic: mf
+    C1: [2:f3, z, c3]
+    lyrics: ["[ih ng]", "", "Some"]
+    C2: [f4-a3-c4, c4-f4-a4, d4-f4-b4, g3-d4-e4]
+    C3: [f2, a2, g2, c2]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 5, 6; played bars 53–54
+  - dynamic: mp
+    C1: [6:f3, 0.666667:e3, 0.666666:f3, 0.666667:g3]
+    lyrics: ["where", "[b ih]", "[y aa n d]", "the"]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 7; played bars 55–55
+  - dynamic: mp
+    C1: [3:a3, f3]
+    lyrics: ["sea", "Some"]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 8; played bars 56–56
+  - dynamic: mp
+    C1: [2:g3, 0.666667:e3, 0.666666:d3, 0.666667:c3]
+    lyrics: ["where", "[w ey]", "[t ih ng]", "for"]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 9, 10; played bars 57–58
+  - dynamic: mp
+    hairpin: cresc
+    C1: [6:a3, 0.666667:g3, 0.666666:a3, 0.666667:b3]
+    lyrics: ["me", "My", "[l ah v]", "[er]"]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 11; played bars 59–59
+  - dynamic: mf
+    C1: [1.5:c4, 0.5:f3, 1.5:f3, 0.5:f3]
+    lyrics: ["stands", "on", "[g ow l d]", "[ax n]"]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 12, 13; played bars 60–61
+  - dynamic: mf
+    C1: [5:d4, d4, 0.666667:c4, 0.666666:a3, 0.666667:g3]
+    lyrics: ["sands", "And", "[w aa ch]", "[ih z]", "the"]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 14; played bars 62–62
+  - dynamic: mf
+    C1: [2:f3, d3, f3]
+    lyrics: ["ships", "that", "go"]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 15; played bars 63–63
+  - dynamic: mf
+    C1: [4:g3]
+    lyrics: ["[s ey l]"]
+    C2: [g4, g4-b3n-f4, g4, g4-b3n-f4]
+    C3: [g2, b2n, d3, b1n]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 16; played bars 64–64
+  - dynamic: mf
+    C1: [2:c3, z, c3]
+    lyrics: ["[ih ng]", "", "Some"]
+    C2: [c4, 2:c4-e3-g3, c4-e3-g3]
+    C3: [c2, e2, b2b, c3]
+    drums: [kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 17, 18; played bars 65–66
+  - dynamic: mf
+    C1: [6:f3, 0.666667:e3, 0.666666:f3, 0.666667:g3]
+    lyrics: ["where", "[b ih]", "[y aa n d]", "the"]
+    C2: [f4, f4-f3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [a2, c3, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 19; played bars 67–67
+  - dynamic: mf
+    C1: [3:a3, f3]
+    lyrics: ["sea", "He's"]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 20; played bars 68–68
+  - dynamic: mf
+    C1: [2:g3, 0.666667:e3, 0.666666:d3, 0.666667:c3]
+    lyrics: ["there", "[w aa ch]", "[ih ng]", "for"]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 21, 22; played bars 69–70
+  - dynamic: mf
+    C1: [6:a3, 0.666667:g3, 0.666666:a3, 0.666667:b3]
+    lyrics: ["me", "If", "I", "could"]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 23; played bars 71–71
+  - dynamic: mf
+    C1: [1.5:c4, 0.5:f3, 1.5:f3, 0.5:f3]
+    lyrics: ["fly", "like", "birds", "on"]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 24, 25; played bars 72–73
+  - dynamic: mf
+    C1: [5:d4, d4, 0.666667:c4, 0.666666:a3, 0.666667:g3]
+    lyrics: ["high", "Then", "straight", "to", "his"]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 26; played bars 74–74
+  - dynamic: mf
+    C1: [2:f3, d3, f3]
+    lyrics: ["arms", "I'd", "go"]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 27; played bars 75–75
+  - dynamic: mf
+    C1: [4:g3]
+    lyrics: ["[s ey l]"]
+    C2: [g4, g4-b3-d4-f4, g4, g4-b3-c4-e4]
+    C3: [g2, b2b, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 28; played bars 76–76
+  - dynamic: mf
+    C1: [2:f3, z, e3]
+    lyrics: ["[ih ng]", "", "It's"]
+    C2: [2:f4-a3-c4, g3#-d4, e4-g3#-d4]
+    C3: [f2, a2, e2, g2#]
+    drums: [kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 29, 30; played bars 77–78
+  - dynamic: mf
+    C1: [6:a3, 0.666667:g3#, 0.666666:a3, 0.666667:b3n]
+    lyrics: ["far", "[b ih]", "[y aa n d]", "a"]
+    C2: [a4, a4-c4#-e4, a4, a4-a3-c4#-f4#, a4, a4-b3n-d4-f4#, 0.666667:g4#-d4-e4, 0.666666:a4-d4-e4, 0.666667:b4n-d4-e4]
+    C3: [a2, c3#, f2#, a2, d2, f2#, e2, g2#]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 31; played bars 79–79
+  - dynamic: mf
+    C1: [3:c4#, a3]
+    lyrics: ["star", "It's"]
+    C2: [c5#, 2:c5#-c4#-e4, a4-c4#-f4#]
+    C3: [a2, c3#, f2#, a2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 32; played bars 80–80
+  - dynamic: mf
+    C1: [2:b3n, 0.666667:g3#, 0.666666:f3#, 0.666667:e3]
+    lyrics: ["near", "[b ih]", "[y aa n d]", "the"]
+    C2: [b4n, b4n-b3n-d4-f4#, 0.666667:g4#-b3n-d4, 0.666666:f4#-b3n-d4, 0.666667:e4-b3n-d4]
+    C3: [d2, f2#, e2, g2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 33, 34; played bars 81–82
+  - dynamic: mf
+    C1: [6:e3, z, g3n]
+    lyrics: ["moon", "", "I"]
+    C2: [e4, e4-a3-c4#, e4, e4-a3-c4#, e4, e4-a3-c4#, e4, g4n-a3-c4n]
+    C3: [a2, c3#, g2#, a2, f2#, a2, e2, g2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 35, 36; played bars 83–84
+  - dynamic: mf
+    C1: [6:c4, 0.666667:b3n, 0.666666:c4, 0.666667:d4]
+    lyrics: ["know", "[b ih]", "[y aa n d]", "a"]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-a4, c5, c5-f4-a4, 0.666667:b4n-f4-g4, 0.666666:c5-f4-g4, 0.666667:d5-f4-g4]
+    C3: [c2, e2, a2, c3, f2, a2, g2, b2n]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 37; played bars 85–85
+  - dynamic: mf
+    C1: [3:e4, c4]
+    lyrics: ["doubt", "My"]
+    C2: [e5, e5-e4-g4, e5, c5-c4-e4-a4]
+    C3: [c2, e2, a2, c3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 38; played bars 86–86
+  - dynamic: mf
+    C1: [1.5:d4, 0.5:b3n, 0.666667:b3n, 0.666666:a3, 0.666667:g3]
+    lyrics: ["heart", "will", "[l iy d]", "me", "there"]
+    C2: [d5, 0.5:d5-d4-a4, 0.5:b4n-d4-a4, 0.666667:b4n-f4-a4, 0.666666:a4-f4, 0.666667:g4-f4-a4]
+    C3: [f2, a2, g2, b2n]
+    drums: [kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 39, 40; played bars 87–88
+  - dynamic: mf
+    C1: [5:c4, z, z, c3]
+    lyrics: ["soon", "", "", "We'll"]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-g4, c5, c5-a3-c4-f4, c5-a3-c4-g4, c4]
+    C3: [c2, e2, b2b, c3, a2, c3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 41, 42; played bars 89–90
+  - dynamic: mf
+    C1: [6:f3, 0.666667:e3, 0.666666:f3, 0.666667:g3]
+    lyrics: ["meet", "[b ih]", "[y aa n d]", "the"]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 43; played bars 91–91
+  - dynamic: mf
+    C1: [3:a3, f3]
+    lyrics: ["shore", "We'll"]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 44; played bars 92–92
+  - dynamic: mf
+    C1: [2:g3, 0.666667:e3, 0.666666:d3, 0.666667:c3]
+    lyrics: ["kiss", "just", "as", "[b ih]"]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 45, 46; played bars 93–94
+  - dynamic: mf
+    C1: [6:a3, 0.666667:g3, 0.666666:a3, 0.666667:b3]
+    lyrics: ["[f ao r]", "[hh ae]", "[p iy]", "we'll"]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 47; played bars 95–95
+  - dynamic: mf
+    C1: [1.5:c4, 0.5:f3, 1.5:f3, 0.5:f3]
+    lyrics: ["be", "[b ih]", "[y aa n d]", "the"]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 48, 49; played bars 96–97
+  - dynamic: mf
+    C1: [5:d4, d4, 0.666667:c4, 0.666666:a3, 0.666667:g3]
+    lyrics: ["sea", "And", "[n eh v]", "[er]", "[ax]"]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 50; played bars 98–98
+  - dynamic: mf
+    C1: [2:f3, d3, f3]
+    lyrics: ["[g eh n]", "I'll", "go"]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 53; played bars 99–99
+  - dynamic: mf
+    C1: [4:g3]
+    lyrics: ["[s ey l]"]
+    C2: [g4, g4-b3n-f4, g4, g4-b3b-c4-e4]
+    C3: [g2, b2n, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 54; played bars 100–100
+  - dynamic: mp
+    C1: [3:f3, z]
+    lyrics: ["[ih ng]", ""]
+    C2: [2:a3-f4, f4-a4-f5, z]
+    C3: [3:f2, z]
+    drums: [kick-crash, 3:z]

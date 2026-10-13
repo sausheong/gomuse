@@ -1,0 +1,30 @@
+{
+  "slow": {
+    "duration_seconds": 3.5,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.405670166015625,
+    "clipped_samples": 0
+  },
+  "high": {
+    "duration_seconds": 2.5,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.365264892578125,
+    "clipped_samples": 0
+  },
+  "low": {
+    "duration_seconds": 2.5,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.477325439453125,
+    "clipped_samples": 0
+  },
+  "quick": {
+    "duration_seconds": 1.5,
+    "sample_rate": 44100,
+    "channels": 1,
+    "peak": 0.429229736328125,
+    "clipped_samples": 0
+  }
+}

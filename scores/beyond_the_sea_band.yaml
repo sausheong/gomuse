@@ -1,0 +1,483 @@
+# Beyond the Sea — saxophone, piano, bass guitar and drums.
+# Band arrangement of scores/beyond_the_sea.yaml; the original is preserved.
+# Music by Charles Trenet; English lyrics by Jack Lawrence.
+# C1: saxophone plays the transcribed vocal melody, at concert pitch.
+# C2: transcribed piano right hand, including the instrumental introduction.
+# C3: newly arranged bass guitar; drums: newly arranged swing groove and fills.
+# The saxophone replaces the wordless voice; the bass replaces piano left hand.
+# F major, 4/4, quarter = 108; swing 0.6. Tempo/groove are editorial choices.
+# Form: 1–52, 5–50, 53–54 (100 played bars, 400 beats in every part).
+# Bass follows printed harmony/inversions, with chromatic approaches at cadences.
+# First pass uses rim clicks; the second pass brings in a snare backbeat.
+# The final chord releases into the written last-beat rest.
+# The underlying manual transcription retains its chord-voicing/accidental caveats.
+# Some piano notes rearticulate where independent voices overlap in Muse notation.
+name: Beyond the Sea — saxophone band
+key: F
+length: 0.5555555555555556
+instrument: piano
+instruments:
+  C1: sax
+  C2: piano
+  C3: bass
+pan:
+  C1: -0.08
+  C2: 0.28
+  C3: 0
+  drums: 0.06
+levels:
+  C1: 0.95
+  C2: 0.5
+  C3: 0.8
+  drums: 0.38
+volume: 20000
+humanize: 0.1
+swing: 0.6
+reverb: 0.14
+sections:
+  # Source bar(s) 1; played bars 1–1
+  - dynamic: mp
+    C1: [4:z]
+    C2: [a5-a4, f5-a4, f5-b4, d5-b4]
+    C3: [2:f2, 2:g2]
+    drums: [kick-ride, rim-hat, ride, rim-hat]
+  # Source bar(s) 2; played bars 2–2
+  - dynamic: mp
+    C1: [4:z]
+    C2: [f5-f4-a4, d5-f4-a4, d5-g4, b4-g4]
+    C3: [2:d2, 2:g2]
+    drums: [kick-ride, rim-hat, ride, rim-hat]
+  # Source bar(s) 3; played bars 3–3
+  - dynamic: mp
+    C1: [4:z]
+    C2: [d5-g4, b4-g4, b4-b3-d4, g4-b3-d4]
+    C3: [2:g2, 2:d3]
+    drums: [kick-ride, rim-hat, ride, rim-hat]
+  # Source bar(s) 4; played bars 4–4
+  - dynamic: mp
+    C1: [3:z, c4]
+    C2: [e4-b4-c5, g5-e4-b4-c5, c6-e4-b4-c5, c4]
+    C3: [c2, e2, g2, e2]
+    drums: [ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom2]
+  # Source bar(s) 5, 6; played bars 5–6
+  - dynamic: mp
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 7; played bars 7–7
+  - dynamic: mp
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 8; played bars 8–8
+  - dynamic: mp
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 9, 10; played bars 9–10
+  - dynamic: mp
+    hairpin: cresc
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 11; played bars 11–11
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 12, 13; played bars 12–13
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 14; played bars 14–14
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 15; played bars 15–15
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3n-f4]
+    C3: [g2, b2n, d3, b1n]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 16; played bars 16–16
+  - dynamic: mf
+    C1: [2:c4, z, c4]
+    C2: [c4, 2:c4-e3-g3, c4-e3-g3]
+    C3: [c2, e2, b2b, c3]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 17, 18; played bars 17–18
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-f3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [a2, c3, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 19; played bars 19–19
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 20; played bars 20–20
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 21, 22; played bars 21–22
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 23; played bars 23–23
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 24, 25; played bars 24–25
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 26; played bars 26–26
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 27; played bars 27–27
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3-d4-f4, g4, g4-b3-c4-e4]
+    C3: [g2, b2b, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 28; played bars 28–28
+  - dynamic: mf
+    C1: [2:f4, z, e4]
+    C2: [2:f4-a3-c4, g3#-d4, e4-g3#-d4]
+    C3: [f2, a2, e2, g2#]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 29, 30; played bars 29–30
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4#, 0.666666:a4, 0.666667:b4n]
+    C2: [a4, a4-c4#-e4, a4, a4-a3-c4#-f4#, a4, a4-b3n-d4-f4#, 0.666667:g4#-d4-e4, 0.666666:a4-d4-e4, 0.666667:b4n-d4-e4]
+    C3: [a2, c3#, f2#, a2, d2, f2#, e2, g2#]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 31; played bars 31–31
+  - dynamic: mf
+    C1: [3:c5#, a4]
+    C2: [c5#, 2:c5#-c4#-e4, a4-c4#-f4#]
+    C3: [a2, c3#, f2#, a2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 32; played bars 32–32
+  - dynamic: mf
+    C1: [2:b4n, 0.666667:g4#, 0.666666:f4#, 0.666667:e4]
+    C2: [b4n, b4n-b3n-d4-f4#, 0.666667:g4#-b3n-d4, 0.666666:f4#-b3n-d4, 0.666667:e4-b3n-d4]
+    C3: [d2, f2#, e2, g2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 33, 34; played bars 33–34
+  - dynamic: mf
+    C1: [6:e4, z, g4n]
+    C2: [e4, e4-a3-c4#, e4, e4-a3-c4#, e4, e4-a3-c4#, e4, g4n-a3-c4n]
+    C3: [a2, c3#, g2#, a2, f2#, a2, e2, g2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 35, 36; played bars 35–36
+  - dynamic: mf
+    C1: [6:c5, 0.666667:b4n, 0.666666:c5, 0.666667:d5]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-a4, c5, c5-f4-a4, 0.666667:b4n-f4-g4, 0.666666:c5-f4-g4, 0.666667:d5-f4-g4]
+    C3: [c2, e2, a2, c3, f2, a2, g2, b2n]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 37; played bars 37–37
+  - dynamic: mf
+    C1: [3:e5, c5]
+    C2: [e5, e5-e4-g4, e5, c5-c4-e4-a4]
+    C3: [c2, e2, a2, c3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 38; played bars 38–38
+  - dynamic: mf
+    C1: [1.5:d5, 0.5:b4n, 0.666667:b4n, 0.666666:a4, 0.666667:g4]
+    C2: [d5, 0.5:d5-d4-a4, 0.5:b4n-d4-a4, 0.666667:b4n-f4-a4, 0.666666:a4-f4, 0.666667:g4-f4-a4]
+    C3: [f2, a2, g2, b2n]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 39, 40; played bars 39–40
+  - dynamic: mf
+    C1: [5:c5, z, z, c4]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-g4, c5, c5-a3-c4-f4, c5-a3-c4-g4, c4]
+    C3: [c2, e2, b2b, c3, a2, c3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 41, 42; played bars 41–42
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 43; played bars 43–43
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 44; played bars 44–44
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 45, 46; played bars 45–46
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 47; played bars 47–47
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 48, 49; played bars 48–49
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride, kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 50; played bars 50–50
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 51; played bars 51–51
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3b-c4-e4]
+    C3: [g2, b2n, c2, e2]
+    drums: [kick-ride, 0.5:rim-hat, 0.5:ride, ride, 0.5:rim-hat, 0.5:ride]
+  # Source bar(s) 52; played bars 52–52
+  - dynamic: mf
+    C1: [2:f4, z, c4]
+    C2: [f4-a3-c4, c4-f4-a4, d4-f4-b4, g3-d4-e4]
+    C3: [f2, a2, g2, c2]
+    drums: [kick-ride, rim-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 5, 6; played bars 53–54
+  - dynamic: mp
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 7; played bars 55–55
+  - dynamic: mp
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 8; played bars 56–56
+  - dynamic: mp
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 9, 10; played bars 57–58
+  - dynamic: mp
+    hairpin: cresc
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 11; played bars 59–59
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 12, 13; played bars 60–61
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 14; played bars 62–62
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 15; played bars 63–63
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3n-f4]
+    C3: [g2, b2n, d3, b1n]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 16; played bars 64–64
+  - dynamic: mf
+    C1: [2:c4, z, c4]
+    C2: [c4, 2:c4-e3-g3, c4-e3-g3]
+    C3: [c2, e2, b2b, c3]
+    drums: [kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 17, 18; played bars 65–66
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-f3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [a2, c3, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 19; played bars 67–67
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 20; played bars 68–68
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 21, 22; played bars 69–70
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 23; played bars 71–71
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 24, 25; played bars 72–73
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 26; played bars 74–74
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 27; played bars 75–75
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3-d4-f4, g4, g4-b3-c4-e4]
+    C3: [g2, b2b, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 28; played bars 76–76
+  - dynamic: mf
+    C1: [2:f4, z, e4]
+    C2: [2:f4-a3-c4, g3#-d4, e4-g3#-d4]
+    C3: [f2, a2, e2, g2#]
+    drums: [kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 29, 30; played bars 77–78
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4#, 0.666666:a4, 0.666667:b4n]
+    C2: [a4, a4-c4#-e4, a4, a4-a3-c4#-f4#, a4, a4-b3n-d4-f4#, 0.666667:g4#-d4-e4, 0.666666:a4-d4-e4, 0.666667:b4n-d4-e4]
+    C3: [a2, c3#, f2#, a2, d2, f2#, e2, g2#]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 31; played bars 79–79
+  - dynamic: mf
+    C1: [3:c5#, a4]
+    C2: [c5#, 2:c5#-c4#-e4, a4-c4#-f4#]
+    C3: [a2, c3#, f2#, a2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 32; played bars 80–80
+  - dynamic: mf
+    C1: [2:b4n, 0.666667:g4#, 0.666666:f4#, 0.666667:e4]
+    C2: [b4n, b4n-b3n-d4-f4#, 0.666667:g4#-b3n-d4, 0.666666:f4#-b3n-d4, 0.666667:e4-b3n-d4]
+    C3: [d2, f2#, e2, g2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 33, 34; played bars 81–82
+  - dynamic: mf
+    C1: [6:e4, z, g4n]
+    C2: [e4, e4-a3-c4#, e4, e4-a3-c4#, e4, e4-a3-c4#, e4, g4n-a3-c4n]
+    C3: [a2, c3#, g2#, a2, f2#, a2, e2, g2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 35, 36; played bars 83–84
+  - dynamic: mf
+    C1: [6:c5, 0.666667:b4n, 0.666666:c5, 0.666667:d5]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-a4, c5, c5-f4-a4, 0.666667:b4n-f4-g4, 0.666666:c5-f4-g4, 0.666667:d5-f4-g4]
+    C3: [c2, e2, a2, c3, f2, a2, g2, b2n]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 37; played bars 85–85
+  - dynamic: mf
+    C1: [3:e5, c5]
+    C2: [e5, e5-e4-g4, e5, c5-c4-e4-a4]
+    C3: [c2, e2, a2, c3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 38; played bars 86–86
+  - dynamic: mf
+    C1: [1.5:d5, 0.5:b4n, 0.666667:b4n, 0.666666:a4, 0.666667:g4]
+    C2: [d5, 0.5:d5-d4-a4, 0.5:b4n-d4-a4, 0.666667:b4n-f4-a4, 0.666666:a4-f4, 0.666667:g4-f4-a4]
+    C3: [f2, a2, g2, b2n]
+    drums: [kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 39, 40; played bars 87–88
+  - dynamic: mf
+    C1: [5:c5, z, z, c4]
+    C2: [c5, c5-e4-g4, c5, c5-c4-e4-g4, c5, c5-a3-c4-f4, c5-a3-c4-g4, c4]
+    C3: [c2, e2, b2b, c3, a2, c3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, snare-hat, 0.5:ride, 0.5:snare, 0.5:tom1, 0.5:tom3]
+  # Source bar(s) 41, 42; played bars 89–90
+  - dynamic: mf
+    C1: [6:f4, 0.666667:e4, 0.666666:f4, 0.666667:g4]
+    C2: [f4, f4-a3-c4, f4, f4-a3-d4, f4, f4-b3-d4, 0.666667:e4-b3, 0.666666:f4-b3, 0.666667:g4-b3]
+    C3: [f2, a2, d2, f2, b2b, d3, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 43; played bars 91–91
+  - dynamic: mf
+    C1: [3:a4, f4]
+    C2: [a4, a4-a3-c4-f4, a4, f4-a3-d4]
+    C3: [f2, a2, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 44; played bars 92–92
+  - dynamic: mf
+    C1: [2:g4, 0.666667:e4, 0.666666:d4, 0.666667:c4]
+    C2: [g4, g4-d4-f4, 0.666667:e4-b3, 0.666666:d4-b3, 0.666667:c4-b3]
+    C3: [b2b, d3, c2, e2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 45, 46; played bars 93–94
+  - dynamic: mf
+    C1: [6:a4, 0.666667:g4, 0.666666:a4, 0.666667:b4]
+    C2: [a4, a4-a3-c4-f4, a4, a4-a3-c4#-g4, a4, a4-a3-d4-f4, 0.666667:g4-c4n-e4, 0.666666:a4-c4n-e4, 0.666667:b4-c4n-e4]
+    C3: [f2, a2, e2, g2, d2, f2, c2, b2b]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 47; played bars 95–95
+  - dynamic: mf
+    C1: [1.5:c5, 0.5:f4, 1.5:f4, 0.5:f4]
+    C2: [c5, 0.5:c5-c4, 0.5:f4-c4, f4, 0.5:f4-a3-d4, 0.5:f4-a3-d4]
+    C3: [a2, c3, d2, f2]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 48, 49; played bars 96–97
+  - dynamic: mf
+    C1: [5:d5, d5, 0.666667:c5, 0.666666:a4, 0.666667:g4]
+    C2: [d5, d5-d4-f4-b4, d5, d5-d4-f4#-c5, d5, d5-d4-g4-b4, 0.666667:c5-e4, 0.666666:a4-e4, 0.666667:g4-e4]
+    C3: [b2b, d3, a2, c3, g2, b2b, c2, c2#]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride, kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 50; played bars 98–98
+  - dynamic: mf
+    C1: [2:f4, d4, f4]
+    C2: [f4, f4-a3-d4, d4, f4-b3-d4]
+    C3: [d2, f2, b2b, d3]
+    drums: [kick-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 53; played bars 99–99
+  - dynamic: mf
+    C1: [4:g4]
+    C2: [g4, g4-b3n-f4, g4, g4-b3b-c4-e4]
+    C3: [g2, b2n, c2, e2]
+    drums: [kick-crash-ride, 0.5:snare-hat, 0.5:ride, ride, 0.5:snare-hat, 0.5:ride]
+  # Source bar(s) 54; played bars 100–100
+  - dynamic: mp
+    C1: [3:f4, z]
+    C2: [2:a3-f4, f4-a4-f5, z]
+    C3: [3:f2, z]
+    drums: [kick-crash, 3:z]

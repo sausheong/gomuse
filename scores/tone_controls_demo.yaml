@@ -1,0 +1,40 @@
+# Original paired examples: same notes before and after each control.
+name: Tone Controls Demo
+key: C
+length: 0.4
+instrument: organ
+volume: 6500
+humanize: 0
+reverb: 0.08
+pan: {C1: 0}
+sections:
+  - label: Organ default
+    C1: [2:c4-e4-g4, 2:f4-a4-c5, 2:g4-b4-d5, 2:c4-e4-g4]
+  - label: Organ drawbars and slow rotor
+    tone: {C1: {drawbars: [8,0,8,4,0,0,0,0,0], rotary: {rate: 0.8, depth: 0.75}}}
+    C1: [2:c4-e4-g4, 2:f4-a4-c5, 2:g4-b4-d5, 2:c4-e4-g4]
+  - label: Organ bright and fast rotor
+    tone: {C1: {drawbars: [8,6,8,8,6,4,3,2,1], rotary: {rate: 6, depth: 0.85}}}
+    C1: [2:c4-e4-g4, 2:f4-a4-c5, 2:g4-b4-d5, 2:c4-e4-g4]
+  - label: Electric piano dry
+    instrument: electric-piano
+    C1: [2:c4-e4-g4-b4, 2:f4-a4-c5-e5, 2:g4-b4-d5-f5, 2:c4-e4-g4-b4]
+  - label: Electric piano tremolo
+    instrument: electric-piano
+    tone: {C1: {tremolo: {rate: 4, depth: 0.7}}}
+    C1: [2:c4-e4-g4-b4, 2:f4-a4-c5-e5, 2:g4-b4-d5-f5, 2:c4-e4-g4-b4]
+  - label: Synth lead default
+    instrument: synth-lead
+    C1: [c4, e4, g4, a4, g4, e4, 2:c4]
+  - label: Square lead resonant falling filter
+    instrument: synth-lead
+    tone: {C1: {synth: {wave: square, detune: 6, attack_ms: 10, release_ms: 180, cutoff: 500, resonance: 2.5, filter_envelope: 3, filter_decay_ms: 180}}}
+    C1: [c4, e4, g4, a4, g4, e4, 2:c4]
+  - label: Triangle pad opening filter
+    instrument: synth-pad
+    tone: {C1: {synth: {wave: triangle, detune: 12, attack_ms: 450, release_ms: 900, cutoff: 3500, resonance: 1.2, filter_envelope: -3, filter_decay_ms: 800}}}
+    C1: [4:c3-e3-g3, 4:f3-a3-c4]
+  - label: Sine bass
+    instrument: synth-bass
+    tone: {C1: {synth: {wave: sine, detune: 0, attack_ms: 5, release_ms: 120, cutoff: 900}}}
+    C1: [c2, c3, g2, c3, f2, c3, 2:g2]

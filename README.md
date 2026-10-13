@@ -4,12 +4,24 @@ Muse turns music scores written in YAML into stereo WAV files. It uses nothing b
 
 It also comes with `muse-convert`, which turns sheet music (images or PDFs) into scores using Claude's vision.
 
-You can use it as a command-line tool, or as a web app where you write a score, listen to it, download it and share it. Try it live at https://muse.sausheong.com.
+You can use it as a command-line tool, or as a web app where you write a score, listen to it, download it and share it.
 
 The design is explained in these articles:
 
 - [Make Music With Maths and Go (Part I)](https://medium.com/geekculture/make-music-with-maths-and-go-i-abfdbcf73b65): generating notes from sine waves, envelopes and harmonics
 - [Make Music With Maths and Go (Part II)](https://medium.com/geekculture/make-music-with-maths-and-go-ii-7d49d438b83c): the score format, the CLI and web app, and sharing through Open Graph
+
+## Editing expressive scores
+
+For new scores, use [Muse 2 notation](docs/notation-v2.md): named tracks, reusable
+patterns, section variants and a musical playback order. Start with the
+[short example](scores/notation_v2_demo.yaml) or the complete
+[The Living Years](scores/the_living_years_expressive.yaml).
+
+The earlier [phrase format](docs/editable-scores.md), demonstrated by
+[Misty Final](scores/misty_final.yaml), and legacy scores remain supported.
+To inspect a score without rendering, run
+`go run ./cmd/muse -expand /tmp/expanded.yaml scores/notation_v2_demo`.
 
 ## Quick start
 
@@ -80,7 +92,7 @@ muse -s [-addr 0.0.0.0:8888] [-data data]
 | `GET /` | Score editor with links to the sample scores |
 | `GET /sample/{name}` | Opens `scores/{name}.yaml` in the editor |
 | `POST /create` | Renders the score, then shows a player, download link and share link |
-| `GET /share/{id}` | Public page for a tune, with Open Graph `music.song` tags for social previews |
+| `GET /share/{id}` | Public page for a tune, with Open Graph `music.song` tags for social previews. Their URLs use the scheme and host the page was requested on (`X-Forwarded-Proto: https` is honoured behind a proxy), so previews work on any domain |
 | `GET /static/...` | Embedded CSS, JS and images |
 | `GET /static/tunes/{id}.wav` | Generated tunes, served from the data folder |
 
@@ -217,6 +229,15 @@ All instruments are used the same way: as the score's `instrument`, a section's 
 
 | Name | Family | Sound |
 |---|---|---|
+| `trombone` | brass | Lower brass body, rounded tongue attack and velocity-dependent upper harmonics; useful around E2–B4 |
+| `french-horn` | brass | Warm low-mid resonances and a gradual attack; useful around B1–F5 |
+| `oboe` | double reed | Nasal upper-mid resonances, light reed noise and delayed vibrato; useful around Bb3–A5 |
+| `bassoon` | double reed | Low reed body with a concentrated midrange resonance; useful around Bb1–E4 |
+| `string-ensemble` | bowed strings | Five detuned bow voices with different attacks, noise seeds and vibrato depths; supports chords |
+| `nylon-guitar` | plucked strings | Soft pluck, low string stiffness and a darker body than steel-string guitar; supports guitar performance controls |
+| `glockenspiel` | mallets | Bright metal-bar modes and ringing decay |
+| `xylophone` | mallets | Hard wooden-bar attack and rapidly decaying upper modes |
+| `tubular-bells` | mallets | Long-lived, inharmonic tube modes around a perceived strike pitch |
 | `violin` | bowed strings | Solo bowed tone with gradual bow engagement, body resonances, quiet friction noise and delayed vibrato; useful around G3–E6 |
 | `cello` | bowed strings | Darker body resonances and a slower bow attack; useful around C2–C5 |
 | `synth-bass` | electronic | Tight attack, strong fundamental and quickly decaying upper harmonics; useful around C1–C4 |
@@ -226,12 +247,13 @@ All instruments are used the same way: as the score's `instrument`, a section's 
 | `harp` | plucked strings | Lightly stretched harmonics, a clear pluck and longer low-register decay; useful around C2–C7 |
 | `marimba` | mallets | Soft wooden-bar strike, tuned and inharmonic modes and a shorter decay than vibraphone; useful around C3–C6 |
 | `electric-piano` | keyboards | Tine-inspired warmth, register-dependent tine modes, a fading bell attack and stronger pickup harmonics on harder strikes |
-| `organ` | keyboards | Fixed drawbar registration, steady sustain and a brief filtered key-contact transient; no rotary speaker effect |
+| `organ` | keyboards | Fixed drawbar registration, steady sustain and a brief filtered key-contact transient; optional drawbars and rotary modulation via `tone` |
 | `vibraphone` | mallets | Tuned and inharmonic bar modes, long decay and gentle 5 Hz tremolo |
 | `flute` | woodwinds | Fundamental-rich tone, breath noise, soft tonguing and delayed vibrato |
 | `clarinet` | woodwinds | Strong odd harmonics in the low register, fuller even harmonics higher up and a restrained reed attack |
 | `piano` | strings (struck) | A hammered string. The hammer strikes a seventh of the way along and its felt softens the top. Above the bass, two strings, then three in the middle and upper registers, beat gently against each other. Hammer hardness changes the upper partials with velocity. Each overtone decays in two stages (a quick drop, then a long tail), and higher notes die away faster |
 | `guitar` | strings (plucked) | A plucked steel string. Plucked a fifth of the way along, so every 5th overtone is missing. Broad body resonances colour the strings and stronger plucks excite more high-frequency energy. The overtones run very slightly sharp, and higher ones fade faster |
+| `electric-guitar` | strings (plucked) | Picked electric guitar with sustained harmonics and a mildly driven amp colour, built from band-limited partials; useful for rock riffs and instrumental melody |
 | `bass` | strings (plucked) | An electric bass guitar played with the fingers. Thick strings, so the overtones run sharper; plucked over the neck pickup, whose roll-off opens with stronger finger attacks. A long, steady fundamental under quickly fading overtones, so a bass line sits under everything without getting in the way. At home from E1 to G3 |
 | `voice` | voice | A sung "ah": a glottal buzz shaped by warm vowel formants (about 650, 1080 and 2650 Hz). It fades in softly, holds the pitch steady for the first 0.2 s, then grows a vibrato (about 5.5 Hz, ±45 cents), with a slight drift and shimmer and a touch of breath at the onset |
 | `trumpet` | winds (brass) | A bright brass tone. Tongued firmly, starts a little under the note as the lips find the pitch, and is mostly played straight, with only a touch of vibrato on long notes |
@@ -254,17 +276,137 @@ To add an instrument, write a function `func(freq, duration float64) []float64` 
 
 The pitched instruments other than `voice` receive the existing dynamic velocity during synthesis, without a second generic tone filter. Scores without dynamics use a moderate strike/breath strength. The `organ` registration stays constant with velocity; dynamics still change its loudness. These instruments now damp from note-off rather than sustaining throughout their release allowance. Singing synthesis keeps its previous rendering path. These are procedural approximations, not sampled instruments.
 
-`keyboards.go` provides an optional `velocityInstrument` renderer and `registerVelocityInstrument` helper. `woodwinds.go` supplies the flute and clarinet presets. Pitched articulation controls, electric-piano tremolo and a rotary speaker remain future work. Piano, guitar and bass now shape their excitation with velocity; trumpet and saxophone vary their breath pressure and tonguing before mixing.
+`keyboards.go` provides an optional `velocityInstrument` renderer and `registerVelocityInstrument` helper. `woodwinds.go` supplies the flute and clarinet presets. The optional `tone` controls add electric-piano tremolo and organ drawbars with a mono rotary approximation. Piano, guitar and bass now shape their excitation with velocity; trumpet and saxophone vary their breath pressure and tonguing before mixing. The original-instrument comparison is in `examples/instruments/existing-quality/`, with preserved before/after audio and RMS-matched listening copies.
 
-Listen to `scores/instrument_palette.wav`, generated from `scores/instrument_palette.yaml`: electric piano, organ, vibraphone, flute and clarinet each play alone, followed by three short ensemble passages. The exposed phrases include low, middle and high notes, repeated notes and contrasting dynamics.
+Listen to `scores/instrument_palette.wav`, generated from `scores/instrument_palette.yaml`: the first keyboard, mallet and woodwind additions play alone, followed by three short ensemble passages. The exposed phrases include low, middle and high notes, repeated notes and contrasting dynamics.
 
 The second palette is `scores/instrument_palette_2.yaml` and its rendered WAV. Each of the eight new presets plays a soft and loud solo phrase, followed by chamber, electronic and plucked/mallet ensemble passages. The suggested ranges above describe intended colour, not enforced pitch limits.
 
-- **Bowed strings** (`bowed.go`) sustain a body-shaped harmonic bank with bow engagement, delayed vibrato and filtered friction noise. Violin and cello are solo-note approximations; connected bowing, portamento and orchestral sections are not modelled.
-- **Electronic instruments** (`synth.go`) sum a bounded number of harmonics, checking each detuned partial against the synthesis frequency ceiling. Harmonic envelopes change brightness over time; there is no nonlinear resonant filter or user-editable synth patch yet.
+- **Bowed strings** (`bowed.go`) sustain a body-shaped harmonic bank with bow engagement, delayed vibrato and filtered friction noise. Violin and cello are solo-note approximations; the optional phrase renderer supports connected bowing and portamento, while `string-ensemble` layers five independent detuned bow voices. This does not simulate individual orchestral seating or section bowing.
+- **Electronic instruments** (`synth.go`) sum a bounded number of harmonics, checking each detuned partial against the synthesis frequency ceiling. Harmonic envelopes change brightness over time; optional editable patches in `tone_controls.go` add oscillator waveforms, envelopes and a linear resonant low-pass filter. Nonlinear analogue saturation is not modelled.
 - **Acoustic plucks and bars** (`acoustic.go`) provide pizzicato upright bass, harp and marimba. They respond to dynamics and note-off damping. Harp sympathetic coupling across notes and alternate upright-bass articulations are not modelled.
 
 For example, `instruments: {C1: violin, C2: harp, C3: cello}` creates a chamber trio; use `{C1: synth-lead, C2: synth-pad, C3: synth-bass}` for an electronic arrangement.
+
+### Stateful phrase performance
+
+Existing scores keep their original renderer. Opt a monophonic clarinet, flute, trumpet, saxophone, violin, cello or synth-lead channel into the phrase renderer with `performance`, at score or section level:
+
+```yaml
+instruments: {C1: clarinet, C2: electric-piano, C3: bass}
+performance:
+  C1: {articulation: legato, swell: 0.35, vibrato: 3}
+```
+
+`articulation` accepts `legato`, `detached` (85% gate) or `staccato` (50% gate). Release follows the gate and can overlap the following note. `swell` is 0–1: it arches loudness and brightness within each note. `vibrato` is 0–30 cents of delayed pitch modulation. Both default to zero. These are per-channel section settings, not inline note annotations.
+
+Consecutive legato notes on the same instrument retain oscillator phase, filtered noise, harmonic state and vibrato time. Pitch and dynamics change smoothly at their boundary. Rests, an instrument change or a non-legato articulation end the connection; timing remains on the existing tempo grid. Small humanisation gaps are bridged, but gaps of 40 ms or more are not. Phrase dynamics already supplied by `dynamic` and `hairpin` still apply.
+
+Section entries replace score entries, so `performance: {C1: {}}` disables the new renderer for that section. Unsupported instruments and invalid values produce errors; sustained performance requires monophonic parts. The original `voice` instrument and singing backends are unchanged. This is a continuous harmonic voice model, not a physical bow/reed simulation; arbitrary automation beyond the phrase curves below remains future work.
+
+Render `scores/how_deep_is_your_love_expressive.yaml` for the phrase-performance version. Its source arrangement and all its musical events are preserved in `scores/how_deep_is_your_love_chamber_pop.yaml`.
+
+### Instrument tone controls
+
+Optional `tone` maps at score or section level configure C1, C2 and C3. A section entry replaces the score entry for that channel; `{}` restores the default sound. Controls are explicit and validated for the selected instrument. Existing scores retain their default timbres.
+
+```yaml
+instruments: {C1: organ, C2: electric-piano, C3: synth-bass}
+tone:
+  C1:
+    drawbars: [8, 0, 8, 4, 0, 0, 0, 0, 0]
+    rotary: {rate: 5.5, depth: 0.7}
+  C2:
+    tremolo: {rate: 4, depth: 0.6}
+  C3:
+    synth:
+      wave: square
+      detune: 3
+      attack_ms: 8
+      release_ms: 180
+      cutoff: 600
+      resonance: 2
+      filter_envelope: 2.5
+      filter_decay_ms: 220
+```
+
+- **Organ drawbars:** nine levels from 0 to 8, ordered 16′, 5⅓′, 8′, 4′, 2⅔′, 2′, 1⅗′, 1⅓′, 1′. Zero turns a bar off; at least one must be audible. The rendered registration is peak-normalised. Custom drawbars omit the default key-contact transient.
+- **Organ rotary:** `rate` is 0.1–12 Hz and `depth` is 0–1. A mono fractional-delay Doppler effect and amplitude shading approximate a rotor. LFO phase follows score time; this is not a stereo Leslie cabinet or an acceleration simulation.
+- **Electric-piano tremolo:** the same rate/depth ranges control amplitude modulation, with phase shared across chord notes and continuous in score time.
+- **Synth patch:** available on `synth-bass`, `synth-lead` and `synth-pad`. `wave` accepts `sine`, `triangle`, `square` or `saw`. `detune` spans 0–30 cents either side of the centre oscillator. `attack_ms` is 0–2000; `release_ms` is 0–3000. The explicit release is included in rendering resource limits.
+- **Synth filter:** `cutoff` is 40–18000 Hz; `resonance` is Q from 0.5–8. `filter_envelope` is an initial offset of −4 to +4 octaves, decaying towards the cutoff over `filter_decay_ms` (1–5000 ms). Positive values close the filter; negative values open it. Resonance is bounded and the result normalised. Patches currently use independent note rendering and reject sustained `performance` rather than silently bypassing the patch.
+
+Omitted patch fields default to a saw wave, preset-specific detune and attack, the instrument's release, a velocity-dependent cutoff, Q 0.707, zero filter envelope and 350 ms filter decay. These controls do not introduce reusable named patch definitions or arbitrary automation.
+
+The new winds (`trombone`, `french-horn`, `oboe`, `bassoon`) support the existing monophonic legato, detached and staccato performance, vibrato, breath and tongue controls. Trombone and French horn also accept falls. Nylon guitar supports strums, let-ring, palm-mute, slides and hammer-ons. The string ensemble supports ordinary polyphonic notes, with its own attacks and releases, rather than the solo bowed phrase renderer.
+
+Listen to `scores/instrument_palette_3.wav` for all nine added pitched instruments, eight added percussion sounds and three ensemble passages. `scores/tone_controls_demo.wav` demonstrates drawbars, rotary, tremolo and synth patches. Their editable YAML files use original audition phrases. See [palette expansion validation](docs/palette-expansion.md) for coverage and measured audio.
+
+### Per-note accents and multi-note phrase swells
+
+Each section can set `expression` independently for C1, C2 and C3. Event numbers are **one-based and count rests**; a chord is one event. Accents are dB offsets applied to loudness and synthesis velocity. Use positive values for emphasis and negative values for softer touch. They combine with existing dynamics and humanisation.
+
+```yaml
+expression:
+  C1:
+    accents: {1: 1.5, 2: -1, 5: 2}
+    phrases:
+      - {from: 1, to: 8, start_db: -2, peak_db: 1, end_db: -3, peak_at: 0.6}
+```
+
+A phrase smoothly interpolates loudness from the start of `from` through its peak to the end of `to`, using performed time including tempo changes and fermatas. `peak_at` defaults to 0.5 and otherwise must be greater than zero and less than one. Swells continue across note boundaries and rests; release tails retain the ending level. Phrase ranges must be ordered and non-overlapping within each channel and section. All dB offsets must be finite and between -12 and +6. Unspecified events retain their existing touch; absent or empty expression leaves the previous output unchanged. Explicit expression also works with `plain: true`.
+
+These phrase curves control amplitude, while accents also affect the instrument's available velocity response. For supported sustained instruments, optional phrase `tone` curves also shape harmonic brightness, as described below. The earlier `performance.swell` still adds a separate swell within each note; set it to zero when only the multi-note arch is wanted. Positive accents and phrase peaks add together, so leave mix headroom.
+
+`scores/how_deep_is_your_love_phrase_shaped.yaml` preserves the acoustic arrangement's musical events, adds melody accents and phrase arches, softens passing notes and varies guitar chord touch. Loudness-matched excerpts are in `examples/instruments/phrase-shaping/`.
+
+### Selective vibrato, breaths, slurs and phrase tone
+
+For channels using sustained-instrument `performance`, section `expression` also accepts these controls. Event numbers still count rests and start at one.
+
+```yaml
+expression:
+  C1:
+    vibrato:
+      1: {depth: 0}
+      2: {depth: 7, delay_ms: 350, rise_ms: 500, rate_hz: 4.8}
+    breaths: {4: 110}
+    slurs: [{from: 1, to: 4}, {from: 5, to: 8}]
+    phrases:
+      - from: 1
+        to: 4
+        start_db: -2
+        peak_db: 1
+        end_db: -3
+        peak_at: 0.6
+        tone: {start: -0.3, peak: 0.2, end: -0.4}
+```
+
+- `vibrato` overrides the channel setting for selected notes. `depth` is 0–30 cents; zero makes the note straight. Delay and rise are 0–5000 ms, measured from each note's onset. The rise is smooth; depth transitions are also smoothed over a few milliseconds. Rate is 1–10 Hz, with zero or omission selecting 5.1 Hz. Delay/rise default to zero. Within connected explicit overrides, modulation phase continues across notes while the depth envelope restarts. Unspecified notes retain the earlier channel vibrato behaviour.
+- `breaths` reserves 0–500 ms of silence at the end of an event, capped at half its performed duration. The release finishes before that silence. A breath breaks a slur; written duration, following onsets and accompaniment remain unchanged. Reverb and other instruments can still sound through the gap.
+- `slurs` explicitly groups connected notes. Groups must be ordered, non-overlapping and contain no rests. Notes outside groups receive fresh attacks. An empty list means no connections for that section; omitting the field retains automatic legato. Groups remain subject to articulation, instrument and timing compatibility. A group cannot cross a section boundary; group source bars into one section when needed.
+- `tone` follows the phrase's timing and peak position, smoothly tilting the harmonic balance. Values run from -1 (darker) to +1 (brighter); zero is neutral. It affects the spectrum independently of the dB curve, although changing harmonics can also affect perceived loudness. Release tails retain the end value. This is harmonic shaping, not a physical breath-pressure or bow model.
+
+Vibrato and breath marks on rests, unsupported instruments, invalid ranges and overlapping slurs are rejected. Existing scores without these controls retain their previous rendering.
+
+`scores/misty3.yaml` keeps Misty 2's notes, trio instrumentation, tempo and accompaniment, adding these four controls to its clarinet. Matched excerpts are in `examples/instruments/misty-expression/`.
+
+### Piano pedal and guitar performance
+
+Piano supports `performance: {C2: {pedal: down}}` and `pedal: up`. Down holds natural string decay through note-offs and rests, until that channel switches to up, disables performance, changes instrument or reaches its end. Pedal controls can be placed on a rest. Each note has at most eight seconds of additional sustain; this is damper behaviour, not sympathetic string resonance or half-pedalling.
+
+For pedal changes within a section, use event-indexed `expression: {C2: {pedal: {1: down, 3: up, 4: down, 6: up}}}`. Events count from one, including rests. Each change lasts until the next event control or the section end; the next section returns to its configured `performance` pedal setting. Place an `up` control on a short rest before a harmony change to clear the old chord. Event controls support piano only. `scores/misty4.yaml` demonstrates this with spaced piano voicings and a rewritten upright-bass accompaniment.
+
+Acoustic steel-string, electric and nylon guitar accept `articulation: picked`, `let-ring` or `palm-mute`, plus `strum: down`, `up` or `alternate`. `strum_ms` is the total chord spread (0–120 ms; zero selects the 40 ms default). Spread is shortened for brief notes. Alternate direction advances on played guitar events, not rests. Explicit performance supports up to six pitches per guitar chord. Let-ring voices decay through subsequent notes and rests until a control/instrument change or the channel end, with the same eight-second cap; re-striking a pitch damps its previous voice. Palm mute darkens the pluck and shortens its decay. These controls do not infer guitar fingering. Explicit hammer-ons and slides are available through event gestures.
+
+```yaml
+instruments: {C1: clarinet, C2: guitar, C3: bass}
+performance:
+  C1: {articulation: legato, swell: 0.35, vibrato: 3}
+  C2: {articulation: picked, strum: alternate, strum_ms: 35}
+```
+
+`scores/string_expression_demo.yaml` demonstrates dry/pedalled piano, pedal lifts on rests, alternating strums, muted strokes and ringing arpeggios. `scores/how_deep_is_your_love_acoustic_expressive.yaml` retains the earlier song's notes and rhythm, adds guitar accompaniment and uses a pedalled piano ending. The earlier arrangements remain separate.
 
 ### Drums
 
@@ -296,9 +438,16 @@ sections:
 | `clap` | `cp` | Hand clap: three quick bursts of noise and a short tail |
 | `rim` | `rs` | Side stick: the stick clicking on the rim |
 | `cowbell` | `cb` | Two clashing tones with a hollow clank |
+| `shaker` | | Short high-passed bead noise |
+| `tambourine` | | Inharmonic jingles and a short contact burst |
+| `conga`, `bongo` | | Lower and higher hand-drum membrane modes with skin contact noise |
+| `claves` | | Short wooden-stick modes |
+| `triangle` | | Long, bright inharmonic metal modes |
+| `brushtap` | | Short brush noise and a quiet snare body |
+| `brushsweep` | | Continuous brush noise for the written/performed duration; unlike struck drums, follows tempo and note length |
 
-- **Ringing:** every drum rings for its own natural length (a closed hat about 0.15 s, a crash 3 s), however short the written note, so cymbals wash on under what follows.
-- **Variety:** each drum comes in four slightly different variants that the hits cycle through, so a run of hi-hats doesn't sound like one recording repeated.
+- **Ringing:** struck drums ring for their own natural length (a closed hat about 0.15 s, a crash 3 s), however short the written note, so cymbals wash on under what follows. `brushsweep` instead follows the performed note duration.
+- **Variety:** struck drums use cached variants; brush sweeps use a deterministic noise seed per event. Repeated noisy hits vary, so a run of hi-hats doesn't sound like one recording repeated.
 - **Expression:** the drums get the same treatment as the other parts. They follow the [dynamics](#dynamics) and the shared tempo map, so they swing, slow down and hold with everything else; hits are humanised by a few milliseconds; the first hit of a section is accented. They sit in the centre and default to a level of 0.7; change both with `pan` and `levels` (`drums: ...`).
 - **Not an instrument:** the drums ignore the key signature, and can't be given an `instrument`.
 
@@ -406,6 +555,26 @@ The new waveforms stop at the 9th overtone, so even the highest notes stay below
 
 Envelopes live in `internal/muse/envelope.go` and harmonics in `internal/muse/harmonic.go`. Each is a small pure function registered in a map, so adding one takes a few lines.
 
+## Optional neural singing (experimental)
+
+The CLI has an optional local DiffSinger ONNX backend for lyrics on one melody
+channel. Add `singing: {channel: C1, language: en}` and one `lyrics` entry per
+melody note; `+` extends a vowel and `""` accompanies a rest. Ordinary scores
+still render with the self-contained Go engine.
+
+```sh
+go run ./cmd/muse -singing-plan .local/singing/stay-plan.json examples/singing/stay_with_me
+go run ./cmd/muse -singer .local/singing/singer.json examples/singing/stay_with_me
+```
+
+The first command exports timing without a model. The second requires an
+installed compatible voicebank, vocoder, and local configuration. The Go
+integration and phoneme preparation are tested. The demo has rendered with
+Nishiren Gard AI DiffSinger v1.2 by Gardanana, including its neural duration,
+pitch, and tension predictors and bundled vocoder: 21.45
+seconds, stereo 44.1 kHz, no clipped samples. Listening acceptance remains open.
+See [setup, supported models, and limitations](scripts/singing/README.md).
+The web app does not execute neural backends.
 
 ## Converting sheet music
 
@@ -425,6 +594,7 @@ bin/muse scores/misty
 
 | Flag | Default | Meaning |
 |---|---|---|
+| `-o` | `<first input>.yaml` | Output score file |
 | `-env` | `.env` | File with `ANTHROPIC_*` settings. Variables already in the environment win |
 | `-model` | `$ANTHROPIC_MODEL`, else `claude-opus-5-5` | Claude model |
 | `-effort` | `high` | Thinking effort: `low`, `medium`, `high`, `xhigh` or `max`. Empty uses the model's default |
@@ -459,16 +629,21 @@ The `scores/` folder contains these scores. Those marked † are longer than the
 | `after_all_piano.yaml` | After All, first chorus | D | piano |
 | `after_all_voice.yaml` | After All, the whole arrangement, converted by `muse-convert` † | D | voice and piano |
 | `beauty.yaml` | Beauty and the Beast | F | round / first |
+| `bright_side.yaml` | Bright Side, an original bright, jazzy pop song (about a minute) | F | voice, saxophone, piano, guitar, bass and drums |
 | `cheek.yaml` | Cheek to Cheek | C | drop / stringed |
 | `every.yaml` | Every Breath You Take | A | tempered / stringed |
+| `feelings.yaml` | Feelings, solo guitar | F | guitar |
 | `how_deep_is_your_love.yaml` | How Deep Is Your Love, arranged with sustained verses, at 88 bpm † | E♭ | saxophone and piano |
+| `how_deep_is_your_love_guitar_solo.yaml` | How Deep Is Your Love, solo guitar arrangement | A | guitar |
 | `march.yaml` | Turkish March | C | drop / stringed |
 | `memory.yaml` | Memory | C | round / first |
 | `misty.yaml` | Misty, converted by `muse-convert` † | E♭ | voice and piano |
+| `nothings_gonna_change_my_love_for_you.yaml` | Nothing's Gonna Change My Love For You, guitar arrangement | G | guitar |
 | `sunday_groove.yaml` | Sunday Groove, an original groove to show off the bass and drums | F | saxophone, piano, bass and drums |
 | `sweet.yaml` | Sweet Child O' Mine | D | drawl / stringed |
 | `tears.yaml` | Tears in Heaven (excerpt) | D | tempered / stringed |
 | `tears.full.yaml` | Tears in Heaven (full) † | D | tempered / stringed |
+| `tears_in_heaven.yaml` | Tears in Heaven, guitar arrangement | D | guitar |
 | `the_light_you_left.yaml` | The Light You Left, an original piano miniature | F | piano |
 | `velvet_after_midnight.yaml` | Velvet After Midnight, an original jazz miniature with swing | C | voice and piano |
 
@@ -534,4 +709,120 @@ Every test is hermetic: it writes only to temporary folders. The tests cover:
 - the converter's checks, page assembly, automatic volume, image shrinking and `.env` loading (the calls to Claude aren't tested)
 - the web handlers via `httptest`, including escaping, ID validation, 404s and size limits
 
-Rendered WAVs are generated locally and ignored by Git. Run `go run ./cmd/muse scores/instrument_palette_2` for the expanded palette or `go run ./cmd/muse scores/how_deep_is_your_love_chamber_pop` for the chamber-pop arrangement.
+### Procedural scat voice
+
+The optional pure Go `scat` channel supports connected `doo`, `bah` and `wah` phrases with relaxed, playful and assertive delivery, vocal effort, breathiness, articulation and syllable emphasis. No voicebank is required. See [controls and listening examples](examples/singing/SCAT.md) and the [three-style jazz score](examples/singing/procedural/jazz_demo.yaml). This is a stylised scat synthesiser; it does not pronounce arbitrary lyrics.
+
+### Piano and upright-bass body refinement
+
+Piano synthesis includes a velocity-shaped felt spectrum, restrained hammer/body excitation and register-dependent string beating. Pedal-down piano adds a small driven resonator bank to suggest related open strings; the existing damper envelope stops it at pedal release. This is local to each note, not an 88-key coupled-string model or half-pedal simulation.
+
+Upright bass has velocity-dependent attack/body decay and a quiet contact transient. Successive played bass events cycle through three nearby pluck positions, with reproducible excitation variation. Rests do not advance that cycle. These preset refinements apply when existing scores are rendered again.
+
+`examples/instruments/piano-bass-quality/` preserves the pre-change solo study and Misty 4 render. Its matched before/after solo excerpts use the same notes and dynamics. `scores/misty5.yaml` retains the Misty 4 arrangement for comparison with the new engine.
+
+### Clarinet transitions and shared small room
+
+The clarinet uses a smooth register-dependent harmonic balance, a velocity-sensitive tongue attack and restrained breath noise. Its phrase renderer carries pitch and harmonic state through slurs; breath noise responds to phrase intensity. This remains procedural synthesis, not a physical reed or airflow simulation.
+
+An optional shared room provides early reflections and a shorter diffuse tail:
+
+```yaml
+reverb: 0.32
+room:
+  preset: small
+  sends: {C1: 0.7, C2: 0.45, C3: 0.08}
+```
+
+`reverb` controls the wet return; each send is 0–1 and defaults to 1 when omitted. Zero send leaves that instrument dry, without changing its dry level or panning. All sends excite the same stereo room. Low-frequency energy is reduced on the wet bus to avoid bass build-up. Only the `small` preset is supported. Without `room`, the existing reverb stays in use; `plain: true` or `reverb: 0` disables either room.
+
+`scores/misty6.yaml` retains Misty 5's musical arrangement and uses the refined clarinet with separate clarinet, piano and bass room sends. Preserved previous audio and matched excerpts are in `examples/instruments/clarinet-room/`. Re-rendering an older score also uses the updated clarinet preset.
+
+### Repeatable sound studies
+
+`go run ./cmd/muse-lab -out <new-directory>` renders every canonical non-vocal instrument and the drum kit in exposed dynamic/register studies. Use `-instrument piano` (or another registered name) for one preview. The tool refuses to overwrite an existing directory. Measure generated audio with `python3 scripts/audio_report.py <directory> --out <report.json>`.
+
+### Output level and ensemble placement
+
+Optional output settings apply one gain before clipping, preserving dynamics and stereo balance:
+
+```yaml
+mastering: {rms_dbfs: -23, peak_dbfs: -1}
+ensemble:
+  offsets_ms: {C1: -4, C2: 9, C3: 0}
+  variation: {C1: 0.7, C2: 0.4, C3: 0.2}
+  chord_spread_ms: {C2: 18}
+```
+
+The peak ceiling takes priority when the RMS target cannot be reached without exceeding it. This is RMS normalization, not LUFS normalization or compression. RMS targets accept -60 to -6 dBFS and sample-peak ceilings -12 to -0.1 dBFS.
+
+Offsets are -40 to +40 ms and move attacks without changing the shared note-ending grid; short notes cap the offset to a quarter of their available duration. Variation scales the existing humanization per part from 0 to 1. Chord spread sets a total 0–120 ms roll, shortened when necessary. Omitted controls retain previous behaviour. Timing controls remain disabled by `plain: true`.
+
+A section's `rubato` value (-0.3 to +0.3) adds a smooth shared tempo cycle without moving its boundaries. Positive values advance the first half of the phrase then return to the written endpoint; negative values reverse this shape. All channels use the same time map, including existing ritardando and fermata controls.
+
+### Instrument gestures and reusable presets
+
+`expression.gestures` addresses one-based played events, counting rests. Each gesture is instrument-specific:
+
+| Kind | Instruments | Meaning |
+|---|---|---|
+| `tongue` | clarinet, flute, trumpet, saxophone | Fresh attack inside an otherwise legato part |
+| `fall` | trumpet, saxophone | Smooth downward pitch movement at the note ending |
+| `bow-change` | violin, cello | Rearticulate at a bow change |
+| `portamento` | violin, cello | Slide from the preceding connected slurred note |
+| `hammer-on` | guitar, electric-guitar | Retain ringing string state and add a small fretting excitation |
+| `slide` | guitar, electric-guitar, bass, upright-bass | Retain ringing string state while changing pitch |
+| `mute` | guitar, electric-guitar, bass, upright-bass | Short damped note and release |
+
+Transitions require a preceding monophonic note of the same instrument within the section, with a performed gap below 40 ms. Portamento also requires a connected legato slur. Transitions cannot follow a breath or mute. `duration_ms` is optional for transitions/falls, 0–1000; zero selects 18 ms for hammer-ons, 120 ms for slides/portamento and 240 ms for falls. Actual duration is capped at 60% of the note. Falls accept `semitones` from 0–12, with zero selecting two. This is controlled procedural articulation, not an automatic fingering or physical string model.
+
+```yaml
+performance: {C1: {preset: bowed-legato}}
+expression_presets:
+  rising-line:
+    gestures: {2: {kind: portamento, duration_ms: 100}}
+    attack_ms: {1: 70}
+    phrases:
+      - {from: 1, to: 4, start_db: -2, peak_db: 0, end_db: -3, tone: {start: -0.2, peak: 0.3, end: -0.2}}
+sections:
+  - C1: [c4, e4, g4, c5]
+    expression: {C1: {preset: rising-line}}
+```
+
+`attack_ms` accepts 0.5–250 ms for sustained instruments. It shapes fresh attacks; connected notes retain the existing attack state unless a tongue or bow change is requested. Wind, bowed and synth-lead profiles have distinct spectra and envelopes but share the level, tone, vibrato and slur controls. Bass performance supports monophonic `picked`, `let-ring` and `palm-mute`; electric guitar also supports guitar strums.
+
+Built-in performance presets are `lyrical-wind`, `bowed-legato`, `short-notes`, `guitar-picking`, `bass-fingers` and `piano-dry`. Define additional values under score-level `performance_presets`. A preset reference cannot contain overrides or refer to another preset. `expression_presets` similarly reuses a complete section expression; event ranges are checked where it is used. Definitions do not alter the source score when expanded.
+
+### Aligned stems and matched comparisons
+
+`go run ./cmd/muse-lab -score scores/misty6.yaml -out <new-directory>` renders the instrumental score once and writes its master, dry panned C1/C2/C3/drums stems (where present), and shared room return. All files start together, include the same tail, and use a common gain. Summing the stems reproduces the master within a few 16-bit rounding units. If a stem would clip due to cancellation in the master, the common gain is reduced to keep that stem safe; the manifest records the applied gain. Existing output directories are refused. Singing/scat backend bundles are outside this instrumental workflow.
+
+`python3 scripts/match_audio.py before.wav after.wav --out <new-directory> --start 14 --duration 30` creates preserved matched excerpts and a report. Both files share an RMS target (-24 dBFS by default), reduced together if necessary to respect the peak ceiling. This is an approximate loudness comparison, not a perceptual listening assessment.
+
+### Calibration and channel tone
+
+`calibration: true` applies a bounded, fixed reference-level correction for each
+instrument and renderer. It measures one moderate reference note, then uses that
+same gain across the part, preserving accents and phrase dynamics. It is an
+optional starting balance, not perceptual loudness matching or automatic mixing.
+An explicit `levels: {C1: 0}` mutes that channel, including expression accents.
+
+```yaml
+calibration: true
+mix:
+  C1: {low_cut_hz: 95, high_cut_hz: 10500}
+  C2: {low_cut_hz: 90, tilt_db: -0.5}
+  C3: {low_cut_hz: 30, gain_db: -1}
+mastering: {rms_dbfs: -23, peak_dbfs: -1}
+```
+
+Mix controls process each continuous channel before its dry pan and room send.
+`gain_db` accepts -12..12, `low_cut_hz` 0..1000, `high_cut_hz` 0..18000,
+and `tilt_db` -6..6. Zero bypasses each control. Positive tilt favours frequencies
+above the 1 kHz split; negative tilt favours lower frequencies. Both filters are
+one-pole filters; a high cutoff must exceed a nonzero low cutoff. These controls
+also accept the `drums` channel. Filtering never changes note timing.
+
+Drum dynamics now change strike colour as well as level: quiet hits excite less
+high-frequency energy, while each kit piece retains its own envelope and seeded
+strike variants. Plain playback with unset velocity preserves the original kit.

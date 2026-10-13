@@ -1,0 +1,48 @@
+name: drums benchmark
+key: C
+length: 0.32
+envelope: ""
+harmonic: ""
+instrument: piano
+volume: 12000
+reverb: 0
+humanize: 0
+pan:
+    C1: 0
+sections:
+    - dynamic: p
+      drums:
+        - kick
+        - snare
+        - hat
+        - ride
+        - tom-low
+        - tom-high
+        - crash
+        - z
+      C1: []
+      C2: []
+    - dynamic: mf
+      drums:
+        - kick
+        - snare
+        - hat
+        - ride
+        - tom-low
+        - tom-high
+        - crash
+        - z
+      C1: []
+      C2: []
+    - dynamic: f
+      drums:
+        - kick
+        - snare
+        - hat
+        - ride
+        - tom-low
+        - tom-high
+        - crash
+        - z
+      C1: []
+      C2: []

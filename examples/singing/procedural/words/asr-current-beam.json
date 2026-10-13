@@ -1,0 +1,50 @@
+[
+  {
+    "file": "examples/singing/procedural/words/first_words.wav",
+    "sha256": "2d9bb32edac6e1e51b72b360d5c90f25ebb7f64677591154d22894cd48af5647",
+    "model": ".local/word-eval/base.en",
+    "beam": 5,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.74,
+        "text": " Oh my!",
+        "avg_logprob": -0.9295401891072591,
+        "no_speech_prob": 0.17584103345870972
+      },
+      {
+        "start": 1.74,
+        "end": 3.12,
+        "text": " Hey you!",
+        "avg_logprob": -0.9295401891072591,
+        "no_speech_prob": 0.17584103345870972
+      },
+      {
+        "start": 3.12,
+        "end": 4.62,
+        "text": " Stay!",
+        "avg_logprob": -0.9295401891072591,
+        "no_speech_prob": 0.17584103345870972
+      }
+    ]
+  },
+  {
+    "file": "examples/singing/procedural/words/phrase.wav",
+    "sha256": "c0829d4c3cd15546033e6e78997d5cc8ac442e933480961ae9a95afff46dcf57",
+    "model": ".local/word-eval/base.en",
+    "beam": 5,
+    "no_repeat_ngram": 0,
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": " A-O-S-A-A-O-S-A-A-O-S-A-A-A-O-S-A-A-A-O-S-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A",
+        "avg_logprob": -0.08692774984571669,
+        "no_speech_prob": 0.2927989363670349
+      }
+    ]
+  }
+]

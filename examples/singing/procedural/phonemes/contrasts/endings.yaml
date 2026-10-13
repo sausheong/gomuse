@@ -1,0 +1,116 @@
+name: endings
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  clarity: 0.7
+  breathiness: 0.04
+  breaths: 0
+sections:
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - lie
+    - ''
+    phonemes:
+    - []
+    - - L
+      - AY
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - light
+    - ''
+    phonemes:
+    - []
+    - - L
+      - AY
+      - T
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - ride
+    - ''
+    phonemes:
+    - []
+    - - R
+      - AY
+      - D
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - life
+    - ''
+    phonemes:
+    - []
+    - - L
+      - AY
+      - F
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - lime
+    - ''
+    phonemes:
+    - []
+    - - L
+      - AY
+      - M
+    - []
+- C1:
+  - 0.4:z
+  - 1.4:g3
+  - 0.6:z
+  C2:
+  - 2.4:z
+  scat:
+    syllables:
+    - ''
+    - line
+    - ''
+    phonemes:
+    - []
+    - - L
+      - AY
+      - N
+    - []

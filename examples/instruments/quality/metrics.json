@@ -1,0 +1,26 @@
+{
+  "before": {
+    "duration_seconds": 53.97768707482993,
+    "comparison_duration_seconds": 53.97768707482993,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -14.75466392700184,
+    "clipped_samples": 0,
+    "comparison_gain": 1.9564779747622085,
+    "matched_rms_dbfs": -23.000000315280168,
+    "matched_peak_dbfs": -8.925260196156167,
+    "matched_clipped_samples": 0
+  },
+  "after": {
+    "duration_seconds": 53.70022675736961,
+    "comparison_duration_seconds": 53.97768707482993,
+    "channels": 2,
+    "sample_rate": 44100,
+    "peak_dbfs": -15.384101264790393,
+    "clipped_samples": 0,
+    "comparison_gain": 1.9387607827171616,
+    "matched_rms_dbfs": -22.999999548277398,
+    "matched_peak_dbfs": -9.63328836234974,
+    "matched_clipped_samples": 0
+  }
+}

@@ -1,0 +1,27 @@
+name: check_two
+key: C
+length: 0.5
+instrument: piano
+volume: 18000
+humanize: 0
+reverb: 0
+plain: true
+scat:
+  channel: C1
+  delivery: playful
+  breaths: 0
+  breathiness: 0.05
+sections:
+- C1:
+  - 1:e3
+  - 1.2:g3
+  - 1.8:e3
+  - z
+  C2:
+  - 5:z
+  scat:
+    syllables:
+    - you
+    - see
+    - me
+    - ''

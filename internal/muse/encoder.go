@@ -18,9 +18,22 @@ func init() {
 
 // note represents a musical note
 type note struct {
-	pitch      []int  // if it's a chord, there will be more than 1 pitch
-	accidental []int  // 1 for sharp, -1 for flat, 0 for everything else
-	explicit   []bool // true when the accidental was written explicitly (#, b or n);
+	tone           *ToneControls
+	attackMS       *float64
+	gesture        *Gesture
+	pluckPhrase    bool
+	noteVibrato    *VibratoShape
+	breath         float64
+	explicitSlurs  bool
+	slurGroup      int
+	phrase         *phraseCurve
+	sustainHold    float64
+	stopPitches    map[int]float64
+	instrumentName string
+	performance    *Performance
+	pitch          []int  // if it's a chord, there will be more than 1 pitch
+	accidental     []int  // 1 for sharp, -1 for flat, 0 for everything else
+	explicit       []bool // true when the accidental was written explicitly (#, b or n);
 	// an explicit accidental replaces the key signature for that note instead
 	// of stacking with it
 	length      float64
@@ -54,10 +67,16 @@ type note struct {
 
 // tune represents a piece of music
 type tune struct {
-	key string
-	ch1 []note
-	ch2 []note
-	ch3 []note // centre channel, mixed into both sides
+	mix       map[string]ChannelMix
+	capture   *renderCapture
+	mastering *Mastering
+	room      *RoomSettings
+	// external replaces one pitched channel with a time-aligned neural vocal.
+	external map[int][]int
+	key      string
+	ch1      []note
+	ch2      []note
+	ch3      []note // centre channel, mixed into both sides
 	// drums is the drum part: hits on the kit rather than pitches
 	drums []note
 	// reverb is the amount of room reverb, 0 to 1
@@ -99,11 +118,30 @@ func (t tune) encode() (data []int, err error) {
 		}
 	}
 
+	for _, ch := range t.channels() {
+		prepareStringPerformance(ch)
+	}
 	var cs [channelCount][]int
 	var nominal [channelCount]int
 	for i, ch := range t.channels() {
+		if samples, ok := t.external[i]; ok {
+			cs[i] = samples
+			for _, n := range ch {
+				nominal[i] += sampleCount(n.length)
+			}
+			if len(ch) > 0 && ch[len(ch)-1].placed {
+				n := ch[len(ch)-1]
+				nominal[i] = max(0, n.start) + sampleCount(n.hold)
+			}
+			continue
+		}
 		if cs[i], nominal[i], err = encodeChannel(ch); err != nil {
 			return
+		}
+	}
+	for c := range cs {
+		if settings, ok := t.mix[channelNames[c]]; ok {
+			processChannelMix(cs[c], settings)
 		}
 	}
 	if err = sameLength(cs, nominal); err != nil {
@@ -139,7 +177,20 @@ func (t tune) encode() (data []int, err error) {
 	} else if l, r, err = mixPanned(cs, t.pan); err != nil {
 		return
 	}
-	l, r = reverb(l, r, t.reverb)
+	if t.capture != nil {
+		t.capture.dry(cs, t.pan, l, r)
+	}
+	if t.room != nil {
+		l, r = smallRoom(l, r, cs, t.room, t.reverb)
+	} else {
+		l, r = reverb(l, r, t.reverb)
+	}
+	if t.capture != nil {
+		gain := t.capture.finish(l, r, masteringGain(l, r, t.mastering))
+		scaleStereo(l, r, gain)
+	} else {
+		masterStereo(l, r, t.mastering)
+	}
 	data = interleave(l, r)
 	return
 }
@@ -191,19 +242,89 @@ func encodeChannel(notes []note) (data []int, nominal int, err error) {
 	}
 	data = make([]int, nominal)
 	at := 0
-	for _, n := range notes {
-		var nd []int
-		if nd, err = n.encode(); err != nil {
-			return nil, 0, err
+	var voice phraseVoice
+	var pluck pluckedVoice
+	guitarStroke := 0
+	bassStroke := 0
+	for index, n := range notes {
+		if n.instrumentName == "upright-bass" && len(n.pitch) > 0 {
+			stroke := bassStroke
+			bassStroke++
+			n.velocityIns = func(f, d, v float64) []float64 { return uprightBassStroke(f, d, v, stroke) }
 		}
+		var nd []int
 		pos := at
 		if n.placed {
 			pos = max(0, n.start)
+		}
+		if !n.placed {
+			n.start = pos
+		}
+		if n.pluckPhrase && n.performance != nil && len(n.pitch) == 1 {
+			voice.active = false
+			if n.gesture.transition() && !pluck.active {
+				return nil, 0, fmt.Errorf("%s transition needs a contiguous preceding note", n.instrumentName)
+			}
+			hold := heldTime(n)
+			join := false
+			if index+1 < len(notes) {
+				next := notes[index+1]
+				nextPos := at + sampleCount(n.length)
+				if next.placed {
+					nextPos = max(0, next.start)
+				}
+				join = next.pluckPhrase && next.gesture.transition() && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < .04
+				if join {
+					hold = float64(nextPos-pos) / sampleRate
+				}
+			}
+			if !join && n.performance.Articulation == "let-ring" && (n.gesture == nil || n.gesture.Kind != "mute") {
+				hold = math.Max(hold, n.sustainHold)
+			}
+			nd = pluck.render(n, hold, join)
+		} else if n.performance != nil && len(n.pitch) > 0 && (n.instrumentName == "piano" || pluckedInstrument(n.instrumentName)) {
+			pluck.active = false
+			voice.active = false
+			nd = renderStringPerformance(n, guitarStroke)
+			if n.instrumentName == "guitar" || n.instrumentName == "nylon-guitar" || n.instrumentName == "electric-guitar" {
+				guitarStroke++
+			}
+		} else if n.performance != nil && len(n.pitch) == 1 {
+			pluck.active = false
+			if n.gesture.transition() && !voice.active {
+				return nil, 0, fmt.Errorf("portamento needs a contiguous preceding slurred note")
+			}
+			hold := n.length
+			if n.placed {
+				hold = n.hold
+			}
+			join := false
+			if index+1 < len(notes) && n.performance.Articulation == "legato" {
+				next := notes[index+1]
+				nextPos := at + sampleCount(n.length)
+				if next.placed {
+					nextPos = max(0, next.start)
+				}
+				join = canSlur(n, next) && next.performance != nil && next.performance.Articulation == "legato" && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < 0.04
+				if join {
+					hold = float64(nextPos-pos) / sampleRate
+				}
+			}
+			nd = voice.render(n, hold, join)
+		} else {
+			pluck.active = false
+			voice.active = false
+			if nd, err = n.encode(); err != nil {
+				return nil, 0, err
+			}
 		}
 		if end := pos + len(nd); end > len(data) {
 			data = append(data, make([]int, end-len(data))...)
 		}
 		for k, v := range nd {
+			if n.phrase != nil {
+				v = int(float64(v) * dBGain(n.phraseDB(float64(k)/sampleRate)))
+			}
 			data[pos+k] += v
 		}
 		at += sampleCount(n.length)
@@ -254,7 +375,9 @@ func (n note) encode() (data []int, err error) {
 		var nd []int
 		if n.ins != nil {
 			var samples []float64
-			if n.velocityIns != nil {
+			if n.tone != nil && n.velocityIns != nil {
+				samples = controlledSamples(n, freq, length)
+			} else if n.velocityIns != nil {
 				samples = n.velocityIns(freq, length+n.release, n.velocity)
 				if n.release > 0 {
 					dampAfterHold(samples, length)

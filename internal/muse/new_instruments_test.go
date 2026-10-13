@@ -60,6 +60,12 @@ func TestNewInstrumentVelocityAndEdges(t *testing.T) {
 			if name == "vibraphone" || name == "marimba" {
 				harmonic = 4
 			}
+			if name == "glockenspiel" {
+				harmonic = 2.76
+			}
+			if name == "xylophone" {
+				harmonic = 3
+			}
 			brightness := func(x []float64) float64 { return power(x, 100, 8000, 220*harmonic) / power(x, 100, 8000, 220) }
 			if brightness(hard) <= brightness(soft) {
 				t.Fatal("hard note should have stronger upper partials")

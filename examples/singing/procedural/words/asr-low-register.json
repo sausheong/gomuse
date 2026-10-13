@@ -1,0 +1,16 @@
+[
+  {
+    "file": "examples/singing/procedural/words/phrase_low.wav",
+    "model": ".local/word-eval/base.en",
+    "prompt": null,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.5200000000000005,
+        "text": " Pay you stay, pay you stay",
+        "avg_logprob": -0.8056841969490052,
+        "no_speech_prob": 0.3033510446548462
+      }
+    ]
+  }
+]
