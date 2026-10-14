@@ -1,0 +1,42 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const path = require('node:path');
+const base = path.resolve(__dirname, '../../web/static/player');
+let Processor;
+const sandbox = { AudioWorkletProcessor: class { constructor() { this.port = { postMessage() {} }; } }, sampleRate: 48000, registerProcessor(_name, type) { Processor = type; } };
+vm.runInNewContext(fs.readFileSync(path.join(base, 'processor.js'), 'utf8'), sandbox);
+const p = new Processor();
+const send = data => p.port.onmessage({ data });
+const tick = () => { const out = [[new Float32Array(128), new Float32Array(128)]]; p.process([], out); return out[0]; };
+send({ type: 'chunk', pcm: new Float32Array(8192).fill(.25) });
+send({ type: 'play', value: true });
+assert.equal(tick()[0][0], .25);
+assert.ok(Math.abs(p.position - 128 * 44100 / 48000) < .001, 'resample clock');
+send({ type: 'play', value: false }); const paused = p.position; assert.equal(tick()[0][0], 0); assert.equal(p.position, paused);
+send({ type: 'seek', seconds: .2 }); send({ type: 'play', value: true }); const waiting = p.position; assert.equal(tick()[0][0], 0); assert.equal(p.position, waiting, 'underrun must retain playhead');
+for (let n = 0; n < 3; n++) send({ type: 'chunk', pcm: new Float32Array(8192).fill(.5) });
+assert.equal(tick()[0][0], .5, 'forward seek resumes after buffering');
+send({ type: 'seek', seconds: 0 }); assert.equal(tick()[0][0], .25, 'backward seek reads original data');
+send({ type: 'done' }); send({ type: 'seek', seconds: 10 }); assert.equal(tick()[0][0], 0);
+console.log('AudioWorklet: pause, resume, resampling, seek, underrun and end checks passed');
+
+(async () => {
+  globalThis.crypto ||= require('node:crypto').webcrypto;
+  require(path.join(base, 'wasm_exec.js'));
+  const go = new Go();
+  const { instance } = await WebAssembly.instantiate(fs.readFileSync(path.join(base, 'muse.wasm')), go.importObject);
+  go.run(instance);
+  const score = 'name: Browser test\nkey: C\nlength: 0.2\nplain: true\nvolume: 1000\ninstrument: nylon-guitar\nsections: [{C1: [c4,d4,e4,f4,g4,a4,b4,c5]}]';
+  const open = museOpen(score); assert.equal(open.info.sampleRate, 44100); assert.ok(!open.error);
+  let block = museNext(4096); assert.equal(block.done, false); assert.equal(block.pcm.byteLength, 4096 * 8);
+  const streamed = [new Float32Array(block.pcm.buffer)];
+  while (!block.done) { block = museNext(4096); assert.ok(!block.error); streamed.push(new Float32Array(block.pcm.buffer)); }
+  const result = museRender(score); assert.ok(!result.error); const full = new Float32Array(result.pcm.buffer);
+  let at = 0; for (const c of streamed) for (const v of c) assert.equal(v, full[at++]);
+  assert.equal(at, full.length);
+  assert.match(museOpen('key: invalid\nsections: []').error, /key|notes/);
+  assert.ok(museOpen(score).info, 'recover after invalid score');
+  console.log('Actual Go WebAssembly: progressive and buffered PCM match; validation and recovery passed');
+  process.exit(0);
+})().catch(error => { console.error(error); process.exit(1); });

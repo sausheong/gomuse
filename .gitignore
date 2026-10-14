@@ -13,3 +13,6 @@
 # optional local neural singing runtime, models and cache
 /.local/
 __pycache__/
+# generated browser engine (make player)
+/web/static/player/muse.wasm
+/web/static/player/wasm_exec.js

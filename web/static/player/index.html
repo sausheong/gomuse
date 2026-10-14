@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muse · Score studio</title><link rel="stylesheet" href="player.css">
+</head>
+<body>
+<header><div class="identity"><span class="brand-mark" aria-hidden="true">m</span><span class="brand">Muse</span><span>Score studio</span></div><span class="privacy">● &nbsp; All sound made in your browser</span></header>
+<main>
+<div class="heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h1>Make room for music.</h1></div><label class="file-button">Open score<input id="file" type="file" accept=".yaml,.yml,text/yaml,text/plain"></label></div>
+<div class="workspace">
+<section class="score-pane" aria-labelledby="score-label">
+<div class="section-heading"><h2 id="score-label">Score <span class="format">YAML</span></h2><button id="save-score" class="text-button">Save YAML</button></div>
+<textarea id="score" spellcheck="false" aria-label="Muse YAML score"></textarea><div class="editor-footer"><span id="edit-state">Ready to render</span><span>⌘ / Ctrl + Enter to render</span></div>
+</section>
+<aside class="listening" aria-label="Listening controls"><h2>Listening room</h2><p class="panel-description">Shape what you hear.</p><div class="live-controls">
+<label for="volume">Volume <output id="volume-value">75%</output></label><input id="volume" type="range" min="0" max="100" value="75">
+<label for="pan">Stereo position <output id="pan-value">Centre</output></label><input id="pan" type="range" min="-1" max="1" step="0.01" value="0">
+<label for="tone">Brightness <output id="tone-value">Open</output></label><input id="tone" type="range" min="200" max="20000" step="100" value="20000">
+<button id="reset" class="text-button">Reset sound controls</button>
+</div>
+<button id="download" disabled>Download rendered WAV ↓</button><p class="hint">Live controls affect listening only. WAV export preserves the rendered score.</p>
+<details><summary>Render settings</summary><label for="mode">Start playing</label><select id="mode"><option value="progressive">While the score renders</option><option value="buffered">After the full score renders</option></select>
+<p class="hint" id="mode-hint">Playback begins after a short buffer. Volume follows the score; full-song mastering is reserved for the other mode.</p>
+</details><details><summary>Help &amp; shortcuts</summary><p>⌘ / Ctrl + Enter renders the score. Space pauses or resumes when you are outside a control.</p><p>Seeking into audio that is still rendering waits for it to arrive. A long note or dense chord can take longer to prepare. If playback pauses to buffer, try the full-score mode.</p><p>The browser player supports procedural Muse instruments. Neural singing needs the local CLI. Lyric-based scat prepares its vocal track before progressive playback.</p></details>
+</aside>
+</div>
+<section class="transport" aria-labelledby="player-label">
+<div class="transport-heading"><div><p class="eyebrow">NOW ON THE DESK</p><h2 id="player-label">Ready when you are</h2></div><output id="clock">0:00 / 0:00</output></div>
+
+<p id="status" role="status" aria-live="polite">Ready for a score.</p>
+<p id="error" role="alert" hidden></p>
+<div class="buttons"><button class="primary" id="render">Render &amp; play</button><button id="play" disabled>Play</button><button id="stop" disabled>Stop</button><button id="cancel" disabled>Cancel render</button></div>
+<canvas id="waveform" aria-hidden="true"></canvas><label class="sr-only" for="seek">Position</label><input id="seek" type="range" min="0" max="0" step="0.01" value="0" disabled>
+<progress id="buffer" max="1" value="0" aria-label="Rendered audio"></progress><p class="hint" id="buffer-label">No audio rendered yet.</p>
+</section>
+</main>
+<script type="module" src="player.js"></script>
+</body></html>

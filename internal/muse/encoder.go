@@ -236,103 +236,129 @@ func (t *tune) channels() [channelCount][]note {
 // previous one's written length ends, and its release tail (if any) is
 // added on top of the notes that follow. nominal is the written length of
 // the channel in samples; data is longer when the last note has a tail.
-func encodeChannel(notes []note) (data []int, nominal int, err error) {
-	for _, n := range notes {
-		nominal += sampleCount(n.length)
+// channelCursor renders one musical event at a time while retaining the
+// connected wind/bow/pluck state. Both offline and progressive rendering use it.
+type channelCursor struct {
+	notes                               []note
+	index, at, guitarStroke, bassStroke int
+	voice                               phraseVoice
+	pluck                               pluckedVoice
+}
+
+func (c *channelCursor) next() (int, []int, error) {
+	n := c.notes[c.index]
+	var err error
+	if n.instrumentName == "upright-bass" && len(n.pitch) > 0 {
+		stroke := c.bassStroke
+		c.bassStroke++
+		n.velocityIns = func(f, d, v float64) []float64 { return uprightBassStroke(f, d, v, stroke) }
 	}
-	data = make([]int, nominal)
-	at := 0
-	var voice phraseVoice
-	var pluck pluckedVoice
-	guitarStroke := 0
-	bassStroke := 0
-	for index, n := range notes {
-		if n.instrumentName == "upright-bass" && len(n.pitch) > 0 {
-			stroke := bassStroke
-			bassStroke++
-			n.velocityIns = func(f, d, v float64) []float64 { return uprightBassStroke(f, d, v, stroke) }
+	var nd []int
+	pos := c.at
+	if n.placed {
+		pos = max(0, n.start)
+	}
+	if !n.placed {
+		n.start = pos
+	}
+	if n.pluckPhrase && n.performance != nil && len(n.pitch) == 1 {
+		c.voice.active = false
+		if n.gesture.transition() && !c.pluck.active {
+			return 0, nil, fmt.Errorf("%s transition needs a contiguous preceding note", n.instrumentName)
 		}
-		var nd []int
-		pos := at
+		hold := heldTime(n)
+		join := false
+		if c.index+1 < len(c.notes) {
+			next := c.notes[c.index+1]
+			nextPos := c.at + sampleCount(n.length)
+			if next.placed {
+				nextPos = max(0, next.start)
+			}
+			join = next.pluckPhrase && next.gesture.transition() && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < .04
+			if join {
+				hold = float64(nextPos-pos) / sampleRate
+			}
+		}
+		if !join && n.performance.Articulation == "let-ring" && (n.gesture == nil || n.gesture.Kind != "mute") {
+			hold = math.Max(hold, n.sustainHold)
+		}
+		nd = c.pluck.render(n, hold, join)
+	} else if n.performance != nil && len(n.pitch) > 0 && (n.instrumentName == "piano" || pluckedInstrument(n.instrumentName)) {
+		c.pluck.active = false
+		c.voice.active = false
+		nd = renderStringPerformance(n, c.guitarStroke)
+		if n.instrumentName == "guitar" || n.instrumentName == "nylon-guitar" || n.instrumentName == "electric-guitar" {
+			c.guitarStroke++
+		}
+	} else if n.performance != nil && len(n.pitch) == 1 {
+		c.pluck.active = false
+		if n.gesture.transition() && !c.voice.active {
+			return 0, nil, fmt.Errorf("portamento needs a contiguous preceding slurred note")
+		}
+		hold := n.length
 		if n.placed {
-			pos = max(0, n.start)
+			hold = n.hold
 		}
-		if !n.placed {
-			n.start = pos
+		join := false
+		if c.index+1 < len(c.notes) && n.performance.Articulation == "legato" {
+			next := c.notes[c.index+1]
+			nextPos := c.at + sampleCount(n.length)
+			if next.placed {
+				nextPos = max(0, next.start)
+			}
+			join = canSlur(n, next) && next.performance != nil && next.performance.Articulation == "legato" && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < 0.04
+			if join {
+				hold = float64(nextPos-pos) / sampleRate
+			}
 		}
-		if n.pluckPhrase && n.performance != nil && len(n.pitch) == 1 {
-			voice.active = false
-			if n.gesture.transition() && !pluck.active {
-				return nil, 0, fmt.Errorf("%s transition needs a contiguous preceding note", n.instrumentName)
-			}
-			hold := heldTime(n)
-			join := false
-			if index+1 < len(notes) {
-				next := notes[index+1]
-				nextPos := at + sampleCount(n.length)
-				if next.placed {
-					nextPos = max(0, next.start)
-				}
-				join = next.pluckPhrase && next.gesture.transition() && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < .04
-				if join {
-					hold = float64(nextPos-pos) / sampleRate
-				}
-			}
-			if !join && n.performance.Articulation == "let-ring" && (n.gesture == nil || n.gesture.Kind != "mute") {
-				hold = math.Max(hold, n.sustainHold)
-			}
-			nd = pluck.render(n, hold, join)
-		} else if n.performance != nil && len(n.pitch) > 0 && (n.instrumentName == "piano" || pluckedInstrument(n.instrumentName)) {
-			pluck.active = false
-			voice.active = false
-			nd = renderStringPerformance(n, guitarStroke)
-			if n.instrumentName == "guitar" || n.instrumentName == "nylon-guitar" || n.instrumentName == "electric-guitar" {
-				guitarStroke++
-			}
-		} else if n.performance != nil && len(n.pitch) == 1 {
-			pluck.active = false
-			if n.gesture.transition() && !voice.active {
-				return nil, 0, fmt.Errorf("portamento needs a contiguous preceding slurred note")
-			}
-			hold := n.length
-			if n.placed {
-				hold = n.hold
-			}
-			join := false
-			if index+1 < len(notes) && n.performance.Articulation == "legato" {
-				next := notes[index+1]
-				nextPos := at + sampleCount(n.length)
-				if next.placed {
-					nextPos = max(0, next.start)
-				}
-				join = canSlur(n, next) && next.performance != nil && next.performance.Articulation == "legato" && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < 0.04
-				if join {
-					hold = float64(nextPos-pos) / sampleRate
-				}
-			}
-			nd = voice.render(n, hold, join)
-		} else {
-			pluck.active = false
-			voice.active = false
-			if nd, err = n.encode(); err != nil {
-				return nil, 0, err
-			}
+		nd = c.voice.render(n, hold, join)
+	} else {
+		c.pluck.active = false
+		c.voice.active = false
+		if nd, err = n.encode(); err != nil {
+			return 0, nil, err
+		}
+	}
+
+	for k, v := range nd {
+		if n.phrase != nil {
+			nd[k] = int(float64(v) * dBGain(n.phraseDB(float64(k)/sampleRate)))
+		}
+	}
+	c.at += sampleCount(n.length)
+	c.index++
+	return pos, nd, nil
+}
+func channelNominal(notes []note) int {
+	n := 0
+	for _, event := range notes {
+		n += sampleCount(event.length)
+	}
+	if len(notes) > 0 && notes[len(notes)-1].placed {
+		last := notes[len(notes)-1]
+		n = max(0, last.start) + sampleCount(last.hold)
+	}
+	return n
+}
+func encodeChannel(notes []note) (data []int, nominal int, err error) {
+	nominal = channelNominal(notes)
+	written := 0
+	for _, n := range notes {
+		written += sampleCount(n.length)
+	}
+	data = make([]int, written)
+	c := channelCursor{notes: notes}
+	for c.index < len(notes) {
+		pos, nd, e := c.next()
+		if e != nil {
+			return nil, 0, e
 		}
 		if end := pos + len(nd); end > len(data) {
 			data = append(data, make([]int, end-len(data))...)
 		}
 		for k, v := range nd {
-			if n.phrase != nil {
-				v = int(float64(v) * dBGain(n.phraseDB(float64(k)/sampleRate)))
-			}
 			data[pos+k] += v
 		}
-		at += sampleCount(n.length)
-	}
-	if len(notes) > 0 && notes[len(notes)-1].placed {
-		// timing may stretch the channel; its written end moves with it
-		last := notes[len(notes)-1]
-		nominal = max(0, last.start) + sampleCount(last.hold)
 	}
 	return
 }

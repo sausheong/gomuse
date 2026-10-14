@@ -108,6 +108,17 @@ muse -s [-addr 0.0.0.0:8888] [-data data]
   - Longer tunes can be rendered with the command-line tool.
 - **Security:** all output is HTML-escaped, and tune IDs and sample names are validated before they're used in any file path.
 
+## Bundled browser player
+
+Run `make serve`, then open `/player` or choose **Play in browser** from the score
+editor. Muse's Go engine runs locally as WebAssembly in a background worker.
+Playback can start while the score renders, with seeking and live volume, pan
+and brightness controls. A full-render mode preserves whole-song mastering.
+
+`make player-bundle` creates a standalone static player in `bin/player`, ready
+for localhost or HTTPS hosting without a Go server. See the [browser player
+guide](docs/browser-player.md) for build instructions, controls and limits.
+
 ## Score format
 
 A score is a YAML document:

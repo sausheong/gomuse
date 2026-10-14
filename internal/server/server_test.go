@@ -59,6 +59,22 @@ func TestWebIndex(t *testing.T) {
 	}
 }
 
+func TestWebBrowserPlayer(t *testing.T) {
+	handler, _ := newTestServer(t)
+	for _, path := range []string{"/static/player/", "/static/player/player.js", "/static/player/worker.js", "/static/player/processor.js"} {
+		rec := httptest.NewRecorder()
+		handler.ServeHTTP(rec, httptest.NewRequest(http.MethodGet, path, nil))
+		if rec.Code != http.StatusOK || rec.Body.Len() == 0 {
+			t.Fatalf("GET %s = %d, %d bytes", path, rec.Code, rec.Body.Len())
+		}
+	}
+	rec := httptest.NewRecorder()
+	handler.ServeHTTP(rec, httptest.NewRequest(http.MethodGet, "/player", nil))
+	if rec.Code != http.StatusTemporaryRedirect || rec.Header().Get("Location") != "/static/player/index.html" {
+		t.Fatalf("player redirect: %d %s", rec.Code, rec.Header().Get("Location"))
+	}
+}
+
 // -- /sample/{name} -----------------------------------------------------
 
 func TestWebSampleFound(t *testing.T) {

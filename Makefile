@@ -16,7 +16,7 @@ GOARCH  ?= $(shell go env GOARCH)
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*## "} /^[a-zA-Z_-]+:.*## / {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-build: ## Build bin/muse for this machine
+build: player ## Build bin/muse for this machine
 	go build -trimpath -o $(BIN_DIR)/$(BINARY) $(CMD)
 
 build-convert: ## Build bin/muse-convert, the sheet music converter
@@ -25,7 +25,7 @@ build-convert: ## Build bin/muse-convert, the sheet music converter
 convert: build-convert ## Convert sheet music: make convert PAGES="notation/misty_*.jpeg" OUT=scores/misty.yaml
 	$(BIN_DIR)/muse-convert -o $(OUT) $(PAGES)
 
-build-linux: ## Cross-compile bin/muse-linux-amd64 for deployment
+build-linux: player ## Cross-compile bin/muse-linux-amd64 for deployment
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -o $(BIN_DIR)/$(BINARY)-linux-amd64 $(CMD)
 
 run: build ## Render one score: make run SCORE=scores/tears
@@ -64,3 +64,17 @@ check: fmt-check vet test ## Run everything CI should: format check, vet, tests
 clean: ## Remove build output and rendered tunes
 	rm -rf $(BIN_DIR)
 	rm -f scores/*.wav
+
+.PHONY: player
+player: ## Bundle the browser synthesis engine and matching Go runtime
+	mkdir -p web/static/player
+	GOOS=js GOARCH=wasm go build -trimpath -o web/static/player/muse.wasm ./cmd/muse-wasm
+	install -m 644 "$$(go env GOROOT)/lib/wasm/wasm_exec.js" web/static/player/wasm_exec.js
+
+.PHONY: player-test player-bundle
+player-test: player ## Verify the actual WebAssembly engine and audio worklet
+	node scripts/player/test-player.cjs
+
+player-bundle: player ## Create a standalone static player in bin/player
+	mkdir -p $(BIN_DIR)/player
+	cp web/static/player/* $(BIN_DIR)/player/

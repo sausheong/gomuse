@@ -104,6 +104,9 @@ func (s *Server) Handler() http.Handler {
 
 	router := http.NewServeMux()
 	router.HandleFunc("GET /{$}", s.index)
+	router.HandleFunc("GET /player", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/static/player/index.html", http.StatusTemporaryRedirect)
+	})
 	router.HandleFunc("GET /sample/{name}", s.sample)
 	router.HandleFunc("POST /create", s.create)
 	router.HandleFunc("GET /share/{id}", s.share)
