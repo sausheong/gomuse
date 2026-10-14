@@ -16,3 +16,5 @@ __pycache__/
 # generated browser engine (make player)
 /web/static/player/muse.wasm
 /web/static/player/wasm_exec.js
+# local Cloudflare deployment cache
+/.wrangler/

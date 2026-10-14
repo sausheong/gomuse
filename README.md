@@ -6,6 +6,10 @@ It also comes with `muse-convert`, which turns sheet music (images or PDFs) into
 
 You can use it as a command-line tool, or as a web app where you write a score, listen to it, download it and share it.
 
+**[Open the browser Score studio at muse.sausheong.dev](https://muse.sausheong.dev)**
+to compose and listen without installing anything. Synthesis runs locally in
+your browser; no backend server or account is required.
+
 The design is explained in these articles:
 
 - [Make Music With Maths and Go (Part I)](https://medium.com/geekculture/make-music-with-maths-and-go-i-abfdbcf73b65): generating notes from sine waves, envelopes and harmonics
@@ -159,6 +163,34 @@ with an additional synthesis-work limit. Progressive mode omits whole-song
 mastering and can retain extra trailing silence. Long notes may delay a block;
 scat vocals need preparation, and neural singing requires the local CLI.
 See the [browser player guide](docs/browser-player.md) for details.
+
+### Cloudflare Pages deployment
+
+The public studio is hosted at **[muse.sausheong.dev](https://muse.sausheong.dev)**
+on Cloudflare Pages' free plan. The Pages project is `muse`, with
+`muse-2hn.pages.dev` as its default hostname. The custom domain uses a proxied
+CNAME from `muse` to `muse-2hn.pages.dev`, with HTTPS managed by Cloudflare.
+
+This is a static-only deployment: Cloudflare serves the interface and WebAssembly
+engine, and the visitor's browser renders and plays the music. No Go server,
+Pages Functions, database or paid compute service is needed. Domain registration
+and renewal are separate from the free hosting.
+
+To publish an update, install Go and Node.js/npm, then run from the repository root:
+
+```shell
+# Once per machine, sign in to the Cloudflare account that owns the project.
+npx wrangler login
+
+# Rebuild, verify and upload the static player.
+make player-bundle player-test
+npx wrangler pages deploy bin/player --project-name muse --branch main
+```
+
+The player tests require Node.js. Only the generated files in `bin/player` are
+uploaded; repository scores and other local files are not included. This project
+uses direct uploads, so pushing to GitHub does not automatically deploy changes.
+Local Wrangler cache files are ignored by Git.
 
 ## Score format
 
