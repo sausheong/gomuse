@@ -110,14 +110,55 @@ muse -s [-addr 0.0.0.0:8888] [-data data]
 
 ## Bundled browser player
 
-Run `make serve`, then open `/player` or choose **Play in browser** from the score
-editor. Muse's Go engine runs locally as WebAssembly in a background worker.
-Playback can start while the score renders, with seeking and live volume, pan
-and brightness controls. A full-render mode preserves whole-song mastering.
+The **Score studio** renders and plays Muse scores entirely in your browser.
+The Go synthesis engine runs as WebAssembly in a background worker, while an
+AudioWorklet plays the generated stereo audio. Scores stay local. The standalone
+player needs no rendering backend.
 
-`make player-bundle` creates a standalone static player in `bin/player`, ready
-for localhost or HTTPS hosting without a Go server. See the [browser player
-guide](docs/browser-player.md) for build instructions, controls and limits.
+<p align="center">
+  <img src="docs/images/muse-score-studio.jpg" width="440" alt="Muse Score studio in its compact layout, with a YAML editor, listening controls, rendered waveform and playback transport">
+</p>
+
+- Edit YAML and see when the score differs from the rendered audio.
+- Seek, pause, resume or stop from a persistent transport with a real waveform.
+- Adjust live volume, stereo position and brightness without changing exports.
+- Start playback after a short buffer, or wait for the full render to include
+  whole-song RMS mastering.
+- Download YAML and stereo 44.1 kHz, 16-bit WAV files locally.
+- Use Command/Ctrl + Enter to render, or Space outside controls to pause/resume.
+- Expand render settings and help as needed; the layout adapts to narrow screens.
+
+### Run with the Muse web app
+
+```shell
+make serve
+```
+
+Open `http://localhost:8888/player`, or choose **Play in browser** from the
+existing score editor to carry its current contents into the studio.
+`make build` and `make build-linux` also build and embed the player assets.
+
+### Run as a standalone static player
+
+```shell
+make player-bundle
+python3 -m http.server 8000 --bind 127.0.0.1 --directory bin/player
+```
+
+Open `http://localhost:8000`. Deploy the contents of `bin/player` to any HTTPS
+static host to use it without a Go server. AudioWorklet requires localhost or
+HTTPS; opening the HTML directly as a file is unsupported. The player has no
+service worker or persistent offline cache.
+
+Go is needed to build the bundle, not to use it. Generated `muse.wasm` and
+`wasm_exec.js` are ignored by Git and rebuilt together with `make player`.
+Run that target first if building the web app directly with `go build`.
+
+Browser scores are limited to 2 MB and ten minutes of written/performed music,
+with an additional synthesis-work limit. Progressive mode omits whole-song
+mastering and can retain extra trailing silence. Long notes may delay a block;
+scat vocals need preparation, and neural singing requires the local CLI.
+See the [browser player guide](docs/browser-player.md) for details.
 
 ## Score format
 
@@ -665,9 +706,11 @@ In the web app, open any of these at `/sample/<name>`, e.g. `/sample/tears`. Eve
 ```
 cmd/muse/            entry point: CLI rendering and the -s web app flags
 cmd/muse-convert/    entry point: sheet music to score converter
+cmd/muse-wasm/       WebAssembly bridge for in-browser synthesis
 internal/muse/       audio engine
   parser.go            YAML scores, notes, chords, length checks
   encoder.go           pitches, key signatures, synthesis of notes, rests and chords
+  player.go            buffered PCM rendering and progressive audio blocks
   envelope.go          envelope functions
   harmonic.go          harmonic functions
   instrument.go        what every instrument shares: the contract, the registry, additive synthesis
@@ -691,8 +734,11 @@ internal/server/     web app: routes, handlers, edit cookies
 web/                 embedded web assets
   templates/           HTML page templates
   static/              CSS, JavaScript (CodeMirror editor), images
+    player/              standalone studio UI, synthesis worker and AudioWorklet
 scores/              sample scores (also embedded for /sample/{name})
 notation/            sheet music pages to convert
+scripts/player/      actual WebAssembly and AudioWorklet checks
+PRODUCT.md           studio users, purpose and design principles
 Makefile             build, run, test and release tasks
 ```
 
@@ -704,10 +750,15 @@ Dependencies: [go-audio/wav](https://github.com/go-audio/wav), [rs/xid](https://
 make check              # gofmt check, go vet, tests
 make race               # tests with the race detector
 make cover              # coverage report
+make player-test        # build WASM and test engine/worklet behaviour (needs Node.js)
 ```
 
-Every test is hermetic: it writes only to temporary folders. The tests cover:
+Go tests write their rendered outputs to temporary folders. `make player-test`
+first rebuilds the browser assets, then tests the actual WASM engine and worklet.
+The tests cover:
 
+- buffered/progressive PCM parity, browser score limits, connected voices and effects
+- AudioWorklet seeking, pause/resume, resampling and underruns (via `make player-test`)
 - pitch and frequency maths
 - exact sample counts
 - clipping
