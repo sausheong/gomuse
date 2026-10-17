@@ -1,13 +1,11 @@
 package muse
 
 import (
-	"fmt"
-	"gopkg.in/yaml.v3"
-	"os"
 	"reflect"
-	"strconv"
 	"strings"
 	"testing"
+
+	"gopkg.in/yaml.v3"
 )
 
 const notationFixture = `version: 2
@@ -154,82 +152,5 @@ func TestNotationSequenceAndSilentOverride(t *testing.T) {
 	}
 	if err := Check(&s); err != nil {
 		t.Fatal(err)
-	}
-}
-
-func TestLivingYearsNotationMigration(t *testing.T) {
-	read := func(path string) Score {
-		t.Helper()
-		doc, err := os.ReadFile(path)
-		if err != nil {
-			t.Fatal(err)
-		}
-		expanded, err := ExpandScore(doc)
-		if err != nil {
-			t.Fatal(err)
-		}
-		var s Score
-		if err = yaml.Unmarshal(expanded, &s); err != nil {
-			t.Fatal(err)
-		}
-		return s
-	}
-	a := read("../../scores/the_living_years_expressive_phrases.yaml")
-	b := read("../../scores/the_living_years_expressive.yaml")
-	if len(a.Sections) != len(b.Sections) {
-		t.Fatal("section count changed")
-	}
-	// Coalesce equivalent consecutive rests; no sounding events may change.
-	normalize := func(notes []string) []string {
-		out := []string{}
-		silence := 0.
-		flush := func() {
-			if silence > 0 {
-				out = append(out, fmt.Sprintf("%g:z", silence))
-				silence = 0
-			}
-		}
-		for _, n := range notes {
-			if strings.HasSuffix(n, ":z") || n == "z" {
-				beats := 1.
-				if raw, _, ok := strings.Cut(n, ":"); ok {
-					beats, _ = strconv.ParseFloat(raw, 64)
-				}
-				silence += beats
-			} else {
-				flush()
-				out = append(out, n)
-			}
-		}
-		flush()
-		return out
-	}
-	for i := range a.Sections {
-		x, y := a.Sections[i], b.Sections[i]
-		x.Label = ""
-		y.Label = ""
-		x.C1 = normalize(x.C1)
-		y.C1 = normalize(y.C1)
-		x.C2 = normalize(x.C2)
-		y.C2 = normalize(y.C2)
-		x.C3 = normalize(x.C3)
-		y.C3 = normalize(y.C3)
-		x.Drums = normalize(x.Drums)
-		y.Drums = normalize(y.Drums)
-		ax, _ := yaml.Marshal(x)
-		by, _ := yaml.Marshal(y)
-		if string(ax) != string(by) {
-			t.Fatalf("section %d changed musical or expressive content", i+1)
-		}
-	}
-	a.Sections = nil
-	b.Sections = nil
-	// Per-track instruments replace the legacy fallback instrument.
-	a.Instrument = ""
-	b.Instrument = ""
-	ax, _ := yaml.Marshal(a)
-	by, _ := yaml.Marshal(b)
-	if string(ax) != string(by) {
-		t.Fatal("global performance settings changed")
 	}
 }

@@ -34,7 +34,7 @@ func humanizeAmount(s *Score) float64 {
 	if s.Humanize == nil {
 		return defaultHumanize
 	}
-	return math.Max(0, math.Min(1, *s.Humanize))
+	return clampFloat(*s.Humanize, 0, 1)
 }
 
 // tempoSection describes one section for the tempo map.
@@ -74,10 +74,7 @@ func buildTempoMap(s *Score, t *tune) tempoMap {
 			}
 			d = math.Max(d, sum)
 		}
-		beat := sec.Length
-		if beat == 0 {
-			beat = s.Length
-		}
+		beat := sectionBeat(*s, sec)
 		if beat <= 0 {
 			beat = 0.25
 		}
@@ -172,7 +169,7 @@ func applyTiming(s *Score, t *tune) {
 					if s.Ensemble != nil {
 						offset := s.Ensemble.OffsetsMS[channelNames[c]] / 1000
 						limit := math.Min(.04, (endAt-startAt)*.25)
-						startAt += math.Max(-limit, math.Min(limit, offset))
+						startAt += clampFloat(offset, -limit, limit)
 					}
 					startAt = math.Max(0, startAt)
 				}
@@ -202,7 +199,7 @@ func jitterFor(rnd *rand.Rand, h float64, channel int) float64 {
 	if channel == 0 {
 		j -= melodyLead * h
 	}
-	return math.Max(-jitterMax, math.Min(jitterMax, j))
+	return clampFloat(j, -jitterMax, jitterMax)
 }
 
 // chordSpread is the delay between the pitches of a rolled chord: a

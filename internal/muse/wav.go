@@ -57,18 +57,10 @@ func writeWAV(name string, data []int) (err error) {
 	return nil
 }
 
-// make stereo channels for the WAV file. c3, if not empty, is a centre
-// channel added equally to both sides. Every sample is hard-clamped to the
-// 16-bit signed range here, once, after the channels have been fully summed
-// - this is the only place clipping is applied, so chords or high volumes
-// can no longer wrap around instead of clipping.
-func stereo(c1, c2, c3 []int) (data []int, err error) {
-	l, r, err := mix(c1, c2, c3)
-	if err != nil {
-		return
-	}
-	return interleave(l, r), nil
-}
+// The channels are mixed with mix or mixPanned, and every sample is
+// hard-clamped to the 16-bit signed range once, by interleave, after the
+// channels have been fully summed - so chords or high volumes clip instead
+// of wrapping around.
 
 // mix lines up the channels and adds them into a left and right side: C1
 // on the left, C2 on the right (or C1 again if there is no C2), and C3 on
@@ -142,7 +134,7 @@ func mixPanned(cs [channelCount][]int, pan []float64) (l, r []int, err error) {
 		}
 		p := 0.0
 		if i < len(pan) {
-			p = math.Max(-1, math.Min(1, pan[i]))
+			p = clampFloat(pan[i], -1, 1)
 		}
 		// equal power: both sides at 1/sqrt2 in the centre, scaled up by
 		// sqrt2 so a centred channel keeps its level on each side

@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"math"
-	"os"
 	"strconv"
 	"strings"
 
@@ -99,19 +98,6 @@ type Section struct {
 	Scat   *ScatSection `yaml:"scat,omitempty"`
 }
 
-// ParseFile reads a score file (filename+".yaml") and writes the resulting
-// tune to filename+".wav", both relative to the current working directory.
-// There is no length limit for the command line tool.
-func ParseFile(s *Score, filename string) (name string, err error) {
-	scoreFile, err := os.ReadFile(filename + ".yaml")
-	if err != nil {
-		err = fmt.Errorf("cannot read score file > %v ", err)
-		return
-	}
-	name, err = Parse(s, scoreFile, filename, 0)
-	return
-}
-
 // Parse reads a score, converts it into a Score struct and writes the
 // resulting audio to outfile+".wav". maxSamples caps the number of samples
 // allowed in any one channel; maxSamples <= 0 means unlimited. A score that
@@ -141,21 +127,12 @@ func ParseWithSinger(ctx context.Context, s *Score, score []byte, outfile string
 	// reject a score that would be too long before synthesising any audio,
 	// computed purely from the notes' durations
 	if maxSamples > 0 {
-		if n := channelSamples(t.ch1); n > maxSamples {
-			err = fmt.Errorf("tune too long > channel 1 needs %d samples, max is %d ", n, maxSamples)
-			return
-		}
-		if n := channelSamples(t.ch2); n > maxSamples {
-			err = fmt.Errorf("tune too long > channel 2 needs %d samples, max is %d ", n, maxSamples)
-			return
-		}
-		if n := channelSamples(t.ch3); n > maxSamples {
-			err = fmt.Errorf("tune too long > channel 3 needs %d samples, max is %d ", n, maxSamples)
-			return
-		}
-		if n := channelSamples(t.drums); n > maxSamples {
-			err = fmt.Errorf("tune too long > the drums need %d samples, max is %d ", n, maxSamples)
-			return
+		needs := [channelCount]string{"channel 1 needs", "channel 2 needs", "channel 3 needs", "the drums need"}
+		for c, ch := range t.channels() {
+			if n := channelSamples(ch); n > maxSamples {
+				err = fmt.Errorf("tune too long > %s %d samples, max is %d ", needs[c], n, maxSamples)
+				return
+			}
 		}
 	}
 
@@ -207,46 +184,27 @@ func buildTune(s *Score) (tune, error) {
 			return tune{}, err
 		}
 	}
-	t := tune{
-		key: s.Key,
-		ch1: []note{},
-		ch2: []note{},
-		ch3: []note{},
-	}
+	// C1 to C3 start empty rather than nil; the drums stay nil without notes
+	chs := [channelCount][]note{{}, {}, {}, nil}
 	for _, section := range s.Sections {
-		for _, n := range section.C1 {
-			nt, err := makeChannelNote(n, section, *s, "C1")
-			if err != nil {
-				return t, fmt.Errorf("[C1] cannot make note > %v ", err)
+		for c, name := range channelNames {
+			for _, n := range sectionChannel(section, c) {
+				var nt note
+				var err error
+				if c == drumChannel {
+					nt, err = makeDrumNote(n, section, *s)
+					nt.hit = len(chs[c])
+				} else {
+					nt, err = makeChannelNote(n, section, *s, name)
+				}
+				if err != nil {
+					return tune{key: s.Key}, fmt.Errorf("[%s] cannot make note > %v ", name, err)
+				}
+				chs[c] = append(chs[c], nt)
 			}
-			t.ch1 = append(t.ch1, nt)
-		}
-
-		for _, n := range section.C2 {
-			nt, err := makeChannelNote(n, section, *s, "C2")
-			if err != nil {
-				return t, fmt.Errorf("[C2] cannot make note > %v ", err)
-			}
-			t.ch2 = append(t.ch2, nt)
-		}
-
-		for _, n := range section.C3 {
-			nt, err := makeChannelNote(n, section, *s, "C3")
-			if err != nil {
-				return t, fmt.Errorf("[C3] cannot make note > %v ", err)
-			}
-			t.ch3 = append(t.ch3, nt)
-		}
-
-		for _, n := range section.Drums {
-			nt, err := makeDrumNote(n, section, *s)
-			if err != nil {
-				return t, fmt.Errorf("[drums] cannot make note > %v ", err)
-			}
-			nt.hit = len(t.drums)
-			t.drums = append(t.drums, nt)
 		}
 	}
+	t := tune{key: s.Key, ch1: chs[0], ch2: chs[1], ch3: chs[2], drums: chs[3]}
 	expressive(s, &t)
 	applyDynamics(s, &t)
 	applyTiming(s, &t)
@@ -336,16 +294,27 @@ func makeChannelNote(noteString string, section Section, score Score, channel st
 	return n, nil
 }
 
+// sectionBeat is the length of a beat in a section, in seconds: the
+// section's own, or else the score's
+func sectionBeat(s Score, sec Section) float64 {
+	if sec.Length != 0 {
+		return sec.Length
+	}
+	return s.Length
+}
+
+// sectionVolume is a section's volume: its own, or else the score's
+func sectionVolume(s Score, sec Section) int {
+	if sec.Volume != 0 {
+		return sec.Volume
+	}
+	return s.Volume
+}
+
 // make a note
 func makeNote(noteString string, section Section, score Score) (n note, err error) {
-	length := section.Length
-	if length == 0.0 {
-		length = score.Length
-	}
-	vol := section.Volume
-	if vol == 0 {
-		vol = score.Volume
-	}
+	length := sectionBeat(score, section)
+	vol := sectionVolume(score, section)
 	env := section.Envelope
 	if env == "" {
 		env = score.Envelope

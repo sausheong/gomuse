@@ -13,9 +13,8 @@ import "math"
 type instrument = func(freq, duration float64) []float64
 
 // instruments holds every instrument by name. Each file that defines
-// instruments registers them here in an init function: strings.go (guitar,
-// piano, bass), voice.go (voice), winds.go (trumpet, saxophone),
-// keyboards.go, woodwinds.go, bowed.go, acoustic.go and synth.go.
+// instruments registers them here in an init function, most through
+// registerVelocityInstrument (see keyboards.go).
 var instruments = map[string]instrument{}
 
 // maxPartialFreq keeps overtones well below the Nyquist frequency (half the

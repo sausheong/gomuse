@@ -2,7 +2,7 @@
 
 Muse turns music scores written in YAML into stereo WAV files. It uses nothing but Go and some simple maths: every note is built from sine waves, either shaped by an envelope and coloured by harmonics, or synthesised whole by an instrument (acoustic, electric and electronic instruments), with a synthesised drum kit to keep time. A score is then played the way a person would play it, with dynamics, phrasing, loose timing, stereo placement and a room, unless you ask for it exactly as written.
 
-It also comes with `muse-convert`, which turns sheet music (images or PDFs) into scores using Claude's vision.
+It also comes with `muse-convert`, which turns sheet music (images or PDFs) into scores using Claude's vision, and `muse-lab`, which renders instrument studies and aligned stems for listening and measurement.
 
 You can use it as a command-line tool, or as a web app where you write a score, listen to it, download it and share it.
 
@@ -69,15 +69,31 @@ An instrument instead synthesises the whole note at once, so each overtone can c
 - **Harmonic** adds overtones to the fundamental frequency to change the timbre.
 - **Chords** are the samples of their notes added together.
 - **Expression:** unless a score sets `plain: true`, it's played the way a person would play it, not exactly as written: louder and softer with the [dynamics](#dynamics) and crescendos you mark, with accents and phrasing, notes that ring into each other, loose [timing](#timing) that slows for a ritardando or holds a fermata, the parts [placed across the stereo field](#parts-and-stereo-placement), and a room around it all (see [Expression](#expression)).
-- **Channels:** a score has up to three pitched channels, `C1`, `C2` and `C3`, usually the melody, the accompaniment and the bass, plus an optional [drum part](#drums). They're placed across the stereo field (the melody and the drums in the middle) and mixed into a stereo WAV; a `plain` score instead puts `C1` on the left, `C2` on the right and `C3` and the drums in the centre (see [Parts and stereo placement](#parts-and-stereo-placement)). Samples are clamped to the 16-bit range, so loud chords clip rather than wrap around.
+- **Channels:** a score has up to three pitched channels, `C1`, `C2` and `C3`, usually the melody, the accompaniment and the bass, plus an optional [drum part](#drums). They're placed across the stereo field (the melody and the drums in the middle) and mixed into a stereo WAV; a `plain` score instead puts `C1` on the left, `C2` on the right and `C3` and the drums in the centre (see [Parts and stereo placement](#parts-and-stereo-placement)). Samples are clamped to the 16-bit range, so loud chords clip rather than wrap around. The channels are independent, so they're synthesised at the same time, which roughly halves the render time of a full arrangement.
 
 ## Command-line tool
 
 ```shell
-muse <path/to/score>    # without the .yaml extension
+muse <path/to/score>    # with or without the .yaml extension
 ```
 
-This reads `<score>.yaml` and writes `<score>.wav` next to it, relative to the current directory. On success it prints the tune's name and how long it took. On failure it prints the error to stderr and exits with a non-zero status. There's no length limit on the command line.
+This reads `<score>.yaml` and writes `<score>.wav` next to it, relative to the current directory. On success it prints the tune's name and how long it took. On failure it prints the error to stderr and exits with a non-zero status. The web app's duration limit does not apply on the command line.
+
+| Flag | Meaning |
+|---|---|
+| `-expand <output.yaml>` | Validate and write a standalone legacy score with patterns and styles resolved, without rendering audio. Refuses to overwrite an existing file |
+| `-singing-plan <output.json>` | Write the vocal timeline without loading a model or rendering audio |
+| `-singer <config.json>` | Render with a configured local neural singer (see [Optional neural singing](#optional-neural-singing-experimental)) |
+
+Put flags before the score path. These options are CLI-only; `-expand` cannot be combined with either singing option. Expansion leaves the source score unchanged.
+
+```shell
+go run ./cmd/muse -expand /tmp/demo-expanded.yaml scores/notation_v2_demo.yaml
+go run ./cmd/muse-lab -instrument piano -out /tmp/muse-piano-study
+go run ./cmd/muse-lab -score scores/misty_final.yaml -out /tmp/muse-misty-stems
+```
+
+Use a new output path for expansion and a new directory for each `muse-lab` run.
 
 ## Web app
 
@@ -194,7 +210,61 @@ Local Wrangler cache files are ignored by Git.
 
 ## Score format
 
-A score is a YAML document:
+A score is a YAML document. New compositions can use Muse 2 to keep repeated
+music in named patterns and express playback order separately:
+
+```yaml
+version: 2
+name: A small song
+key: C
+tempo: 96
+meter: 4/4
+volume: 5000
+tracks:
+  melody: {instrument: flute, playing: lyrical-wind}
+  keys: {instrument: piano, playing: gentle-piano, level: 0.6}
+  kit: {instrument: drums, level: 0.5}
+patterns:
+  tune: "c5 d5 e5 g5 |"
+  harmony: "4:c4-e4-g4 |"
+  backbeat: "kick hat snare hat |"
+sections:
+  verse:
+    bars: 1
+    dynamic: mp
+    parts:
+      melody: {use: tune}
+      keys: {use: harmony}
+  chorus:
+    extends: verse
+    dynamic: mf
+    parts:
+      kit: {use: backbeat}
+form: [verse, {use: chorus, repeat: 2}]
+```
+
+Track names are user-defined. Up to three pitched tracks map, in written order,
+to `C1`, `C2` and `C3`; one optional drum track maps to the kit. `tempo` is
+quarter-note BPM, and `|` checks bar lengths against `meter`. Omitted tracks are
+silent for the section. Section variants inherit unchanged parts; `track: off`
+silences an inherited part. Named `styles` and note `marks` keep expression close
+to the music. Both the CLI and web app accept Muse 2.
+
+See the [Muse 2 guide](docs/notation-v2.md) for patterns, phrase boundaries,
+section inheritance, repetition and validation. Unknown fields, invalid durations
+and cyclic references are rejected. Muse 2 currently accepts a subset of engine
+settings: use the unversioned format for mastering, calibration, channel filters,
+shared-room, ensemble, singing and scat configuration.
+
+### Legacy and phrase scores
+
+Existing unversioned scores remain supported. The [editable phrase
+format](docs/editable-scores.md) adds `parts`, `playing`, phrase shapes and inline
+note marks to these scores. The remaining field tables and examples describe the
+unversioned engine format; instrument names and basic note tokens also apply to
+Muse 2.
+
+A minimal legacy score looks like this:
 
 ```yaml
 name: C major scale with C major chord progression
@@ -703,10 +773,13 @@ ANTHROPIC_MODEL="claude-opus-5-5"
 
 ## Sample scores
 
-The `scores/` folder contains these scores. Those marked † are longer than the web app's limit (about 2 minutes 16 seconds), so render them with the command-line tool.
+The `scores/` folder includes the following selections. Those marked † are longer than the web app's limit (about 2 minutes 16 seconds), so render them with the command-line tool.
 
 | File | Tune | Key | Sound |
 |---|---|---|---|
+| `notation_v2_demo.yaml` | Named sections, patterns and repeated form | C | flute, piano and drums |
+| `the_living_years_expressive.yaml` | The Living Years, Muse 2 arrangement † | A♭ | saxophone, electric piano, bass and drums |
+| `misty_final.yaml` | Misty, editable phrases with calibration, shared room and mastering † | E♭ | clarinet, piano and upright bass |
 | `scale.yaml` | C major scale with a C major chord progression | C | round / first |
 | `after_all.yaml` | After All † | D | tempered / stringed |
 | `after_all_guitar.yaml` | After All, first chorus | D | guitar |
@@ -738,11 +811,17 @@ In the web app, open any of these at `/sample/<name>`, e.g. `/sample/tears`. Eve
 ```
 cmd/muse/            entry point: CLI rendering and the -s web app flags
 cmd/muse-convert/    entry point: sheet music to score converter
+cmd/muse-lab/        instrument studies and aligned master/stem exports
 cmd/muse-wasm/       WebAssembly bridge for in-browser synthesis
 internal/muse/       audio engine
   parser.go            YAML scores, notes, chords, length checks
-  encoder.go           pitches, key signatures, synthesis of notes, rests and chords
+  notation.go          Muse 2 tracks, patterns, section inheritance and form
+  authoring.go         editable phrases, playing styles and inline note marks
+  presets.go           reusable performance and expression presets
+  encoder.go           pitches, key signatures, notes, rests and chords; renders channels concurrently
   player.go            buffered PCM rendering and progressive audio blocks
+  dsp.go               small shared signal helpers: clamping, dB, ramps, fades, normalising, resonances
+  phrase_profile.go    instrument families and the connected wind/bow voice's timbres
   envelope.go          envelope functions
   harmonic.go          harmonic functions
   instrument.go        what every instrument shares: the contract, the registry, additive synthesis
@@ -755,6 +834,11 @@ internal/muse/       audio engine
   dynamics.go          dynamic markings, hairpins, tone of soft notes
   timing.go            tempo map, ritardando, fermata, swing, humanize
   reverb.go            room reverb
+  small_room.go        shared room with per-channel sends (one bus for WAV and streamed playback)
+  mix_controls.go      instrument calibration and channel filters (shared by WAV and streamed playback)
+  mastering.go         RMS target and sample-peak ceiling
+  ensemble.go          part offsets, variation and chord spread
+  render_bundle.go     aligned master, dry stems and room return
   wav.go               stereo interleaving, clipping, WAV writing
 internal/convert/    sheet music transcription with Claude
   convert.go           requests, page continuation, fix-up loop
@@ -762,6 +846,7 @@ internal/convert/    sheet music transcription with Claude
   score.go             assembling pages, checks, automatic volume
   image.go             shrinking oversized images
   env.go               reading .env
+internal/singing/    optional local neural-singer backend
 internal/server/     web app: routes, handlers, edit cookies
 web/                 embedded web assets
   templates/           HTML page templates
@@ -769,7 +854,10 @@ web/                 embedded web assets
     player/              standalone studio UI, synthesis worker and AudioWorklet
 scores/              sample scores (also embedded for /sample/{name})
 notation/            sheet music pages to convert
-scripts/player/      actual WebAssembly and AudioWorklet checks
+docs/                notation, editable-score and sound-quality guides
+examples/            instrument studies and singing/listening comparisons
+scripts/             audio measurement, matched comparisons and singing tools
+  player/              actual WebAssembly and AudioWorklet checks
 PRODUCT.md           studio users, purpose and design principles
 Makefile             build, run, test and release tasks
 ```
@@ -785,7 +873,8 @@ make cover              # coverage report
 make player-test        # build WASM and test engine/worklet behaviour (needs Node.js)
 ```
 
-Go tests write their rendered outputs to temporary folders. `make player-test`
+Go tests write their rendered outputs to temporary folders, and the sample
+scores render in parallel, so `make test` takes under a minute. `make player-test`
 first rebuilds the browser assets, then tests the actual WASM engine and worklet.
 The tests cover:
 
@@ -796,6 +885,9 @@ The tests cover:
 - clipping
 - key signatures and accidentals
 - parser errors
+- Muse 2 expansion, strict fields, track mapping, patterns, section inheritance and repeat limits
+- phrase styles, inline marks, instrument gestures and compatible transitions
+- calibration, channel filters, mastering, shared-room sends and stem reconstruction
 - rendering every sample score and decoding the WAV back
 - instruments: normalisation and tuning for all of them, decay for the guitar, piano and bass, formants and vibrato for the voice, brightening and vibrato for the winds
 - drums: every drum rendered and varied, where each sits in the spectrum, parsing drum notes, drums following the tempo map, drums-only scores

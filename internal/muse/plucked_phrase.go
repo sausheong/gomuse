@@ -87,10 +87,7 @@ func (v *pluckedVoice) render(n note, hold float64, join bool) []int {
 		duration = hold
 	}
 	out := make([]int, sampleCount(duration))
-	gain := n.gain
-	if gain == 0 {
-		gain = 1
-	}
+	gain := n.effectiveGain()
 	for i := range out {
 		t := float64(i) / sampleRate
 		if connected {

@@ -44,10 +44,10 @@ func validatePerformance(s *Score) error {
 			if p.Articulation != "" && p.Articulation != "legato" && p.Articulation != "detached" && p.Articulation != "staccato" && p.Articulation != "picked" && p.Articulation != "let-ring" && p.Articulation != "palm-mute" {
 				return fmt.Errorf("performance: unknown articulation %q", p.Articulation)
 			}
-			if math.IsNaN(p.Swell) || math.IsInf(p.Swell, 0) || p.Swell < 0 || p.Swell > 1 {
+			if !finiteRange(p.Swell, 0, 1) {
 				return fmt.Errorf("performance swell must be 0..1")
 			}
-			if math.IsNaN(p.Vibrato) || math.IsInf(p.Vibrato, 0) || p.Vibrato < 0 || p.Vibrato > 30 {
+			if !finiteRange(p.Vibrato, 0, 30) {
 				return fmt.Errorf("performance vibrato must be 0..30 cents")
 			}
 			if p.Pedal != "" && p.Pedal != "up" && p.Pedal != "down" {
@@ -56,7 +56,7 @@ func validatePerformance(s *Score) error {
 			if p.Strum != "" && p.Strum != "up" && p.Strum != "down" && p.Strum != "alternate" {
 				return fmt.Errorf("performance strum must be up, down or alternate")
 			}
-			if math.IsNaN(p.StrumMS) || math.IsInf(p.StrumMS, 0) || p.StrumMS < 0 || p.StrumMS > 120 {
+			if !finiteRange(p.StrumMS, 0, 120) {
 				return fmt.Errorf("performance strum_ms must be 0..120")
 			}
 			if p.StrumMS > 0 && p.Strum == "" {
@@ -119,7 +119,7 @@ func (v *phraseVoice) render(n note, hold float64, join bool) []int {
 	// Cap it at half the performed hold so short events stay playable.
 	if n.breath > 0 {
 		join = false
-		end := math.Max(0, math.Min(sounding, hold-math.Min(n.breath, hold/2)))
+		end := clampFloat(hold-math.Min(n.breath, hold/2), 0, sounding)
 		release = math.Min(release, end/3)
 		sounding = end - release
 	}
@@ -128,10 +128,7 @@ func (v *phraseVoice) render(n note, hold float64, join bool) []int {
 		duration = hold
 	}
 	out := make([]int, sampleCount(duration))
-	gain := n.gain
-	if gain == 0 {
-		gain = 1
-	}
+	gain := n.effectiveGain()
 	velocity := playingVelocity(n.velocity)
 	base, attack := profile.levels, profile.attack
 	if n.attackMS != nil {
@@ -167,7 +164,7 @@ func (v *phraseVoice) render(n note, hold float64, join bool) []int {
 		hz := v.freq * math.Exp2(modulation/1200)
 		if n.gesture != nil && n.gesture.Kind == "fall" {
 			d := n.gesture.seconds(hold)
-			u := math.Max(0, math.Min(1, (t-(sounding-d))/math.Max(d, 1.0/sampleRate)))
+			u := clampFloat((t-(sounding-d))/math.Max(d, 1.0/sampleRate), 0, 1)
 			steps := n.gesture.Semitones
 			if steps == 0 {
 				steps = 2
@@ -199,12 +196,12 @@ func (v *phraseVoice) render(n note, hold float64, join bool) []int {
 		v.slow += 0.06 * (v.noise - v.slow)
 		friction := profile.noise
 		if n.instrumentName == "clarinet" {
-			pressure := math.Max(.1, math.Min(1, velocity+n.phraseDB(t)/30+.1*n.phraseTone(t)))
+			pressure := clampFloat(velocity+n.phraseDB(t)/30+.1*n.phraseTone(t), .1, 1)
 			friction = .004 + .009*pressure*pressure + .006*velocity*math.Exp(-v.age/.025)
 			env *= 1 - .12*math.Exp(-v.age/.018)
 		}
 		if windInstrument(n.instrumentName) && n.instrumentName != "clarinet" {
-			friction *= math.Max(.2, math.Min(1.5, 1+n.phraseDB(t)/24+.2*n.phraseTone(t)))
+			friction *= clampFloat(1+n.phraseDB(t)/24+.2*n.phraseTone(t), .2, 1.5)
 		}
 		sum += friction * (v.noise - v.slow) * (0.5 + velocity)
 		out[i] = int(sum * env * v.level * profile.gain)
@@ -224,25 +221,26 @@ func (p Performance) enabled() bool {
 }
 
 func validateInstrumentPerformance(n note, p Performance) error {
-	switch n.instrumentName {
-	case "piano":
+	name := n.instrumentName
+	switch {
+	case name == "piano":
 		if p.Pedal == "" || p.Articulation != "" || p.Strum != "" || p.Swell != 0 || p.Vibrato != 0 {
 			return fmt.Errorf("piano performance accepts pedal only")
 		}
-	case "nylon-guitar", "guitar", "electric-guitar", "bass", "upright-bass":
+	case pluckedInstrument(name):
 		if p.Pedal != "" || p.Swell != 0 || p.Vibrato != 0 {
 			return fmt.Errorf("guitar performance accepts articulation and strum only")
 		}
 		if p.Articulation != "" && p.Articulation != "picked" && p.Articulation != "let-ring" && p.Articulation != "palm-mute" {
 			return fmt.Errorf("guitar articulation must be picked, let-ring or palm-mute")
 		}
-		if (n.instrumentName == "bass" || n.instrumentName == "upright-bass") && (len(n.pitch) > 1 || p.Strum != "") {
+		if bassInstrument(name) && (len(n.pitch) > 1 || p.Strum != "") {
 			return fmt.Errorf("bass performance requires a single note and no strum")
 		}
 		if len(n.pitch) > 6 {
 			return fmt.Errorf("guitar performance supports at most six pitches per chord")
 		}
-	case "trombone", "french-horn", "oboe", "bassoon", "violin", "cello", "clarinet", "flute", "trumpet", "saxophone", "sax", "synth-lead":
+	case sustainedInstrument(name):
 		if p.Pedal != "" || p.Strum != "" || (p.Articulation != "legato" && p.Articulation != "detached" && p.Articulation != "staccato") {
 			return fmt.Errorf("sustained performance requires legato, detached or staccato")
 		}
@@ -250,7 +248,7 @@ func validateInstrumentPerformance(n note, p Performance) error {
 			return fmt.Errorf("performance requires a monophonic part")
 		}
 	default:
-		return fmt.Errorf("performance does not support %s", n.instrumentName)
+		return fmt.Errorf("performance does not support %s", name)
 	}
 	return nil
 }

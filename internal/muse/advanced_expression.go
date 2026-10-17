@@ -23,11 +23,8 @@ type ToneShape struct {
 	End   float64 `yaml:"end"`
 }
 
-func finiteRange(x, lo, hi float64) bool {
-	return !math.IsNaN(x) && !math.IsInf(x, 0) && x >= lo && x <= hi
-}
 func (v VibratoShape) depthAt(age float64) float64 {
-	u := math.Max(0, math.Min(1, (age-v.DelayMS/1000)/math.Max(v.RiseMS/1000, 1.0/sampleRate)))
+	u := clampFloat((age-v.DelayMS/1000)/math.Max(v.RiseMS/1000, 1.0/sampleRate), 0, 1)
 	return v.Depth * u * u * (3 - 2*u)
 }
 func validateAdvancedExpression(s *Score, sec Section, ch string, e NoteExpression, events []string) error {
@@ -108,11 +105,9 @@ func validateAdvancedExpression(s *Score, sec Section, ch string, e NoteExpressi
 }
 func applyAdvancedExpression(notes []note, offset, count int, e NoteExpression) {
 	for i, ms := range e.AttackMS {
-		ms := ms
 		notes[offset+i-1].attackMS = &ms
 	}
 	for i, v := range e.Vibrato {
-		v := v
 		notes[offset+i-1].noteVibrato = &v
 	}
 	for i, ms := range e.Breaths {

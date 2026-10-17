@@ -3,13 +3,22 @@ package muse
 import (
 	"errors"
 	"fmt"
+	"maps"
 	"math"
+	"sync"
 )
 
-var pitch map[string]int // a list of all pitches
-var tuneKey map[string][]int
-var sharpKeys []string
-var flatKeys []string
+// pitch maps a note name such as "c4" to its distance in semitones from A4
+var pitch = map[string]int{}
+
+// keySignatures maps each key, e.g. "G" or "Bb", to the accidental it adds
+// to the notes it alters
+var keySignatures = map[string]keySignature{}
+
+type keySignature struct {
+	shift int          // 1 for a sharp key, -1 for a flat key
+	notes map[int]bool // the pitches it alters, in every octave
+}
 
 func init() {
 	setupPitches()
@@ -65,6 +74,38 @@ type note struct {
 	hit int
 }
 
+// effectiveGain is the note's gain, where 0 means unset and so 1
+func (n note) effectiveGain() float64 {
+	if n.gain == 0 {
+		return 1
+	}
+	return n.gain
+}
+
+// heldTime is how long a note is played, in seconds: its placed hold once
+// timing has placed it, or else its written length
+func heldTime(n note) float64 {
+	if n.placed {
+		return n.hold
+	}
+	return n.length
+}
+
+// noteStarts is when each note of a channel starts, in seconds: where
+// timing placed it, or else where the written lengths before it end
+func noteStarts(notes []note) []float64 {
+	starts := make([]float64, len(notes))
+	at := 0.0
+	for i, n := range notes {
+		starts[i] = at
+		if n.placed {
+			starts[i] = float64(max(0, n.start)) / sampleRate
+		}
+		at += n.length
+	}
+	return starts
+}
+
 // tune represents a piece of music
 type tune struct {
 	mix       map[string]ChannelMix
@@ -92,50 +133,23 @@ func (t tune) encode() (data []int, err error) {
 		err = fmt.Errorf("unknown key signature - %s ", t.key)
 		return
 	}
+	t.prepareForRender()
 
-	// apply key
-	acc := 0
-	if inKey(sharpKeys, t.key) { // if the key signature is a sharp key
-		acc = 1
-	} else if inKey(flatKeys, t.key) { // if the key signature is a flat key
-		acc = -1
-	}
-
-	// set up the accidentals for each note in the channels. A note whose
-	// accidental was written explicitly (# , b or n) replaces the key
-	// signature rather than stacking with it, so it's left untouched here.
-	channels := t.channels()
-	for _, channel := range channels {
-		for _, n := range channel {
-			for i, p := range n.pitch {
-				if n.explicit[i] {
-					continue
-				}
-				if inNote(tuneKey[t.key], p) {
-					n.accidental[i] += acc
-				}
-			}
-		}
-	}
-
-	for _, ch := range t.channels() {
-		prepareStringPerformance(ch)
-	}
+	// the channels share nothing, so they're synthesised at the same time
 	var cs [channelCount][]int
 	var nominal [channelCount]int
+	var errs [channelCount]error
+	var wg sync.WaitGroup
 	for i, ch := range t.channels() {
 		if samples, ok := t.external[i]; ok {
-			cs[i] = samples
-			for _, n := range ch {
-				nominal[i] += sampleCount(n.length)
-			}
-			if len(ch) > 0 && ch[len(ch)-1].placed {
-				n := ch[len(ch)-1]
-				nominal[i] = max(0, n.start) + sampleCount(n.hold)
-			}
+			cs[i], nominal[i] = samples, channelNominal(ch)
 			continue
 		}
-		if cs[i], nominal[i], err = encodeChannel(ch); err != nil {
+		wg.Go(func() { cs[i], nominal[i], errs[i] = encodeChannel(ch) })
+	}
+	wg.Wait()
+	for _, err = range errs {
+		if err != nil {
 			return
 		}
 	}
@@ -195,6 +209,24 @@ func (t tune) encode() (data []int, err error) {
 	return
 }
 
+// prepareForRender applies the key signature to every note, then works out
+// pedal and let-ring sustain from the final pitches. It changes the notes in
+// place, so it must run exactly once before a tune is rendered.
+func (t *tune) prepareForRender() {
+	for _, ch := range t.channels() {
+		for _, n := range ch {
+			for i, p := range n.pitch {
+				// an accidental written explicitly (#, b or n) replaces the
+				// key signature rather than stacking with it
+				if !n.explicit[i] {
+					n.accidental[i] += keyShift(t.key, p)
+				}
+			}
+		}
+		prepareStringPerformance(ch)
+	}
+}
+
 // sameLength checks that the channels' written lengths (without the tails
 // of their last notes) agree to within the tolerance
 func sameLength(cs [channelCount][]int, nominal [channelCount]int) error {
@@ -232,96 +264,84 @@ func (t *tune) channels() [channelCount][]note {
 	return [channelCount][]note{t.ch1, t.ch2, t.ch3, t.drums}
 }
 
-// encodeChannel encodes a whole channel. Each note starts where the
-// previous one's written length ends, and its release tail (if any) is
-// added on top of the notes that follow. nominal is the written length of
-// the channel in samples; data is longer when the last note has a tail.
 // channelCursor renders one musical event at a time while retaining the
 // connected wind/bow/pluck state. Both offline and progressive rendering use it.
 type channelCursor struct {
-	notes                               []note
-	index, at, guitarStroke, bassStroke int
-	voice                               phraseVoice
-	pluck                               pluckedVoice
+	notes []note
+	// index is the next note to render, at where it starts as written
+	index, at int
+	// guitarStroke and bassStroke count the strokes played so far, so
+	// alternate strums and repeated plucks vary
+	guitarStroke, bassStroke int
+	voice                    phraseVoice  // the connected wind/bow voice
+	pluck                    pluckedVoice // the connected plucked string
 }
 
+// next renders the next note and returns where it starts, in samples from
+// the beginning of the channel, and its samples. A connected note keeps
+// the voice of the one before it ringing; anything else resets it.
 func (c *channelCursor) next() (int, []int, error) {
 	n := c.notes[c.index]
-	var err error
 	if n.instrumentName == "upright-bass" && len(n.pitch) > 0 {
 		stroke := c.bassStroke
 		c.bassStroke++
 		n.velocityIns = func(f, d, v float64) []float64 { return uprightBassStroke(f, d, v, stroke) }
 	}
-	var nd []int
 	pos := c.at
 	if n.placed {
 		pos = max(0, n.start)
-	}
-	if !n.placed {
+	} else {
 		n.start = pos
 	}
-	if n.pluckPhrase && n.performance != nil && len(n.pitch) == 1 {
+
+	var nd []int
+	switch {
+	case n.pluckPhrase && n.performance != nil && len(n.pitch) == 1:
+		// a plucked note in a phrase of slides, hammer-ons and mutes
 		c.voice.active = false
 		if n.gesture.transition() && !c.pluck.active {
 			return 0, nil, fmt.Errorf("%s transition needs a contiguous preceding note", n.instrumentName)
 		}
-		hold := heldTime(n)
-		join := false
-		if c.index+1 < len(c.notes) {
-			next := c.notes[c.index+1]
-			nextPos := c.at + sampleCount(n.length)
-			if next.placed {
-				nextPos = max(0, next.start)
-			}
-			join = next.pluckPhrase && next.gesture.transition() && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < .04
-			if join {
-				hold = float64(nextPos-pos) / sampleRate
-			}
-		}
+		hold, join := c.joinNext(n, pos, heldTime(n), func(next note) bool {
+			return next.pluckPhrase && next.gesture.transition()
+		})
 		if !join && n.performance.Articulation == "let-ring" && (n.gesture == nil || n.gesture.Kind != "mute") {
 			hold = math.Max(hold, n.sustainHold)
 		}
 		nd = c.pluck.render(n, hold, join)
-	} else if n.performance != nil && len(n.pitch) > 0 && (n.instrumentName == "piano" || pluckedInstrument(n.instrumentName)) {
+	case n.performance != nil && len(n.pitch) > 0 && (n.instrumentName == "piano" || pluckedInstrument(n.instrumentName)):
+		// a pedalled piano note, or a strummed or picked string
 		c.pluck.active = false
 		c.voice.active = false
 		nd = renderStringPerformance(n, c.guitarStroke)
-		if n.instrumentName == "guitar" || n.instrumentName == "nylon-guitar" || n.instrumentName == "electric-guitar" {
+		if guitarInstrument(n.instrumentName) {
 			c.guitarStroke++
 		}
-	} else if n.performance != nil && len(n.pitch) == 1 {
+	case n.performance != nil && len(n.pitch) == 1:
+		// a sustained wind, bowed or synth note, slurred into the next
+		// when both are legato
 		c.pluck.active = false
 		if n.gesture.transition() && !c.voice.active {
 			return 0, nil, fmt.Errorf("portamento needs a contiguous preceding slurred note")
 		}
-		hold := n.length
-		if n.placed {
-			hold = n.hold
-		}
-		join := false
-		if c.index+1 < len(c.notes) && n.performance.Articulation == "legato" {
-			next := c.notes[c.index+1]
-			nextPos := c.at + sampleCount(n.length)
-			if next.placed {
-				nextPos = max(0, next.start)
-			}
-			join = canSlur(n, next) && next.performance != nil && next.performance.Articulation == "legato" && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(float64(nextPos-pos)/sampleRate-hold) < 0.04
-			if join {
-				hold = float64(nextPos-pos) / sampleRate
-			}
+		hold, join := heldTime(n), false
+		if n.performance.Articulation == "legato" {
+			hold, join = c.joinNext(n, pos, hold, func(next note) bool {
+				return canSlur(n, next) && next.performance != nil && next.performance.Articulation == "legato"
+			})
 		}
 		nd = c.voice.render(n, hold, join)
-	} else {
+	default:
 		c.pluck.active = false
 		c.voice.active = false
+		var err error
 		if nd, err = n.encode(); err != nil {
 			return 0, nil, err
 		}
 	}
 
-	for k, v := range nd {
-		if n.phrase != nil {
+	if n.phrase != nil {
+		for k, v := range nd {
 			nd[k] = int(float64(v) * dBGain(n.phraseDB(float64(k)/sampleRate)))
 		}
 	}
@@ -329,24 +349,54 @@ func (c *channelCursor) next() (int, []int, error) {
 	c.index++
 	return pos, nd, nil
 }
-func channelNominal(notes []note) int {
+
+// joinNext reports whether the following note carries on from n, which
+// starts at pos and is held for hold seconds: the same instrument, a single
+// pitch, starting within 40 ms of where n ends, and connects(next). If it
+// does, n is held until the next note starts.
+func (c *channelCursor) joinNext(n note, pos int, hold float64, connects func(next note) bool) (float64, bool) {
+	if c.index+1 >= len(c.notes) {
+		return hold, false
+	}
+	next := c.notes[c.index+1]
+	nextPos := c.at + sampleCount(n.length)
+	if next.placed {
+		nextPos = max(0, next.start)
+	}
+	gap := float64(nextPos-pos) / sampleRate
+	if connects(next) && next.instrumentName == n.instrumentName && len(next.pitch) == 1 && nextPos > pos && math.Abs(gap-hold) < .04 {
+		return gap, true
+	}
+	return hold, false
+}
+
+// channelWritten is the length of a channel's notes in samples, as written
+func channelWritten(notes []note) int {
 	n := 0
 	for _, event := range notes {
 		n += sampleCount(event.length)
 	}
-	if len(notes) > 0 && notes[len(notes)-1].placed {
-		last := notes[len(notes)-1]
-		n = max(0, last.start) + sampleCount(last.hold)
-	}
 	return n
 }
+
+// channelNominal is the length of a channel in samples without the tail of
+// its last note: where the last note ends once timing has placed it, or the
+// written length if it hasn't
+func channelNominal(notes []note) int {
+	if len(notes) > 0 && notes[len(notes)-1].placed {
+		last := notes[len(notes)-1]
+		return max(0, last.start) + sampleCount(last.hold)
+	}
+	return channelWritten(notes)
+}
+
+// encodeChannel encodes a whole channel. Each note starts where the
+// previous one's written length ends, and its release tail (if any) is
+// added on top of the notes that follow. nominal is the written length of
+// the channel in samples; data is longer when the last note has a tail.
 func encodeChannel(notes []note) (data []int, nominal int, err error) {
 	nominal = channelNominal(notes)
-	written := 0
-	for _, n := range notes {
-		written += sampleCount(n.length)
-	}
-	data = make([]int, written)
+	data = make([]int, channelWritten(notes))
 	c := channelCursor{notes: notes}
 	for c.index < len(notes) {
 		pos, nd, e := c.next()
@@ -470,33 +520,10 @@ func noteData(frequency float64, duration float64, env envelope, har harmonic, v
 	return
 }
 
-// note data from an instrument, scaled to the volume
-func instrumentData(frequency float64, duration float64, ins instrument, vol int) (data []int) {
-	samples := ins(frequency, duration)
-	data = make([]int, len(samples))
-	for k, v := range samples {
-		data[k] = int(float64(vol) * v)
-	}
-	return
-}
-
 // rest note
 func rest(duration float64) (data []int) {
 	// zero-valued ints are silence, so there's nothing to fill in
 	data = make([]int, sampleCount(duration))
-	return
-}
-
-// chain notes together to create music!
-func chain(notes ...[]int) (data []int, err error) {
-	total := 0
-	for _, n := range notes {
-		total += len(n)
-	}
-	data = make([]int, 0, total)
-	for _, n := range notes {
-		data = append(data, n...)
-	}
 	return
 }
 
@@ -530,74 +557,47 @@ func frequency(step int) float64 {
 	return 440.0 * (math.Pow(2, (float64(step) / 12.0)))
 }
 
-// setup pitches
+// setupPitches names every note from c1 to b7
 func setupPitches() {
-	pitch = make(map[string]int)
-	notes := []string{"c", "d", "e", "f", "g", "a", "b"}
-	nums := []int{-57, -55, -53, -52, -50, -48, -46}
-	for i := 1; i < 8; i++ {
-		for j, note := range notes {
-			nums[j] = nums[j] + 12
-			pitch[fmt.Sprintf("%s%d", note, i)] = nums[j]
+	// semitones from A4 of each note in octave 4
+	octave4 := map[byte]int{'c': -9, 'd': -7, 'e': -5, 'f': -4, 'g': -2, 'a': 0, 'b': 2}
+	for octave := 1; octave <= 7; octave++ {
+		for name, semitones := range octave4 {
+			pitch[fmt.Sprintf("%c%d", name, octave)] = semitones + 12*(octave-4)
 		}
 	}
 }
 
-// initialise the tuneKey array, which is used to apply the key signature
-// to notes. A key's accidental note applies across every octave (1 to 7),
-// so l ranges over all 7 octaves starting from the octave-1 pitch (l=0).
+// setupKeys builds the key signatures. Each key alters the notes of the key
+// before it in the circle of fifths plus one more, in every octave.
 func setupKeys() {
-	tuneKey = make(map[string][]int)
-	tuneKey["C"] = []int{}
-	sharpKeys = []string{"G", "D", "A", "E", "B", "F#", "C#"}
-	sharpNotes := []int{pitch["f1"], pitch["c1"], pitch["g1"], pitch["d1"], pitch["a1"], pitch["e1"], pitch["b1"]}
-	for i, key := range sharpKeys {
-		k := []int{}
-		for j := 0; j < i+1; j++ {
-			for l := 0; l < 7; l++ {
-				k = append(k, sharpNotes[j]+(12*l))
-			}
-		}
-		tuneKey[key] = k
-	}
+	keySignatures["C"] = keySignature{}
+	addKeys([]string{"G", "D", "A", "E", "B", "F#", "C#"}, "fcgdaeb", 1)
+	addKeys([]string{"F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"}, "beadgcf", -1)
+}
 
-	flatKeys = []string{"F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"}
-	flatNotes := []int{pitch["b1"], pitch["e1"], pitch["a1"], pitch["d1"], pitch["g1"], pitch["c1"], pitch["f1"]}
-	for i, key := range flatKeys {
-		k := []int{}
-		for j := 0; j < i+1; j++ {
-			for l := 0; l < 7; l++ {
-				k = append(k, flatNotes[j]+(12*l))
-			}
+func addKeys(keys []string, order string, shift int) {
+	notes := map[int]bool{}
+	for i, key := range keys {
+		base := pitch[order[i:i+1]+"1"]
+		for octave := 0; octave < 7; octave++ {
+			notes[base+12*octave] = true
 		}
-		tuneKey[key] = k
+		keySignatures[key] = keySignature{shift, maps.Clone(notes)}
 	}
 }
 
 // validKey reports whether key is a recognised key signature
 func validKey(key string) bool {
-	if key == "C" {
-		return true
-	}
-	return inKey(sharpKeys, key) || inKey(flatKeys, key)
+	_, ok := keySignatures[key]
+	return ok
 }
 
-// check if the key is sharp or flat
-func inKey(key []string, note string) bool {
-	for _, item := range key {
-		if item == note {
-			return true
-		}
+// keyShift is the accidental the key signature adds to a written pitch: 1
+// in a sharp key, -1 in a flat key, or 0 if the key leaves the pitch alone
+func keyShift(key string, p int) int {
+	if k := keySignatures[key]; k.notes[p] {
+		return k.shift
 	}
-	return false
-}
-
-// check if the note is in the given key
-func inNote(notes []int, note int) bool {
-	for _, item := range notes {
-		if item == note {
-			return true
-		}
-	}
-	return false
+	return 0
 }

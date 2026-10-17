@@ -93,17 +93,6 @@ var saxophoneSpec = wind{
 func trumpet(freq, duration float64) []float64   { return trumpetVelocity(freq, duration, 0.7) }
 func saxophone(freq, duration float64) []float64 { return saxophoneVelocity(freq, duration, 0.7) }
 
-// resonanceGain is the body's gain at hz: a sum of resonance peaks
-// (Lorentzians, as in formantGain) over a floor
-func resonanceGain(rs []formant, floor, hz float64) float64 {
-	g := floor
-	for _, r := range rs {
-		x := (hz - r.freq) / (r.width / 2)
-		g += r.gain / math.Sqrt(1+x*x)
-	}
-	return g
-}
-
 // windNote synthesises one note of a wind instrument. Overtone h is played
 // at a level of A[h] × e × r^(h-1), where e is the note's level and
 // r = blow^bright, blow being how hard the player is blowing (0 to 1): when

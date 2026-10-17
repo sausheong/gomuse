@@ -205,19 +205,15 @@ func vocalRequest(s *Score, t *tune) (VocalRequest, error) {
 				continue
 			}
 			p := n.pitch[0] + n.accidental[0]
-			if !n.explicit[0] && inNote(tuneKey[t.key], n.pitch[0]) {
-				if inKey(sharpKeys, t.key) {
-					p++
-				} else if inKey(flatKeys, t.key) {
-					p--
-				}
+			if !n.explicit[0] {
+				p += keyShift(t.key, n.pitch[0])
 			}
 			// Muse pitches count semitones from A4; MIDI A4 is 69.
 			gain := float64(n.vol) * n.gain / 32768
 			if lv, ok := s.Levels[s.Singing.Channel]; ok && lv == 0 {
 				gain = 0
 			}
-			if !isFinite(gain) || gain < 0 {
+			if !finiteRange(gain, 0, math.MaxFloat64) {
 				return req, fmt.Errorf("singing volume must be non-negative and finite")
 			}
 			phrase.Notes = append(phrase.Notes, VocalNote{start, end - start, p + 69, strings.TrimSpace(sec.Lyrics[j]), gain})
@@ -237,8 +233,6 @@ func vocalRequest(s *Score, t *tune) (VocalRequest, error) {
 	return req, nil
 }
 
-func isFinite(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) }
-
 func attachSinging(ctx context.Context, s *Score, t *tune, singer Singer) error {
 	if !validKey(t.key) {
 		return fmt.Errorf("unknown key signature - %s", t.key)
@@ -257,7 +251,7 @@ func attachSinging(ctx context.Context, s *Score, t *tune, singer Singer) error 
 	}
 	out := make([]int, len(x))
 	for _, v := range x {
-		if math.IsNaN(v) || math.IsInf(v, 0) || math.Abs(v) > 1 {
+		if !finiteRange(v, -1, 1) {
 			return fmt.Errorf("neural singing returned invalid audio samples")
 		}
 	}

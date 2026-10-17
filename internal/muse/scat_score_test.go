@@ -127,7 +127,7 @@ func TestScatPhraseControlsAndMute(t *testing.T) {
 		t.Fatal(err)
 	}
 	for _, v := range x {
-		if !isFinite(v) || math.Abs(v) > 1 {
+		if !finiteRange(v, -1, 1) {
 			t.Fatal("bad signal")
 		}
 	}

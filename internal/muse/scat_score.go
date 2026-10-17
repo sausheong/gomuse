@@ -85,7 +85,7 @@ func validateScatControls(c ScatControls) error {
 		return fmt.Errorf("scat.phrasing must be connected or detached")
 	}
 	for _, v := range []*float64{c.Effort, c.Breathiness, c.Breaths, c.Clarity} {
-		if v != nil && (!isFinite(*v) || *v < 0 || *v > 1) {
+		if v != nil && !finiteRange(*v, 0, 1) {
 			return fmt.Errorf("scat numeric controls must be finite and between 0 and 1")
 		}
 	}
@@ -154,7 +154,7 @@ func validateScat(s *Score) error {
 			return fmt.Errorf("section %d: scat.emphasis must match syllables", i+1)
 		}
 		for _, v := range c.Emphasis {
-			if !isFinite(v) || v < 0 || v > 1 {
+			if !finiteRange(v, 0, 1) {
 				return fmt.Errorf("section %d: emphasis must be finite and between 0 and 1", i+1)
 			}
 		}

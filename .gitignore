@@ -18,3 +18,4 @@ __pycache__/
 /web/static/player/wasm_exec.js
 # local Cloudflare deployment cache
 /.wrangler/
+*.pdf

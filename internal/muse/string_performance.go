@@ -2,28 +2,17 @@ package muse
 
 import "math"
 
-func heldTime(n note) float64 {
-	if n.placed {
-		return n.hold
-	}
-	return n.length
-}
-
 // Pedal/let-ring sustain ends at the next control or instrument change,
 // including controls on rests. Each released note is capped at eight seconds
 // of extra natural decay. Re-striking a guitar pitch damps its old voice.
 func prepareStringPerformance(notes []note) {
-	starts := make([]float64, len(notes)+1)
-	at := 0.0
-	for i, n := range notes {
-		starts[i] = at
-		if n.placed {
-			starts[i] = float64(max(0, n.start)) / sampleRate
-		}
-		at += n.length
-		starts[len(notes)] = starts[i] + heldTime(n)
+	starts := noteStarts(notes)
+	boundary := 0.0
+	if len(notes) > 0 {
+		boundary = starts[len(notes)-1] + heldTime(notes[len(notes)-1])
 	}
-	boundary := starts[len(notes)]
+	// the sustain of the last note runs to the end of the channel
+	starts = append(starts, boundary)
 	mode := ""
 	nextPitch := map[int]float64{}
 	for i := len(notes) - 1; i >= 0; i-- {
@@ -48,7 +37,7 @@ func prepareStringPerformance(notes []note) {
 		if current == "" {
 			continue
 		}
-		n.sustainHold = math.Max(heldTime(*n), math.Min(boundary-starts[i], heldTime(*n)+8))
+		n.sustainHold = clampFloat(boundary-starts[i], heldTime(*n), heldTime(*n)+8)
 		if current == "ring" {
 			n.stopPitches = map[int]float64{}
 			for j, p := range n.pitch {
@@ -89,10 +78,7 @@ func renderStringPerformance(n note, stroke int) []int {
 			}
 		}
 	}
-	gain := n.gain
-	if gain == 0 {
-		gain = 1
-	}
+	gain := n.effectiveGain()
 	out := make([]int, sampleCount(ring+release+spread*float64(len(n.pitch)-1)))
 	for j, pitch := range n.pitch {
 		pitch += n.accidental[j]

@@ -40,7 +40,7 @@ const releaseTime = 0.01 // seconds
 // releaseTime seconds (or the last quarter of a very short note).
 func release(input float64, duration float64) float64 {
 	r := math.Min(releaseTime, duration/4)
-	return math.Max(0, math.Min(1, (duration-input)/r))
+	return clampFloat((duration-input)/r, 0, 1)
 }
 
 // ------.

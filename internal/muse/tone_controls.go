@@ -219,7 +219,7 @@ func patchNote(f, hold, release, v float64, name string, p SynthPatch) []float64
 	ic1, ic2 := 0., 0.
 	for i := range x {
 		t := float64(i) / sampleRate
-		fc := math.Max(40, math.Min(18000, cutoff*math.Exp2(env*math.Exp(-t/decay))))
+		fc := clampFloat(cutoff*math.Exp2(env*math.Exp(-t/decay)), 40, 18000)
 		g := math.Tan(math.Pi * fc / sampleRate)
 		k := 1 / q
 		a1 := 1 / (1 + g*(g+k))

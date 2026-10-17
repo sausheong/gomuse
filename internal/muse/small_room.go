@@ -23,37 +23,36 @@ func validateRoom(s *Score) error {
 	}
 	return nil
 }
-func smallRoom(l, r []int, cs [channelCount][]int, settings *RoomSettings, amount float64) ([]int, []int) {
-	if amount <= 0 || len(l) == 0 {
-		return l, r
-	}
+
+// roomSends is each channel's send level to the room: 1 unless the score
+// sets it
+func roomSends(settings *RoomSettings) [channelCount]float64 {
 	sends := [channelCount]float64{1, 1, 1, 1}
-	active := false
 	for c, ch := range channelNames {
 		if v, ok := settings.Sends[ch]; ok {
 			sends[c] = v
 		}
-		if sends[c] > 0 && len(cs[c]) > 0 {
-			active = true
-		}
+	}
+	return sends
+}
+
+// smallRoomTail is how long the small room rings past the dry signal
+const smallRoomTail = 1.5
+
+func smallRoom(l, r []int, cs [channelCount][]int, settings *RoomSettings, amount float64) ([]int, []int) {
+	if amount <= 0 || len(l) == 0 {
+		return l, r
+	}
+	sends := roomSends(settings)
+	active := false
+	for c := range cs {
+		active = active || (sends[c] > 0 && len(cs[c]) > 0)
 	}
 	if !active {
 		return l, r
 	}
-	left, right := newRoom(0), newRoom(stereoSpread)
-	for _, room := range []*room{left, right} {
-		for i := range room.combs {
-			c := &room.combs[i]
-			c.buf = make([]float64, len(c.buf)*2/3)
-			c.feedback = .67
-			c.damping = .48
-		}
-	}
-	// Early reflections establish a compact room before its diffuse tail.
-	delay := make([]float64, sampleCount(.06))
-	at := 0
-	low := 0.0
-	n := len(l) + sampleCount(1.5)
+	bus := newSmallRoomBus()
+	n := len(l) + sampleCount(smallRoomTail)
 	ol, or := make([]int, n), make([]int, n)
 	last := len(l) - 1
 	for k := 0; k < n; k++ {
@@ -63,24 +62,52 @@ func smallRoom(l, r []int, cs [channelCount][]int, settings *RoomSettings, amoun
 				in += float64(x[k]) * sends[c]
 			}
 		}
-		low += .018 * (in - low)
-		in -= low // keep low bass energy out of the room bus
-		delay[at] = in
-		tap := func(seconds float64) float64 { return delay[(at-sampleCount(seconds)+len(delay))%len(delay)] }
-		earlyL := .13*tap(.013) + .07*tap(.031)
-		earlyR := .12*tap(.019) + .08*tap(.043)
-		diffuse := tap(.011) * roomInput
-		dl, dr := 0, 0
+		wl, wr := bus.process(in, amount)
 		if k < len(l) {
-			dl, dr = l[k], r[k]
+			ol[k], or[k] = l[k]+wl, r[k]+wr
+		} else {
+			ol[k], or[k] = wl, wr
 		}
-		ol[k] = dl + int(amount*(earlyL+2*left.process(diffuse)))
-		or[k] = dr + int(amount*(earlyR+2*right.process(diffuse)))
 		if ol[k] != 0 || or[k] != 0 {
 			last = k
 		}
-		at = (at + 1) % len(delay)
 	}
 	end := max(len(l), last+1)
 	return ol[:end], or[:end]
+}
+
+// smallRoomBus is the shared send bus of the small room: early reflections
+// establish a compact room before a shorter, darker Freeverb tail.
+type smallRoomBus struct {
+	left, right *room
+	delay       []float64 // recent input, for the early reflections
+	at          int       // write position in delay
+	low         float64   // low-pass state, to keep bass out of the room
+}
+
+func newSmallRoomBus() *smallRoomBus {
+	b := &smallRoomBus{left: newRoom(0), right: newRoom(stereoSpread), delay: make([]float64, sampleCount(.06))}
+	for _, room := range []*room{b.left, b.right} {
+		for i := range room.combs {
+			c := &room.combs[i]
+			c.buf = make([]float64, len(c.buf)*2/3)
+			c.feedback = .67
+			c.damping = .48
+		}
+	}
+	return b
+}
+
+// process feeds one sample of the summed sends into the room and returns
+// what the room adds to the left and right sides
+func (b *smallRoomBus) process(in, amount float64) (int, int) {
+	b.low += .018 * (in - b.low)
+	in -= b.low // keep low bass energy out of the room bus
+	b.delay[b.at] = in
+	tap := func(seconds float64) float64 { return b.delay[(b.at-sampleCount(seconds)+len(b.delay))%len(b.delay)] }
+	earlyL := .13*tap(.013) + .07*tap(.031)
+	earlyR := .12*tap(.019) + .08*tap(.043)
+	diffuse := tap(.011) * roomInput
+	b.at = (b.at + 1) % len(b.delay)
+	return int(amount * (earlyL + 2*b.left.process(diffuse))), int(amount * (earlyR + 2*b.right.process(diffuse)))
 }

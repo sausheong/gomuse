@@ -112,7 +112,7 @@ func scatClusterFrame(phones []string, u float64, vowel [3]float64, coda bool) s
 	if coda {
 		total = codaSpan(phones)
 	}
-	at := math.Max(0, math.Min(1, u)) * total
+	at := clampFloat(u, 0, 1) * total
 	for i, p := range phones {
 		span := scatConsonantTimes[p]
 		if coda && p == "Z" {

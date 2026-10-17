@@ -42,12 +42,9 @@ const (
 	lengthShape = 0.04
 )
 
-// dBGain converts a level in dB to an amplitude factor
-func dBGain(db float64) float64 { return math.Pow(10, db/20) }
-
 // velocityOf is how hard a note at the given level is played, 0.1 to 1
 func velocityOf(db float64) float64 {
-	return math.Max(minVelocity, math.Min(1, 1+db/velocityRange))
+	return clampFloat(1+db/velocityRange, minVelocity, 1)
 }
 
 // sectionLevels works out the level at the start and end of every section.
@@ -81,7 +78,7 @@ func sectionLevels(s *Score) (start, end []float64, ok bool) {
 		if sec.Hairpin == "dim" {
 			step = -dynamicStep
 		}
-		target := math.Max(minLevel, math.Min(maxLevel, cur+step))
+		target := clampFloat(cur+step, minLevel, maxLevel)
 		if i+1 < len(s.Sections) && s.Sections[i+1].Dynamic != "" {
 			target = dynamicLevels[s.Sections[i+1].Dynamic]
 		}
@@ -123,11 +120,7 @@ func applyDynamics(s *Score, t *tune) {
 					frac = at / total
 				}
 				db := start[si] + (end[si]-start[si])*frac
-				g := n.gain
-				if g == 0 {
-					g = 1
-				}
-				n.gain = math.Min(1, g*dBGain(db))
+				n.gain = math.Min(1, n.effectiveGain()*dBGain(db))
 				n.velocity = velocityOf(db)
 				at += n.length
 				i++
@@ -160,10 +153,7 @@ func shapePhrases(s *Score, notes []note) {
 	}
 	i := 0
 	for _, sec := range s.Sections {
-		beat := sec.Length
-		if beat == 0 {
-			beat = s.Length
-		}
+		beat := sectionBeat(*s, sec)
 		for range sec.C1 {
 			n := notes[i]
 			switch {
@@ -199,11 +189,7 @@ func shapePhrase(notes []note, idx []int) {
 			lenRel = n.length / longest
 		}
 		m := 1 - pitchShape*(1-rel) - lengthShape*(1-lenRel)
-		g := n.gain
-		if g == 0 {
-			g = 1
-		}
-		n.gain = math.Min(1, g*m)
+		n.gain = math.Min(1, n.effectiveGain()*m)
 	}
 }
 

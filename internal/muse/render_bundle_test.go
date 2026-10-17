@@ -1,6 +1,7 @@
 package muse
 
 import (
+	"bytes"
 	"math"
 	"os"
 	"path/filepath"
@@ -25,12 +26,11 @@ func TestRenderBundleAlignedStemsReconstructMaster(t *testing.T) {
 			t.Fatal(err)
 		}
 		read := func(name string) []int {
-			f, err := os.Open(filepath.Join(dir, name+".wav"))
+			f, err := os.ReadFile(filepath.Join(dir, name+".wav"))
 			if err != nil {
 				t.Fatal(err)
 			}
-			defer f.Close()
-			b, err := wav.NewDecoder(f).FullPCMBuffer()
+			b, err := wav.NewDecoder(bytes.NewReader(f)).FullPCMBuffer()
 			if err != nil {
 				t.Fatal(err)
 			}

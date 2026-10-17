@@ -27,36 +27,64 @@ func validateMix(s *Score) error {
 	}
 	return nil
 }
+
+// processChannelMix applies a channel's mix settings to the whole channel
 func processChannelMix(x []int, m ChannelMix) {
-	if m == (ChannelMix{}) {
+	f := newChannelFilter(m)
+	if f == nil {
 		return
 	}
-	hp, lp, split := 0.0, 0.0, 0.0
-	ah := 1 - math.Exp(-2*math.Pi*m.LowCutHz/sampleRate)
-	al := 1 - math.Exp(-2*math.Pi*m.HighCutHz/sampleRate)
-	as := 1 - math.Exp(-2*math.Pi*1000/sampleRate)
-	gain := dBGain(m.GainDB)
-	lowGain, highGain := dBGain(-m.TiltDB/2), dBGain(m.TiltDB/2)
 	for i, n := range x {
-		y := float64(n)
-		if m.LowCutHz > 0 {
-			hp += ah * (y - hp)
-			y -= hp
-		}
-		if m.HighCutHz > 0 {
-			lp += al * (y - lp)
-			y = lp
-		}
-		if m.TiltDB != 0 {
-			split += as * (y - split)
-			y = split*lowGain + (y-split)*highGain
-		}
-		// Remove residual filter state smoothly at the existing channel ending.
-		if m.LowCutHz > 0 || m.HighCutHz > 0 || m.TiltDB != 0 {
-			y *= math.Min(1, float64(len(x)-1-i)/math.Min(float64(sampleCount(.01)), float64(max(1, len(x)-1))))
-		}
-		x[i] = int(math.Round(y * gain))
+		x[i] = f.process(n, i, len(x))
 	}
+}
+
+// channelFilter runs a ChannelMix one sample at a time, keeping its filter
+// state, so whole-channel and streamed rendering share the same code.
+type channelFilter struct {
+	ChannelMix
+	ah, al, as        float64 // one-pole coefficients: low cut, high cut, tilt split
+	gain              float64
+	lowGain, highGain float64 // tilt gains either side of 1 kHz
+	hp, lp, split     float64 // filter state
+}
+
+// newChannelFilter returns nil when the settings leave the channel as it is
+func newChannelFilter(m ChannelMix) *channelFilter {
+	if m == (ChannelMix{}) {
+		return nil
+	}
+	return &channelFilter{
+		ChannelMix: m,
+		ah:         1 - math.Exp(-2*math.Pi*m.LowCutHz/sampleRate),
+		al:         1 - math.Exp(-2*math.Pi*m.HighCutHz/sampleRate),
+		as:         1 - math.Exp(-2*math.Pi*1000/sampleRate),
+		gain:       dBGain(m.GainDB),
+		lowGain:    dBGain(-m.TiltDB / 2),
+		highGain:   dBGain(m.TiltDB / 2),
+	}
+}
+
+// process filters sample x at position i of a channel end samples long
+func (f *channelFilter) process(x, i, end int) int {
+	y := float64(x)
+	if f.LowCutHz > 0 {
+		f.hp += f.ah * (y - f.hp)
+		y -= f.hp
+	}
+	if f.HighCutHz > 0 {
+		f.lp += f.al * (y - f.lp)
+		y = f.lp
+	}
+	if f.TiltDB != 0 {
+		f.split += f.as * (y - f.split)
+		y = f.split*f.lowGain + (y-f.split)*f.highGain
+	}
+	// Remove residual filter state smoothly at the existing channel ending.
+	if f.LowCutHz > 0 || f.HighCutHz > 0 || f.TiltDB != 0 {
+		y *= math.Min(1, float64(end-1-i)/math.Min(float64(sampleCount(.01)), float64(max(1, end-1))))
+	}
+	return int(math.Round(y * f.gain))
 }
 
 var calibrationCache sync.Map
@@ -118,7 +146,7 @@ func instrumentCalibration(n note) float64 {
 	rms := math.Sqrt(sum / float64(min(len(samples), sampleCount(.6))))
 	gain := 1.
 	if rms > 0 {
-		gain = math.Max(.5, math.Min(2, .18/rms))
+		gain = clampFloat(.18/rms, .5, 2)
 	}
 	calibrationCache.Store(key, gain)
 	return gain
@@ -131,11 +159,7 @@ func applyCalibration(s *Score, t *tune) {
 				n.vol = 0
 			}
 			if s.Calibration && c != drumChannel {
-				g := n.gain
-				if g == 0 {
-					g = 1
-				}
-				n.gain = g * instrumentCalibration(*n)
+				n.gain = n.effectiveGain() * instrumentCalibration(*n)
 			}
 		}
 	}

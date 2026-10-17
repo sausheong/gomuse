@@ -34,11 +34,6 @@ const (
 	maxOvertones = 40
 )
 
-// a formant is one resonance of the vocal tract
-type formant struct {
-	freq, width, gain float64
-}
-
 // vowelAh is a warm open "ah"
 var vowelAh = []formant{{650, 90, 1}, {1080, 100, 0.7}, {2650, 120, 0.35}}
 
@@ -58,14 +53,6 @@ func formantGain(vowel []formant, f0, hz float64) float64 {
 		g += f.gain / math.Sqrt(1+x*x)
 	}
 	return g
-}
-
-// ramp is a raised-cosine rise from 0 to 1 over n samples
-func ramp(k int, n float64) float64 {
-	if n <= 0 || float64(k) >= n {
-		return 1
-	}
-	return 0.5 - 0.5*math.Cos(math.Pi*float64(k)/n)
 }
 
 // voice is a sung "ah". A new note starts softly, the pitch holds steady for

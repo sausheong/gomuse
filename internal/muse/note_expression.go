@@ -32,7 +32,8 @@ type phraseCurve struct {
 	start, duration, offset float64
 }
 
-func boundedDB(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) && v >= -12 && v <= 6 }
+// boundedDB reports whether v is a usable dB offset for an accent or phrase
+func boundedDB(v float64) bool { return finiteRange(v, -12, 6) }
 func validateNoteExpression(s *Score) error {
 	for name, e := range s.ExpressionPresets {
 		if name == "" || e.Preset != "" {
@@ -75,7 +76,7 @@ func validateNoteExpression(s *Score) error {
 			}
 			last := 0
 			for _, p := range e.Phrases {
-				if p.From <= last || p.To < p.From || p.To > len(ns) || !boundedDB(p.StartDB) || !boundedDB(p.PeakDB) || !boundedDB(p.EndDB) || math.IsNaN(p.PeakAt) || math.IsInf(p.PeakAt, 0) || p.PeakAt < 0 || p.PeakAt >= 1 {
+				if p.From <= last || p.To < p.From || p.To > len(ns) || !boundedDB(p.StartDB) || !boundedDB(p.PeakDB) || !boundedDB(p.EndDB) || !finiteRange(p.PeakAt, 0, 1) || p.PeakAt == 1 {
 					return fmt.Errorf("section %d %s: phrases must be ordered, non-overlapping event ranges, dB -12..6, peak_at 0..1 (exclusive of 1)", si+1, ch)
 				}
 				last = p.To
@@ -95,7 +96,7 @@ func (p PhraseShape) db(frac float64) float64 {
 	if peak == 0 {
 		peak = .5
 	}
-	frac = math.Max(0, math.Min(1, frac))
+	frac = clampFloat(frac, 0, 1)
 	a, b, u := p.StartDB, p.PeakDB, frac/peak
 	if frac > peak {
 		a, b, u = p.PeakDB, p.EndDB, (frac-peak)/(1-peak)
@@ -115,15 +116,7 @@ func applyNoteExpression(s *Score, t *tune) {
 		if c >= 3 {
 			continue
 		}
-		starts := make([]float64, len(notes))
-		at := 0.0
-		for i, n := range notes {
-			starts[i] = at
-			if n.placed {
-				starts[i] = float64(max(0, n.start)) / sampleRate
-			}
-			at += n.length
-		}
+		starts := noteStarts(notes)
 		offset := 0
 		for _, sec := range s.Sections {
 			e, _ := resolveExpression(s, sec.Expression[channelNames[c]])
@@ -147,12 +140,8 @@ func applyNoteExpression(s *Score, t *tune) {
 			}
 			for event, db := range e.Accents {
 				n := &notes[offset+event-1]
-				g := n.gain
-				if g == 0 {
-					g = 1
-				}
-				n.gain = g * dBGain(db)
-				n.velocity = math.Max(minVelocity, math.Min(1, playingVelocity(n.velocity)+db/velocityRange))
+				n.gain = n.effectiveGain() * dBGain(db)
+				n.velocity = clampFloat(playingVelocity(n.velocity)+db/velocityRange, minVelocity, 1)
 			}
 			for _, p := range e.Phrases {
 				first, last := offset+p.From-1, offset+p.To-1

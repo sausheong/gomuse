@@ -2,20 +2,46 @@ package muse
 
 import "math"
 
-func sustainedInstrument(name string) bool {
+// Instrument families, as the phrase renderers and performance controls
+// group them.
+
+// windInstrument: blown, with breath noise and tonguing
+func windInstrument(name string) bool {
 	switch name {
-	case "trombone", "french-horn", "oboe", "bassoon", "clarinet", "flute", "trumpet", "saxophone", "sax", "violin", "cello", "synth-lead":
+	case "trombone", "french-horn", "oboe", "bassoon", "clarinet", "flute", "trumpet", "saxophone", "sax":
 		return true
 	}
 	return false
 }
+
+// bowedInstrument: a solo bowed string
 func bowedInstrument(name string) bool { return name == "violin" || name == "cello" }
-func windInstrument(name string) bool {
-	return name == "trombone" || name == "french-horn" || name == "oboe" || name == "bassoon" || name == "clarinet" || name == "flute" || name == "trumpet" || name == "saxophone" || name == "sax"
+
+// sustainedInstrument: anything the connected phrase voice can play, a
+// note held for as long as it's written
+func sustainedInstrument(name string) bool {
+	return windInstrument(name) || bowedInstrument(name) || name == "synth-lead"
 }
-func pluckedInstrument(name string) bool {
-	return name == "nylon-guitar" || name == "guitar" || name == "electric-guitar" || name == "bass" || name == "upright-bass"
+
+// fallInstrument: a horn that can fall off the end of a note
+func fallInstrument(name string) bool {
+	switch name {
+	case "trombone", "french-horn", "trumpet", "saxophone", "sax":
+		return true
+	}
+	return false
 }
+
+// guitarInstrument: a guitar, strummed or picked
+func guitarInstrument(name string) bool {
+	return name == "nylon-guitar" || name == "guitar" || name == "electric-guitar"
+}
+
+// bassInstrument: a plucked bass, played one note at a time
+func bassInstrument(name string) bool { return name == "bass" || name == "upright-bass" }
+
+// pluckedInstrument: a plucked string, guitar or bass
+func pluckedInstrument(name string) bool { return guitarInstrument(name) || bassInstrument(name) }
 
 type phraseProfile struct {
 	attack, release, noise, gain float64

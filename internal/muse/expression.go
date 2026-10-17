@@ -74,10 +74,7 @@ func expressive(s *Score, t *tune) {
 		}
 		i := 0
 		for _, sec := range s.Sections {
-			beat := sec.Length
-			if beat == 0 {
-				beat = s.Length
-			}
+			beat := sectionBeat(*s, sec)
 			at := 0.0 // position in the section, in beats
 			for range sectionChannel(sec, c) {
 				n := &chs[c][i]
@@ -108,5 +105,5 @@ func reverbAmount(s *Score) float64 {
 	case s.Reverb == nil:
 		return defaultReverb
 	}
-	return math.Max(0, math.Min(1, *s.Reverb))
+	return clampFloat(*s.Reverb, 0, 1)
 }

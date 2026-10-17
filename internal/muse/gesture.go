@@ -33,7 +33,7 @@ func glideFrequency(from, to, t, duration float64) float64 {
 	if duration <= 0 {
 		return to
 	}
-	u := math.Max(0, math.Min(1, t/duration))
+	u := clampFloat(t/duration, 0, 1)
 	u = u * u * (3 - 2*u)
 	return from * math.Exp2(math.Log2(to/from)*u)
 }
@@ -54,13 +54,13 @@ func validateGestures(s *Score, sec Section, ch string, e NoteExpression, events
 		case "tongue":
 			valid = windInstrument(n.instrumentName)
 		case "fall":
-			valid = n.instrumentName == "trombone" || n.instrumentName == "french-horn" || n.instrumentName == "trumpet" || n.instrumentName == "saxophone" || n.instrumentName == "sax"
+			valid = fallInstrument(n.instrumentName)
 		case "bow-change", "portamento":
 			valid = bowedInstrument(n.instrumentName)
 		case "slide", "mute":
 			valid = pluckedInstrument(n.instrumentName)
 		case "hammer-on":
-			valid = n.instrumentName == "nylon-guitar" || n.instrumentName == "guitar" || n.instrumentName == "electric-guitar"
+			valid = guitarInstrument(n.instrumentName)
 		}
 		if !valid || (g.Kind != "fall" && g.Semitones != 0) {
 			return fmt.Errorf("gesture %q is not supported by %s or has inapplicable semitones", g.Kind, n.instrumentName)
@@ -110,7 +110,6 @@ func validateGestures(s *Score, sec Section, ch string, e NoteExpression, events
 }
 func applyGestures(notes []note, offset int, e NoteExpression) {
 	for i, g := range e.Gestures {
-		g := g
 		n := &notes[offset+i-1]
 		n.gesture = &g
 		if pluckedInstrument(n.instrumentName) {
@@ -126,21 +125,14 @@ func applyGestures(notes []note, offset int, e NoteExpression) {
 // synthesis starts, so Check and rendering agree about transition feasibility.
 func validatePreparedGestures(t *tune) error {
 	for _, notes := range t.channels() {
-		at := 0.0
+		starts := noteStarts(notes)
 		for i, n := range notes {
-			start := at
-			if n.placed {
-				start = float64(max(0, n.start)) / sampleRate
-			}
 			if n.gesture.transition() {
 				if i == 0 {
 					return fmt.Errorf("transition has no predecessor")
 				}
 				previous := notes[i-1]
-				previousStart := at - previous.length
-				if previous.placed {
-					previousStart = float64(max(0, previous.start)) / sampleRate
-				}
+				start, previousStart := starts[i], starts[i-1]
 				if start <= previousStart || math.Abs(start-previousStart-heldTime(previous)) >= .04 {
 					return fmt.Errorf("transition needs contiguous performed notes (gap below 40 ms)")
 				}
@@ -148,7 +140,6 @@ func validatePreparedGestures(t *tune) error {
 					return fmt.Errorf("portamento needs a connected slur")
 				}
 			}
-			at += n.length
 		}
 	}
 	return nil

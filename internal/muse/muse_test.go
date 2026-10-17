@@ -1,6 +1,7 @@
 package muse
 
 import (
+	"bytes"
 	"context"
 	"io/fs"
 
@@ -84,22 +85,6 @@ func TestConcatMismatchedLengths(t *testing.T) {
 	}
 }
 
-func TestChainConcatenates(t *testing.T) {
-	data, err := chain([]int{1, 2}, []int{3, 4, 5})
-	if err != nil {
-		t.Fatalf("chain returned error: %v", err)
-	}
-	want := []int{1, 2, 3, 4, 5}
-	if len(data) != len(want) {
-		t.Fatalf("chain length = %d, want %d", len(data), len(want))
-	}
-	for i := range want {
-		if data[i] != want[i] {
-			t.Fatalf("chain[%d] = %d, want %d", i, data[i], want[i])
-		}
-	}
-}
-
 // -- clipping ---------------------------------------------------------
 
 func TestClampLimitsRange(t *testing.T) {
@@ -118,6 +103,15 @@ func TestClampLimitsRange(t *testing.T) {
 			t.Fatalf("clamp(%d) = %d, want %d", c.in, got, c.want)
 		}
 	}
+}
+
+// stereo mixes and interleaves the channels as the plain layout does
+func stereo(c1, c2, c3 []int) ([]int, error) {
+	l, r, err := mix(c1, c2, c3)
+	if err != nil {
+		return nil, err
+	}
+	return interleave(l, r), nil
 }
 
 func TestStereoClampsSummedChords(t *testing.T) {
@@ -299,16 +293,16 @@ func TestUnknownKeySignature(t *testing.T) {
 
 func TestKeySignatureCoversAllOctaves(t *testing.T) {
 	// D major has F# and C#; before the fix this only covered octaves 2-6
-	if !inNote(tuneKey["D"], pitch["f1"]) {
+	if keyShift("D", pitch["f1"]) != 1 {
 		t.Fatal("key D should affect F in octave 1")
 	}
-	if !inNote(tuneKey["D"], pitch["f7"]) {
+	if keyShift("D", pitch["f7"]) != 1 {
 		t.Fatal("key D should affect F in octave 7")
 	}
-	if !inNote(tuneKey["D"], pitch["c1"]) {
+	if keyShift("D", pitch["c1"]) != 1 {
 		t.Fatal("key D should affect C in octave 1")
 	}
-	if !inNote(tuneKey["D"], pitch["c7"]) {
+	if keyShift("D", pitch["c7"]) != 1 {
 		t.Fatal("key D should affect C in octave 7")
 	}
 }
@@ -494,6 +488,7 @@ func TestSampleScoresProduceValidWAV(t *testing.T) {
 
 	for _, f := range files {
 		t.Run(f, func(t *testing.T) {
+			t.Parallel()
 			data, err := fs.ReadFile(scores.FS, f)
 			if err != nil {
 				t.Fatalf("cannot read %s: %v", f, err)
@@ -506,13 +501,13 @@ func TestSampleScoresProduceValidWAV(t *testing.T) {
 				t.Fatalf("Parse(%s) returned error: %v", f, err)
 			}
 
-			wf, err := os.Open(out + ".wav")
+			// decode from memory: the decoder reads one sample at a time
+			wf, err := os.ReadFile(out + ".wav")
 			if err != nil {
 				t.Fatalf("cannot open generated wav: %v", err)
 			}
-			defer wf.Close()
 
-			dec := wav.NewDecoder(wf)
+			dec := wav.NewDecoder(bytes.NewReader(wf))
 			buf, err := dec.FullPCMBuffer()
 			if err != nil {
 				t.Fatalf("cannot decode generated wav: %v", err)

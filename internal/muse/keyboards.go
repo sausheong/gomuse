@@ -27,7 +27,7 @@ func playingVelocity(v float64) float64 {
 	if v <= 0 {
 		return 0.7
 	}
-	return math.Max(0.1, math.Min(1, v))
+	return clampFloat(v, 0.1, 1)
 }
 
 // The low tine modes ring while pickup harmonics and the upper strike
@@ -92,28 +92,4 @@ func vibraphone(f, d, v float64) []float64 {
 	}
 	normalise(x)
 	return x
-}
-
-// finishInstrument tapers transients and normalises without adding harmonics.
-func finishInstrument(x []float64, duration, release float64) {
-	if len(x) == 0 {
-		return
-	}
-	fadeTail(x, math.Min(release, duration/4))
-	x[0], x[len(x)-1] = 0, 0
-	normalise(x)
-}
-
-// dampAfterHold preserves the held note and damps from key/tongue release.
-// A smooth exponential reaches exact silence without renormalising the tail.
-func dampAfterHold(x []float64, hold float64) {
-	start := sampleCount(hold)
-	if start >= len(x)-1 {
-		return
-	}
-	count := len(x) - 1 - start
-	for i := start; i < len(x); i++ {
-		u := float64(i-start) / float64(count)
-		x[i] *= (math.Exp(-5*u) - math.Exp(-5)) / (1 - math.Exp(-5))
-	}
 }

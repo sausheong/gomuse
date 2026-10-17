@@ -62,7 +62,7 @@ func renderScatPhrase(ctx context.Context, events []scatEvent, duration float64)
 		phraseT := math.Max(0, t-e.phraseStart)
 		phraseLength := e.phraseEnd - e.phraseStart
 		arc := math.Sin(math.Pi * math.Min(1, phraseT/math.Max(.001, phraseLength)))
-		targetEffort := math.Max(0, math.Min(1, e.settings.effort*(.72+.28*arc)+.24*(e.emphasis-.5)))
+		targetEffort := clampFloat(e.settings.effort*(.72+.28*arc)+.24*(e.emphasis-.5), 0, 1)
 		targetEffort = scatCurve(e.gesture.Effort, progress, targetEffort)
 		effort += (targetEffort - effort) * .002
 		air += (scatCurve(e.gesture.Air, progress, e.settings.air) - air) * .002

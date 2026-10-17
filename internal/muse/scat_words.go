@@ -34,7 +34,7 @@ type scatPhoneFrame struct {
 }
 
 func scatSmooth(x float64) float64 {
-	x = math.Max(0, math.Min(1, x))
+	x = clampFloat(x, 0, 1)
 	return x * x * (3 - 2*x)
 }
 

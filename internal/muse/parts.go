@@ -2,8 +2,8 @@ package muse
 
 import (
 	"fmt"
-	"math"
-	"sort"
+	"maps"
+	"slices"
 )
 
 // Parts: the settings a score makes per channel - its instrument, its place
@@ -53,12 +53,7 @@ var (
 // the instruments, pans and levels per channel.
 func validateParts(s *Score) error {
 	check := func(where string, m map[string]string) error {
-		keys := make([]string, 0, len(m))
-		for k := range m {
-			keys = append(keys, k)
-		}
-		sort.Strings(keys)
-		for _, k := range keys {
+		for _, k := range slices.Sorted(maps.Keys(m)) {
 			if !partChannels[k] {
 				return fmt.Errorf("%s: unknown channel %q - use C1, C2 or C3 ", where, k)
 			}
@@ -76,29 +71,19 @@ func validateParts(s *Score) error {
 			return err
 		}
 	}
-	keys := make([]string, 0, len(s.Pan))
-	for k := range s.Pan {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	for _, k := range keys {
+	for _, k := range slices.Sorted(maps.Keys(s.Pan)) {
 		if !mixChannels[k] {
 			return fmt.Errorf("pan: unknown channel %q - use C1, C2, C3 or drums ", k)
 		}
-		if v := s.Pan[k]; math.IsNaN(v) || v < -1 || v > 1 {
+		if v := s.Pan[k]; !finiteRange(v, -1, 1) {
 			return fmt.Errorf("pan: %s is %v - use a value from -1 (left) to 1 (right) ", k, v)
 		}
 	}
-	keys = keys[:0]
-	for k := range s.Levels {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	for _, k := range keys {
+	for _, k := range slices.Sorted(maps.Keys(s.Levels)) {
 		if !mixChannels[k] {
 			return fmt.Errorf("levels: unknown channel %q - use C1, C2, C3 or drums ", k)
 		}
-		if v := s.Levels[k]; math.IsNaN(v) || v < 0 || v > 1 {
+		if v := s.Levels[k]; !finiteRange(v, 0, 1) {
 			return fmt.Errorf("levels: %s is %v - use a value from 0 to 1 ", k, v)
 		}
 	}

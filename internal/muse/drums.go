@@ -2,9 +2,10 @@ package muse
 
 import (
 	"fmt"
+	"maps"
 	"math"
 	"math/rand/v2"
-	"sort"
+	"slices"
 	"strconv"
 	"strings"
 )
@@ -85,14 +86,8 @@ func init() {
 // makeDrumNote makes a drum note from a drums entry such as "kick-hat" or
 // "0.5:snare"; z is a rest
 func makeDrumNote(noteString string, section Section, score Score) (n note, err error) {
-	length := section.Length
-	if length == 0 {
-		length = score.Length
-	}
-	vol := section.Volume
-	if vol == 0 {
-		vol = score.Volume
-	}
+	length := sectionBeat(score, section)
+	vol := sectionVolume(score, section)
 	n = note{length: length, vol: vol, gain: 1}
 
 	l, hits := 1.0, noteString
@@ -128,12 +123,7 @@ func makeDrumNote(noteString string, section Section, score Score) (n note, err 
 
 // drumNames lists the kit, for error messages
 func drumNames() string {
-	names := make([]string, 0, len(drumKit))
-	for name := range drumKit {
-		names = append(names, name)
-	}
-	sort.Strings(names)
-	return strings.Join(names, ", ")
+	return strings.Join(slices.Sorted(maps.Keys(drumKit)), ", ")
 }
 
 // kitData renders a drum note: every drum struck, each at its level in the
@@ -351,28 +341,6 @@ func bandpass(centre, q float64) func(float64) float64 {
 		x2, x1 = x1, x
 		y2, y1 = y1, y
 		return y
-	}
-}
-
-// normalise scales x to peak at 1
-func normalise(x []float64) {
-	peak := 0.0
-	for _, v := range x {
-		peak = math.Max(peak, math.Abs(v))
-	}
-	if peak > 0 {
-		for k := range x {
-			x[k] /= peak
-		}
-	}
-}
-
-// fadeTail fades the last r seconds of x to silence, so a drum that hasn't
-// quite died away by the end of its buffer doesn't click
-func fadeTail(x []float64, r float64) {
-	m := min(len(x), sampleCount(r))
-	for k := 0; k < m; k++ {
-		x[len(x)-1-k] *= float64(k) / float64(m)
 	}
 }
 

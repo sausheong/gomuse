@@ -1,9 +1,6 @@
 package muse
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 // ScatGesture describes a hand-shaped performance of one note. Curves are
 // evenly spaced across the note and smooth between points. Empty curves inherit
@@ -30,13 +27,13 @@ func (g ScatGesture) validate() error {
 			return fmt.Errorf("gesture %s needs 2 to 64 points or an empty curve", c.name)
 		}
 		for _, v := range c.points {
-			if !isFinite(v) || v < c.lo || v > c.hi {
+			if !finiteRange(v, c.lo, c.hi) {
 				return fmt.Errorf("gesture %s must be finite in [%g, %g]", c.name, c.lo, c.hi)
 			}
 		}
 	}
 	for _, v := range []float64{g.Attack, g.Release} {
-		if !isFinite(v) || v < 0 || v > 1 {
+		if !finiteRange(v, 0, 1) {
 			return fmt.Errorf("gesture attack/release must be finite in [0, 1] seconds")
 		}
 	}
@@ -50,7 +47,7 @@ func scatCurve(points []float64, position, fallback float64) float64 {
 	if len(points) == 1 {
 		return points[0]
 	}
-	x := math.Max(0, math.Min(1, position)) * float64(len(points)-1)
+	x := clampFloat(position, 0, 1) * float64(len(points)-1)
 	i := min(int(x), len(points)-2)
 	f := x - float64(i)
 	f = f * f * (3 - 2*f)

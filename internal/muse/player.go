@@ -3,8 +3,9 @@ package muse
 import (
 	"context"
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"math"
+
+	"gopkg.in/yaml.v3"
 )
 
 // PlayerInfo describes browser playback. Progressive playback preserves score
@@ -40,11 +41,7 @@ func playerTune(doc []byte) (Score, tune, error) {
 	hasNotes := false
 	for _, ch := range t.channels() {
 		hasNotes = hasNotes || len(ch) > 0
-		written := 0
-		for _, n := range ch {
-			written += sampleCount(n.length)
-		}
-		if channelSamples(ch) > sampleRate*7200 || channelNominal(ch) > playerMaxFrames || written > playerMaxFrames {
+		if channelSamples(ch) > sampleRate*7200 || channelNominal(ch) > playerMaxFrames || channelWritten(ch) > playerMaxFrames {
 			return s, t, fmt.Errorf("browser playback supports up to ten minutes and two hours of synthesized voices per channel")
 		}
 	}
@@ -70,18 +67,25 @@ func RenderPCM(doc []byte) (PlayerInfo, []int, error) {
 	return PlayerInfo{s.Name, sampleRate, float64(len(pcm)/2) / sampleRate, s.Mastering != nil, s.Scat != nil}, pcm, err
 }
 
+// pendingEvent is a synthesized note still sounding, at sample at
 type pendingEvent struct {
 	at   int
 	data []int
 }
+
+// streamChannel renders one channel incrementally: notes are synthesized
+// only shortly before they're needed and kept until they've finished.
 type streamChannel struct {
-	cursor        channelCursor
-	pending       []pendingEvent
-	end           int
-	external      []int
-	hp, lp, split float64
+	cursor   channelCursor
+	pending  []pendingEvent
+	end      int   // the channel's length in samples, including tails
+	external []int // a pre-rendered vocal, in place of the notes
+	filter   *channelFilter
 }
 
+// schedule synthesizes every note that starts before end, plus a little
+// lookahead, since timing humanisation can put a following event just ahead
+// of its neighbour.
 func (c *streamChannel) schedule(end int) error {
 	if c.external != nil {
 		return nil
@@ -92,7 +96,6 @@ func (c *streamChannel) schedule(end int) error {
 		if n.placed {
 			pos = max(0, n.start)
 		}
-		// Timing humanisation can put a following event just ahead of its neighbour.
 		if pos >= end+sampleCount(.1) {
 			break
 		}
@@ -107,7 +110,9 @@ func (c *streamChannel) schedule(end int) error {
 	}
 	return nil
 }
-func (c *streamChannel) sample(at int, m ChannelMix) int {
+
+// sample is the channel's mixed and filtered output at sample at
+func (c *streamChannel) sample(at int) int {
 	x := 0
 	if at < len(c.external) {
 		x = c.external[at]
@@ -120,26 +125,22 @@ func (c *streamChannel) sample(at int, m ChannelMix) int {
 	if at >= c.end {
 		return 0
 	}
-	if m == (ChannelMix{}) {
+	if c.filter == nil {
 		return x
 	}
-	y := float64(x)
-	if m.LowCutHz > 0 {
-		c.hp += (1 - math.Exp(-2*math.Pi*m.LowCutHz/sampleRate)) * (y - c.hp)
-		y -= c.hp
+	return c.filter.process(x, at, c.end)
+}
+
+// drop forgets the events that have finished sounding before end
+func (c *streamChannel) drop(end int) {
+	keep := c.pending[:0]
+	for _, e := range c.pending {
+		if e.at+len(e.data) > end {
+			keep = append(keep, e)
+		}
 	}
-	if m.HighCutHz > 0 {
-		c.lp += (1 - math.Exp(-2*math.Pi*m.HighCutHz/sampleRate)) * (y - c.lp)
-		y = c.lp
-	}
-	if m.TiltDB != 0 {
-		c.split += (1 - math.Exp(-2*math.Pi*1000/sampleRate)) * (y - c.split)
-		y = c.split*dBGain(-m.TiltDB/2) + (y-c.split)*dBGain(m.TiltDB/2)
-	}
-	if m.LowCutHz > 0 || m.HighCutHz > 0 || m.TiltDB != 0 {
-		y *= math.Min(1, float64(c.end-1-at)/math.Min(float64(sampleCount(.01)), float64(max(1, c.end-1))))
-	}
-	return int(math.Round(y * dBGain(m.GainDB)))
+	clear(c.pending[len(keep):])
+	c.pending = keep
 }
 
 // PCMStream synthesizes only events needed for the next block. Voice state,
@@ -147,16 +148,17 @@ func (c *streamChannel) sample(at int, m ChannelMix) int {
 // Each event is still synthesized as a unit, so an unusually long chord may
 // take longer than a block to generate. Call from a worker, never an audio thread.
 type PCMStream struct {
-	Info                        PlayerInfo
-	channels                    [channelCount]streamChannel
-	tune                        tune
+	Info     PlayerInfo
+	channels [channelCount]streamChannel
+	tune     tune
+	// frame is the next sample to render, nominal the written length,
+	// tail how long the reverb rings on, and final the total length once
+	// every note has been synthesized (-1 until then)
 	frame, nominal, tail, final int
-	left, right                 *room
-	delay                       []float64
-	delayAt                     int
-	low                         float64
-	gains                       [channelCount][2]float64
+	gains                       [channelCount][2]float64 // left and right
 	sends                       [channelCount]float64
+	left, right                 *room         // the default reverb
+	small                       *smallRoomBus // the small room, in its place
 }
 
 func NewPCMStream(doc []byte) (*PCMStream, error) {
@@ -165,98 +167,64 @@ func NewPCMStream(doc []byte) (*PCMStream, error) {
 		return nil, err
 	}
 	p := &PCMStream{tune: t, final: -1, Info: PlayerInfo{Name: s.Name, SampleRate: sampleRate, Mastering: s.Mastering != nil, Scat: s.Scat != nil}}
-	acc := 0
-	if inKey(sharpKeys, t.key) {
-		acc = 1
-	} else if inKey(flatKeys, t.key) {
-		acc = -1
+	t.prepareForRender()
+	sends := [channelCount]float64{1, 1, 1, 1}
+	if t.room != nil {
+		sends = roomSends(t.room)
 	}
 	ref := -1
+	roomActive := false
 	for i, ch := range t.channels() {
-		for _, n := range ch {
-			for j, v := range n.pitch {
-				if !n.explicit[j] && inNote(tuneKey[t.key], v) {
-					n.accidental[j] += acc
-				}
-			}
-		}
-		prepareStringPerformance(ch)
 		nominal := channelNominal(ch)
 		if len(ch) > 0 {
-			if ref >= 0 && absInt(nominal-ref) >= tolerance {
+			if ref >= 0 && max(nominal-ref, ref-nominal) >= tolerance {
 				return nil, fmt.Errorf("channel lengths are different")
 			}
 			ref = nominal
 		}
 		p.nominal = max(p.nominal, nominal)
-		written := 0
-		for _, n := range ch {
-			written += sampleCount(n.length)
+		c := streamChannel{cursor: channelCursor{notes: ch}, end: max(nominal, channelWritten(ch)), filter: newChannelFilter(t.mix[channelNames[i]])}
+		if ext := t.external[i]; ext != nil {
+			c.external = ext
+			c.end = max(nominal, len(ext))
+			c.cursor.index = len(ch)
 		}
-		p.channels[i] = streamChannel{cursor: channelCursor{notes: ch}, end: max(nominal, written), external: t.external[i]}
-		if t.external[i] != nil {
-			p.channels[i].end = max(nominal, len(t.external[i]))
-			p.channels[i].cursor.index = len(ch)
-		}
-		if t.pan != nil {
-			a := (t.pan[i] + 1) * math.Pi / 4
-			p.gains[i] = [2]float64{math.Cos(a) * math.Sqrt2, math.Sin(a) * math.Sqrt2}
-		} else {
-			switch i {
-			case 0:
-				p.gains[i] = [2]float64{1, 0}
-				if len(t.ch2) == 0 {
-					p.gains[i][1] = 1
-				}
-			case 1:
-				p.gains[i] = [2]float64{0, 1}
-				if len(t.ch1) == 0 {
-					p.gains[i][0] = 1
-				}
-			default:
-				p.gains[i] = [2]float64{1, 1}
-			}
-		}
-		p.sends[i] = 1
-		if t.room != nil {
-			if v, ok := t.room.Sends[channelNames[i]]; ok {
-				p.sends[i] = v
-			}
-		}
+		p.channels[i] = c
+		p.gains[i] = channelGainsLR(t, i)
+		p.sends[i] = sends[i]
+		roomActive = roomActive || (len(ch) > 0 && sends[i] > 0)
 	}
-	if t.reverb > 0 {
+	switch {
+	case t.reverb <= 0:
+	case t.room == nil:
 		p.left, p.right = newRoom(0), newRoom(stereoSpread)
 		p.tail = sampleCount(reverbTail)
-		if t.room != nil {
-			p.tail = sampleCount(1.5)
-			p.delay = make([]float64, sampleCount(.06))
-			for _, r := range []*room{p.left, p.right} {
-				for j := range r.combs {
-					c := &r.combs[j]
-					c.buf = make([]float64, len(c.buf)*2/3)
-					c.feedback = .67
-					c.damping = .48
-				}
-			}
-			active := false
-			for i, ch := range t.channels() {
-				active = active || (len(ch) > 0 && p.sends[i] > 0)
-			}
-			if !active {
-				p.tail = 0
-				p.left = nil
-				p.right = nil
-			}
-		}
+	case roomActive:
+		p.small = newSmallRoomBus()
+		p.tail = sampleCount(smallRoomTail)
 	}
 	p.Info.Duration = float64(p.nominal) / sampleRate
 	return p, nil
 }
-func absInt(v int) int {
-	if v < 0 {
-		return -v
+
+// channelGainsLR is how much of channel i goes to the left and right sides:
+// the equal-power pan when the tune is panned, otherwise the plain layout
+// (C1 left, C2 right, each on both sides if the other is empty, and the
+// rest centred)
+func channelGainsLR(t tune, i int) [2]float64 {
+	if t.pan != nil {
+		a := (t.pan[i] + 1) * math.Pi / 4
+		return [2]float64{math.Cos(a) * math.Sqrt2, math.Sin(a) * math.Sqrt2}
 	}
-	return v
+	switch {
+	case i == 0 && len(t.ch2) == 0, i == 1 && len(t.ch1) == 0:
+		return [2]float64{1, 1}
+	case i == 0:
+		return [2]float64{1, 0}
+	case i == 1:
+		return [2]float64{0, 1}
+	}
+	return [2]float64{1, 1}
 }
 
 // Next returns interleaved signed 16-bit PCM in an int slice. The final block
@@ -286,44 +254,26 @@ func (p *PCMStream) Next(frames int) ([]int, bool, error) {
 	}
 	out := make([]int, 0, (end-p.frame)*2)
 	for at := p.frame; at < end; at++ {
-		dl, dr, in := 0, 0, 0.
+		l, r, in := 0, 0, 0.
 		for i := range p.channels {
-			x := p.channels[i].sample(at, p.tune.mix[channelNames[i]])
-			dl += int(float64(x) * p.gains[i][0])
-			dr += int(float64(x) * p.gains[i][1])
+			x := p.channels[i].sample(at)
+			l += int(float64(x) * p.gains[i][0])
+			r += int(float64(x) * p.gains[i][1])
 			in += float64(x) * p.sends[i]
 		}
-		l, r := dl, dr
-		if p.left != nil {
-			if p.delay == nil {
-				in = float64(dl+dr) * roomInput
-				l = int(float64(dl) + p.tune.reverb*3*p.left.process(in))
-				r = int(float64(dr) + p.tune.reverb*3*p.right.process(in))
-			} else {
-				p.low += .018 * (in - p.low)
-				in -= p.low
-				p.delay[p.delayAt] = in
-				tap := func(t float64) float64 { return p.delay[(p.delayAt-sampleCount(t)+len(p.delay))%len(p.delay)] }
-				earlyL, earlyR := .13*tap(.013)+.07*tap(.031), .12*tap(.019)+.08*tap(.043)
-				diffuse := tap(.011) * roomInput
-				l += int(p.tune.reverb * (earlyL + 2*p.left.process(diffuse)))
-				r += int(p.tune.reverb * (earlyR + 2*p.right.process(diffuse)))
-				p.delayAt = (p.delayAt + 1) % len(p.delay)
-			}
+		switch {
+		case p.left != nil:
+			in = float64(l+r) * roomInput
+			l, r = int(float64(l)+p.tune.reverb*3*p.left.process(in)), int(float64(r)+p.tune.reverb*3*p.right.process(in))
+		case p.small != nil:
+			wl, wr := p.small.process(in, p.tune.reverb)
+			l, r = l+wl, r+wr
 		}
 		out = append(out, clamp(l), clamp(r))
 	}
 	p.frame = end
 	for i := range p.channels {
-		c := &p.channels[i]
-		keep := c.pending[:0]
-		for _, e := range c.pending {
-			if e.at+len(e.data) > end {
-				keep = append(keep, e)
-			}
-		}
-		clear(c.pending[len(keep):])
-		c.pending = keep
+		p.channels[i].drop(end)
 	}
 	return out, p.final >= 0 && p.frame >= p.final, nil
 }
